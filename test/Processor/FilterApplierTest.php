@@ -1,22 +1,19 @@
 <?php
 
-namespace test\Vehicles\Workers\Processors;
+namespace rollun\test\datahandler\Processor;
 
-use rollun\datanadler\Processor\FilterApplier;
-use Zend\Filter\FilterPluginManager;
+use PHPUnit\Framework\TestCase;
+use rollun\datahandler\Processor\FilterApplier;
 
 /**
  * Class FilterApplierTest
  * @package test\Vehicles\Workers\Processors
  */
-class FilterApplierTest extends AbstractProcessorTest
+class FilterApplierTest extends TestCase
 {
-    public function getFilterPluginManager()
+    public function getProcessor($options = [], $validator = null)
     {
-        global $container;
-        $container = isset($container) ? $container : include "config/container.php";
-
-        return $container->get(FilterPluginManager::class);
+        return new FilterApplier($options, $validator);
     }
 
     public function dataProvider()
@@ -47,10 +44,7 @@ class FilterApplierTest extends AbstractProcessorTest
                     'columnToWrite' => 'result column',
                     'filters' => [
                         [
-                            'service' => 'rqlReplace',
-                            'options' => [
-                                'pattern' => 'ab'
-                            ]
+                            'service' => 'stringToUpper',
                         ],
                         [
                             'service' => 'stringTrim',
@@ -62,7 +56,7 @@ class FilterApplierTest extends AbstractProcessorTest
                 ],
                 [
                     'some column' => '   abcd   ',
-                    'result column' => 'cd',
+                    'result column' => 'ABCD',
                 ],
             ],
         ];
@@ -77,8 +71,7 @@ class FilterApplierTest extends AbstractProcessorTest
      */
     public function testProcess($options, $value, $expected)
     {
-        $filterPluginManager = $this->getFilterPluginManager();
-        $object = new FilterApplier($options, $filterPluginManager);
+        $object = $this->getProcessor($options);
         $result = $object->process($value);
         $this->assertEquals($expected, $result);
     }

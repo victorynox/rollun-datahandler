@@ -6,7 +6,7 @@ $vendorDir = dirname(dirname(__FILE__));
 $baseDir = dirname($vendorDir);
 
 return array(
-    'rollun\\test\\datahandler\\' => array($baseDir . '/test/src'),
+    'rollun\\test\\datahandler\\' => array($baseDir . '/test'),
     'rollun\\datahandler\\Validator\\' => array($baseDir . '/src/Validator/src'),
     'rollun\\datahandler\\Processor\\' => array($baseDir . '/src/Processor/src'),
     'rollun\\datahandler\\Filter\\' => array($baseDir . '/src/Filter/src'),

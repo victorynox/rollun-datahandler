@@ -1,10 +1,10 @@
 <?php
 
-namespace rollun\datanadler\Processor;
+namespace rollun\datahandler\Processor;
 
 /**
  * Interface ProcessorInterface
- * @package rollun\datanadler\Processor
+ * @package rollun\datahandler\Processor
  */
 interface ProcessorInterface
 {

@@ -1,13 +1,26 @@
 <?php
 
-namespace rollun\datanadler\Factory;
+namespace rollun\datahandler\Factory;
 
 use Interop\Container\ContainerInterface;
 use Zend\ServiceManager\Factory\AbstractFactoryInterface;
 
 /**
+ * Config example
+ *
+ * static::KEY => [
+ *      'abstract_factory_config' => [
+ *          static::class => [
+ *              'requestedName' => [
+ *                  'class' => SomePlugin::class,
+ *                  'options' => [],
+ *              ],
+ *          ],
+ *      ],
+ * ],
+ *
  * Class PluginAbstractFactoryAbstract
- * @package rollun\datanadler\Factory
+ * @package rollun\datahandler\Factory
  */
 abstract class PluginAbstractFactoryAbstract implements AbstractFactoryInterface
 {
@@ -36,13 +49,18 @@ abstract class PluginAbstractFactoryAbstract implements AbstractFactoryInterface
      */
     const CLASS_KEY = 'class';
 
+    /**
+     * @param ContainerInterface $container
+     * @param string $requestedName
+     * @return bool
+     */
     public function canCreate(ContainerInterface $container, $requestedName)
     {
         return boolval($this->getServiceConfig($container, $requestedName));
     }
 
     /**
-     * Get Options for plugin
+     * Get options for plugin
      *
      * @param $serviceConfig
      * @param array|null $options
@@ -52,8 +70,8 @@ abstract class PluginAbstractFactoryAbstract implements AbstractFactoryInterface
     {
         $pluginOptions = [];
 
-        if (isset($options[self::OPTIONS_KEY]) && is_array($options[self::OPTIONS_KEY])) {
-            $pluginOptions = $options[self::OPTIONS_KEY];
+        if (isset($options) && is_array($options)) {
+            $pluginOptions = $options;
         }
 
         if (isset($serviceConfig[self::OPTIONS_KEY]) && is_array($serviceConfig[self::OPTIONS_KEY])) {

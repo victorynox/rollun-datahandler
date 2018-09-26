@@ -1,8 +1,8 @@
 <?php
 
-namespace rollun\datanadler\Filter\Factory;
+namespace rollun\datahandler\Filter\Factory;
 
-use rollun\datanadler\Factory\PluginAbstractFactoryAbstract;
+use rollun\datahandler\Factory\PluginAbstractFactoryAbstract;
 use Interop\Container\ContainerInterface;
 use Zend\Filter\FilterInterface;
 
@@ -21,7 +21,7 @@ use Zend\Filter\FilterInterface;
  * ],
  *
  * Class SimpleFilterAbstractFactory
- * @package rollun\datanadler\Filter\Factory
+ * @package rollun\datahandler\Filter\Factory
  */
 class SimpleFilterAbstractFactory extends PluginAbstractFactoryAbstract
 {
@@ -44,9 +44,9 @@ class SimpleFilterAbstractFactory extends PluginAbstractFactoryAbstract
     public function __invoke(ContainerInterface $container, $requestedName, array $options = null)
     {
         $serviceConfig = $this->getServiceConfig($container, $requestedName);
-        $options = $this->getPluginOptions($serviceConfig, $options);
+        $pluginOptions = $this->getPluginOptions($serviceConfig, $options);
         $class = $this->getClass($serviceConfig);
 
-        return new $class($options);
+        return new $class($pluginOptions);
     }
 }

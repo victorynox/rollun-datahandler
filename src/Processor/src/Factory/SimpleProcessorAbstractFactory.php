@@ -1,8 +1,8 @@
 <?php
 
-namespace rollun\datanadler\Processor\Factory;
+namespace rollun\datahandler\Processor\Factory;
 
-use rollun\datanadler\Processor\ProcessorInterface;
+use rollun\datahandler\Processor\ProcessorInterface;
 use Interop\Container\ContainerInterface;
 use Zend\ServiceManager\Factory\AbstractFactoryInterface;
 
@@ -14,15 +14,18 @@ use Zend\ServiceManager\Factory\AbstractFactoryInterface;
  *          SimpleProcessorAbstractFactory::class => [
  *              'requestedName' => [
  *                  'class' => Concat::class,
- *                  'options' => [],
- *                  'validator' => 'validator-service',
+ *                  'options' => [
+ *                      'validator' => 'validator-service',
+ *                      'validatorOptions' => [],
+ *                      // other options
+ *                  ],
  *              ]
  *          ],
  *      ]
  * ]
  *
  * Class ProcessorAbstractFactory
- * @package rollun\datanadler\Processor\Factory
+ * @package rollun\datahandler\Processor\Factory
  */
 class SimpleProcessorAbstractFactory extends ProcessorAbstractFactoryAbstract implements AbstractFactoryInterface
 {
@@ -40,10 +43,11 @@ class SimpleProcessorAbstractFactory extends ProcessorAbstractFactoryAbstract im
     public function __invoke(ContainerInterface $container, $requestedName, array $options = null)
     {
         $serviceConfig = $this->getServiceConfig($container, $requestedName);
-        $validator = $this->getValidator($container, $serviceConfig, $options);
-        $processorOptions = $this->getPluginOptions($serviceConfig, $options);
+        $pluginOptions = $this->getPluginOptions($serviceConfig, $options);
+        $validator = $this->getValidator($container, $pluginOptions);
         $class = $this->getClass($serviceConfig);
+        $clearedPluginOptions = $this->clearPluginOptions($pluginOptions);
 
-        return new $class($processorOptions, $validator);
+        return new $class($clearedPluginOptions, $validator);
     }
 }

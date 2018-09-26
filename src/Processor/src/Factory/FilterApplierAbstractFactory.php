@@ -1,8 +1,8 @@
 <?php
 
-namespace rollun\datanadler\Processor\Factory;
+namespace rollun\datahandler\Processor\Factory;
 
-use rollun\datanadler\Processor\FilterApplier;
+use rollun\datahandler\Processor\FilterApplier;
 use Interop\Container\ContainerInterface;
 use Zend\Filter\FilterPluginManager;
 
@@ -14,17 +14,20 @@ use Zend\Filter\FilterPluginManager;
  *          FilterApplierAbstractFactory::class => [
  *              'requestedName' => [
  *                  'class' => FilterApplier::class,
- *                  'options' => [],
- *                  'validator' => 'validator-service',
+ *                  'options' => [
+ *                      'validator' => 'validator-service',
+ *                      'validatorOptions' => [],
+ *                      // other options
+ *                  ],
  *              ],
  *          ],
  *      ],
  * ],
  *
  * Class FilterApplierAbstractFactory
- * @package rollun\datanadler\Processor\Factory
+ * @package rollun\datahandler\Processor\Factory
  */
-class FilterApplierAbstractFactory extends SimpleProcessorAbstractFactory
+class FilterApplierAbstractFactory extends ProcessorAbstractFactoryAbstract
 {
     /**
      * Default class for filter applier processor
@@ -40,11 +43,13 @@ class FilterApplierAbstractFactory extends SimpleProcessorAbstractFactory
     public function __invoke(ContainerInterface $container, $requestedName, array $options = null)
     {
         $serviceConfig = $this->getServiceConfig($container, $requestedName);
-        $validator = $this->getValidator($container, $serviceConfig, $options);
-        $processorOptions = $this->getPluginOptions($serviceConfig, $options);
+        $pluginOptions = $this->getPluginOptions($serviceConfig, $options);
+        $validator = $this->getValidator($container, $pluginOptions);
+        $clearedPluginOptions = $this->clearPluginOptions($pluginOptions);
+
         $class = $this->getClass($serviceConfig);
         $filterPluginManager = $container->get(FilterPluginManager::class);
 
-        return new $class($filterPluginManager, $processorOptions, $validator);
+        return new $class($clearedPluginOptions, $validator, $filterPluginManager);
     }
 }

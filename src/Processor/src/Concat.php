@@ -1,10 +1,12 @@
 <?php
 
-namespace rollun\datanadler\Processor;
+namespace rollun\datahandler\Processor;
+
+use InvalidArgumentException;
 
 /**
  * Class Concat
- * @package rollun\datanadler\Processor
+ * @package rollun\datahandler\Processor
  */
 class Concat extends AbstractProcessor
 {
@@ -43,7 +45,7 @@ class Concat extends AbstractProcessor
     public function setColumns(array $columns)
     {
         if (!isset($columns) || count($columns) < 2) {
-            throw new \InvalidArgumentException(self::class . ' processor: minimum count of columns - 2');
+            throw new InvalidArgumentException("Minimum columns count - 2");
         }
 
         $this->columns = $columns;
@@ -63,7 +65,7 @@ class Concat extends AbstractProcessor
     public function getColumnToWrite()
     {
         if (!isset($this->columnToWrite)) {
-            throw new \InvalidArgumentException(self::class . ' processor: columnToWrite is not set');
+            throw new InvalidArgumentException("Missing option 'columnToWrite'");
         }
 
         return $this->columnToWrite;
@@ -92,17 +94,20 @@ class Concat extends AbstractProcessor
         if (in_array($delimiter, $allowedDelimiters)) {
             $this->delimiter = $delimiter;
         } else {
-            throw new \InvalidArgumentException(
-                self::class . ' Delimiter ' . $delimiter . ' must be one of [' .
-                implode(',', $allowedDelimiters) . ']'
+            throw new InvalidArgumentException(
+                "Options 'delimiter' must be one of [" . implode(',', $allowedDelimiters) . "]." .
+                "{$delimiter} given"
             );
         }
     }
 
+    /**
+     * @return string
+     */
     public function getDelimiter()
     {
         if (!isset($this->delimiter)) {
-            throw new \InvalidArgumentException(self::class . ' processor: delimiter is not set');
+            throw new InvalidArgumentException("Missing 'delimiter' option");
         }
 
         return $this->delimiter;
@@ -118,7 +123,7 @@ class Concat extends AbstractProcessor
     {
         foreach ($this->columns as $column) {
             if (!array_key_exists($column, $value)) {
-                throw new \InvalidArgumentException(self::class . ' processor: column ' . $column . ' is not valid');
+                throw new InvalidArgumentException("Column '{$column}' in 'columns' option is not valid");
             }
         }
 

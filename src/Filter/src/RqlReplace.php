@@ -1,13 +1,14 @@
 <?php
 
-namespace rollun\datanadler\Filter;
+namespace rollun\datahandler\Filter;
 
+use InvalidArgumentException;
 use Zend\Filter\AbstractFilter;
 use Zend\Filter\FilterInterface;
 
 /**
  * Class RqlReplace
- * @package rollun\datanadler\Filter
+ * @package rollun\datahandler\Filter
  */
 class RqlReplace extends AbstractFilter implements FilterInterface
 {
@@ -44,6 +45,9 @@ class RqlReplace extends AbstractFilter implements FilterInterface
         '}' => '\}',
     ];
 
+    /**
+     * @var string
+     */
     protected $replacement = '';
 
     /**
@@ -77,7 +81,7 @@ class RqlReplace extends AbstractFilter implements FilterInterface
      *
      * @param array $options
      */
-    public function __construct($options = [])
+    public function __construct(array $options)
     {
         $this->setOptions($options);
     }
@@ -107,6 +111,18 @@ class RqlReplace extends AbstractFilter implements FilterInterface
     }
 
     /**
+     * @return string
+     */
+    public function getPattern()
+    {
+        if (!isset($this->pattern)) {
+            throw new InvalidArgumentException("Missing option 'pattern'");
+        }
+
+        return $this->pattern;
+    }
+
+    /**
      * @param $replacement
      */
     public function setReplacement($replacement)
@@ -126,29 +142,15 @@ class RqlReplace extends AbstractFilter implements FilterInterface
             return $value;
         }
 
-        $fullPattern = $this->beforePattern . $this->pattern . $this->afterPattern;
-        $fullRegExp = $this->getRegExp($fullPattern);
+        $pattern = "/({$this->processPattern($this->beforePattern)})"
+            . "({$this->processPattern($this->getPattern())})"
+            . "({$this->processPattern($this->afterPattern)})/";
 
-        if (preg_match($fullRegExp, $value)) {
-            $definitePattern = $this->getRegExp($this->pattern);
-            $value = preg_replace($definitePattern, $this->replacement, $value);
+        if (preg_match($pattern, $value, $matches)) {
+            $value = str_replace($matches[2], $this->replacement, $value);
         }
 
         return $value;
-    }
-
-    /**
-     * Prepare regular expression
-     *
-     * @param $pattern
-     * @return null|string|string[]
-     */
-    protected function getRegExp(string $pattern)
-    {
-        $pattern = $this->processPattern($pattern);
-        $regExp = '/' . $pattern . '/';
-
-        return $regExp;
     }
 
     /**

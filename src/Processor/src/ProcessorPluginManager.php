@@ -1,12 +1,12 @@
 <?php
 
-namespace rollun\datanadler\Processor;
+namespace rollun\datahandler\Processor;
 
 use Zend\ServiceManager\AbstractPluginManager;
 
 /**
  * Class ProcessorPluginManager
- * @package rollun\datanadler\Processor
+ * @package rollun\datahandler\Processor
  */
 class ProcessorPluginManager extends AbstractPluginManager
 {

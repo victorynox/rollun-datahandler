@@ -1,12 +1,12 @@
 <?php
 
-namespace rollun\datanadler\Filter;
+namespace rollun\datahandler\Filter;
 
 use Zend\Filter\AbstractFilter;
 
 /**
  * Class RemoveDigits
- * @package rollun\datanadler\Filter
+ * @package rollun\datahandler\Filter
  */
 class RemoveDigits extends AbstractFilter
 {

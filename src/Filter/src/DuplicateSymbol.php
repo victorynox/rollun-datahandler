@@ -1,12 +1,13 @@
 <?php
 
-namespace rollun\datanadler\Filter;
+namespace rollun\datahandler\Filter;
 
+use InvalidArgumentException;
 use Zend\Filter\AbstractFilter;
 
 /**
  * Class DuplicateSymbol
- * @package rollun\datanadler\Filter
+ * @package rollun\datahandler\Filter
  */
 class DuplicateSymbol extends AbstractFilter
 {
@@ -64,7 +65,7 @@ class DuplicateSymbol extends AbstractFilter
      *
      * @param array $options
      */
-    public function __construct($options = [])
+    public function __construct(array $options)
     {
         $this->setOptions($options);
     }
@@ -83,7 +84,7 @@ class DuplicateSymbol extends AbstractFilter
     public function getDuplicate()
     {
         if (!isset($this->duplicate)) {
-            throw new \InvalidArgumentException('Duplicate symbol filter: Duplicate is not set');
+            throw new InvalidArgumentException("Missing option 'duplicate'");
         }
 
         return $this->duplicate;

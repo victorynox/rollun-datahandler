@@ -1,14 +1,16 @@
 <?php
 
-namespace rollun\datanadler\Processor;
+namespace rollun\datahandler\Processor;
 
+use InvalidArgumentException;
 use Zend\Filter\FilterInterface;
 use Zend\Filter\FilterPluginManager;
+use Zend\ServiceManager\ServiceManager;
 use Zend\Validator\ValidatorInterface;
 
 /**
  * Class FilterApplier
- * @package rollun\datanadler\Processor
+ * @package rollun\datahandler\Processor
  */
 class FilterApplier extends AbstractProcessor
 {
@@ -54,9 +56,9 @@ class FilterApplier extends AbstractProcessor
 
     /**
      * FilterApplier constructor.
-     * @param FilterPluginManager $filterPluginManager
      * @param array $option
      * @param ValidatorInterface|null $validator
+     * @param FilterPluginManager $filterPluginManager
      *
      * Valid keys are:
      * - columnToRead - string, data store valid column
@@ -65,14 +67,13 @@ class FilterApplier extends AbstractProcessor
      *
      */
     public function __construct(
-        FilterPluginManager $filterPluginManager,
-        $option = [],
-        ValidatorInterface $validator = null
+        $option = null,
+        ValidatorInterface $validator = null,
+        FilterPluginManager $filterPluginManager = null
     ) {
         parent::__construct($option, $validator);
 
-        $this->setOptions($option);
-        $this->setFilterPluginManager($filterPluginManager);
+        $this->filterPluginManager = $filterPluginManager;
     }
 
     /**
@@ -83,10 +84,13 @@ class FilterApplier extends AbstractProcessor
         $this->columnToRead = $columnToRead;
     }
 
+    /**
+     * @return string
+     */
     public function getColumnToRead()
     {
-        if (!isset($this->columnToRead) || !isset($value[$this->columnToRead])) {
-            throw new \InvalidArgumentException(self::class . ' processor: column to read is not set or valid');
+        if (!isset($this->columnToRead)) {
+            throw new InvalidArgumentException("Missing option 'columnToRaed'");
         }
 
         return $this->columnToRead;
@@ -109,20 +113,12 @@ class FilterApplier extends AbstractProcessor
     }
 
     /**
-     * @param $filterPluginManager FilterPluginManager
-     */
-    public function setFilterPluginManager(FilterPluginManager $filterPluginManager)
-    {
-        $this->filterPluginManager = $filterPluginManager;
-    }
-
-    /**
      * @return FilterPluginManager
      */
     public function getFilterPluginManager()
     {
-        if (!isset($this->filterPluginManager)) {
-            throw new \InvalidArgumentException(self::class . ' processor: filter plugin manager is not set');
+        if ($this->filterPluginManager === null) {
+            $this->filterPluginManager = new FilterPluginManager(new ServiceManager());
         }
 
         return $this->filterPluginManager;
@@ -136,17 +132,22 @@ class FilterApplier extends AbstractProcessor
     public function doProcess(array $value)
     {
         $columnToRead = $this->getColumnToRead();
-        $value = $value[$columnToRead];
+
+        if (!isset($value[$columnToRead])) {
+            throw new InvalidArgumentException("Column '{$columnToRead}' does'nt exist in incoming value");
+        }
+
+        $columnValue = $value[$columnToRead];
         $filters = $this->filters;
         ksort($filters);
 
         foreach ($filters as $filter) {
             $filterService = $this->buildFilter($filter);
-            $value = $filterService->filter($value);
+            $columnValue = $filterService->filter($columnValue);
         }
 
         $columnToWrite = $this->columnToWrite ?? $columnToRead;
-        $value[$columnToWrite] = $value;
+        $value[$columnToWrite] = $columnValue;
 
         return $value;
     }
@@ -159,7 +160,7 @@ class FilterApplier extends AbstractProcessor
     protected function buildFilter($filter)
     {
         if (!isset($filter['service'])) {
-            throw new \InvalidArgumentException(self::class . ' processor: filter service name is not set');
+            throw new InvalidArgumentException("Missing 'service' column in 'filters' option");
         }
 
         $service = $this->getFilterPluginManager()->build($filter['service'], $filter['options'] ?? null);

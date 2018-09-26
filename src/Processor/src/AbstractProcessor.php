@@ -1,13 +1,14 @@
 <?php
 
-namespace rollun\datanadler\Processor;
+namespace rollun\datahandler\Processor;
 
+use InvalidArgumentException;
 use Traversable;
 use Zend\Validator\ValidatorInterface;
 
 /**
  * Class AbstractProcessor
- * @package rollun\datanadler\Processor
+ * @package rollun\datahandler\Processor
  */
 abstract class AbstractProcessor implements ProcessorInterface
 {
@@ -31,21 +32,24 @@ abstract class AbstractProcessor implements ProcessorInterface
      * @param array $options
      * @param ValidatorInterface|null $validator
      */
-    public function __construct($options = [], ValidatorInterface $validator = null)
+    public function __construct($options = null, ValidatorInterface $validator = null)
     {
-        $this->setOptions($options);
+        if ($options) {
+            $this->setOptions($options);
+        }
+
         $this->validator = $validator;
     }
 
     /**
      * @param  array|Traversable $options
      * @return self
-     * @throws \InvalidArgumentException
+     * @throws InvalidArgumentException
      */
     public function setOptions($options)
     {
         if (!is_array($options) && !$options instanceof Traversable) {
-            throw new \InvalidArgumentException(sprintf(
+            throw new InvalidArgumentException(sprintf(
                 '"%s" expects an array or Traversable; received "%s"',
                 __METHOD__,
                 (is_object($options) ? get_class($options) : gettype($options))
@@ -59,7 +63,7 @@ abstract class AbstractProcessor implements ProcessorInterface
             } elseif (array_key_exists($key, $this->options)) {
                 $this->options[$key] = $value;
             } else {
-                throw new \InvalidArgumentException(
+                throw new InvalidArgumentException(
                     sprintf(
                         'The option "%s" does not have a matching %s setter method or options[%s] array key',
                         $key,

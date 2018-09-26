@@ -1,12 +1,12 @@
 <?php
 
-namespace rollun\datanadler\Filter;
+namespace rollun\datahandler\Filter;
 
 use Zend\Filter\AbstractFilter;
 
 /**
  * Class SortWords
- * @package rollun\datanadler\Filter
+ * @package rollun\datahandler\Filter
  */
 class SortWords extends AbstractFilter
 {

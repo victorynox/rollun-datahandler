@@ -2,7 +2,7 @@
 
 namespace rollun\test\datahandler\Filter;
 
-use rollun\datanadler\Filter\DuplicateSymbol;
+use rollun\datahandler\Filter\DuplicateSymbol;
 use PHPUnit\Framework\TestCase;
 
 /**

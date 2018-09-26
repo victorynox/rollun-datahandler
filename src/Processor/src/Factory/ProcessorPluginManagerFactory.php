@@ -1,15 +1,15 @@
 <?php
 
-namespace rollun\datanadler\Processor\Factory;
+namespace rollun\datahandler\Processor\Factory;
 
-use rollun\datanadler\Processor\ProcessorPluginManager;
+use rollun\datahandler\Processor\ProcessorPluginManager;
 use Interop\Container\ContainerInterface;
 use Zend\ServiceManager\Config;
 use Zend\ServiceManager\Factory\FactoryInterface;
 
 /**
  * Class ProcessorPluginManagerAbstractFactory
- * @package rollun\datanadler\Processor\Factory
+ * @package rollun\datahandler\Processor\Factory
  */
 class ProcessorPluginManagerFactory implements FactoryInterface
 {

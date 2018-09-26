@@ -2,41 +2,42 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="6d997a1f-e56e-4c28-90eb-938bff6fa540" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/LICENSE.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/phpunit.dist.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Factory/PluginAbstractFactoryAbstract.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Filter/DuplicateSymbol.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Filter/Factory/SimpleFilterAbstractFactory.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Filter/RemoveAllExceptDigits.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Filter/RemoveDigits.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Filter/RqlReplace.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Filter/SortSymbols.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Filter/SortWords.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Processor/AbstractProcessor.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Processor/Concat.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Processor/Factory/FilterApplierAbstractFactory.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Processor/Factory/ProcessorAbstractFactoryAbstract.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Processor/Factory/ProcessorPluginManagerFactory.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Processor/Factory/SimpleProcessorAbstractFactory.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Processor/FilterApplier.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Processor/ProcessorInterface.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Processor/ProcessorPluginManager.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Validator/Factory/SimpleValidatorAbstractFactory.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/test/Filter/DuplicateSymbolTest.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/test/Filter/RemoveAllExceptDigitsTest.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/test/Filter/RemoveDigitsTest.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/test/Filter/RqlReplaceTest.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/test/Filter/SortSymbolsTest.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/test/Filter/SortWordsTest.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/test/Processor/AbstractProcessorTest.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/test/Processor/ConcatTest.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/test/Processor/FilterApplierTest.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/php-test-framework.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Validator/src/ArrayAdapter.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Validator/src/Factory/ValidatorAdapterAbstractFactory.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/Processor/ValidateProcessorTest.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/Validator/ArrayAdapterTest.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/bootstrap.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/composer.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/composer.lock" beforeDir="false" afterPath="$PROJECT_DIR$/composer.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Factory/PluginAbstractFactoryAbstract.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Factory/src/PluginAbstractFactoryAbstract.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Filter/DuplicateSymbol.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Filter/src/DuplicateSymbol.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Filter/Factory/SimpleFilterAbstractFactory.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Filter/src/Factory/SimpleFilterAbstractFactory.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Filter/RemoveAllExceptDigits.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Filter/RemoveDigits.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Filter/src/RemoveDigits.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Filter/RqlReplace.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Filter/src/RqlReplace.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Filter/SortSymbols.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Filter/src/SortSymbols.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Filter/SortWords.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Filter/src/SortWords.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Processor/AbstractProcessor.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Processor/src/AbstractProcessor.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Processor/Concat.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Processor/src/Concat.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Processor/Factory/FilterApplierAbstractFactory.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Processor/src/Factory/FilterApplierAbstractFactory.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Processor/Factory/ProcessorAbstractFactoryAbstract.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Processor/src/Factory/ProcessorAbstractFactoryAbstract.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Processor/Factory/ProcessorPluginManagerFactory.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Processor/src/Factory/ProcessorPluginManagerFactory.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Processor/Factory/SimpleProcessorAbstractFactory.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Processor/src/Factory/SimpleProcessorAbstractFactory.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Processor/FilterApplier.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Processor/src/FilterApplier.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Processor/ProcessorInterface.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Processor/src/ProcessorInterface.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Processor/ProcessorPluginManager.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Processor/src/ProcessorPluginManager.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Validator/Factory/SimpleValidatorAbstractFactory.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Validator/src/Factory/SimpleValidatorAbstractFactory.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/Filter/DuplicateSymbolTest.php" beforeDir="false" afterPath="$PROJECT_DIR$/test/Filter/DuplicateSymbolTest.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/Filter/RemoveAllExceptDigitsTest.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/Filter/RemoveDigitsTest.php" beforeDir="false" afterPath="$PROJECT_DIR$/test/Filter/RemoveDigitsTest.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/Filter/RqlReplaceTest.php" beforeDir="false" afterPath="$PROJECT_DIR$/test/Filter/RqlReplaceTest.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/Filter/SortSymbolsTest.php" beforeDir="false" afterPath="$PROJECT_DIR$/test/Filter/SortSymbolsTest.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/Filter/SortWordsTest.php" beforeDir="false" afterPath="$PROJECT_DIR$/test/Filter/SortWordsTest.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/Processor/AbstractProcessorTest.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/Processor/ConcatTest.php" beforeDir="false" afterPath="$PROJECT_DIR$/test/Processor/ConcatTest.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/Processor/FilterApplierTest.php" beforeDir="false" afterPath="$PROJECT_DIR$/test/Processor/FilterApplierTest.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/vendor/autoload.php" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/vendor/bin/generate-deps-for-config-factory" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/vendor/bin/generate-factory-for-class" beforeDir="false" />
@@ -75,6 +76,12 @@
       <change beforePath="$PROJECT_DIR$/vendor/doctrine/instantiator/src/Doctrine/Instantiator/Exception/UnexpectedValueException.php" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/vendor/doctrine/instantiator/src/Doctrine/Instantiator/Instantiator.php" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/vendor/doctrine/instantiator/src/Doctrine/Instantiator/InstantiatorInterface.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/http-interop/http-middleware/.pullapprove.yml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/http-interop/http-middleware/LICENSE" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/http-interop/http-middleware/README.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/http-interop/http-middleware/composer.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/http-interop/http-middleware/src/MiddlewareInterface.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/http-interop/http-middleware/src/RequestHandlerInterface.php" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/vendor/myclabs/deep-copy/.gitattributes" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/vendor/myclabs/deep-copy/.gitignore" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/vendor/myclabs/deep-copy/.scrutinizer.yml" beforeDir="false" />
@@ -131,7 +138,6 @@
       <change beforePath="$PROJECT_DIR$/vendor/phar-io/manifest/composer.json" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/vendor/phar-io/manifest/examples/example-01.php" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/vendor/phar-io/manifest/phive.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/phar-io/manifest/phpunit.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/vendor/phar-io/manifest/src/ManifestDocumentMapper.php" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/vendor/phar-io/manifest/src/ManifestLoader.php" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/vendor/phar-io/manifest/src/ManifestSerializer.php" beforeDir="false" />
@@ -232,7 +238,6 @@
       <change beforePath="$PROJECT_DIR$/vendor/phar-io/version/build.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/vendor/phar-io/version/composer.json" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/vendor/phar-io/version/phive.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/phar-io/version/phpunit.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/vendor/phar-io/version/src/AbstractVersionConstraint.php" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/vendor/phar-io/version/src/AndVersionConstraintGroup.php" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/vendor/phar-io/version/src/AnyVersionConstraint.php" beforeDir="false" />
@@ -453,7 +458,6 @@
       <change beforePath="$PROJECT_DIR$/vendor/phpunit/php-code-coverage/README.md" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/vendor/phpunit/php-code-coverage/build.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/vendor/phpunit/php-code-coverage/composer.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/phpunit/php-code-coverage/phpunit.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/vendor/phpunit/php-code-coverage/src/CodeCoverage.php" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/vendor/phpunit/php-code-coverage/src/Driver/Driver.php" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/vendor/phpunit/php-code-coverage/src/Driver/HHVM.php" beforeDir="false" />
@@ -615,7 +619,6 @@
       <change beforePath="$PROJECT_DIR$/vendor/phpunit/php-timer/LICENSE" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/vendor/phpunit/php-timer/README.md" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/vendor/phpunit/php-timer/composer.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/phpunit/php-timer/phpunit.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/vendor/phpunit/php-timer/src/Timer.php" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/vendor/phpunit/php-timer/tests/TimerTest.php" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/vendor/phpunit/php-token-stream/.gitattributes" beforeDir="false" />
@@ -626,7 +629,6 @@
       <change beforePath="$PROJECT_DIR$/vendor/phpunit/php-token-stream/README.md" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/vendor/phpunit/php-token-stream/build.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/vendor/phpunit/php-token-stream/composer.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/phpunit/php-token-stream/phpunit.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/vendor/phpunit/php-token-stream/src/Token.php" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/vendor/phpunit/php-token-stream/src/Token/Stream.php" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/vendor/phpunit/php-token-stream/src/Token/Stream/CachingFactory.php" beforeDir="false" />
@@ -667,7 +669,6 @@
       <change beforePath="$PROJECT_DIR$/vendor/phpunit/phpunit-mock-objects/README.md" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/vendor/phpunit/phpunit-mock-objects/build.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/vendor/phpunit/phpunit-mock-objects/composer.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/phpunit/phpunit-mock-objects/phpunit.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/vendor/phpunit/phpunit-mock-objects/src/Builder/Identity.php" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/vendor/phpunit/phpunit-mock-objects/src/Builder/InvocationMocker.php" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/vendor/phpunit/phpunit-mock-objects/src/Builder/Match.php" beforeDir="false" />
@@ -823,7 +824,6 @@
       <change beforePath="$PROJECT_DIR$/vendor/phpunit/phpunit/composer.json" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/vendor/phpunit/phpunit/phive.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/vendor/phpunit/phpunit/phpunit" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/phpunit/phpunit/phpunit.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/vendor/phpunit/phpunit/phpunit.xsd" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/vendor/phpunit/phpunit/src/Exception.php" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/vendor/phpunit/phpunit/src/Framework/Assert.php" beforeDir="false" />
@@ -1009,7 +1009,6 @@
       <change beforePath="$PROJECT_DIR$/vendor/phpunit/phpunit/tests/_files/DataProviderIncompleteTest.php" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/vendor/phpunit/phpunit/tests/_files/DataProviderIssue2833/FirstTest.php" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/vendor/phpunit/phpunit/tests/_files/DataProviderIssue2833/SecondTest.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/phpunit/phpunit/tests/_files/DataProviderIssue2859/phpunit.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/vendor/phpunit/phpunit/tests/_files/DataProviderIssue2859/tests/another/TestWithDataProviderTest.php" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/vendor/phpunit/phpunit/tests/_files/DataProviderIssue2922/FirstTest.php" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/vendor/phpunit/phpunit/tests/_files/DataProviderIssue2922/SecondTest.php" beforeDir="false" />
@@ -1124,7 +1123,6 @@
       <change beforePath="$PROJECT_DIR$/vendor/phpunit/phpunit/tests/_files/foo.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/vendor/phpunit/phpunit/tests/_files/phpt-for-coverage.phpt" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/vendor/phpunit/phpunit/tests/_files/phpt-xfail.phpt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/phpunit/phpunit/tests/_files/phpunit-example-extension/phpunit.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/vendor/phpunit/phpunit/tests/_files/phpunit-example-extension/tests/OneTest.php" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/vendor/phpunit/phpunit/tests/_files/phpunit-example-extension/tools/phpunit.d/phpunit-example-extension-1.0.1.phar" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/vendor/phpunit/phpunit/tests/_files/structureAttributesAreSameButValuesAreNot.xml" beforeDir="false" />
@@ -1414,6 +1412,17 @@
       <change beforePath="$PROJECT_DIR$/vendor/psr/container/src/ContainerExceptionInterface.php" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/vendor/psr/container/src/ContainerInterface.php" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/vendor/psr/container/src/NotFoundExceptionInterface.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/psr/http-message/CHANGELOG.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/psr/http-message/LICENSE" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/psr/http-message/README.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/psr/http-message/composer.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/psr/http-message/src/MessageInterface.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/psr/http-message/src/RequestInterface.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/psr/http-message/src/ResponseInterface.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/psr/http-message/src/ServerRequestInterface.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/psr/http-message/src/StreamInterface.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/psr/http-message/src/UploadedFileInterface.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/psr/http-message/src/UriInterface.php" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/vendor/sebastian/code-unit-reverse-lookup/.gitignore" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/vendor/sebastian/code-unit-reverse-lookup/.php_cs" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/vendor/sebastian/code-unit-reverse-lookup/.travis.yml" beforeDir="false" />
@@ -1422,7 +1431,6 @@
       <change beforePath="$PROJECT_DIR$/vendor/sebastian/code-unit-reverse-lookup/README.md" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/vendor/sebastian/code-unit-reverse-lookup/build.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/vendor/sebastian/code-unit-reverse-lookup/composer.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/sebastian/code-unit-reverse-lookup/phpunit.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/vendor/sebastian/code-unit-reverse-lookup/src/Wizard.php" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/vendor/sebastian/code-unit-reverse-lookup/tests/WizardTest.php" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/vendor/sebastian/comparator/.gitignore" beforeDir="false" />
@@ -1433,7 +1441,6 @@
       <change beforePath="$PROJECT_DIR$/vendor/sebastian/comparator/README.md" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/vendor/sebastian/comparator/build.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/vendor/sebastian/comparator/composer.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/sebastian/comparator/phpunit.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/vendor/sebastian/comparator/src/ArrayComparator.php" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/vendor/sebastian/comparator/src/Comparator.php" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/vendor/sebastian/comparator/src/ComparisonFailure.php" beforeDir="false" />
@@ -1478,7 +1485,6 @@
       <change beforePath="$PROJECT_DIR$/vendor/sebastian/diff/README.md" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/vendor/sebastian/diff/build.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/vendor/sebastian/diff/composer.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/sebastian/diff/phpunit.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/vendor/sebastian/diff/src/Chunk.php" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/vendor/sebastian/diff/src/Diff.php" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/vendor/sebastian/diff/src/Differ.php" beforeDir="false" />
@@ -1512,7 +1518,6 @@
       <change beforePath="$PROJECT_DIR$/vendor/sebastian/environment/README.md" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/vendor/sebastian/environment/build.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/vendor/sebastian/environment/composer.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/sebastian/environment/phpunit.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/vendor/sebastian/environment/src/Console.php" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/vendor/sebastian/environment/src/OperatingSystem.php" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/vendor/sebastian/environment/src/Runtime.php" beforeDir="false" />
@@ -1526,7 +1531,6 @@
       <change beforePath="$PROJECT_DIR$/vendor/sebastian/exporter/README.md" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/vendor/sebastian/exporter/build.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/vendor/sebastian/exporter/composer.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/sebastian/exporter/phpunit.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/vendor/sebastian/exporter/src/Exporter.php" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/vendor/sebastian/exporter/tests/ExporterTest.php" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/vendor/sebastian/global-state/.gitignore" beforeDir="false" />
@@ -1536,7 +1540,6 @@
       <change beforePath="$PROJECT_DIR$/vendor/sebastian/global-state/README.md" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/vendor/sebastian/global-state/build.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/vendor/sebastian/global-state/composer.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/sebastian/global-state/phpunit.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/vendor/sebastian/global-state/src/Blacklist.php" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/vendor/sebastian/global-state/src/CodeExporter.php" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/vendor/sebastian/global-state/src/Restorer.php" beforeDir="false" />
@@ -1563,7 +1566,6 @@
       <change beforePath="$PROJECT_DIR$/vendor/sebastian/object-enumerator/README.md" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/vendor/sebastian/object-enumerator/build.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/vendor/sebastian/object-enumerator/composer.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/sebastian/object-enumerator/phpunit.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/vendor/sebastian/object-enumerator/src/Enumerator.php" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/vendor/sebastian/object-enumerator/src/Exception.php" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/vendor/sebastian/object-enumerator/src/InvalidArgumentException.php" beforeDir="false" />
@@ -1577,7 +1579,6 @@
       <change beforePath="$PROJECT_DIR$/vendor/sebastian/object-reflector/README.md" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/vendor/sebastian/object-reflector/build.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/vendor/sebastian/object-reflector/composer.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/sebastian/object-reflector/phpunit.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/vendor/sebastian/object-reflector/src/Exception.php" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/vendor/sebastian/object-reflector/src/InvalidArgumentException.php" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/vendor/sebastian/object-reflector/src/ObjectReflector.php" beforeDir="false" />
@@ -1591,7 +1592,6 @@
       <change beforePath="$PROJECT_DIR$/vendor/sebastian/recursion-context/README.md" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/vendor/sebastian/recursion-context/build.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/vendor/sebastian/recursion-context/composer.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/sebastian/recursion-context/phpunit.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/vendor/sebastian/recursion-context/src/Context.php" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/vendor/sebastian/recursion-context/src/Exception.php" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/vendor/sebastian/recursion-context/src/InvalidArgumentException.php" beforeDir="false" />
@@ -1999,7 +1999,6 @@
       <change beforePath="$PROJECT_DIR$/vendor/theseer/tokenizer/build.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/vendor/theseer/tokenizer/composer.json" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/vendor/theseer/tokenizer/phive.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/theseer/tokenizer/phpunit.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/vendor/theseer/tokenizer/src/Exception.php" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/vendor/theseer/tokenizer/src/NamespaceUri.php" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/vendor/theseer/tokenizer/src/NamespaceUriException.php" beforeDir="false" />
@@ -2024,6 +2023,91 @@
       <change beforePath="$PROJECT_DIR$/vendor/webmozart/assert/README.md" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/vendor/webmozart/assert/composer.json" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/vendor/webmozart/assert/src/Assert.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/zendframework/zend-filter/CHANGELOG.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/zendframework/zend-filter/LICENSE.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/zendframework/zend-filter/README.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/zendframework/zend-filter/composer.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/zendframework/zend-filter/src/AbstractDateDropdown.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/zendframework/zend-filter/src/AbstractFilter.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/zendframework/zend-filter/src/AbstractUnicode.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/zendframework/zend-filter/src/BaseName.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/zendframework/zend-filter/src/Blacklist.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/zendframework/zend-filter/src/Boolean.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/zendframework/zend-filter/src/Callback.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/zendframework/zend-filter/src/Compress.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/zendframework/zend-filter/src/Compress/AbstractCompressionAlgorithm.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/zendframework/zend-filter/src/Compress/Bz2.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/zendframework/zend-filter/src/Compress/CompressionAlgorithmInterface.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/zendframework/zend-filter/src/Compress/Gz.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/zendframework/zend-filter/src/Compress/Lzf.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/zendframework/zend-filter/src/Compress/Rar.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/zendframework/zend-filter/src/Compress/Snappy.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/zendframework/zend-filter/src/Compress/Tar.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/zendframework/zend-filter/src/Compress/Zip.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/zendframework/zend-filter/src/ConfigProvider.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/zendframework/zend-filter/src/DataUnitFormatter.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/zendframework/zend-filter/src/DateSelect.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/zendframework/zend-filter/src/DateTimeFormatter.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/zendframework/zend-filter/src/DateTimeSelect.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/zendframework/zend-filter/src/Decompress.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/zendframework/zend-filter/src/Decrypt.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/zendframework/zend-filter/src/Digits.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/zendframework/zend-filter/src/Dir.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/zendframework/zend-filter/src/Encrypt.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/zendframework/zend-filter/src/Encrypt/BlockCipher.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/zendframework/zend-filter/src/Encrypt/EncryptionAlgorithmInterface.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/zendframework/zend-filter/src/Encrypt/Openssl.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/zendframework/zend-filter/src/Exception/BadMethodCallException.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/zendframework/zend-filter/src/Exception/DomainException.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/zendframework/zend-filter/src/Exception/ExceptionInterface.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/zendframework/zend-filter/src/Exception/ExtensionNotLoadedException.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/zendframework/zend-filter/src/Exception/InvalidArgumentException.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/zendframework/zend-filter/src/Exception/RuntimeException.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/zendframework/zend-filter/src/File/Decrypt.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/zendframework/zend-filter/src/File/Encrypt.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/zendframework/zend-filter/src/File/LowerCase.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/zendframework/zend-filter/src/File/Rename.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/zendframework/zend-filter/src/File/RenameUpload.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/zendframework/zend-filter/src/File/UpperCase.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/zendframework/zend-filter/src/FilterChain.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/zendframework/zend-filter/src/FilterInterface.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/zendframework/zend-filter/src/FilterPluginManager.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/zendframework/zend-filter/src/FilterPluginManagerFactory.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/zendframework/zend-filter/src/FilterProviderInterface.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/zendframework/zend-filter/src/HtmlEntities.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/zendframework/zend-filter/src/Inflector.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/zendframework/zend-filter/src/Int.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/zendframework/zend-filter/src/Module.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/zendframework/zend-filter/src/MonthSelect.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/zendframework/zend-filter/src/Null.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/zendframework/zend-filter/src/PregReplace.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/zendframework/zend-filter/src/RealPath.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/zendframework/zend-filter/src/StaticFilter.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/zendframework/zend-filter/src/StringToLower.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/zendframework/zend-filter/src/StringToUpper.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/zendframework/zend-filter/src/StringTrim.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/zendframework/zend-filter/src/StripNewlines.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/zendframework/zend-filter/src/StripTags.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/zendframework/zend-filter/src/ToInt.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/zendframework/zend-filter/src/ToNull.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/zendframework/zend-filter/src/UpperCaseWords.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/zendframework/zend-filter/src/UriNormalize.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/zendframework/zend-filter/src/Whitelist.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/zendframework/zend-filter/src/Word/AbstractSeparator.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/zendframework/zend-filter/src/Word/CamelCaseToDash.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/zendframework/zend-filter/src/Word/CamelCaseToSeparator.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/zendframework/zend-filter/src/Word/CamelCaseToUnderscore.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/zendframework/zend-filter/src/Word/DashToCamelCase.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/zendframework/zend-filter/src/Word/DashToSeparator.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/zendframework/zend-filter/src/Word/DashToUnderscore.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/zendframework/zend-filter/src/Word/SeparatorToCamelCase.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/zendframework/zend-filter/src/Word/SeparatorToDash.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/zendframework/zend-filter/src/Word/SeparatorToSeparator.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/zendframework/zend-filter/src/Word/Service/SeparatorToSeparatorFactory.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/zendframework/zend-filter/src/Word/UnderscoreToCamelCase.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/zendframework/zend-filter/src/Word/UnderscoreToDash.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/zendframework/zend-filter/src/Word/UnderscoreToSeparator.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/zendframework/zend-filter/src/Word/UnderscoreToStudlyCase.php" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/vendor/zendframework/zend-servicemanager/CHANGELOG.md" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/vendor/zendframework/zend-servicemanager/LICENSE.md" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/vendor/zendframework/zend-servicemanager/README.md" beforeDir="false" />
@@ -2111,6 +2195,182 @@
       <change beforePath="$PROJECT_DIR$/vendor/zendframework/zend-stdlib/src/StringWrapper/MbString.php" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/vendor/zendframework/zend-stdlib/src/StringWrapper/Native.php" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/vendor/zendframework/zend-stdlib/src/StringWrapper/StringWrapperInterface.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/zendframework/zend-validator/CHANGELOG.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/zendframework/zend-validator/CONDUCT.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/zendframework/zend-validator/CONTRIBUTING.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/zendframework/zend-validator/LICENSE.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/zendframework/zend-validator/README.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/zendframework/zend-validator/bin/update_hostname_validator.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/zendframework/zend-validator/composer.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/zendframework/zend-validator/composer.lock" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/zendframework/zend-validator/doc/book/index.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/zendframework/zend-validator/doc/book/index.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/zendframework/zend-validator/doc/book/intro.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/zendframework/zend-validator/doc/book/messages.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/zendframework/zend-validator/doc/book/set.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/zendframework/zend-validator/doc/book/validator-chains.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/zendframework/zend-validator/doc/book/validators/barcode.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/zendframework/zend-validator/doc/book/validators/between.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/zendframework/zend-validator/doc/book/validators/callback.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/zendframework/zend-validator/doc/book/validators/credit-card.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/zendframework/zend-validator/doc/book/validators/date.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/zendframework/zend-validator/doc/book/validators/db.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/zendframework/zend-validator/doc/book/validators/digits.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/zendframework/zend-validator/doc/book/validators/email-address.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/zendframework/zend-validator/doc/book/validators/explode.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/zendframework/zend-validator/doc/book/validators/file/count.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/zendframework/zend-validator/doc/book/validators/file/crc32.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/zendframework/zend-validator/doc/book/validators/file/exclude-extension.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/zendframework/zend-validator/doc/book/validators/file/exclude-mime-type.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/zendframework/zend-validator/doc/book/validators/file/exists.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/zendframework/zend-validator/doc/book/validators/file/extension.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/zendframework/zend-validator/doc/book/validators/file/files-size.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/zendframework/zend-validator/doc/book/validators/file/hash.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/zendframework/zend-validator/doc/book/validators/file/image-size.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/zendframework/zend-validator/doc/book/validators/file/intro.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/zendframework/zend-validator/doc/book/validators/file/is-compressed.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/zendframework/zend-validator/doc/book/validators/file/is-image.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/zendframework/zend-validator/doc/book/validators/file/md5.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/zendframework/zend-validator/doc/book/validators/file/mime-type.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/zendframework/zend-validator/doc/book/validators/file/not-exists.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/zendframework/zend-validator/doc/book/validators/file/sha1.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/zendframework/zend-validator/doc/book/validators/file/size.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/zendframework/zend-validator/doc/book/validators/file/upload-file.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/zendframework/zend-validator/doc/book/validators/file/upload.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/zendframework/zend-validator/doc/book/validators/file/word-count.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/zendframework/zend-validator/doc/book/validators/greater-than.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/zendframework/zend-validator/doc/book/validators/hex.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/zendframework/zend-validator/doc/book/validators/hostname.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/zendframework/zend-validator/doc/book/validators/iban.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/zendframework/zend-validator/doc/book/validators/identical.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/zendframework/zend-validator/doc/book/validators/in-array.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/zendframework/zend-validator/doc/book/validators/ip.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/zendframework/zend-validator/doc/book/validators/is-countable.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/zendframework/zend-validator/doc/book/validators/isbn.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/zendframework/zend-validator/doc/book/validators/isinstanceof.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/zendframework/zend-validator/doc/book/validators/less-than.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/zendframework/zend-validator/doc/book/validators/not-empty.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/zendframework/zend-validator/doc/book/validators/regex.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/zendframework/zend-validator/doc/book/validators/sitemap.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/zendframework/zend-validator/doc/book/validators/step.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/zendframework/zend-validator/doc/book/validators/string-length.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/zendframework/zend-validator/doc/book/validators/timezone.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/zendframework/zend-validator/doc/book/validators/uri.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/zendframework/zend-validator/doc/book/validators/uuid.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/zendframework/zend-validator/doc/book/writing-validators.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/zendframework/zend-validator/mkdocs.yml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/zendframework/zend-validator/phpcs.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/zendframework/zend-validator/src/AbstractValidator.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/zendframework/zend-validator/src/Barcode.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/zendframework/zend-validator/src/Barcode/AbstractAdapter.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/zendframework/zend-validator/src/Barcode/AdapterInterface.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/zendframework/zend-validator/src/Barcode/Codabar.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/zendframework/zend-validator/src/Barcode/Code128.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/zendframework/zend-validator/src/Barcode/Code25.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/zendframework/zend-validator/src/Barcode/Code25interleaved.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/zendframework/zend-validator/src/Barcode/Code39.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/zendframework/zend-validator/src/Barcode/Code39ext.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/zendframework/zend-validator/src/Barcode/Code93.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/zendframework/zend-validator/src/Barcode/Code93ext.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/zendframework/zend-validator/src/Barcode/Ean12.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/zendframework/zend-validator/src/Barcode/Ean13.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/zendframework/zend-validator/src/Barcode/Ean14.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/zendframework/zend-validator/src/Barcode/Ean18.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/zendframework/zend-validator/src/Barcode/Ean2.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/zendframework/zend-validator/src/Barcode/Ean5.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/zendframework/zend-validator/src/Barcode/Ean8.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/zendframework/zend-validator/src/Barcode/Gtin12.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/zendframework/zend-validator/src/Barcode/Gtin13.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/zendframework/zend-validator/src/Barcode/Gtin14.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/zendframework/zend-validator/src/Barcode/Identcode.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/zendframework/zend-validator/src/Barcode/Intelligentmail.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/zendframework/zend-validator/src/Barcode/Issn.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/zendframework/zend-validator/src/Barcode/Itf14.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/zendframework/zend-validator/src/Barcode/Leitcode.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/zendframework/zend-validator/src/Barcode/Planet.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/zendframework/zend-validator/src/Barcode/Postnet.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/zendframework/zend-validator/src/Barcode/Royalmail.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/zendframework/zend-validator/src/Barcode/Sscc.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/zendframework/zend-validator/src/Barcode/Upca.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/zendframework/zend-validator/src/Barcode/Upce.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/zendframework/zend-validator/src/Between.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/zendframework/zend-validator/src/Bitwise.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/zendframework/zend-validator/src/Callback.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/zendframework/zend-validator/src/ConfigProvider.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/zendframework/zend-validator/src/CreditCard.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/zendframework/zend-validator/src/Csrf.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/zendframework/zend-validator/src/Date.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/zendframework/zend-validator/src/DateStep.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/zendframework/zend-validator/src/Db/AbstractDb.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/zendframework/zend-validator/src/Db/NoRecordExists.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/zendframework/zend-validator/src/Db/RecordExists.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/zendframework/zend-validator/src/Digits.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/zendframework/zend-validator/src/EmailAddress.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/zendframework/zend-validator/src/Exception/BadMethodCallException.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/zendframework/zend-validator/src/Exception/ExceptionInterface.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/zendframework/zend-validator/src/Exception/ExtensionNotLoadedException.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/zendframework/zend-validator/src/Exception/InvalidArgumentException.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/zendframework/zend-validator/src/Exception/InvalidMagicMimeFileException.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/zendframework/zend-validator/src/Exception/RuntimeException.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/zendframework/zend-validator/src/Explode.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/zendframework/zend-validator/src/File/Count.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/zendframework/zend-validator/src/File/Crc32.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/zendframework/zend-validator/src/File/ExcludeExtension.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/zendframework/zend-validator/src/File/ExcludeMimeType.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/zendframework/zend-validator/src/File/Exists.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/zendframework/zend-validator/src/File/Extension.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/zendframework/zend-validator/src/File/FilesSize.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/zendframework/zend-validator/src/File/Hash.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/zendframework/zend-validator/src/File/ImageSize.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/zendframework/zend-validator/src/File/IsCompressed.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/zendframework/zend-validator/src/File/IsImage.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/zendframework/zend-validator/src/File/Md5.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/zendframework/zend-validator/src/File/MimeType.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/zendframework/zend-validator/src/File/NotExists.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/zendframework/zend-validator/src/File/Sha1.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/zendframework/zend-validator/src/File/Size.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/zendframework/zend-validator/src/File/Upload.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/zendframework/zend-validator/src/File/UploadFile.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/zendframework/zend-validator/src/File/WordCount.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/zendframework/zend-validator/src/GpsPoint.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/zendframework/zend-validator/src/GreaterThan.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/zendframework/zend-validator/src/Hex.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/zendframework/zend-validator/src/Hostname.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/zendframework/zend-validator/src/Hostname/Biz.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/zendframework/zend-validator/src/Hostname/Cn.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/zendframework/zend-validator/src/Hostname/Com.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/zendframework/zend-validator/src/Hostname/Jp.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/zendframework/zend-validator/src/Iban.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/zendframework/zend-validator/src/Identical.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/zendframework/zend-validator/src/InArray.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/zendframework/zend-validator/src/Ip.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/zendframework/zend-validator/src/IsCountable.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/zendframework/zend-validator/src/IsInstanceOf.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/zendframework/zend-validator/src/Isbn.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/zendframework/zend-validator/src/Isbn/Isbn10.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/zendframework/zend-validator/src/Isbn/Isbn13.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/zendframework/zend-validator/src/LessThan.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/zendframework/zend-validator/src/Module.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/zendframework/zend-validator/src/NotEmpty.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/zendframework/zend-validator/src/Regex.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/zendframework/zend-validator/src/Sitemap/Changefreq.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/zendframework/zend-validator/src/Sitemap/Lastmod.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/zendframework/zend-validator/src/Sitemap/Loc.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/zendframework/zend-validator/src/Sitemap/Priority.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/zendframework/zend-validator/src/StaticValidator.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/zendframework/zend-validator/src/Step.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/zendframework/zend-validator/src/StringLength.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/zendframework/zend-validator/src/Timezone.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/zendframework/zend-validator/src/Translator/TranslatorAwareInterface.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/zendframework/zend-validator/src/Translator/TranslatorInterface.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/zendframework/zend-validator/src/Uri.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/zendframework/zend-validator/src/Uuid.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/zendframework/zend-validator/src/ValidatorChain.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/zendframework/zend-validator/src/ValidatorInterface.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/zendframework/zend-validator/src/ValidatorPluginManager.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/zendframework/zend-validator/src/ValidatorPluginManagerAwareInterface.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/zendframework/zend-validator/src/ValidatorPluginManagerFactory.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/zendframework/zend-validator/src/ValidatorProviderInterface.php" beforeDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -2134,37 +2394,44 @@
       <usages-collector id="statistics.file.extensions.open">
         <counts>
           <entry key="gitignore" value="2" />
-          <entry key="json" value="7" />
+          <entry key="json" value="12" />
           <entry key="md" value="2" />
-          <entry key="php" value="77" />
-          <entry key="xml" value="2" />
+          <entry key="php" value="231" />
+          <entry key="phpunit" value="1" />
+          <entry key="xml" value="4" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
-          <entry key="JSON" value="7" />
+          <entry key="JSON" value="12" />
           <entry key="Markdown" value="2" />
-          <entry key="PHP" value="77" />
+          <entry key="PHP" value="232" />
           <entry key="PLAIN_TEXT" value="2" />
-          <entry key="XML" value="2" />
+          <entry key="XML" value="4" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
+          <entry key="dummy" value="38" />
           <entry key="gitignore" value="14" />
-          <entry key="json" value="291" />
+          <entry key="json" value="295" />
           <entry key="md" value="67" />
-          <entry key="php" value="918" />
+          <entry key="php" value="4684" />
           <entry key="xml" value="1" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="JSON" value="291" />
+          <entry key="JSON" value="295" />
           <entry key="Markdown" value="67" />
-          <entry key="PHP" value="918" />
-          <entry key="PLAIN_TEXT" value="14" />
+          <entry key="PHP" value="4684" />
+          <entry key="PLAIN_TEXT" value="52" />
           <entry key="XML" value="1" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.php.new.class">
+        <counts>
+          <entry key="PHP Class.type" value="3" />
         </counts>
       </usages-collector>
     </session>
@@ -2172,105 +2439,108 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/test/Filter/RemoveDigitsTest.php">
+        <entry file="file://$PROJECT_DIR$/src/Processor/src/Factory/SimpleProcessorAbstractFactory.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="456">
-              <caret line="24" column="13" selection-start-line="24" selection-start-column="13" selection-end-line="24" selection-end-column="13" />
+            <state relative-caret-position="-21">
+              <caret line="4" column="4" lean-forward="true" selection-start-line="4" selection-start-column="4" selection-end-line="4" selection-end-column="4" />
               <folding>
-                <element signature="e#50#92#0#PHP" expanded="true" />
+                <element signature="e#56#108#0#PHP" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/test/Filter/RqlReplaceTest.php">
+        <entry file="file://$PROJECT_DIR$/src/Processor/src/AbstractProcessor.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="57">
-              <caret line="4" column="40" selection-start-line="4" selection-start-column="40" selection-end-line="4" selection-end-column="40" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/test/Filter/SortSymbolsTest.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="76">
-              <caret line="4" column="41" selection-start-line="4" selection-start-column="41" selection-end-line="4" selection-end-column="41" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/test/Filter/SortWordsTest.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="57">
-              <caret line="4" column="39" selection-start-line="4" selection-start-column="39" selection-end-line="4" selection-end-column="39" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/test/Processor/AbstractProcessorTest.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="283">
-              <caret line="75" column="29" selection-start-line="75" selection-start-column="29" selection-end-line="75" selection-end-column="29" />
+            <state relative-caret-position="498">
+              <caret line="41" column="5" lean-forward="true" selection-start-line="41" selection-start-column="5" selection-end-line="41" selection-end-column="5" />
               <folding>
-                <element signature="e#52#83#0#PHP" expanded="true" />
+                <element signature="e#48#77#0#PHP" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/test/Processor/ConcatTest.php">
+        <entry file="file://$PROJECT_DIR$/src/Processor/src/Concat.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1140">
-              <caret line="60" column="24" selection-start-line="60" selection-start-column="24" selection-end-line="60" selection-end-column="24" />
+            <state relative-caret-position="460">
+              <caret line="129" column="50" lean-forward="true" selection-start-line="129" selection-start-column="50" selection-end-line="129" selection-end-column="50" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/test/Processor/FilterApplierTest.php">
+        <entry file="file://$PROJECT_DIR$/src/Processor/src/FilterApplier.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-228">
-              <caret line="9" column="44" selection-start-line="9" selection-start-column="44" selection-end-line="9" selection-end-column="44" />
+            <state relative-caret-position="304">
+              <caret line="16" selection-start-line="16" selection-end-line="16" />
               <folding>
-                <element signature="e#52#98#0#PHP" expanded="true" />
+                <element signature="e#48#77#0#PHP" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/Processor/src/ProcessorInterface.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="342">
+              <caret line="18" lean-forward="true" selection-start-line="18" selection-end-line="18" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/Validator/src/ArrayAdapter.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="549">
+              <caret line="90" column="20" lean-forward="true" selection-start-line="90" selection-start-column="20" selection-end-line="90" selection-end-column="20" />
+              <folding>
+                <element signature="e#48#85#0#PHP" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/Validator/src/Factory/SimpleValidatorAbstractFactory.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="703">
+              <caret line="39" column="41" lean-forward="true" selection-start-line="39" selection-start-column="41" selection-end-line="39" selection-end-column="41" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/Validator/src/Factory/ValidatorAdapterAbstractFactory.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-665">
+              <caret line="7" column="57" selection-start-line="7" selection-start-column="57" selection-end-line="7" selection-end-column="57" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/composer.json">
+        <entry file="file://$PROJECT_DIR$/src/Factory/src/PluginAbstractFactoryAbstract.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="247">
-              <caret line="13" column="48" selection-start-line="13" selection-start-column="48" selection-end-line="13" selection-end-column="48" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/Processor/Factory/FilterApplierAbstractFactory.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="456">
-              <caret line="24" selection-start-line="24" selection-end-line="25" />
+            <state relative-caret-position="-705">
+              <caret line="38" column="7" lean-forward="true" selection-start-line="38" selection-start-column="7" selection-end-line="38" selection-end-column="7" />
               <folding>
-                <element signature="e#55#101#0#PHP" expanded="true" />
+                <element signature="e#46#87#0#PHP" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/Processor/Factory/ProcessorAbstractFactoryAbstract.php">
+        <entry file="file://$PROJECT_DIR$/src/Processor/src/Factory/ProcessorPluginManagerFactory.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="190">
-              <caret line="10" selection-start-line="10" selection-end-line="10" />
+            <state relative-caret-position="61">
+              <caret line="4" column="4" lean-forward="true" selection-start-line="4" selection-start-column="4" selection-end-line="4" selection-end-column="4" />
               <folding>
-                <element signature="e#55#96#0#PHP" expanded="true" />
+                <element signature="e#56#112#0#PHP" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -2281,7 +2551,20 @@
   <component name="FindInProjectRecents">
     <findStrings>
       <find>Vehicl</find>
+      <find>throw</find>
+      <find>conta</find>
+      <find>datanadler</find>
+      <find>public function isValid($value)</find>
+      <find>public funct</find>
+      <find>public function is</find>
     </findStrings>
+    <replaceStrings>
+      <replace>datahandler</replace>
+    </replaceStrings>
+    <dirStrings>
+      <dir>$PROJECT_DIR$/vendor/zendframework/zend-validator</dir>
+      <dir>$PROJECT_DIR$/test</dir>
+    </dirStrings>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -2289,14 +2572,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/.gitignore" />
-        <option value="$PROJECT_DIR$/README.md" />
-        <option value="$PROJECT_DIR$/LICENSE.md" />
-        <option value="$PROJECT_DIR$/phpunit.xml" />
-        <option value="$PROJECT_DIR$/src/Processor/CreateVehicleYears.php" />
-        <option value="$PROJECT_DIR$/src/Processor/Concat.php" />
-        <option value="$PROJECT_DIR$/src/Processor/FilterApplier.php" />
-        <option value="$PROJECT_DIR$/src/Processor/Factory/ProcessorApplierAbstractFactory.php" />
         <option value="$PROJECT_DIR$/src/Validator/SimpleValidatorAbstractFactory.php" />
         <option value="$PROJECT_DIR$/src/Factory/PluginAbstractFactoryAbstract.php" />
         <option value="$PROJECT_DIR$/src/Filter/Factory/SimpleFilterAbstractFactory.php" />
@@ -2305,7 +2580,6 @@
         <option value="$PROJECT_DIR$/src/Filter/RqlReplace.php" />
         <option value="$PROJECT_DIR$/src/Filter/SortSymbols.php" />
         <option value="$PROJECT_DIR$/src/Filter/SortWords.php" />
-        <option value="$PROJECT_DIR$/src/Processor/Factory/FilterApplierAbstractFactory.php" />
         <option value="$PROJECT_DIR$/src/Processor/Factory/ProcessorAbstractFactoryAbstract.php" />
         <option value="$PROJECT_DIR$/src/Processor/Factory/SimpleProcessorAbstractFactory.php" />
         <option value="$PROJECT_DIR$/src/Processor/ProcessorInterface.php" />
@@ -2318,13 +2592,37 @@
         <option value="$PROJECT_DIR$/test/Filter/DuplicateSymbolTest.php" />
         <option value="$PROJECT_DIR$/test/Filter/RemoveAllExceptDigitsTest.php" />
         <option value="$PROJECT_DIR$/test/Filter/RemoveDigitsTest.php" />
-        <option value="$PROJECT_DIR$/test/Filter/RqlReplaceTest.php" />
         <option value="$PROJECT_DIR$/test/Filter/SortSymbolsTest.php" />
         <option value="$PROJECT_DIR$/test/Filter/SortWordsTest.php" />
         <option value="$PROJECT_DIR$/test/Processor/AbstractProcessorTest.php" />
-        <option value="$PROJECT_DIR$/test/Processor/ConcatTest.php" />
-        <option value="$PROJECT_DIR$/test/Processor/FilterApplierTest.php" />
+        <option value="$PROJECT_DIR$/test/bootstrap.php" />
+        <option value="$PROJECT_DIR$/phpunit.xml" />
+        <option value="$PROJECT_DIR$/src/Processor/Factory/FilterApplierAbstractFactory.php" />
+        <option value="$PROJECT_DIR$/src/Processor/FilterApplier.php" />
         <option value="$PROJECT_DIR$/composer.json" />
+        <option value="$PROJECT_DIR$/test/Processor/BaseProcessorTest.php" />
+        <option value="$PROJECT_DIR$/test/Processor/ValidateProcessorTest.php" />
+        <option value="$PROJECT_DIR$/test/Processor/FilterApplierTest.php" />
+        <option value="$PROJECT_DIR$/test/Processor/ConcatTest.php" />
+        <option value="$PROJECT_DIR$/test/Filter/RqlReplaceTest.php" />
+        <option value="$PROJECT_DIR$/src/Validator/src/Factory/AdapterValidatorAbstractFactory.php" />
+        <option value="$PROJECT_DIR$/src/Validator/src/Factory/ArrayAdapterAbstractFactory.php" />
+        <option value="$PROJECT_DIR$/src/Validator/src/Factory/AdapterAbstractFactory.php" />
+        <option value="$PROJECT_DIR$/src/Processor/src/Factory/SimpleProcessorAbstractFactory.php" />
+        <option value="$PROJECT_DIR$/src/Processor/src/Factory/FilterApplierAbstractFactory.php" />
+        <option value="$PROJECT_DIR$/src/Filter/src/Factory/SimpleFilterAbstractFactory.php" />
+        <option value="$PROJECT_DIR$/src/Validator/src/Factory/SimpleValidatorAbstractFactory.php" />
+        <option value="$PROJECT_DIR$/src/Filter/src/DuplicateSymbol.php" />
+        <option value="$PROJECT_DIR$/src/Processor/src/AbstractProcessor.php" />
+        <option value="$PROJECT_DIR$/test/Validator/ArrayAdapterTest.php" />
+        <option value="$PROJECT_DIR$/src/Factory/src/PluginAbstractFactoryAbstract.php" />
+        <option value="$PROJECT_DIR$/src/Filter/src/RqlReplace.php" />
+        <option value="$PROJECT_DIR$/src/Filter/src/SortSymbols.php" />
+        <option value="$PROJECT_DIR$/src/Processor/src/Factory/ProcessorAbstractFactoryAbstract.php" />
+        <option value="$PROJECT_DIR$/src/Processor/src/Concat.php" />
+        <option value="$PROJECT_DIR$/src/Processor/src/FilterApplier.php" />
+        <option value="$PROJECT_DIR$/src/Validator/src/ArrayAdapter.php" />
+        <option value="$PROJECT_DIR$/src/Validator/src/Factory/ValidatorAdapterAbstractFactory.php" />
       </list>
     </option>
   </component>
@@ -2334,7 +2632,7 @@
     <detection-done>true</detection-done>
     <sorting>DEFINITION_ORDER</sorting>
   </component>
-  <component name="PhpWorkspaceProjectConfiguration">
+  <component name="PhpWorkspaceProjectConfiguration" interpreter_name="PHP 7.1">
     <include_path>
       <path value="$PROJECT_DIR$/vendor/myclabs/deep-copy" />
       <path value="$PROJECT_DIR$/vendor/symfony/console" />
@@ -2430,27 +2728,14 @@
               <item name="rollun-datahandler" type="b2602c69:ProjectViewProjectNode" />
               <item name="rollun-datahandler" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="Filter" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="rollun-datahandler" type="b2602c69:ProjectViewProjectNode" />
-              <item name="rollun-datahandler" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="Filter" type="462c0819:PsiDirectoryNode" />
               <item name="Factory" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="rollun-datahandler" type="b2602c69:ProjectViewProjectNode" />
               <item name="rollun-datahandler" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="Processor" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="rollun-datahandler" type="b2602c69:ProjectViewProjectNode" />
-              <item name="rollun-datahandler" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="Processor" type="462c0819:PsiDirectoryNode" />
               <item name="Factory" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="rollun-datahandler" type="b2602c69:ProjectViewProjectNode" />
@@ -2468,6 +2753,12 @@
               <item name="rollun-datahandler" type="462c0819:PsiDirectoryNode" />
               <item name="test" type="462c0819:PsiDirectoryNode" />
               <item name="Processor" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="rollun-datahandler" type="b2602c69:ProjectViewProjectNode" />
+              <item name="rollun-datahandler" type="462c0819:PsiDirectoryNode" />
+              <item name="test" type="462c0819:PsiDirectoryNode" />
+              <item name="Validator" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -2477,15 +2768,20 @@
     </panes>
   </component>
   <component name="PropertiesComponent">
+    <property name="SearchEverywhereHistoryKey" value="&#9;FILE&#9;file:///home/lasgrate/rollun/rollun-datahandler/src/Validator/src/Factory/ValidatorAdapterAbstractFactory.php&#10;Conca&#9;FILE&#9;file:///home/lasgrate/rollun/rollun-datahandler/src/Processor/src/Concat.php&#10;Re&#9;FILE&#9;file:///home/lasgrate/rollun/rollun-datahandler/vendor/zendframework/zend-validator/src/Regex.php&#10;Reg&#9;FILE&#9;file:///home/lasgrate/rollun/rollun-datahandler/vendor/zendframework/zend-validator/src/Regex.php&#10;Abstrac&#9;FILE&#9;file:///home/lasgrate/rollun/rollun-datahandler/vendor/zendframework/zend-validator/src/AbstractValidator.php&#10;Rege&#9;FILE&#9;file:///home/lasgrate/rollun/rollun-datahandler/vendor/zendframework/zend-validator/src/Regex.php" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../service-vehicles" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/test/bootstrap.php" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
+    <property name="settings.editor.selected.configurable" value="php.test.frameworks.configurable" />
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/Validator/src" />
+      <recent name="$PROJECT_DIR$/src/Processor/src" />
+      <recent name="$PROJECT_DIR$/src/Filter/src" />
+      <recent name="$PROJECT_DIR$/src/Factory/src" />
       <recent name="$PROJECT_DIR$/src/Validator/Factory" />
-      <recent name="$PROJECT_DIR$/src/Filter/Factory" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -2500,6 +2796,44 @@
       </list>
     </option>
   </component>
+  <component name="RunManager" selected="PHPUnit.ArrayAdapterTest">
+    <configuration name="ArrayAdapterTest" type="PHPUnitRunConfigurationType" factoryName="PHPUnit" temporary="true">
+      <TestRunner class="rollun\test\datahandler\Validator\ArrayAdapterTest" file="$PROJECT_DIR$/test/Validator/ArrayAdapterTest.php" scope="Class" />
+      <method v="2" />
+    </configuration>
+    <configuration name="ArrayAdapterTest.testInvalidColumnException" type="PHPUnitRunConfigurationType" factoryName="PHPUnit" temporary="true">
+      <TestRunner class="rollun\test\datahandler\Validator\ArrayAdapterTest" file="$PROJECT_DIR$/test/Validator/ArrayAdapterTest.php" method="testInvalidColumnException" scope="Method" />
+      <method v="2" />
+    </configuration>
+    <configuration name="ArrayAdapterTest.testInvalidColumnToWriteOptions" type="PHPUnitRunConfigurationType" factoryName="PHPUnit" temporary="true">
+      <TestRunner class="rollun\test\datahandler\Validator\ArrayAdapterTest" file="$PROJECT_DIR$/test/Validator/ArrayAdapterTest.php" method="testInvalidColumnToWriteOptions" scope="Method" />
+      <method v="2" />
+    </configuration>
+    <configuration name="ArrayAdapterTest.testInvalidValueException" type="PHPUnitRunConfigurationType" factoryName="PHPUnit" temporary="true">
+      <TestRunner class="rollun\test\datahandler\Validator\ArrayAdapterTest" file="$PROJECT_DIR$/test/Validator/ArrayAdapterTest.php" method="testInvalidValueException" scope="Method" />
+      <method v="2" />
+    </configuration>
+    <configuration name="ArrayAdapterTest.testUnsetColumnsToWriteOption" type="PHPUnitRunConfigurationType" factoryName="PHPUnit" temporary="true">
+      <TestRunner class="rollun\test\datahandler\Validator\ArrayAdapterTest" file="$PROJECT_DIR$/test/Validator/ArrayAdapterTest.php" method="testUnsetColumnsToWriteOption" scope="Method" />
+      <method v="2" />
+    </configuration>
+    <list>
+      <item itemvalue="PHPUnit.ArrayAdapterTest.testInvalidValueException" />
+      <item itemvalue="PHPUnit.ArrayAdapterTest.testInvalidColumnException" />
+      <item itemvalue="PHPUnit.ArrayAdapterTest.testInvalidColumnToWriteOptions" />
+      <item itemvalue="PHPUnit.ArrayAdapterTest.testUnsetColumnsToWriteOption" />
+      <item itemvalue="PHPUnit.ArrayAdapterTest" />
+    </list>
+    <recent_temporary>
+      <list>
+        <item itemvalue="PHPUnit.ArrayAdapterTest" />
+        <item itemvalue="PHPUnit.ArrayAdapterTest.testUnsetColumnsToWriteOption" />
+        <item itemvalue="PHPUnit.ArrayAdapterTest.testInvalidColumnToWriteOptions" />
+        <item itemvalue="PHPUnit.ArrayAdapterTest.testInvalidColumnException" />
+        <item itemvalue="PHPUnit.ArrayAdapterTest.testInvalidValueException" />
+      </list>
+    </recent_temporary>
+  </component>
   <component name="SvnConfiguration">
     <configuration />
   </component>
@@ -2511,36 +2845,90 @@
       <option name="presentableId" value="Default" />
       <updated>1537877745186</updated>
       <workItem from="1537877746520" duration="1952000" />
-      <workItem from="1537951696341" duration="6574000" />
+      <workItem from="1537951696341" duration="26464000" />
     </task>
     <servers />
   </component>
+  <component name="TestHistory">
+    <history-entry file="ArrayAdapterTest_testNegativeSeveralColumnValid - 2018.09.26 at 19h 24m 05s.xml">
+      <configuration name="ArrayAdapterTest.testNegativeSeveralColumnValid" configurationId="PHPUnitRunConfigurationType" />
+    </history-entry>
+    <history-entry file="ArrayAdapterTest_testNegativeSeveralColumnValid - 2018.09.26 at 19h 24m 37s.xml">
+      <configuration name="ArrayAdapterTest.testNegativeSeveralColumnValid" configurationId="PHPUnitRunConfigurationType" />
+    </history-entry>
+    <history-entry file="ArrayAdapterTest_testInvalidValueException - 2018.09.26 at 19h 26m 11s.xml">
+      <configuration name="ArrayAdapterTest.testInvalidValueException" configurationId="PHPUnitRunConfigurationType" />
+    </history-entry>
+    <history-entry file="ArrayAdapterTest_testInvalidValueException - 2018.09.26 at 19h 26m 32s.xml">
+      <configuration name="ArrayAdapterTest.testInvalidValueException" configurationId="PHPUnitRunConfigurationType" />
+    </history-entry>
+    <history-entry file="ArrayAdapterTest_testInvalidColumnException - 2018.09.26 at 19h 27m 13s.xml">
+      <configuration name="ArrayAdapterTest.testInvalidColumnException" configurationId="PHPUnitRunConfigurationType" />
+    </history-entry>
+    <history-entry file="ArrayAdapterTest_testInvalidColumnException - 2018.09.26 at 19h 27m 44s.xml">
+      <configuration name="ArrayAdapterTest.testInvalidColumnException" configurationId="PHPUnitRunConfigurationType" />
+    </history-entry>
+    <history-entry file="ArrayAdapterTest_testInvalidColumnException - 2018.09.26 at 19h 27m 59s.xml">
+      <configuration name="ArrayAdapterTest.testInvalidColumnException" configurationId="PHPUnitRunConfigurationType" />
+    </history-entry>
+    <history-entry file="ArrayAdapterTest_testInvalidColumnToWriteOptions - 2018.09.26 at 19h 28m 57s.xml">
+      <configuration name="ArrayAdapterTest.testInvalidColumnToWriteOptions" configurationId="PHPUnitRunConfigurationType" />
+    </history-entry>
+    <history-entry file="ArrayAdapterTest_testUnsetColumnsToWriteOption - 2018.09.26 at 19h 29m 51s.xml">
+      <configuration name="ArrayAdapterTest.testUnsetColumnsToWriteOption" configurationId="PHPUnitRunConfigurationType" />
+    </history-entry>
+    <history-entry file="ArrayAdapterTest - 2018.09.26 at 19h 37m 29s.xml">
+      <configuration name="ArrayAdapterTest" configurationId="PHPUnitRunConfigurationType" />
+    </history-entry>
+  </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="8526000" />
+    <option name="totallyTimeSpent" value="28416000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="65" y="-4" width="1855" height="1204" extended-state="6" />
+    <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.25262576" />
-      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
-      <window_info id="Favorites" order="2" side_tool="true" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.49907064" visible="true" weight="0.25262576" />
+      <window_info id="Favorites" order="1" side_tool="true" />
+      <window_info id="Structure" order="2" sideWeight="0.50092936" weight="0.25262576" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info anchor="bottom" id="Run" order="2" />
-      <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.19237918" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.3550186" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Database Changes" order="8" show_stripe_button="false" />
       <window_info anchor="bottom" id="Version Control" order="9" show_stripe_button="false" />
-      <window_info active="true" anchor="bottom" id="Terminal" order="10" visible="true" weight="0.27602232" />
-      <window_info anchor="bottom" id="Event Log" order="11" side_tool="true" />
+      <window_info anchor="bottom" id="Terminal" order="10" weight="0.27602232" />
+      <window_info anchor="bottom" id="Event Log" order="11" side_tool="true" weight="0.32992566" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
       <window_info anchor="right" id="Database" order="3" />
     </layout>
+    <layout-to-restore>
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.25262576" />
+      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
+      <window_info id="Favorites" order="2" side_tool="true" />
+      <window_info anchor="bottom" id="Message" order="0" />
+      <window_info anchor="bottom" id="Find" order="1" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.18122676" />
+      <window_info active="true" anchor="bottom" id="Debug" order="3" visible="true" weight="0.3550186" />
+      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
+      <window_info anchor="bottom" id="TODO" order="6" />
+      <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Database Changes" order="8" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Version Control" order="9" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Terminal" order="10" weight="0.27602232" />
+      <window_info anchor="bottom" id="Event Log" order="11" side_tool="true" weight="0.32992566" />
+      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
+      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+      <window_info anchor="right" id="Database" order="3" />
+    </layout-to-restore>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
@@ -2549,318 +2937,389 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/phpunit.dist.xml">
-      <provider selected="true" editor-type-id="text-editor" />
+    <entry file="file://$PROJECT_DIR$/test/bootstrap.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="19">
+          <caret line="1" selection-start-line="1" selection-end-line="1" />
+        </state>
+      </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/.gitignore">
+    <entry file="file://$PROJECT_DIR$/test/Processor/FilterApplierTest.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="190">
+          <caret line="11" column="40" selection-start-line="11" selection-start-column="32" selection-end-line="11" selection-end-column="40" />
+          <folding>
+            <element signature="e#53#84#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/test/Processor/ValidateProcessorTest.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="475">
+          <caret line="25" column="20" selection-start-line="25" selection-start-column="20" selection-end-line="25" selection-end-column="20" />
+          <folding>
+            <element signature="e#53#93#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/test/Processor/ConcatTest.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="114">
+          <caret line="7" column="31" selection-start-line="7" selection-start-column="31" selection-end-line="7" selection-end-column="31" />
+          <folding>
+            <element signature="e#53#84#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/vendor/phpunit/phpunit/src/Framework/TestCase.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="236">
+          <caret line="1072" selection-start-line="1072" selection-end-line="1072" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/test/Filter/RqlReplaceTest.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1176">
+          <caret line="74" column="38" selection-start-line="74" selection-start-column="38" selection-end-line="74" selection-end-column="38" />
+          <folding>
+            <element signature="e#50#91#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/vendor/zendframework/zend-validator/src/IsCountable.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="551">
+          <caret line="90" column="32" selection-start-line="90" selection-start-column="32" selection-end-line="90" selection-end-column="32" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/vendor/container-interop/container-interop/src/Interop/Container/ContainerInterface.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="190">
+          <caret line="12" column="10" selection-start-line="12" selection-start-column="10" selection-end-line="12" selection-end-column="10" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/composer.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="437">
+          <caret line="23" column="60" lean-forward="true" selection-start-line="23" selection-start-column="60" selection-end-line="23" selection-end-column="60" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/vendor/zendframework/zend-servicemanager/src/AbstractPluginManager.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1483">
+          <caret line="26" column="15" selection-start-line="26" selection-start-column="15" selection-end-line="26" selection-end-column="15" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/vendor/zendframework/zend-validator/src/ValidatorPluginManager.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="133">
+          <caret line="17" column="43" selection-start-line="17" selection-start-column="43" selection-end-line="17" selection-end-column="43" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/vendor/zendframework/zend-validator/src/Exception/InvalidArgumentException.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="95">
+          <caret line="11" column="6" selection-start-line="11" selection-start-column="6" selection-end-line="11" selection-end-column="6" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Processor/src/ProcessorPluginManager.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="171">
+          <caret line="9" selection-start-line="9" selection-end-line="9" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/vendor/zendframework/zend-filter/src/AbstractFilter.php">
       <provider selected="true" editor-type-id="text-editor">
         <state>
-          <caret column="11" selection-start-column="11" selection-end-column="11" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/README.md">
-      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-        <state split_layout="SPLIT">
-          <first_editor>
-            <caret column="21" selection-start-column="21" selection-end-column="21" />
-          </first_editor>
-          <second_editor />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/LICENSE.md">
-      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-        <state split_layout="SPLIT">
-          <first_editor>
-            <caret column="12" selection-start-column="12" selection-end-column="12" />
-          </first_editor>
-          <second_editor />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/phpunit.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="209">
-          <caret line="11" column="10" selection-start-line="11" selection-start-column="10" selection-end-line="11" selection-end-column="10" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/vendor/zendframework/zend-filter/src/FilterInterface.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="380">
-          <caret line="20" column="20" selection-start-line="20" selection-start-column="20" selection-end-line="20" selection-end-column="20" />
-          <folding>
-            <element signature="e#6#308#0#PHP" expanded="true" />
-          </folding>
+          <caret line="37" column="20" selection-start-line="37" selection-start-column="20" selection-end-line="37" selection-end-column="20" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/vendor/zendframework/zend-filter/src/PregReplace.php">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Processor/CreateVehicleYears.php">
+    <entry file="file://$PROJECT_DIR$/vendor/zendframework/zend-filter/src/UriNormalize.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="76">
-          <caret line="4" column="21" lean-forward="true" selection-start-line="4" selection-start-column="21" selection-end-line="4" selection-end-column="21" />
+        <state relative-caret-position="-855" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/vendor/zendframework/zend-validator/src/ValidatorInterface.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="95">
+          <caret line="11" column="10" selection-start-line="11" selection-start-column="10" selection-end-line="11" selection-end-column="10" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Processor/Factory/CreateVehicleYearsAbstractFactory.php">
+    <entry file="file://$PROJECT_DIR$/vendor/zendframework/zend-validator/src/Regex.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="703">
+          <caret line="43" lean-forward="true" selection-start-line="43" selection-end-line="43" />
+          <folding>
+            <element signature="e#337#353#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/test/Filter/DuplicateSymbolTest.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="19">
+          <caret line="2" selection-start-line="2" selection-end-line="3" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/vendor/zendframework/zend-validator/src/Digits.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="587">
+          <caret line="52" selection-start-line="52" selection-end-line="52" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/vendor/zendframework/zend-validator/src/Barcode.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1824">
+          <caret line="15" column="10" selection-start-line="15" selection-start-column="10" selection-end-line="15" selection-end-column="10" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/vendor/zendframework/zend-validator/src/Between.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="348">
+          <caret line="186" column="35" selection-start-line="186" selection-start-column="4" selection-end-line="186" selection-end-column="35" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/vendor/zendframework/zend-validator/src/Bitwise.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="331">
+          <caret line="128" column="35" selection-start-line="128" selection-start-column="4" selection-end-line="128" selection-end-column="35" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/vendor/zendframework/zend-validator/src/AbstractValidator.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="331">
+          <caret line="370" column="16" selection-start-line="370" selection-start-column="4" selection-end-line="370" selection-end-column="16" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/vendor/zendframework/zend-validator/src/Callback.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="494">
+          <caret line="125" column="9" selection-start-line="125" selection-start-column="9" selection-end-line="125" selection-end-column="9" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/vendor/zendframework/zend-validator/src/ConfigProvider.php">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Processor/Factory/ProcessorApplierAbstractFactory.php">
+    <entry file="file://$PROJECT_DIR$/vendor/zendframework/zend-validator/src/CreditCard.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="57">
-          <caret line="3" selection-start-line="3" selection-end-line="3" />
+        <state relative-caret-position="-4440" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/vendor/zendframework/zend-validator/src/Csrf.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="331">
+          <caret line="116" column="22" selection-start-line="116" selection-start-column="4" selection-end-line="116" selection-end-column="22" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Factory/PluginAbstractFactoryAbstract.php">
+    <entry file="file://$PROJECT_DIR$/vendor/zendframework/zend-validator/src/DateStep.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="171">
-          <caret line="9" column="37" selection-start-line="9" selection-start-column="37" selection-end-line="9" selection-end-column="37" />
+        <state relative-caret-position="369">
+          <caret line="196" column="26" selection-start-line="196" selection-start-column="26" selection-end-line="196" selection-end-column="26" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/vendor/zendframework/zend-validator/src/Date.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="341">
+          <caret line="108" column="20" selection-start-line="108" selection-start-column="20" selection-end-line="108" selection-end-column="20" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/vendor/zendframework/zend-validator/src/Explode.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="160">
+          <caret line="151" column="22" selection-start-line="151" selection-start-column="4" selection-end-line="151" selection-end-column="22" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/vendor/zendframework/zend-validator/src/GpsPoint.php">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/test/Validator/ArrayAdapterTest.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="228">
+          <caret line="12" column="5" lean-forward="true" selection-start-line="12" selection-start-column="5" selection-end-line="12" selection-end-column="5" />
           <folding>
-            <element signature="e#44#85#0#PHP" expanded="true" />
+            <element signature="e#53#84#0#PHP" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Filter/Factory/SimpleFilterAbstractFactory.php">
+    <entry file="file://$PROJECT_DIR$/src/Filter/src/Factory/SimpleFilterAbstractFactory.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="418">
-          <caret line="22" column="1" selection-start-line="22" selection-start-column="1" selection-end-line="22" selection-end-column="1" />
+        <state relative-caret-position="859">
+          <caret line="48" lean-forward="true" selection-start-line="48" selection-end-line="48" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Filter/src/DuplicateSymbol.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="19">
+          <caret line="57" column="33" selection-start-line="57" selection-start-column="33" selection-end-line="57" selection-end-column="33" />
           <folding>
-            <element signature="e#52#112#0#PHP" expanded="true" />
+            <element signature="e#45#74#0#PHP" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Filter/SortSymbols.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="171">
-          <caret line="9" selection-start-line="9" selection-end-line="9" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Filter/SortWords.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="171">
-          <caret line="9" selection-start-line="9" selection-end-line="9" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Validator/Factory/SimpleValidatorAbstractFactory.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="380">
-          <caret line="22" selection-start-line="22" selection-end-line="22" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Filter/DuplicateSymbol.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="437">
-          <caret line="23" column="63" lean-forward="true" selection-start-line="23" selection-start-column="63" selection-end-line="23" selection-end-column="63" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Filter/RemoveAllExceptDigits.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="152">
-          <caret line="8" column="36" selection-start-line="8" selection-start-column="36" selection-end-line="8" selection-end-column="36" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Filter/RemoveDigits.php">
+    <entry file="file://$PROJECT_DIR$/src/Filter/src/RemoveDigits.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="152">
           <caret line="8" selection-start-line="8" selection-end-line="9" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Filter/RqlReplace.php">
+    <entry file="file://$PROJECT_DIR$/src/Filter/src/RqlReplace.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="190">
-          <caret line="10" selection-start-line="10" selection-end-line="10" />
+        <state relative-caret-position="834">
+          <caret line="83" column="46" selection-start-line="83" selection-start-column="46" selection-end-line="83" selection-end-column="46" />
           <folding>
-            <element signature="e#44#75#0#PHP" expanded="true" />
+            <element signature="e#45#74#0#PHP" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Processor/Factory/ProcessorPluginManagerFactory.php">
+    <entry file="file://$PROJECT_DIR$/src/Filter/src/SortSymbols.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-40">
-          <caret column="5" lean-forward="true" selection-start-column="5" selection-end-column="5" />
-          <folding>
-            <element signature="e#55#110#0#PHP" expanded="true" />
-          </folding>
+        <state relative-caret-position="456">
+          <caret line="24" column="21" lean-forward="true" selection-start-line="24" selection-start-column="21" selection-end-line="24" selection-end-column="21" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Processor/Factory/SimpleProcessorAbstractFactory.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="475">
-          <caret line="25" selection-start-line="25" selection-end-line="25" />
-          <folding>
-            <element signature="e#55#106#0#PHP" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Processor/AbstractProcessor.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="589">
-          <caret line="31" column="48" selection-start-line="31" selection-start-column="48" selection-end-line="31" selection-end-column="48" />
-          <folding>
-            <element signature="e#47#63#0#PHP" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Processor/Concat.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2120">
-          <caret line="136" column="20" lean-forward="true" selection-start-line="136" selection-start-column="20" selection-end-line="136" selection-end-column="20" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Processor/FilterApplier.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1011">
-          <caret line="146" lean-forward="true" selection-start-line="146" selection-end-line="146" />
-          <folding>
-            <element signature="e#47#79#0#PHP" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Processor/ProcessorInterface.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="114">
-          <caret line="6" selection-start-line="6" selection-end-line="7" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Processor/ProcessorPluginManager.php">
+    <entry file="file://$PROJECT_DIR$/src/Filter/src/SortWords.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="171">
           <caret line="9" selection-start-line="9" selection-end-line="9" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/test/Filter/DuplicateSymbolTest.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="38">
-          <caret line="2" selection-start-line="2" selection-end-line="3" />
-          <folding>
-            <element signature="e#43#88#0#PHP" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/test/Filter/RemoveAllExceptDigitsTest.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="76">
-          <caret line="4" column="51" selection-start-line="4" selection-start-column="51" selection-end-line="4" selection-end-column="51" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/test/Filter/RemoveDigitsTest.php">
+    <entry file="file://$PROJECT_DIR$/src/Processor/src/Factory/FilterApplierAbstractFactory.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="456">
-          <caret line="24" column="13" selection-start-line="24" selection-start-column="13" selection-end-line="24" selection-end-column="13" />
+          <caret line="27" column="41" selection-start-line="27" selection-start-column="41" selection-end-line="27" selection-end-column="41" />
           <folding>
-            <element signature="e#50#92#0#PHP" expanded="true" />
+            <element signature="e#56#103#0#PHP" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/test/Filter/RqlReplaceTest.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="57">
-          <caret line="4" column="40" selection-start-line="4" selection-start-column="40" selection-end-line="4" selection-end-column="40" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/test/Filter/SortSymbolsTest.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="76">
-          <caret line="4" column="41" selection-start-line="4" selection-start-column="41" selection-end-line="4" selection-end-column="41" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/test/Processor/Factory/AbstractProcessorAbstractFactoryTest.php">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/test/Filter/SortWordsTest.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="57">
-          <caret line="4" column="39" selection-start-line="4" selection-start-column="39" selection-end-line="4" selection-end-column="39" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/test/Processor/AbstractProcessorTest.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="283">
-          <caret line="75" column="29" selection-start-line="75" selection-start-column="29" selection-end-line="75" selection-end-column="29" />
-          <folding>
-            <element signature="e#52#83#0#PHP" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/test/Processor/CreateVehicleYearsTest.php">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/test/Processor/ConcatTest.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1140">
-          <caret line="60" column="24" selection-start-line="60" selection-start-column="24" selection-end-line="60" selection-end-column="24" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/test/Processor/ProcessorApplierTest.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-2574">
-          <caret line="5" column="38" lean-forward="true" selection-start-line="5" selection-start-column="38" selection-end-line="5" selection-end-column="38" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/test/Processor/FilterApplierTest.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-228">
-          <caret line="9" column="44" selection-start-line="9" selection-start-column="44" selection-end-line="9" selection-end-column="44" />
-          <folding>
-            <element signature="e#52#98#0#PHP" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Processor/Factory/ProcessorAbstractFactoryAbstract.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="190">
-          <caret line="10" selection-start-line="10" selection-end-line="10" />
-          <folding>
-            <element signature="e#55#96#0#PHP" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Processor/Factory/FilterApplierAbstractFactory.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="456">
-          <caret line="24" selection-start-line="24" selection-end-line="25" />
-          <folding>
-            <element signature="e#55#101#0#PHP" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/composer.json">
+    <entry file="file://$PROJECT_DIR$/src/Processor/src/Factory/ProcessorAbstractFactoryAbstract.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="247">
-          <caret line="13" column="48" selection-start-line="13" selection-start-column="48" selection-end-line="13" selection-end-column="48" />
+          <caret line="16" column="44" selection-start-line="16" selection-start-column="44" selection-end-line="16" selection-end-column="44" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Processor/src/Factory/ProcessorPluginManagerFactory.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="61">
+          <caret line="4" column="4" lean-forward="true" selection-start-line="4" selection-start-column="4" selection-end-line="4" selection-end-column="4" />
+          <folding>
+            <element signature="e#56#112#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Processor/src/Factory/SimpleProcessorAbstractFactory.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-21">
+          <caret line="4" column="4" lean-forward="true" selection-start-line="4" selection-start-column="4" selection-end-line="4" selection-end-column="4" />
+          <folding>
+            <element signature="e#56#108#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Processor/src/AbstractProcessor.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="498">
+          <caret line="41" column="5" lean-forward="true" selection-start-line="41" selection-start-column="5" selection-end-line="41" selection-end-column="5" />
+          <folding>
+            <element signature="e#48#77#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Processor/src/Concat.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="460">
+          <caret line="129" column="50" lean-forward="true" selection-start-line="129" selection-start-column="50" selection-end-line="129" selection-end-column="50" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Processor/src/FilterApplier.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="304">
+          <caret line="16" selection-start-line="16" selection-end-line="16" />
+          <folding>
+            <element signature="e#48#77#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Processor/src/ProcessorInterface.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="342">
+          <caret line="18" lean-forward="true" selection-start-line="18" selection-end-line="18" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Validator/src/ArrayAdapter.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="549">
+          <caret line="90" column="20" lean-forward="true" selection-start-line="90" selection-start-column="20" selection-end-line="90" selection-end-column="20" />
+          <folding>
+            <element signature="e#48#85#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Validator/src/Factory/SimpleValidatorAbstractFactory.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="703">
+          <caret line="39" column="41" lean-forward="true" selection-start-line="39" selection-start-column="41" selection-end-line="39" selection-end-column="41" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Validator/src/Factory/ValidatorAdapterAbstractFactory.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-665">
+          <caret line="7" column="57" selection-start-line="7" selection-start-column="57" selection-end-line="7" selection-end-column="57" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Factory/src/PluginAbstractFactoryAbstract.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-705">
+          <caret line="38" column="7" lean-forward="true" selection-start-line="38" selection-start-column="7" selection-end-line="38" selection-end-column="7" />
+          <folding>
+            <element signature="e#46#87#0#PHP" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

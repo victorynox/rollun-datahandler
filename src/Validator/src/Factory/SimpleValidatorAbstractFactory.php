@@ -1,8 +1,8 @@
 <?php
 
-namespace rollun\datanadler\Validator\Factory;
+namespace rollun\datahandler\Validator\Factory;
 
-use rollun\datanadler\Factory\PluginAbstractFactoryAbstract;
+use rollun\datahandler\Factory\PluginAbstractFactoryAbstract;
 use Interop\Container\ContainerInterface;
 use Zend\Validator\ValidatorInterface;
 
@@ -11,17 +11,19 @@ use Zend\Validator\ValidatorInterface;
  *
  * 'validators' => [
  *      'abstract_factory_config' => [
- *          IsCountable::class => [
+ *          SimpleValidatorAbstractFactory::class => [
  *              'requestedName' => [
  *                  'class' => IsCountable::class,
- *                  'options' => [],
+ *                  'options' => [
+ *                      // other options
+ *                  ],
  *              ],
  *          ],
  *      ],
  * ],
  *
  * Class SimpleValidatorAbstractFactory
- * @package rollun\datanadler\Validator\Factory
+ * @package rollun\datahandler\Validator\Factory
  */
 class SimpleValidatorAbstractFactory extends PluginAbstractFactoryAbstract
 {
@@ -33,14 +35,14 @@ class SimpleValidatorAbstractFactory extends PluginAbstractFactoryAbstract
     /**
      * Common namespace name for plugin config. By default doesn't set
      */
-    const KEY = 'filters';
+    const KEY = 'validators';
 
     public function __invoke(ContainerInterface $container, $requestedName, array $options = null)
     {
         $serviceConfig = $this->getServiceConfig($container, $requestedName);
-        $options = $this->getPluginOptions($serviceConfig, $options);
+        $pluginOptions = $this->getPluginOptions($serviceConfig, $options);
         $class = $this->getClass($serviceConfig);
 
-        return new $class($options);
+        return new $class($pluginOptions);
     }
 }

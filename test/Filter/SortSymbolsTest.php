@@ -2,7 +2,7 @@
 
 namespace rollun\test\datahandler\Filter;
 
-use rollun\datanadler\Filter\SortSymbols;
+use rollun\datahandler\Filter\SortSymbols;
 use PHPUnit\Framework\TestCase;
 
 /**

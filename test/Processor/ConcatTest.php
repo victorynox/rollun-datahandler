@@ -1,11 +1,17 @@
 <?php
 
-namespace test\Vehicles\Workers\Processors;
+namespace rollun\test\datahandler\Processor;
 
-use rollun\datanadler\Processor\Concat;
+use PHPUnit\Framework\TestCase;
+use rollun\datahandler\Processor\Concat;
 
-class ConcatTest extends AbstractProcessorTest
+class ConcatTest extends TestCase
 {
+    public function getProcessor($options = [], $validator = null)
+    {
+        return new Concat($options, $validator);
+    }
+
     public function dataProvider()
     {
         return [
