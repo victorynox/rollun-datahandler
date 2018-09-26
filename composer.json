@@ -1,0 +1,30 @@
+{
+  "name": "rollun-com/rollun-datahandler",
+  "description": "Rollun zend-expressive skeleton. Begin developing applications in seconds!",
+  "type": "library",
+  "homepage": "https://github.com/rollun/rollun-datahandler",
+  "config": {
+    "sort-packages": true
+  },
+  "require": {
+    "php": "^7.0",
+    "ext-json": "*",
+    "zendframework/zend-servicemanager": "^3.3"
+  },
+  "require-dev": {
+    "phpunit/phpunit": "^6.0.8",
+    "squizlabs/php_codesniffer": "^2.8.1"
+  },
+  "autoload": {
+    "psr-4": {
+      "rollun\\datahandler\\Filter\\": "src/Filter/src",
+      "rollun\\datahandler\\Validator\\": "src/Validator/src",
+      "rollun\\datahandler\\Processor\\": "src/Processor/src"
+    }
+  },
+  "autoload-dev": {
+    "psr-4": {
+      "rollun\\test\\datahandler\\": "test/src"
+    }
+  }
+}
