@@ -4,7 +4,7 @@
 
 namespace Composer\Autoload;
 
-class ComposerStaticInit91af96713d33b3f3a73c86176009cc43
+class ComposerStaticInita7fa1f726ee7ccbcf58b1c3bca53f5a4
 {
     public static $files = array (
         '6124b4c8570aa390c21fafd04a26c69f' => __DIR__ . '/..' . '/myclabs/deep-copy/src/DeepCopy/deep_copy.php',
@@ -17,6 +17,7 @@ class ComposerStaticInit91af96713d33b3f3a73c86176009cc43
             'rollun\\datahandler\\Validator\\' => 29,
             'rollun\\datahandler\\Processor\\' => 29,
             'rollun\\datahandler\\Filter\\' => 26,
+            'rollun\\datahandler\\Factory\\' => 27,
         ),
         'p' => 
         array (
@@ -24,8 +25,10 @@ class ComposerStaticInit91af96713d33b3f3a73c86176009cc43
         ),
         'Z' => 
         array (
+            'Zend\\Validator\\' => 15,
             'Zend\\Stdlib\\' => 12,
             'Zend\\ServiceManager\\' => 20,
+            'Zend\\Filter\\' => 12,
         ),
         'W' => 
         array (
@@ -33,10 +36,12 @@ class ComposerStaticInit91af96713d33b3f3a73c86176009cc43
         ),
         'P' => 
         array (
+            'Psr\\Http\\Message\\' => 17,
             'Psr\\Container\\' => 14,
         ),
         'I' => 
         array (
+            'Interop\\Http\\Server\\' => 20,
             'Interop\\Container\\' => 18,
         ),
         'D' => 
@@ -63,11 +68,19 @@ class ComposerStaticInit91af96713d33b3f3a73c86176009cc43
         array (
             0 => __DIR__ . '/../..' . '/src/Filter/src',
         ),
+        'rollun\\datahandler\\Factory\\' => 
+        array (
+            0 => __DIR__ . '/../..' . '/src/Factory/src',
+        ),
         'phpDocumentor\\Reflection\\' => 
         array (
             0 => __DIR__ . '/..' . '/phpdocumentor/reflection-common/src',
             1 => __DIR__ . '/..' . '/phpdocumentor/reflection-docblock/src',
             2 => __DIR__ . '/..' . '/phpdocumentor/type-resolver/src',
+        ),
+        'Zend\\Validator\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/zendframework/zend-validator/src',
         ),
         'Zend\\Stdlib\\' => 
         array (
@@ -77,13 +90,25 @@ class ComposerStaticInit91af96713d33b3f3a73c86176009cc43
         array (
             0 => __DIR__ . '/..' . '/zendframework/zend-servicemanager/src',
         ),
+        'Zend\\Filter\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/zendframework/zend-filter/src',
+        ),
         'Webmozart\\Assert\\' => 
         array (
             0 => __DIR__ . '/..' . '/webmozart/assert/src',
         ),
+        'Psr\\Http\\Message\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/psr/http-message/src',
+        ),
         'Psr\\Container\\' => 
         array (
             0 => __DIR__ . '/..' . '/psr/container/src',
+        ),
+        'Interop\\Http\\Server\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/http-interop/http-middleware/src',
         ),
         'Interop\\Container\\' => 
         array (
@@ -909,10 +934,10 @@ class ComposerStaticInit91af96713d33b3f3a73c86176009cc43
     public static function getInitializer(ClassLoader $loader)
     {
         return \Closure::bind(function () use ($loader) {
-            $loader->prefixLengthsPsr4 = ComposerStaticInit91af96713d33b3f3a73c86176009cc43::$prefixLengthsPsr4;
-            $loader->prefixDirsPsr4 = ComposerStaticInit91af96713d33b3f3a73c86176009cc43::$prefixDirsPsr4;
-            $loader->prefixesPsr0 = ComposerStaticInit91af96713d33b3f3a73c86176009cc43::$prefixesPsr0;
-            $loader->classMap = ComposerStaticInit91af96713d33b3f3a73c86176009cc43::$classMap;
+            $loader->prefixLengthsPsr4 = ComposerStaticInita7fa1f726ee7ccbcf58b1c3bca53f5a4::$prefixLengthsPsr4;
+            $loader->prefixDirsPsr4 = ComposerStaticInita7fa1f726ee7ccbcf58b1c3bca53f5a4::$prefixDirsPsr4;
+            $loader->prefixesPsr0 = ComposerStaticInita7fa1f726ee7ccbcf58b1c3bca53f5a4::$prefixesPsr0;
+            $loader->classMap = ComposerStaticInita7fa1f726ee7ccbcf58b1c3bca53f5a4::$classMap;
 
         }, null, ClassLoader::class);
     }
