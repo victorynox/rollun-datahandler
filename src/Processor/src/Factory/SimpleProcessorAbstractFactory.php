@@ -7,22 +7,31 @@ use Interop\Container\ContainerInterface;
 use Zend\ServiceManager\Factory\AbstractFactoryInterface;
 
 /**
- * Config example
+ * Create and return instance of ProcessorInterface
  *
+ * This Factory depends on Container (which should return an 'config' as array)
+ *
+ * Config example:
+ * <code>
  * 'processors' => [
  *      'abstract_factory_config' => [
  *          SimpleProcessorAbstractFactory::class => [
- *              'requestedName' => [
+ *              'simpleProcessorName1' => [
  *                  'class' => Concat::class,
- *                  'options' => [
+ *                  'options' => [ // by default is not required
  *                      'validator' => 'validator-service',
  *                      'validatorOptions' => [],
- *                      // other options
+ *                      // other options, specific for each processor
+ *                      //...
  *                  ],
- *              ]
+ *              ],
+ *              'simpleProcessorName2' => [
+ *                  '//...
+ *              ],
  *          ],
  *      ]
- * ]
+ * ],
+ * </code>
  *
  * Class ProcessorAbstractFactory
  * @package rollun\datahandler\Processor\Factory
@@ -38,14 +47,14 @@ class SimpleProcessorAbstractFactory extends ProcessorAbstractFactoryAbstract im
      * @param ContainerInterface $container
      * @param string $requestedName
      * @param array|null $options
-     * @return mixed|object
+     * @return object
      */
     public function __invoke(ContainerInterface $container, $requestedName, array $options = null)
     {
         $serviceConfig = $this->getServiceConfig($container, $requestedName);
         $pluginOptions = $this->getPluginOptions($serviceConfig, $options);
         $validator = $this->getValidator($container, $pluginOptions);
-        $class = $this->getClass($serviceConfig);
+        $class = $this->getClass($serviceConfig, true);
         $clearedPluginOptions = $this->clearPluginOptions($pluginOptions);
 
         return new $class($clearedPluginOptions, $validator);

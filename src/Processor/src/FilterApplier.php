@@ -21,14 +21,14 @@ class FilterApplier extends AbstractProcessor
      *
      * @var string
      */
-    protected $columnToRead;
+    protected $argumentColumn;
 
     /**
      * Data store column in which need to write filtered value
      *
      * @var string
      */
-    protected $columnToWrite;
+    protected $resultColumn;
 
     /**
      * Array of filters
@@ -55,16 +55,15 @@ class FilterApplier extends AbstractProcessor
     protected $filterPluginManager;
 
     /**
+     * Valid keys are:
+     * - argumentColumn - string, data store valid column
+     * - resultColumn - string, data store valid column
+     * - filters - array of FilterInterface object
+     *
      * FilterApplier constructor.
      * @param array $option
      * @param ValidatorInterface|null $validator
      * @param FilterPluginManager $filterPluginManager
-     *
-     * Valid keys are:
-     * - columnToRead - string, data store valid column
-     * - columnToWrite - string, data store valid column
-     * - filters - array of FilterInterface object
-     *
      */
     public function __construct(
         $option = null,
@@ -77,31 +76,31 @@ class FilterApplier extends AbstractProcessor
     }
 
     /**
-     * @param string $columnToRead
+     * @param string $argumentColumn
      */
-    public function setColumnToRead(string $columnToRead)
+    public function setArgumentColumn(string $argumentColumn)
     {
-        $this->columnToRead = $columnToRead;
+        $this->argumentColumn = $argumentColumn;
     }
 
     /**
      * @return string
      */
-    public function getColumnToRead()
+    public function getArgumentColumn()
     {
-        if (!isset($this->columnToRead)) {
-            throw new InvalidArgumentException("Missing option 'columnToRaed'");
+        if (!isset($this->argumentColumn)) {
+            throw new InvalidArgumentException("Missing option 'argumentColumn'");
         }
 
-        return $this->columnToRead;
+        return $this->argumentColumn;
     }
 
     /**
-     * @param string $columnToWrite
+     * @param string $resultColumn
      */
-    public function setColumnToWrite(string $columnToWrite)
+    public function setResultColumn(string $resultColumn)
     {
-        $this->columnToWrite = $columnToWrite;
+        $this->resultColumn = $resultColumn;
     }
 
     /**
@@ -131,13 +130,13 @@ class FilterApplier extends AbstractProcessor
      */
     public function doProcess(array $value)
     {
-        $columnToRead = $this->getColumnToRead();
+        $argumentColumn = $this->getArgumentColumn();
 
-        if (!isset($value[$columnToRead])) {
-            throw new InvalidArgumentException("Column '{$columnToRead}' does'nt exist in incoming value");
+        if (!isset($value[$argumentColumn])) {
+            throw new InvalidArgumentException("Column '{$argumentColumn}' does'nt exist in incoming value");
         }
 
-        $columnValue = $value[$columnToRead];
+        $columnValue = $value[$argumentColumn];
         $filters = $this->filters;
         ksort($filters);
 
@@ -146,8 +145,8 @@ class FilterApplier extends AbstractProcessor
             $columnValue = $filterService->filter($columnValue);
         }
 
-        $columnToWrite = $this->columnToWrite ?? $columnToRead;
-        $value[$columnToWrite] = $columnValue;
+        $resultColumn = $this->resultColumn ?? $argumentColumn;
+        $value[$resultColumn] = $columnValue;
 
         return $value;
     }

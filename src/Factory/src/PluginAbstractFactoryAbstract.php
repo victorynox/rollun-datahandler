@@ -6,19 +6,6 @@ use Interop\Container\ContainerInterface;
 use Zend\ServiceManager\Factory\AbstractFactoryInterface;
 
 /**
- * Config example
- *
- * static::KEY => [
- *      'abstract_factory_config' => [
- *          static::class => [
- *              'requestedName' => [
- *                  'class' => SomePlugin::class,
- *                  'options' => [],
- *              ],
- *          ],
- *      ],
- * ],
- *
  * Class PluginAbstractFactoryAbstract
  * @package rollun\datahandler\Factory
  */
@@ -94,12 +81,17 @@ abstract class PluginAbstractFactoryAbstract implements AbstractFactoryInterface
     /**
      * Get caused class
      *
-     * @param $serviceConfig
+     * @param array $serviceConfig
+     * @param bool $required
      * @return mixed
      */
-    protected function getClass($serviceConfig)
+    protected function getClass(array $serviceConfig, $required = false)
     {
         if (!isset($serviceConfig[self::CLASS_KEY])) {
+            if (!$required) {
+                return self::DEFAULT_CLASS;
+            }
+
             throw new \InvalidArgumentException('There is no \'class\' config for plugin in config');
         } else if (!is_a($serviceConfig[self::CLASS_KEY], static::DEFAULT_CLASS, true)) {
             throw new \InvalidArgumentException(

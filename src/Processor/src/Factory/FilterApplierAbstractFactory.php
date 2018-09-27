@@ -7,22 +7,32 @@ use Interop\Container\ContainerInterface;
 use Zend\Filter\FilterPluginManager;
 
 /**
- * Config example
+ * Create and return instance of FilterApplier processor
  *
+ * This Factory depends on Container (which should return an 'config' as array)
+ *
+ * Config example
+ * <code>
  * 'processors' => [
  *      'abstract_factory_config' => [
  *          FilterApplierAbstractFactory::class => [
- *              'requestedName' => [
+ *              'filterApplierProcessorName1' => [
  *                  'class' => FilterApplier::class,
- *                  'options' => [
+ *                  'options' => [ // by default is not required
  *                      'validator' => 'validator-service',
  *                      'validatorOptions' => [],
- *                      // other options
+ *                      // other options, specific for each processor
+ *                      //...
  *                  ],
+ *              ],
+ *              'filterApplierProcessorName2' => [
+ *                  //...
  *              ],
  *          ],
  *      ],
  * ],
+ *
+ * </code>
  *
  * Class FilterApplierAbstractFactory
  * @package rollun\datahandler\Processor\Factory
@@ -38,7 +48,7 @@ class FilterApplierAbstractFactory extends ProcessorAbstractFactoryAbstract
      * @param ContainerInterface $container
      * @param string $requestedName
      * @param array|null $options
-     * @return mixed|object
+     * @return FilterApplier
      */
     public function __invoke(ContainerInterface $container, $requestedName, array $options = null)
     {

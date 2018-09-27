@@ -3,6 +3,7 @@
 namespace rollun\datahandler\Processor;
 
 use InvalidArgumentException;
+use Zend\Validator\ValidatorInterface;
 
 /**
  * Class Concat
@@ -30,12 +31,27 @@ class Concat extends AbstractProcessor
      *
      * @var string
      */
-    protected $columnToWrite;
+    protected $resultColumn;
 
     /**
      * @var string
      */
     protected $delimiter = '_';
+
+    /**
+     * Valid keys are:
+     * - resultColumn - string, data store valid column
+     * - expression - symphony language expression
+     *  @see https://symfony.com/doc/current/components/expression_language/syntax.html
+     *
+     * Concat constructor.
+     * @param array|null $options
+     * @param ValidatorInterface|null $validator
+     */
+    public function __construct(array $options = null, ValidatorInterface $validator = null)
+    {
+        parent::__construct($options, $validator);
+    }
 
     /**
      * Minimum count of columns - 2
@@ -52,23 +68,23 @@ class Concat extends AbstractProcessor
     }
 
     /**
-     * @param $columnToWrite
+     * @param $resultColumn
      */
-    public function setColumnToWrite($columnToWrite)
+    public function setResultColumn($resultColumn)
     {
-        $this->columnToWrite = $columnToWrite;
+        $this->resultColumn = $resultColumn;
     }
 
     /**
      * @return string
      */
-    public function getColumnToWrite()
+    public function getResultColumn()
     {
-        if (!isset($this->columnToWrite)) {
-            throw new InvalidArgumentException("Missing option 'columnToWrite'");
+        if (!isset($this->resultColumn)) {
+            throw new InvalidArgumentException("Missing option 'resultColumn'");
         }
 
-        return $this->columnToWrite;
+        return $this->resultColumn;
     }
 
     /**
@@ -130,9 +146,9 @@ class Concat extends AbstractProcessor
         $columns = $this->getValueColumns($value);
         ksort($columns);
 
-        $columnToWrite = $this->getColumnToWrite();
+        $resultColumn = $this->getResultColumn();
         $delimiter = $this->getDelimiter();
-        $value[$columnToWrite] = implode($delimiter, $columns);
+        $value[$resultColumn] = implode($delimiter, $columns);
 
         return $value;
     }

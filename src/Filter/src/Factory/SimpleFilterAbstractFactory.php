@@ -7,18 +7,29 @@ use Interop\Container\ContainerInterface;
 use Zend\Filter\FilterInterface;
 
 /**
- * Config example
+ * Create and return instance of FilterInterface
  *
+ * This Factory depends on Container (which should return an 'config' as array)
+ *
+ * Config example:
+ * <code>
  * 'filters' => [
  *      'abstract_factory_config' => [
- *          'stringTrim'::class => [
- *              'requestedName' => [
+ *          SimpleFilterAbstractFactory::class => [
+ *              'simpleFilterName1' => [
  *                  'class' => stringTrim::class,
- *                  'options' => [],
+ *                  'options' => [ // by default is not required
+ *                      // filter options, specific for each filter
+ *                      //...
+ *                  ],
+ *              ],
+ *              'simpleFilterName2' => [
+ *                  //...
  *              ],
  *          ],
  *      ],
  * ],
+ * </code>
  *
  * Class SimpleFilterAbstractFactory
  * @package rollun\datahandler\Filter\Factory
@@ -45,7 +56,7 @@ class SimpleFilterAbstractFactory extends PluginAbstractFactoryAbstract
     {
         $serviceConfig = $this->getServiceConfig($container, $requestedName);
         $pluginOptions = $this->getPluginOptions($serviceConfig, $options);
-        $class = $this->getClass($serviceConfig);
+        $class = $this->getClass($serviceConfig, true);
 
         return new $class($pluginOptions);
     }

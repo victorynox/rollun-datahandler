@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<module type="WEB_MODULE" version="4">
+  <component name="NewModuleRootManager">
+    <content url="file://$MODULE_DIR$">
+      <sourceFolder url="file://$MODULE_DIR$/src/Filter/src" isTestSource="false" packagePrefix="rollun\datahandler\Filter\" />
+      <sourceFolder url="file://$MODULE_DIR$/src/Evaluator/src" isTestSource="false" packagePrefix="rollun\datahandler\Evaluator\" />
+      <sourceFolder url="file://$MODULE_DIR$/test" isTestSource="true" packagePrefix="rollun\test\datahandler\" />
+      <sourceFolder url="file://$MODULE_DIR$/src/Factory/src" isTestSource="false" packagePrefix="rollun\datahandler\Factory\" />
+      <sourceFolder url="file://$MODULE_DIR$/src/Validator/src" isTestSource="false" packagePrefix="rollun\datahandler\Validator\" />
+      <sourceFolder url="file://$MODULE_DIR$/src/Processor/src" isTestSource="false" packagePrefix="rollun\datahandler\Processor\" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/http-interop/http-middleware" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/phpunit/phpunit-mock-objects" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/psr/cache" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/psr/log" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/psr/simple-cache" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/symfony/cache" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/symfony/expression-language" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/zendframework/zend-filter" />
+    </content>
+    <orderEntry type="inheritedJdk" />
+    <orderEntry type="sourceFolder" forTests="false" />
+  </component>
+</module>

@@ -9,6 +9,7 @@
   "require": {
     "php": "^7.0",
     "ext-json": "*",
+    "symfony/expression-language": "^4.1",
     "zendframework/zend-filter": "^2.8",
     "zendframework/zend-validator": "^2.10"
   },
@@ -18,6 +19,7 @@
   },
   "autoload": {
     "psr-4": {
+      "rollun\\datahandler\\Evaluator\\": "src/Evaluator/src",
       "rollun\\datahandler\\Factory\\": "src/Factory/src",
       "rollun\\datahandler\\Filter\\": "src/Filter/src",
       "rollun\\datahandler\\Validator\\": "src/Validator/src",

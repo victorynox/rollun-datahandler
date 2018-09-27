@@ -9,22 +9,30 @@ use Zend\ServiceManager\Factory\AbstractFactoryInterface;
 use Zend\Validator\ValidatorPluginManager;
 
 /**
- * Config example
+ * Create and return instance of ArrayAdapter
  *
+ * This Factory depends on Container (which should return an 'config' as array)
+ *
+ * Config example:
+ * <code>
  * self::class => [
  *      'abstract_factory_config' => [
  *          ValidatorAdapterAbstractFactory::class => [
- *              'requestedName' => [
+ *              'validatorAdapterName1' => [
  *                  'class' => ArrayAdapter::class,
  *                  'options' => [
- *                      'validator' => 'validator-service',
- *                      'validatorOptions' => [],
- *                      // other options
+ *                      'validator' => 'validator-service', // required
+ *                      'validatorOptions' => [], // validator options, by default is not required
+ *                      //...
  *                  ],
+ *              ],
+ *              'validatorAdapterName2' => [
+ *                  //...
  *              ],
  *          ],
  *      ],
  * ],
+ * </code>
  *
  * Class AdapterValidatorAbstractFactory
  * @package rollun\datahandler\Validator\Factory
@@ -51,6 +59,12 @@ class ValidatorAdapterAbstractFactory extends PluginAbstractFactoryAbstract impl
      */
     const VALIDATOR_OPTION_KEY = 'validatorOptions';
 
+    /**
+     * @param ContainerInterface $container
+     * @param string $requestedName
+     * @param array|null $options
+     * @return ArrayAdapter
+     */
     public function __invoke(ContainerInterface $container, $requestedName, array $options = null)
     {
         $serviceConfig = $this->getServiceConfig($container, $requestedName);
