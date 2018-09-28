@@ -16,14 +16,14 @@ use Zend\Validator\ValidatorInterface;
  * 'validators' => [
  *      'abstract_factory_config' => [
  *          SimpleValidatorAbstractFactory::class => [
- *              'simpleValidatorName1' => [
+ *              'simpleValidatorServiceName1' => [
  *                  'class' => IsCountable::class,
  *                  'options' => [ // by default is not required
  *                      // other options, specific for each validator
  *                      //...
  *                  ],
  *              ],
- *              'simpleValidatorName2' => [
+ *              'simpleValidatorServiceName2' => [
  *                  //...
  *              ],
  *          ],

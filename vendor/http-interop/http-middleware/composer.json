@@ -4,8 +4,9 @@
     "keywords": [
         "psr",
         "psr-7",
-        "psr-15",
+        "psr-17",
         "http",
+        "factory",
         "middleware",
         "request",
         "response"
@@ -23,7 +24,7 @@
     },
     "autoload": {
         "psr-4": {
-            "Interop\\Http\\Server\\": "src/"
+            "Interop\\Http\\ServerMiddleware\\": "src/"
         }
     },
     "extra": {

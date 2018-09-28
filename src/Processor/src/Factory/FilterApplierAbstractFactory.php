@@ -16,7 +16,7 @@ use Zend\Filter\FilterPluginManager;
  * 'processors' => [
  *      'abstract_factory_config' => [
  *          FilterApplierAbstractFactory::class => [
- *              'filterApplierProcessorName1' => [
+ *              'filterApplierProcessorServiceName1' => [
  *                  'class' => FilterApplier::class,
  *                  'options' => [ // by default is not required
  *                      'validator' => 'validator-service',
@@ -25,7 +25,7 @@ use Zend\Filter\FilterPluginManager;
  *                      //...
  *                  ],
  *              ],
- *              'filterApplierProcessorName2' => [
+ *              'filterApplierProcessorServiceName2' => [
  *                  //...
  *              ],
  *          ],

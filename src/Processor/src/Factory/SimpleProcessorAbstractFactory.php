@@ -16,7 +16,7 @@ use Zend\ServiceManager\Factory\AbstractFactoryInterface;
  * 'processors' => [
  *      'abstract_factory_config' => [
  *          SimpleProcessorAbstractFactory::class => [
- *              'simpleProcessorName1' => [
+ *              'simpleProcessorServiceName1' => [
  *                  'class' => Concat::class,
  *                  'options' => [ // by default is not required
  *                      'validator' => 'validator-service',
@@ -25,7 +25,7 @@ use Zend\ServiceManager\Factory\AbstractFactoryInterface;
  *                      //...
  *                  ],
  *              ],
- *              'simpleProcessorName2' => [
+ *              'simpleProcessorServiceName2' => [
  *                  '//...
  *              ],
  *          ],

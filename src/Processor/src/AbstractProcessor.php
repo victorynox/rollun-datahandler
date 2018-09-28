@@ -112,6 +112,11 @@ abstract class AbstractProcessor implements ProcessorInterface
         $this->validator = $validator;
     }
 
+    public function __invoke(array $value)
+    {
+        $this->doProcess($value);
+    }
+
     /**
      * Retrieve options representing object state
      *

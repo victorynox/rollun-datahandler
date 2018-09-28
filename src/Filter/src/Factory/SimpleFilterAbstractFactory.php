@@ -16,14 +16,14 @@ use Zend\Filter\FilterInterface;
  * 'filters' => [
  *      'abstract_factory_config' => [
  *          SimpleFilterAbstractFactory::class => [
- *              'simpleFilterName1' => [
+ *              'simpleFilterServiceName1' => [
  *                  'class' => stringTrim::class,
  *                  'options' => [ // by default is not required
  *                      // filter options, specific for each filter
  *                      //...
  *                  ],
  *              ],
- *              'simpleFilterName2' => [
+ *              'simpleFilterServiceName2' => [
  *                  //...
  *              ],
  *          ],

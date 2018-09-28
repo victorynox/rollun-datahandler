@@ -9,6 +9,8 @@
   "require": {
     "php": "^7.0",
     "ext-json": "*",
+    "http-interop/http-middleware": "0.4.1",
+    "rollun-com/rollun-callback": "^4.6",
     "symfony/expression-language": "^4.1",
     "zendframework/zend-filter": "^2.8",
     "zendframework/zend-validator": "^2.10"

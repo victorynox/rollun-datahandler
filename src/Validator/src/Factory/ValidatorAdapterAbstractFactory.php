@@ -18,7 +18,7 @@ use Zend\Validator\ValidatorPluginManager;
  * self::class => [
  *      'abstract_factory_config' => [
  *          ValidatorAdapterAbstractFactory::class => [
- *              'validatorAdapterName1' => [
+ *              'validatorAdapterServiceName1' => [
  *                  'class' => ArrayAdapter::class,
  *                  'options' => [
  *                      'validator' => 'validator-service', // required
@@ -26,7 +26,7 @@ use Zend\Validator\ValidatorPluginManager;
  *                      //...
  *                  ],
  *              ],
- *              'validatorAdapterName2' => [
+ *              'validatorAdapterServiceName2' => [
  *                  //...
  *              ],
  *          ],

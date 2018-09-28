@@ -7,38 +7,105 @@ namespace Composer\Autoload;
 class ComposerStaticInit1c946fa18877ad2fb932e82dc6b60063
 {
     public static $files = array (
+        '10a6847eba8a430a134fad89f4a30a26' => __DIR__ . '/..' . '/zendframework/zend-cache/autoload/patternPluginManagerPolyfill.php',
+        '0e6d7bf4a5811bfa5cf40c5ccd6fae6a' => __DIR__ . '/..' . '/symfony/polyfill-mbstring/bootstrap.php',
+        '023d27dca8066ef29e6739335ea73bad' => __DIR__ . '/..' . '/symfony/polyfill-php70/bootstrap.php',
+        '320cde22f66dd4f5d3fd621d3e88b98f' => __DIR__ . '/..' . '/symfony/polyfill-ctype/bootstrap.php',
+        'aaf5b53a99b4de51dadc23016def253f' => __DIR__ . '/..' . '/webimpress/http-middleware-compatibility/autoload/http-middleware.php',
+        'cf97c57bfe0f23854afd2f3818abb7a0' => __DIR__ . '/..' . '/zendframework/zend-diactoros/src/functions/create_uploaded_file.php',
+        '9bf37a3d0dad93e29cb4e1b1bfab04e9' => __DIR__ . '/..' . '/zendframework/zend-diactoros/src/functions/marshal_headers_from_sapi.php',
+        'ce70dccb4bcc2efc6e94d2ee526e6972' => __DIR__ . '/..' . '/zendframework/zend-diactoros/src/functions/marshal_method_from_sapi.php',
+        'f86420df471f14d568bfcb71e271b523' => __DIR__ . '/..' . '/zendframework/zend-diactoros/src/functions/marshal_protocol_version_from_sapi.php',
+        'b87481e008a3700344428ae089e7f9e5' => __DIR__ . '/..' . '/zendframework/zend-diactoros/src/functions/marshal_uri_from_sapi.php',
+        '0b0974a5566a1077e4f2e111341112c1' => __DIR__ . '/..' . '/zendframework/zend-diactoros/src/functions/normalize_server.php',
+        '1ca3bc274755662169f9629d5412a1da' => __DIR__ . '/..' . '/zendframework/zend-diactoros/src/functions/normalize_uploaded_files.php',
+        '40360c0b9b437e69bcbb7f1349ce029e' => __DIR__ . '/..' . '/zendframework/zend-diactoros/src/functions/parse_cookie_header.php',
+        'c0c684e103c597a31a3e514398f79ec1' => __DIR__ . '/..' . '/zendframework/zend-stratigility/src/functions/double-pass-middleware.php',
+        '73f02b5e05532acfb968fa91193a3d17' => __DIR__ . '/..' . '/zendframework/zend-stratigility/src/functions/middleware.php',
+        '7ba36b1c7d480f53d620df374623203a' => __DIR__ . '/..' . '/zendframework/zend-stratigility/src/functions/path.php',
         '6124b4c8570aa390c21fafd04a26c69f' => __DIR__ . '/..' . '/myclabs/deep-copy/src/DeepCopy/deep_copy.php',
     );
 
     public static $prefixLengthsPsr4 = array (
         'r' => 
         array (
+            'rollun\\utils\\WebDriver\\' => 23,
+            'rollun\\utils\\HtmlParser\\' => 24,
+            'rollun\\utils\\Cleaner\\' => 21,
+            'rollun\\utils\\' => 13,
             'rollun\\test\\datahandler\\' => 24,
+            'rollun\\tableGateway\\' => 20,
+            'rollun\\logger\\' => 14,
+            'rollun\\installer\\' => 17,
+            'rollun\\dic\\' => 11,
             'rollun\\datahandler\\Validator\\' => 29,
             'rollun\\datahandler\\Processor\\' => 29,
             'rollun\\datahandler\\Filter\\' => 26,
             'rollun\\datahandler\\Factory\\' => 27,
             'rollun\\datahandler\\Evaluator\\' => 29,
+            'rollun\\callback\\' => 16,
+            'rollun\\actionrender\\' => 20,
+            'rollun\\Downloader\\' => 18,
         ),
         'p' => 
         array (
             'phpDocumentor\\Reflection\\' => 25,
         ),
+        'm' => 
+        array (
+            'mindplay\\jsonfreeze\\' => 20,
+        ),
         'Z' => 
         array (
             'Zend\\Validator\\' => 15,
+            'Zend\\Uri\\' => 9,
+            'Zend\\Stratigility\\' => 18,
             'Zend\\Stdlib\\' => 12,
             'Zend\\ServiceManager\\' => 20,
+            'Zend\\Mime\\' => 10,
+            'Zend\\Mail\\' => 10,
+            'Zend\\Log\\' => 9,
+            'Zend\\Loader\\' => 12,
+            'Zend\\Json\\' => 10,
+            'Zend\\Http\\' => 10,
             'Zend\\Filter\\' => 12,
+            'Zend\\Expressive\\Template\\' => 25,
+            'Zend\\Expressive\\Router\\' => 23,
+            'Zend\\Expressive\\' => 16,
+            'Zend\\EventManager\\' => 18,
+            'Zend\\Escaper\\' => 13,
+            'Zend\\Diactoros\\' => 15,
+            'Zend\\Db\\' => 8,
+            'Zend\\Cache\\' => 11,
         ),
         'W' => 
         array (
             'Webmozart\\Assert\\' => 17,
+            'Webimpress\\ComposerExtraDependency\\' => 35,
+        ),
+        'T' => 
+        array (
+            'TrueBV\\' => 7,
         ),
         'S' => 
         array (
+            'Symfony\\Polyfill\\Php70\\' => 23,
+            'Symfony\\Polyfill\\Mbstring\\' => 26,
+            'Symfony\\Polyfill\\Ctype\\' => 23,
+            'Symfony\\Component\\Process\\' => 26,
+            'Symfony\\Component\\Lock\\' => 23,
+            'Symfony\\Component\\Finder\\' => 25,
+            'Symfony\\Component\\Filesystem\\' => 29,
             'Symfony\\Component\\ExpressionLanguage\\' => 37,
+            'Symfony\\Component\\EventDispatcher\\' => 34,
+            'Symfony\\Component\\Console\\' => 26,
             'Symfony\\Component\\Cache\\' => 24,
+            'Seld\\PharUtils\\' => 15,
+            'Seld\\JsonLint\\' => 14,
+        ),
+        'R' => 
+        array (
+            'ReputationVIP\\QueueClient\\' => 26,
         ),
         'P' => 
         array (
@@ -48,22 +115,76 @@ class ComposerStaticInit1c946fa18877ad2fb932e82dc6b60063
             'Psr\\Container\\' => 14,
             'Psr\\Cache\\' => 10,
         ),
+        'O' => 
+        array (
+            'Opis\\Closure\\' => 13,
+        ),
+        'J' => 
+        array (
+            'JsonSchema\\' => 11,
+        ),
         'I' => 
         array (
-            'Interop\\Http\\Server\\' => 20,
+            'Interop\\Http\\ServerMiddleware\\' => 30,
             'Interop\\Container\\' => 18,
+        ),
+        'F' => 
+        array (
+            'Fig\\Http\\Message\\' => 17,
+            'Facebook\\WebDriver\\' => 19,
         ),
         'D' => 
         array (
             'Doctrine\\Instantiator\\' => 22,
             'DeepCopy\\' => 9,
         ),
+        'C' => 
+        array (
+            'Composer\\XdebugHandler\\' => 23,
+            'Composer\\Spdx\\' => 14,
+            'Composer\\Semver\\' => 16,
+            'Composer\\CaBundle\\' => 18,
+            'Composer\\' => 9,
+        ),
     );
 
     public static $prefixDirsPsr4 = array (
+        'rollun\\utils\\WebDriver\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/rollun-com/rollun-utils/src/WebDriver/src',
+        ),
+        'rollun\\utils\\HtmlParser\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/rollun-com/rollun-utils/src/HtmlParser/src',
+        ),
+        'rollun\\utils\\Cleaner\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/rollun-com/rollun-utils/src/Cleaner/src',
+        ),
+        'rollun\\utils\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/rollun-com/rollun-utils/src/Utils/src',
+        ),
         'rollun\\test\\datahandler\\' => 
         array (
             0 => __DIR__ . '/../..' . '/test',
+        ),
+        'rollun\\tableGateway\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/rollun-com/rollun-utils/src/TableGateway/src',
+        ),
+        'rollun\\logger\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/rollun-com/rollun-logger/src/Logger/src',
+            1 => __DIR__ . '/..' . '/rollun-com/rollun-utils/src/Logger/src',
+        ),
+        'rollun\\installer\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/rollun-com/rollun-installer/src/Installer/src',
+        ),
+        'rollun\\dic\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/rollun-com/rollun-dic/src/Dic/src',
         ),
         'rollun\\datahandler\\Validator\\' => 
         array (
@@ -85,15 +206,39 @@ class ComposerStaticInit1c946fa18877ad2fb932e82dc6b60063
         array (
             0 => __DIR__ . '/../..' . '/src/Evaluator/src',
         ),
+        'rollun\\callback\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/rollun-com/rollun-callback/src/Callback/src',
+        ),
+        'rollun\\actionrender\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/rollun-com/rollun-actionrender/src/ActionRender/src',
+        ),
+        'rollun\\Downloader\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/rollun-com/rollun-utils/src/Downloader/src',
+        ),
         'phpDocumentor\\Reflection\\' => 
         array (
             0 => __DIR__ . '/..' . '/phpdocumentor/reflection-common/src',
             1 => __DIR__ . '/..' . '/phpdocumentor/reflection-docblock/src',
             2 => __DIR__ . '/..' . '/phpdocumentor/type-resolver/src',
         ),
+        'mindplay\\jsonfreeze\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/mindplay/jsonfreeze/src',
+        ),
         'Zend\\Validator\\' => 
         array (
             0 => __DIR__ . '/..' . '/zendframework/zend-validator/src',
+        ),
+        'Zend\\Uri\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/zendframework/zend-uri/src',
+        ),
+        'Zend\\Stratigility\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/zendframework/zend-stratigility/src',
         ),
         'Zend\\Stdlib\\' => 
         array (
@@ -103,21 +248,133 @@ class ComposerStaticInit1c946fa18877ad2fb932e82dc6b60063
         array (
             0 => __DIR__ . '/..' . '/zendframework/zend-servicemanager/src',
         ),
+        'Zend\\Mime\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/zendframework/zend-mime/src',
+        ),
+        'Zend\\Mail\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/zendframework/zend-mail/src',
+        ),
+        'Zend\\Log\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/avz-cmf/zend-psr3-log/src',
+        ),
+        'Zend\\Loader\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/zendframework/zend-loader/src',
+        ),
+        'Zend\\Json\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/zendframework/zend-json/src',
+        ),
+        'Zend\\Http\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/zendframework/zend-http/src',
+        ),
         'Zend\\Filter\\' => 
         array (
             0 => __DIR__ . '/..' . '/zendframework/zend-filter/src',
+        ),
+        'Zend\\Expressive\\Template\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/zendframework/zend-expressive-template/src',
+        ),
+        'Zend\\Expressive\\Router\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/zendframework/zend-expressive-router/src',
+        ),
+        'Zend\\Expressive\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/zendframework/zend-expressive/src',
+        ),
+        'Zend\\EventManager\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/zendframework/zend-eventmanager/src',
+        ),
+        'Zend\\Escaper\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/zendframework/zend-escaper/src',
+        ),
+        'Zend\\Diactoros\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/zendframework/zend-diactoros/src',
+        ),
+        'Zend\\Db\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/zendframework/zend-db/src',
+        ),
+        'Zend\\Cache\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/zendframework/zend-cache/src',
         ),
         'Webmozart\\Assert\\' => 
         array (
             0 => __DIR__ . '/..' . '/webmozart/assert/src',
         ),
+        'Webimpress\\ComposerExtraDependency\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/webimpress/composer-extra-dependency/src',
+        ),
+        'TrueBV\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/true/punycode/src',
+        ),
+        'Symfony\\Polyfill\\Php70\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/symfony/polyfill-php70',
+        ),
+        'Symfony\\Polyfill\\Mbstring\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/symfony/polyfill-mbstring',
+        ),
+        'Symfony\\Polyfill\\Ctype\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/symfony/polyfill-ctype',
+        ),
+        'Symfony\\Component\\Process\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/symfony/process',
+        ),
+        'Symfony\\Component\\Lock\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/symfony/lock',
+        ),
+        'Symfony\\Component\\Finder\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/symfony/finder',
+        ),
+        'Symfony\\Component\\Filesystem\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/symfony/filesystem',
+        ),
         'Symfony\\Component\\ExpressionLanguage\\' => 
         array (
             0 => __DIR__ . '/..' . '/symfony/expression-language',
         ),
+        'Symfony\\Component\\EventDispatcher\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/symfony/event-dispatcher',
+        ),
+        'Symfony\\Component\\Console\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/symfony/console',
+        ),
         'Symfony\\Component\\Cache\\' => 
         array (
             0 => __DIR__ . '/..' . '/symfony/cache',
+        ),
+        'Seld\\PharUtils\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/seld/phar-utils/src',
+        ),
+        'Seld\\JsonLint\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/seld/jsonlint/src/Seld/JsonLint',
+        ),
+        'ReputationVIP\\QueueClient\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/reputation-vip/queue-client/src',
         ),
         'Psr\\SimpleCache\\' => 
         array (
@@ -139,13 +396,29 @@ class ComposerStaticInit1c946fa18877ad2fb932e82dc6b60063
         array (
             0 => __DIR__ . '/..' . '/psr/cache/src',
         ),
-        'Interop\\Http\\Server\\' => 
+        'Opis\\Closure\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/opis/closure/lib',
+        ),
+        'JsonSchema\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/justinrainbow/json-schema/src/JsonSchema',
+        ),
+        'Interop\\Http\\ServerMiddleware\\' => 
         array (
             0 => __DIR__ . '/..' . '/http-interop/http-middleware/src',
         ),
         'Interop\\Container\\' => 
         array (
             0 => __DIR__ . '/..' . '/container-interop/container-interop/src/Interop/Container',
+        ),
+        'Fig\\Http\\Message\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/fig/http-message-util/src',
+        ),
+        'Facebook\\WebDriver\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/facebook/webdriver/lib',
         ),
         'Doctrine\\Instantiator\\' => 
         array (
@@ -154,6 +427,26 @@ class ComposerStaticInit1c946fa18877ad2fb932e82dc6b60063
         'DeepCopy\\' => 
         array (
             0 => __DIR__ . '/..' . '/myclabs/deep-copy/src/DeepCopy',
+        ),
+        'Composer\\XdebugHandler\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/composer/xdebug-handler/src',
+        ),
+        'Composer\\Spdx\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/composer/spdx-licenses/src',
+        ),
+        'Composer\\Semver\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/composer/semver/src',
+        ),
+        'Composer\\CaBundle\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/composer/ca-bundle/src',
+        ),
+        'Composer\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/composer/composer/src/Composer',
         ),
     );
 
@@ -165,9 +458,38 @@ class ComposerStaticInit1c946fa18877ad2fb932e82dc6b60063
                 0 => __DIR__ . '/..' . '/phpspec/prophecy/src',
             ),
         ),
+        'G' => 
+        array (
+            'Guzzle\\Tests' => 
+            array (
+                0 => __DIR__ . '/..' . '/guzzle/guzzle/tests',
+            ),
+            'Guzzle' => 
+            array (
+                0 => __DIR__ . '/..' . '/guzzle/guzzle/src',
+            ),
+        ),
+        'F' => 
+        array (
+            'FtpClient' => 
+            array (
+                0 => __DIR__ . '/..' . '/nicolab/php-ftp-client/src',
+            ),
+        ),
+        'A' => 
+        array (
+            'Aws' => 
+            array (
+                0 => __DIR__ . '/..' . '/aws/aws-sdk-php/src',
+            ),
+        ),
     );
 
     public static $classMap = array (
+        'ArithmeticError' => __DIR__ . '/..' . '/symfony/polyfill-php70/Resources/stubs/ArithmeticError.php',
+        'AssertionError' => __DIR__ . '/..' . '/symfony/polyfill-php70/Resources/stubs/AssertionError.php',
+        'DivisionByZeroError' => __DIR__ . '/..' . '/symfony/polyfill-php70/Resources/stubs/DivisionByZeroError.php',
+        'Error' => __DIR__ . '/..' . '/symfony/polyfill-php70/Resources/stubs/Error.php',
         'File_Iterator' => __DIR__ . '/..' . '/phpunit/php-file-iterator/src/Iterator.php',
         'File_Iterator_Facade' => __DIR__ . '/..' . '/phpunit/php-file-iterator/src/Facade.php',
         'File_Iterator_Factory' => __DIR__ . '/..' . '/phpunit/php-file-iterator/src/Factory.php',
@@ -692,6 +1014,7 @@ class ComposerStaticInit1c946fa18877ad2fb932e82dc6b60063
         'PSR2_Sniffs_Methods_MethodDeclarationSniff' => __DIR__ . '/..' . '/squizlabs/php_codesniffer/CodeSniffer/Standards/PSR2/Sniffs/Methods/MethodDeclarationSniff.php',
         'PSR2_Sniffs_Namespaces_NamespaceDeclarationSniff' => __DIR__ . '/..' . '/squizlabs/php_codesniffer/CodeSniffer/Standards/PSR2/Sniffs/Namespaces/NamespaceDeclarationSniff.php',
         'PSR2_Sniffs_Namespaces_UseDeclarationSniff' => __DIR__ . '/..' . '/squizlabs/php_codesniffer/CodeSniffer/Standards/PSR2/Sniffs/Namespaces/UseDeclarationSniff.php',
+        'ParseError' => __DIR__ . '/..' . '/symfony/polyfill-php70/Resources/stubs/ParseError.php',
         'PharIo\\Manifest\\Application' => __DIR__ . '/..' . '/phar-io/manifest/src/values/Application.php',
         'PharIo\\Manifest\\ApplicationName' => __DIR__ . '/..' . '/phar-io/manifest/src/values/ApplicationName.php',
         'PharIo\\Manifest\\Author' => __DIR__ . '/..' . '/phar-io/manifest/src/values/Author.php',
@@ -850,6 +1173,7 @@ class ComposerStaticInit1c946fa18877ad2fb932e82dc6b60063
         'SebastianBergmann\\RecursionContext\\InvalidArgumentException' => __DIR__ . '/..' . '/sebastian/recursion-context/src/InvalidArgumentException.php',
         'SebastianBergmann\\ResourceOperations\\ResourceOperations' => __DIR__ . '/..' . '/sebastian/resource-operations/src/ResourceOperations.php',
         'SebastianBergmann\\Version' => __DIR__ . '/..' . '/sebastian/version/src/Version.php',
+        'SessionUpdateTimestampHandlerInterface' => __DIR__ . '/..' . '/symfony/polyfill-php70/Resources/stubs/SessionUpdateTimestampHandlerInterface.php',
         'Squiz_Sniffs_Arrays_ArrayBracketSpacingSniff' => __DIR__ . '/..' . '/squizlabs/php_codesniffer/CodeSniffer/Standards/Squiz/Sniffs/Arrays/ArrayBracketSpacingSniff.php',
         'Squiz_Sniffs_Arrays_ArrayDeclarationSniff' => __DIR__ . '/..' . '/squizlabs/php_codesniffer/CodeSniffer/Standards/Squiz/Sniffs/Arrays/ArrayDeclarationSniff.php',
         'Squiz_Sniffs_CSS_ClassDefinitionClosingBraceSpaceSniff' => __DIR__ . '/..' . '/squizlabs/php_codesniffer/CodeSniffer/Standards/Squiz/Sniffs/CSS/ClassDefinitionClosingBraceSpaceSniff.php',
@@ -959,6 +1283,7 @@ class ComposerStaticInit1c946fa18877ad2fb932e82dc6b60063
         'TheSeer\\Tokenizer\\TokenCollectionException' => __DIR__ . '/..' . '/theseer/tokenizer/src/TokenCollectionException.php',
         'TheSeer\\Tokenizer\\Tokenizer' => __DIR__ . '/..' . '/theseer/tokenizer/src/Tokenizer.php',
         'TheSeer\\Tokenizer\\XMLSerializer' => __DIR__ . '/..' . '/theseer/tokenizer/src/XMLSerializer.php',
+        'TypeError' => __DIR__ . '/..' . '/symfony/polyfill-php70/Resources/stubs/TypeError.php',
         'Zend_Sniffs_Debug_CodeAnalyzerSniff' => __DIR__ . '/..' . '/squizlabs/php_codesniffer/CodeSniffer/Standards/Zend/Sniffs/Debug/CodeAnalyzerSniff.php',
         'Zend_Sniffs_Files_ClosingTagSniff' => __DIR__ . '/..' . '/squizlabs/php_codesniffer/CodeSniffer/Standards/Zend/Sniffs/Files/ClosingTagSniff.php',
         'Zend_Sniffs_NamingConventions_ValidVariableNameSniff' => __DIR__ . '/..' . '/squizlabs/php_codesniffer/CodeSniffer/Standards/Zend/Sniffs/NamingConventions/ValidVariableNameSniff.php',
