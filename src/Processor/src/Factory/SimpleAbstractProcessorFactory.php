@@ -36,7 +36,7 @@ use Zend\ServiceManager\Factory\AbstractFactoryInterface;
  * Class ProcessorAbstractFactory
  * @package rollun\datahandler\Processor\Factory
  */
-class SimpleProcessorAbstractFactory extends ProcessorAbstractFactoryAbstract implements AbstractFactoryInterface
+class SimpleAbstractProcessorFactory extends AbstractProcessorAbstractFactory implements AbstractFactoryInterface
 {
     /**
      * Parent class. Each object create by this factory must implement or extend this class

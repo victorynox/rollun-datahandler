@@ -104,11 +104,27 @@ class FilterApplier extends AbstractProcessor
     }
 
     /**
+     * @return string
+     */
+    public function getResultColumn()
+    {
+        return $this->resultColumn ?? $this->getArgumentColumn();
+    }
+
+    /**
      * @param FilterInterface[] $filters
      */
     public function setFilters(array $filters)
     {
         $this->filters = $filters;
+    }
+
+    /**
+     * @return FilterInterface[]
+     */
+    public function getFilters()
+    {
+        return $this->filters;
     }
 
     /**
@@ -145,7 +161,7 @@ class FilterApplier extends AbstractProcessor
             $columnValue = $filterService->filter($columnValue);
         }
 
-        $resultColumn = $this->resultColumn ?? $argumentColumn;
+        $resultColumn = $this->getResultColumn();
         $value[$resultColumn] = $columnValue;
 
         return $value;

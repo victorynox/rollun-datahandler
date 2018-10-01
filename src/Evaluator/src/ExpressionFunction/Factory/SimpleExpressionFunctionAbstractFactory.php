@@ -15,13 +15,25 @@ use Symfony\Component\ExpressionLanguage\ExpressionFunction;
  * <code>
  * AbstractExpressionFunctionAbstractFactory::KEY => [
  *      SimpleExpressionFunctionAbstractFactory::class =>
- *          'expressionFunctionServiceName1' => [
+ *          'simpleExpressionFunctionServiceName1' => [
  *              'class' => ExpressionFunction::class, // default value
+ *
  *              'functionName' => 'functionName1',
- *              'compiler' => 'callableOrServiceName', callable or service name which is callable
- *              'evaluator' => 'callableOrServiceName', callable or service name which is callable
+ *              // function ($str) {
+ *              //      return sprintf('(is_string(%1$s) ? strtolower(%1$s) : %1$s)', $str);
+ *              // }
+ *              'compilerService' => 'compilerServiceName1', service name which is callable
+ *
+ *              // function ($arguments, $str) {
+ *              //      if (!is_string($str)) {
+ *              //          return $str;
+ *              //      }
+ *              //
+ *              //      return strtolower($str);
+ *              // }
+ *              'evaluatorService' => 'evaluatorServiceName1', service name which is callable
  *          ],
- *          'expressionFunctionServiceName2' => [
+ *          'simpleExpressionFunctionServiceName2' => [
  *              //...
  *          ],
  *      ]
@@ -56,7 +68,7 @@ class SimpleExpressionFunctionAbstractFactory extends AbstractExpressionFunction
      */
     public function __invoke(ContainerInterface $container, $requestedName, array $options = null)
     {
-        $serviceConfig = $container->get('config')[self::class][$requestedName];
+        $serviceConfig = $this->getServiceConfig($container, $requestedName);
 
         $functionName = $serviceConfig[self::FUNCTION_NAME_KEY] ?? $requestedName;
         $compiler = $this->getCallbackOption($container, $serviceConfig, self::COMPILER_KEY);
@@ -77,14 +89,10 @@ class SimpleExpressionFunctionAbstractFactory extends AbstractExpressionFunction
     protected function getCallbackOption(ContainerInterface $container, $serviceConfig, $configKey)
     {
         if (!isset($serviceConfig[$configKey])) {
-            throw new InvalidArgumentException("Missing $configKey option in config");
+            throw new InvalidArgumentException("Missing '$configKey' option in config");
         }
 
-        $evaluator = $serviceConfig[$configKey];
-
-        if (is_string($container->has($evaluator)) && $container->has($evaluator)) {
-            $evaluator = $container->get($evaluator);
-        }
+        $evaluator = $container->get($serviceConfig[$configKey]);
 
         if (is_callable($evaluator)) {
             return $evaluator;

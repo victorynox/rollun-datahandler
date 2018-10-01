@@ -8,6 +8,8 @@ use Zend\ServiceManager\Factory\AbstractFactoryInterface;
 
 /**
  * Create and return instance of ExpressionEvaluator
+ * You can add function expressions to expression evaluation through function expression provider services
+ * or directly through function expression services
  *
  * This Factory depends on Container (which should return an 'config' as array)
  *
@@ -16,11 +18,16 @@ use Zend\ServiceManager\Factory\AbstractFactoryInterface;
  * ExpressionEvaluatorAbstractFactory::class => [
  *      'expressionEvaluatorServiceName1' => [
  *          'class' => ExpressionEvaluatorFactory::class, // default value
- *          'functionExpressionProviders' => [
+ *          'functionExpressionProviders' => [ // optional
  *              'functionExpressionProviderServiceName1',
  *              'functionExpressionProviderServiceName2',
  *              //...
- *          ]
+ *          ],
+ *          'functionExpressions' => [ // optional
+ *              'functionExpressionServiceName1',
+ *              'functionExpressionServiceName2',
+ *              //...
+ *          ],
  *      ],
  *      'expressionEvaluatorServiceName2' => [
  *          //...
@@ -34,7 +41,7 @@ use Zend\ServiceManager\Factory\AbstractFactoryInterface;
 class ExpressionEvaluatorAbstractFactory implements AbstractFactoryInterface
 {
     /**
-     * Parent class for plugin
+     * Parent class for expression evaluation
      */
     const DEFAULT_CLASS = ExpressionEvaluator::class;
 
@@ -44,9 +51,14 @@ class ExpressionEvaluatorAbstractFactory implements AbstractFactoryInterface
     const CLASS_KEY = 'class';
 
     /**
-     * Config for plugin managers
+     * Config for function expression providers
      */
     const FUNCTION_EXPRESSION_PROVIDERS_KEY = 'functionExpressionProviders';
+
+    /**
+     * Config for function expressions
+     */
+    const FUNCTION_EXPRESSIONS_KEY = 'functionExpressions';
 
     /**
      * @param ContainerInterface $container
@@ -55,7 +67,7 @@ class ExpressionEvaluatorAbstractFactory implements AbstractFactoryInterface
      */
     public function canCreate(ContainerInterface $container, $requestedName)
     {
-        return isset($container->get('config')[self::class][$requestedName]);
+        return !is_null($this->getServiceConfig($container, $requestedName));
     }
 
     /**
@@ -72,20 +84,28 @@ class ExpressionEvaluatorAbstractFactory implements AbstractFactoryInterface
         /** @var ExpressionEvaluator $expressionEvaluator */
         $expressionEvaluator = new $class();
 
-        if (!isset($serviceConfig[self::FUNCTION_EXPRESSION_PROVIDERS_KEY])) {
-            throw new InvalidArgumentException("Missing 'pluginManagers' option in config");
-        } elseif (!is_array($serviceConfig[self::FUNCTION_EXPRESSION_PROVIDERS_KEY])) {
-            throw new InvalidArgumentException("Option 'pluginManagers' is invalid");
+        $functionExpressionServiceNames = $serviceConfig[self::FUNCTION_EXPRESSIONS_KEY] ?? [];
+        $functionExpressionProviderServiceNames = $serviceConfig[self::FUNCTION_EXPRESSION_PROVIDERS_KEY] ?? [];
+
+        if (is_array($functionExpressionProviderServiceNames)) {
+            foreach ($functionExpressionProviderServiceNames as $functionExpressionProviderServiceName) {
+                $functionExpressionProvider = $container->get($functionExpressionProviderServiceName);
+                $expressionEvaluator->registerProvider($functionExpressionProvider);
+            }
+        } else {
+            throw new InvalidArgumentException("Option 'functionExpressionProviders' is invalid");
         }
 
-        $functionExpressionProviderServiceNames = $serviceConfig[self::FUNCTION_EXPRESSION_PROVIDERS_KEY];
-
-        foreach ($functionExpressionProviderServiceNames as $functionExpressionProviderServiceName) {
-            $functionExpressionProvider = $container->get($functionExpressionProviderServiceName);
-            $expressionEvaluator->registerProvider($functionExpressionProvider);
+        if (is_array($functionExpressionServiceNames)) {
+            foreach ($functionExpressionServiceNames as $functionExpressionServiceName) {
+                $functionExpression = $container->get($functionExpressionServiceName);
+                $expressionEvaluator->addFunction($functionExpression);
+            }
+        } else {
+            throw new InvalidArgumentException("Option 'functionExpressions' is invalid");
         }
 
-        return new $class();
+        return $expressionEvaluator;
     }
 
     /**
@@ -94,7 +114,7 @@ class ExpressionEvaluatorAbstractFactory implements AbstractFactoryInterface
      * @param array $serviceConfig
      * @return mixed
      */
-    protected function getClass(array $serviceConfig)
+    public function getClass(array $serviceConfig)
     {
         if (!isset($serviceConfig[self::CLASS_KEY])) {
             return self::DEFAULT_CLASS;
@@ -107,5 +127,16 @@ class ExpressionEvaluatorAbstractFactory implements AbstractFactoryInterface
         }
 
         return $serviceConfig[self::CLASS_KEY];
+    }
+
+    /**
+     * @param ContainerInterface $container
+     * @param $requestedName
+     * @return null|array
+     */
+    public function getServiceConfig(ContainerInterface $container, $requestedName)
+    {
+        $config = $container->get('config');
+        return $config[self::class][$requestedName] ?? null;
     }
 }

@@ -55,7 +55,7 @@ class RqlReplace extends AbstractFilter implements FilterInterface
      *
      * @var string
      */
-    protected $beforePattern;
+    protected $beforePattern = '';
 
     /**
      * The symbol, which will be find and processed (rql query)
@@ -69,7 +69,7 @@ class RqlReplace extends AbstractFilter implements FilterInterface
      *
      * @var string
      */
-    protected $afterPattern;
+    protected $afterPattern = '';
 
     /**
      * StripSymbolFilter constructor.
@@ -95,11 +95,27 @@ class RqlReplace extends AbstractFilter implements FilterInterface
     }
 
     /**
+     * @return string
+     */
+    public function getBeforePattern()
+    {
+        return $this->beforePattern;
+    }
+
+    /**
      * @param $afterPattern
      */
     public function setAfterPattern($afterPattern)
     {
         $this->afterPattern = $afterPattern;
+    }
+
+    /**
+     * @return string
+     */
+    public function getAfterPattern()
+    {
+        return $this->afterPattern;
     }
 
     /**
@@ -131,6 +147,14 @@ class RqlReplace extends AbstractFilter implements FilterInterface
     }
 
     /**
+     * @return string
+     */
+    public function getReplacement()
+    {
+        return $this->replacement;
+    }
+
+    /**
      * Replace pattern with one space
      *
      * @param string $value
@@ -142,9 +166,9 @@ class RqlReplace extends AbstractFilter implements FilterInterface
             return $value;
         }
 
-        $pattern = "/({$this->processPattern($this->beforePattern)})"
+        $pattern = "/({$this->processPattern($this->getBeforePattern())})"
             . "({$this->processPattern($this->getPattern())})"
-            . "({$this->processPattern($this->afterPattern)})/";
+            . "({$this->processPattern($this->getAfterPattern())})/";
 
         if (preg_match($pattern, $value, $matches)) {
             $value = str_replace($matches[2], $this->replacement, $value);

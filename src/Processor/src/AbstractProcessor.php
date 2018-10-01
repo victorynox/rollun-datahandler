@@ -42,6 +42,22 @@ abstract class AbstractProcessor implements ProcessorInterface
     }
 
     /**
+     * @param $validator
+     */
+    public function setValidator($validator)
+    {
+        $this->validator = $validator;
+    }
+
+    /**
+     * @return ValidatorInterface
+     */
+    public function getValidator()
+    {
+        return $this->validator;
+    }
+
+    /**
      * @param  array|Traversable $options
      * @return self
      * @throws InvalidArgumentException
@@ -78,6 +94,16 @@ abstract class AbstractProcessor implements ProcessorInterface
     }
 
     /**
+     * Retrieve options representing object state
+     *
+     * @return array
+     */
+    public function getOptions()
+    {
+        return $this->options;
+    }
+
+    /**
      * @param array $value
      * @return array
      */
@@ -104,26 +130,8 @@ abstract class AbstractProcessor implements ProcessorInterface
      */
     abstract protected function doProcess(array $value);
 
-    /**
-     * @param $validator
-     */
-    protected function setValidator($validator)
-    {
-        $this->validator = $validator;
-    }
-
     public function __invoke(array $value)
     {
         $this->doProcess($value);
-    }
-
-    /**
-     * Retrieve options representing object state
-     *
-     * @return array
-     */
-    public function getOptions()
-    {
-        return $this->options;
     }
 }

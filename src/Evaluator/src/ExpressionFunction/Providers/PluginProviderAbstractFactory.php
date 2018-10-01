@@ -4,7 +4,6 @@ namespace rollun\datahandler\Evaluator\ExpressionFunction\Providers;
 
 use InvalidArgumentException;
 use Interop\Container\ContainerInterface;
-use rollun\datahandler\Evaluator\ExpressionFunctionProviders\Plugin;
 use Zend\ServiceManager\Factory\AbstractFactoryInterface;
 
 /**
@@ -68,7 +67,7 @@ class PluginProviderAbstractFactory implements AbstractFactoryInterface
      */
     public function canCreate(ContainerInterface $container, $requestedName)
     {
-        return isset($container->get('config')[self::class][$requestedName]);
+        return !is_null($this->getServiceConfig($container, $requestedName));
     }
 
     public function __invoke(ContainerInterface $container, $requestedName, array $options = null)
@@ -79,18 +78,14 @@ class PluginProviderAbstractFactory implements AbstractFactoryInterface
             throw new InvalidArgumentException("Missing 'pluginManagerService' option in config");
         }
 
-        if (!isset($serviceConfig[self::CALLED_METHOD_KEY])) {
-            throw new InvalidArgumentException("Missing 'calledMethod' option in config");
-        }
-
         if (!isset($serviceConfig[self::PLUGIN_SERVICES_KEY])) {
             throw new InvalidArgumentException("Missing 'pluginServices' option in config");
         }
 
         $class = $this->getClass($serviceConfig);
         $pluginManager = $container->get($serviceConfig[self::PLUGIN_MANAGER_SERVICE_KEY]);
-        $pluginServices = $container->get($serviceConfig[self::PLUGIN_SERVICES_KEY]);
-        $calledMethod = $container->get($serviceConfig[self::CALLED_METHOD_KEY]);
+        $pluginServices = $serviceConfig[self::PLUGIN_SERVICES_KEY];
+        $calledMethod = $serviceConfig[self::CALLED_METHOD_KEY] ?? '__invoke';
 
         return new $class($pluginManager, $pluginServices, $calledMethod);
     }
@@ -101,7 +96,7 @@ class PluginProviderAbstractFactory implements AbstractFactoryInterface
      * @param array $serviceConfig
      * @return mixed
      */
-    protected function getClass(array $serviceConfig)
+    public function getClass(array $serviceConfig)
     {
         if (!isset($serviceConfig[self::CLASS_KEY])) {
             return self::DEFAULT_CLASS;
@@ -114,5 +109,11 @@ class PluginProviderAbstractFactory implements AbstractFactoryInterface
         }
 
         return $serviceConfig[self::CLASS_KEY];
+    }
+
+    public function getServiceConfig(ContainerInterface $container, $requestedName)
+    {
+        $config = $container->get('config');
+        return $config[self::class][$requestedName] ?? null;
     }
 }

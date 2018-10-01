@@ -3,7 +3,6 @@
 namespace rollun\datahandler\Evaluator\ExpressionFunction\Factory;
 
 use Interop\Container\ContainerInterface;
-use InvalidArgumentException;
 use Symfony\Component\ExpressionLanguage\ExpressionFunction;
 use Zend\ServiceManager\Factory\AbstractFactoryInterface;
 
@@ -34,7 +33,7 @@ abstract class AbstractExpressionFunctionAbstractFactory implements AbstractFact
      */
     public function canCreate(ContainerInterface $container, $requestedName)
     {
-        return isset($container->get('config')[self::KEY][static::class][$requestedName]);
+        return !is_null($this->getServiceConfig($container, $requestedName));
     }
 
     /**
@@ -43,7 +42,7 @@ abstract class AbstractExpressionFunctionAbstractFactory implements AbstractFact
      * @param array $serviceConfig
      * @return mixed
      */
-    protected function getClass(array $serviceConfig)
+    public function getClass(array $serviceConfig)
     {
         if (!isset($serviceConfig[self::CLASS_KEY])) {
             return self::DEFAULT_CLASS;
@@ -56,5 +55,11 @@ abstract class AbstractExpressionFunctionAbstractFactory implements AbstractFact
         }
 
         return $serviceConfig[self::CLASS_KEY];
+    }
+
+    public function getServiceConfig(ContainerInterface $container, $requestedName)
+    {
+        $config = $container->get('config');
+        return $config[static::KEY][static::class][$requestedName] ?? null;
     }
 }

@@ -21,7 +21,7 @@ class FilterApplierTest extends TestCase
         return [
             [
                 [
-                    'columnToRead' => 'some column',
+                    'argumentColumn' => 'some column',
                     'filters' => [
                         [
                             'service' => 'pregReplace',
@@ -40,8 +40,8 @@ class FilterApplierTest extends TestCase
             ],
             [
                 [
-                    'columnToRead' => 'some column',
-                    'columnToWrite' => 'result column',
+                    'argumentColumn' => 'some column',
+                    'resultColumn' => 'result column',
                     'filters' => [
                         [
                             'service' => 'stringToUpper',

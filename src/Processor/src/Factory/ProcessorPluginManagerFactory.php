@@ -36,14 +36,14 @@ class ProcessorPluginManagerFactory implements FactoryInterface
         $config = $container->get('config');
 
         // If we do not have filters configuration, nothing more to do
-        if (!isset($config[ProcessorAbstractFactoryAbstract::KEY])
-            || !is_array($config[ProcessorAbstractFactoryAbstract::KEY])
+        if (!isset($config[AbstractProcessorAbstractFactory::KEY])
+            || !is_array($config[AbstractProcessorAbstractFactory::KEY])
         ) {
             return $pluginManager;
         }
 
         // Wire service configuration for validators
-        (new Config($config[ProcessorAbstractFactoryAbstract::KEY]))->configureServiceManager($pluginManager);
+        (new Config($config[AbstractProcessorAbstractFactory::KEY]))->configureServiceManager($pluginManager);
 
         return $pluginManager;
     }

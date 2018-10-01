@@ -2,40 +2,51 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="6d997a1f-e56e-4c28-90eb-938bff6fa540" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/Evaluator/src/ExpressionFunction/Callback.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Evaluator/src/ExpressionFunction/Factory/AbstractExpressionFunctionAbstractFactory.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Evaluator/src/ExpressionFunction/Factory/CallbackExpressionFunctionAbstractFactory.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Evaluator/src/ExpressionFunction/Factory/SimpleExpressionFunctionAbstractFactory.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Evaluator/src/ExpressionFunction/Providers/Plugin.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Evaluator/src/ExpressionFunction/Providers/PluginProviderAbstractFactory.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Evaluator/src/ExpressionFunction/SimpleFunctionExpression.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/test/Evaluator/ExpressionEvaluatorTest.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/test/Evaluator/ExpressionFunction/CallbackTest.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/rollun-datahandler.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/rollun-datahandler.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/codeStyles/codeStyleConfig.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Evaluator/src/ExpressionFunction/Factory/PHPExpressionFunctionAbstractFactory.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Evaluator/src/ExpressionFunction/LogicException.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/Evaluator/ExpressionFunction/Factory/AbstractExpressionFunctionAbstractFactoryTest.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/Evaluator/ExpressionFunction/Factory/CallbackExpressionFunctionAbstractFactoryTest.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/Evaluator/ExpressionFunction/Factory/PHPExpressionFunctionAbstractFactoryTest.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/Evaluator/ExpressionFunction/Factory/SimpleExpressionFunctionAbstractFactoryTest.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/Evaluator/ExpressionFunction/Provider/PluginProviderAbstractFactoryTest.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/Evaluator/ExpressionFunction/Provider/PluginTest.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/Evaluator/Factory/ExpressionEvaluatorAbstractFactoryTest.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/Factory/PluginAbstractFactoryAbstractTest.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/Filter/Factory/SimpleFilterAbstractFactoryTest.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/Processor/Factory/AbstractProcessorAbstractFactoryTest.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/Processor/Factory/FilterApplierAbstractProcessorFactoryTest.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/Processor/Factory/ProcessorPluginManagerFactoryTest.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/Processor/Factory/SimpleAbstractProcessorFactoryTest.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/Validator/Factory/SimpleValidatorAbstractFactoryTest.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/Validator/Factory/ValidatorAdapterAbstractFactoryTest.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/composer.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/composer.lock" beforeDir="false" afterPath="$PROJECT_DIR$/composer.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Evaluator/src/ExpressionEvaluator.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Evaluator/src/ExpressionEvaluator.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Evaluator/src/ExpressionEvaluatorFactory.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Evaluator/src/ExpressionEvaluatorAbstractFactory.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Filter/src/Factory/SimpleFilterAbstractFactory.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Filter/src/Factory/SimpleFilterAbstractFactory.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Evaluator/src/ExpressionEvaluatorAbstractFactory.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Evaluator/src/ExpressionEvaluatorAbstractFactory.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Evaluator/src/ExpressionFunction/Callback.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Evaluator/src/ExpressionFunction/Callback.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Evaluator/src/ExpressionFunction/Factory/AbstractExpressionFunctionAbstractFactory.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Evaluator/src/ExpressionFunction/Factory/AbstractExpressionFunctionAbstractFactory.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Evaluator/src/ExpressionFunction/Factory/CallbackExpressionFunctionAbstractFactory.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Evaluator/src/ExpressionFunction/Factory/CallbackExpressionFunctionAbstractFactory.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Evaluator/src/ExpressionFunction/Factory/SimpleExpressionFunctionAbstractFactory.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Evaluator/src/ExpressionFunction/Factory/SimpleExpressionFunctionAbstractFactory.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Evaluator/src/ExpressionFunction/Providers/Plugin.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Evaluator/src/ExpressionFunction/Providers/Plugin.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Evaluator/src/ExpressionFunction/Providers/PluginProviderAbstractFactory.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Evaluator/src/ExpressionFunction/Providers/PluginProviderAbstractFactory.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Evaluator/src/ExpressionFunction/SimpleFunctionExpression.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Factory/src/PluginAbstractFactoryAbstract.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Factory/src/PluginAbstractFactoryAbstract.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Filter/src/RqlReplace.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Filter/src/RqlReplace.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Processor/src/AbstractProcessor.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Processor/src/AbstractProcessor.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Processor/src/Factory/FilterApplierAbstractFactory.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Processor/src/Factory/FilterApplierAbstractFactory.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Processor/src/Factory/SimpleProcessorAbstractFactory.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Processor/src/Factory/SimpleProcessorAbstractFactory.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Validator/src/Factory/SimpleValidatorAbstractFactory.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Validator/src/Factory/SimpleValidatorAbstractFactory.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Validator/src/Factory/ValidatorAdapterAbstractFactory.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Validator/src/Factory/ValidatorAdapterAbstractFactory.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/ExpressionEvaluator/ExpressionEvaluatorTest.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/bootstrap.php" beforeDir="false" afterPath="$PROJECT_DIR$/test/bootstrap.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/composer/autoload_classmap.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/composer/autoload_classmap.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/composer/autoload_files.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/composer/autoload_files.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/composer/autoload_namespaces.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/composer/autoload_namespaces.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/composer/autoload_psr4.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/composer/autoload_psr4.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/composer/autoload_static.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/composer/autoload_static.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/composer/installed.json" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/composer/installed.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/http-interop/http-middleware/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/http-interop/http-middleware/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/http-interop/http-middleware/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/http-interop/http-middleware/composer.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/http-interop/http-middleware/src/MiddlewareInterface.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/http-interop/http-middleware/src/MiddlewareInterface.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/http-interop/http-middleware/src/RequestHandlerInterface.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Processor/src/Concat.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Processor/src/Concat.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Processor/src/Factory/FilterApplierAbstractFactory.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Processor/src/Factory/FilterApplierAbstractProcessorFactory.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Processor/src/Factory/ProcessorAbstractFactoryAbstract.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Processor/src/Factory/AbstractProcessorAbstractFactory.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Processor/src/Factory/ProcessorPluginManagerFactory.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Processor/src/Factory/ProcessorPluginManagerFactory.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Processor/src/Factory/SimpleProcessorAbstractFactory.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Processor/src/Factory/SimpleAbstractProcessorFactory.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Processor/src/FilterApplier.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Processor/src/FilterApplier.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Validator/src/ArrayAdapter.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Validator/src/ArrayAdapter.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/Evaluator/ExpressionEvaluatorTest.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/Processor/ConcatTest.php" beforeDir="false" afterPath="$PROJECT_DIR$/test/Processor/ConcatTest.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/Processor/EvaluationTest.php" beforeDir="false" afterPath="$PROJECT_DIR$/test/Processor/EvaluationTest.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/Processor/FilterApplierTest.php" beforeDir="false" afterPath="$PROJECT_DIR$/test/Processor/FilterApplierTest.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/Processor/ValidateProcessorTest.php" beforeDir="false" afterPath="$PROJECT_DIR$/test/Processor/ValidateProcessorTest.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/Validator/ArrayAdapterTest.php" beforeDir="false" afterPath="$PROJECT_DIR$/test/Validator/ArrayAdapterTest.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -46,33 +57,37 @@
   <component name="ComposerSettings" doNotAsk="true" synchronizationState="SYNCHRONIZE">
     <pharConfigPath>$PROJECT_DIR$/composer.json</pharConfigPath>
   </component>
+  <component name="CoverageDataManager">
+    <SUITE FILE_PATH="coverage/rollun_datahandler$SimpleValidatorAbstractFactoryTest.xml" NAME="SimpleValidatorAbstractFactoryTest Coverage Results" MODIFIED="1538397978347" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="PhpCoverage" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
+  </component>
   <component name="FUSProjectUsageTrigger">
     <session id="584741284">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
           <entry key="project.closed" value="3" />
           <entry key="project.open.time.0" value="2" />
+          <entry key="project.open.time.1" value="1" />
           <entry key="project.open.time.22" value="1" />
           <entry key="project.open.time.8" value="1" />
-          <entry key="project.opened" value="4" />
+          <entry key="project.opened" value="5" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
         <counts>
           <entry key="gitignore" value="2" />
           <entry key="htaccess" value="1" />
-          <entry key="json" value="19" />
+          <entry key="json" value="21" />
           <entry key="md" value="2" />
-          <entry key="php" value="374" />
+          <entry key="php" value="559" />
           <entry key="phpunit" value="1" />
           <entry key="xml" value="4" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
-          <entry key="JSON" value="19" />
+          <entry key="JSON" value="21" />
           <entry key="Markdown" value="2" />
-          <entry key="PHP" value="375" />
+          <entry key="PHP" value="560" />
           <entry key="PLAIN_TEXT" value="2" />
           <entry key="XML" value="4" />
           <entry key="htaccess" value="1" />
@@ -80,11 +95,11 @@
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="dummy" value="44" />
+          <entry key="dummy" value="84" />
           <entry key="gitignore" value="14" />
           <entry key="json" value="307" />
           <entry key="md" value="67" />
-          <entry key="php" value="15972" />
+          <entry key="php" value="27114" />
           <entry key="txt" value="18" />
           <entry key="xml" value="1" />
         </counts>
@@ -93,70 +108,49 @@
         <counts>
           <entry key="JSON" value="307" />
           <entry key="Markdown" value="67" />
-          <entry key="PHP" value="15972" />
-          <entry key="PLAIN_TEXT" value="76" />
+          <entry key="PHP" value="27114" />
+          <entry key="PLAIN_TEXT" value="116" />
           <entry key="XML" value="1" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.php.new.class">
         <counts>
-          <entry key="PHP Class.type" value="19" />
+          <entry key="PHP Class.type" value="37" />
         </counts>
       </usages-collector>
     </session>
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/Evaluator/src/ExpressionFunction/Callback.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="437">
-              <caret line="23" column="37" lean-forward="true" selection-start-line="23" selection-start-column="37" selection-end-line="23" selection-end-column="85" />
-              <folding>
-                <element signature="e#67#86#0#PHP" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/Evaluator/src/ExpressionFunction/Factory/SimpleExpressionFunctionAbstractFactory.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="739">
-              <caret line="86" column="9" lean-forward="true" selection-start-line="86" selection-start-column="9" selection-end-line="86" selection-end-column="9" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/Evaluator/src/ExpressionFunction/Factory/CallbackExpressionFunctionAbstractFactory.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="707">
-              <caret line="63" column="56" selection-start-line="63" selection-start-column="56" selection-end-line="63" selection-end-column="56" />
-              <folding>
-                <element signature="e#75#104#0#PHP" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/test/Evaluator/ExpressionFunction/CallbackTest.php">
+        <entry file="file://$PROJECT_DIR$/test/Evaluator/Factory/ExpressionEvaluatorAbstractFactoryTest.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="388">
-              <caret line="30" column="76" lean-forward="true" selection-start-line="30" selection-start-column="76" selection-end-line="30" selection-end-column="76" />
+            <state relative-caret-position="290">
+              <caret line="50" column="60" selection-start-line="50" selection-start-column="60" selection-end-line="50" selection-end-column="60" />
               <folding>
-                <element signature="e#72#103#0#PHP" expanded="true" />
+                <element signature="e#61#92#0#PHP" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/Evaluator/src/ExpressionFunction/SimpleFunctionExpression.php">
+        <entry file="file://$PROJECT_DIR$/vendor/phpunit/phpunit/src/Framework/TestCase.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="152">
-              <caret line="8" selection-start-line="8" selection-end-line="8" />
+            <state relative-caret-position="399">
+              <caret line="1072" selection-start-line="1072" selection-end-line="1072" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/Evaluator/src/ExpressionEvaluatorAbstractFactory.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="556">
+              <caret line="107" column="15" selection-start-line="107" selection-start-column="15" selection-end-line="107" selection-end-column="15" />
+              <folding>
+                <element signature="e#48#89#0#PHP" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -164,44 +158,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/vendor/symfony/expression-language/ExpressionLanguage.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="796">
-              <caret line="161" column="37" lean-forward="true" selection-start-line="161" selection-start-column="37" selection-end-line="161" selection-end-column="37" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/vendor/symfony/expression-language/Node/Node.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="679">
-              <caret line="61" column="26" selection-start-line="61" selection-start-column="26" selection-end-line="61" selection-end-column="26" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/vendor/symfony/expression-language/Node/FunctionNode.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="460">
-              <caret line="39" column="44" selection-start-line="39" selection-start-column="24" selection-end-line="39" selection-end-column="44" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/vendor/symfony/expression-language/Compiler.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="379">
-              <caret line="30" column="28" lean-forward="true" selection-start-line="30" selection-start-column="28" selection-end-line="30" selection-end-column="28" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/vendor/symfony/expression-language/ExpressionFunction.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="573">
-              <caret line="53" column="33" lean-forward="true" selection-start-line="53" selection-start-column="20" selection-end-line="53" selection-end-column="33" />
+            <state relative-caret-position="361">
+              <caret line="36" selection-start-line="36" selection-end-line="36" />
             </state>
           </provider>
         </entry>
@@ -223,15 +181,27 @@
       <find>pluginServices</find>
       <find>eval(</find>
       <find>-&gt;compiler</find>
+      <find>$object-&gt;</find>
+      <find>$t</find>
+      <find>$this-&gt;columns</find>
+      <find>return $this-&gt;beforePattern;</find>
+      <find>columnToWrite</find>
+      <find>columnToRead</find>
+      <find>emailAddress</find>
+      <find>functionCallbackService</find>
     </findStrings>
     <replaceStrings>
       <replace>datahandler</replace>
       <replace>,</replace>
+      <replace>$this-&gt;object-&gt;</replace>
+      <replace>resultColumn</replace>
+      <replace>argumentColumn</replace>
     </replaceStrings>
     <dirStrings>
       <dir>$PROJECT_DIR$/vendor/zendframework/zend-validator</dir>
-      <dir>$PROJECT_DIR$/test</dir>
       <dir>$PROJECT_DIR$/vendor/symfony/expression-language</dir>
+      <dir>$PROJECT_DIR$/test</dir>
+      <dir>$PROJECT_DIR$/test/Evaluator</dir>
     </dirStrings>
   </component>
   <component name="Git.Settings">
@@ -240,57 +210,57 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/Validator/src/Factory/ArrayAdapterAbstractFactory.php" />
-        <option value="$PROJECT_DIR$/src/Validator/src/Factory/AdapterAbstractFactory.php" />
-        <option value="$PROJECT_DIR$/src/Filter/src/DuplicateSymbol.php" />
-        <option value="$PROJECT_DIR$/test/Validator/ArrayAdapterTest.php" />
-        <option value="$PROJECT_DIR$/src/Filter/src/RqlReplace.php" />
-        <option value="$PROJECT_DIR$/src/Filter/src/SortSymbols.php" />
-        <option value="$PROJECT_DIR$/src/Processor/src/Factory/ProcessorAbstractFactoryAbstract.php" />
-        <option value="$PROJECT_DIR$/src/Validator/src/ArrayAdapter.php" />
-        <option value="$PROJECT_DIR$/src/Processor/src/FilterApplier.php" />
-        <option value="$PROJECT_DIR$/src/Processor/src/Concat.php" />
-        <option value="$PROJECT_DIR$/src/Processor/src/Evaluation.php" />
-        <option value="$PROJECT_DIR$/src/Processor/src/Callaback.php" />
-        <option value="$PROJECT_DIR$/src/Processor/src/Callback.php" />
-        <option value="$PROJECT_DIR$/test/Processor/EvaluationTest.php" />
-        <option value="$PROJECT_DIR$/test/ExpressionEvaluator/ExpressionEvaluator.php" />
-        <option value="$PROJECT_DIR$/src/Factory/src/PluginAbstractFactoryAbstract.php" />
-        <option value="$PROJECT_DIR$/src/Evaluator/ExpressionEvaluatorFactory.php" />
-        <option value="$PROJECT_DIR$/src/Evaluator/ExpressionEvaluator.php" />
-        <option value="$PROJECT_DIR$/composer.json" />
-        <option value="$PROJECT_DIR$/test/bootstrap.php" />
-        <option value="$PROJECT_DIR$/public/index.php" />
-        <option value="$PROJECT_DIR$/src/Evaluator/src/functions.php" />
-        <option value="$PROJECT_DIR$/src/Evaluator/src/ExpressionEvaluatorFactory.php" />
-        <option value="$PROJECT_DIR$/src/Evaluator/src/ExpresionFunctionAbstractFactory.php" />
-        <option value="$PROJECT_DIR$/src/Evaluator/src/ExpressionFunctionAbstractFactory.php" />
-        <option value="$PROJECT_DIR$/src/Evaluator/src/PluginExpressionLanguageProvider.php" />
-        <option value="$PROJECT_DIR$/src/Evaluator/src/ExpressionFunctionProviders/Plugin.php" />
-        <option value="$PROJECT_DIR$/src/Processor/src/Factory/FilterApplierAbstractFactory.php" />
-        <option value="$PROJECT_DIR$/src/Processor/src/Factory/SimpleProcessorAbstractFactory.php" />
-        <option value="$PROJECT_DIR$/src/Filter/src/Factory/SimpleFilterAbstractFactory.php" />
-        <option value="$PROJECT_DIR$/src/Validator/src/Factory/SimpleValidatorAbstractFactory.php" />
-        <option value="$PROJECT_DIR$/src/Validator/src/Factory/ValidatorAdapterAbstractFactory.php" />
-        <option value="$PROJECT_DIR$/src/Evaluator/src/ExpressionFunction/Providers/ProviderAbstractFactory.php" />
-        <option value="$PROJECT_DIR$/src/Evaluator/src/ExpressionFunction/ExpressionFunctionAbstractFactory.php" />
-        <option value="$PROJECT_DIR$/src/Evaluator/src/ExpressionFunction/Providers/Plugin.php" />
-        <option value="$PROJECT_DIR$/src/Evaluator/src/ExpressionEvaluatorAbstractFactory.php" />
-        <option value="$PROJECT_DIR$/src/Evaluator/src/ExpressionEvaluator.php" />
         <option value="$PROJECT_DIR$/test/ExpressionEvaluator/ExpressionEvaluatorTest.php" />
-        <option value="$PROJECT_DIR$/src/Processor/src/AbstractProcessor.php" />
         <option value="$PROJECT_DIR$/src/Evaluator/src/ExpressionFunction/Callaback.php" />
         <option value="$PROJECT_DIR$/src/Evaluator/src/ExpressionFunction/Factory/AbstractExpressionfunctionAbstractFactory.php" />
         <option value="$PROJECT_DIR$/src/Evaluator/src/ExpressionFunction/Factory/ExpressionFunctionAbstractFactory.php" />
-        <option value="$PROJECT_DIR$/src/Evaluator/src/ExpressionFunction/Providers/PluginProviderAbstractFactory.php" />
-        <option value="$PROJECT_DIR$/src/Evaluator/src/ExpressionFunction/Factory/AbstractExpressionFunctionAbstractFactory.php" />
-        <option value="$PROJECT_DIR$/src/Evaluator/src/ExpressionFunction/Factory/CallbackExpressionFunctionAbstractFactory.php" />
-        <option value="$PROJECT_DIR$/src/Evaluator/src/ExpressionFunction/Factory/SimpleExpressionFunctionAbstractFactory.php" />
         <option value="$PROJECT_DIR$/test/Evaluator/ExpressionEvaluatorTest.php" />
         <option value="$PROJECT_DIR$/test/Evaluator/ExpressionFunction/Callback.php" />
-        <option value="$PROJECT_DIR$/src/Evaluator/src/ExpressionFunction/Callback.php" />
-        <option value="$PROJECT_DIR$/src/Evaluator/src/ExpressionFunction/SimpleFunctionExpression.php" />
         <option value="$PROJECT_DIR$/test/Evaluator/ExpressionFunction/CallbackTest.php" />
+        <option value="$PROJECT_DIR$/test/Processor/Factory/ProcessorPluginManagerFactory.php" />
+        <option value="$PROJECT_DIR$/src/Processor/src/Concat.php" />
+        <option value="$PROJECT_DIR$/src/Processor/src/AbstractProcessor.php" />
+        <option value="$PROJECT_DIR$/src/Processor/src/FilterApplier.php" />
+        <option value="$PROJECT_DIR$/src/Validator/src/ArrayAdapter.php" />
+        <option value="$PROJECT_DIR$/test/Processor/Factory/ProcessorPluginManagerFactoryTest.php" />
+        <option value="$PROJECT_DIR$/test/Processor/Factory/FilterApplierAbstractFactoryTest.php" />
+        <option value="$PROJECT_DIR$/test/Processor/Factory/ProcessorAbstractFactoryAbstractTest.php" />
+        <option value="$PROJECT_DIR$/test/Processor/Factory/SimpleProcessorAbstractFactoryTest.php" />
+        <option value="$PROJECT_DIR$/test/Validator/Factory/SimpleValidatorAbstractFactoryTest.php" />
+        <option value="$PROJECT_DIR$/test/Filter/Factory/SimpleFilterAbstractFactoryTest.php" />
+        <option value="$PROJECT_DIR$/src/Filter/src/RqlReplace.php" />
+        <option value="$PROJECT_DIR$/test/Processor/ConcatTest.php" />
+        <option value="$PROJECT_DIR$/test/Processor/ValidateProcessorTest.php" />
+        <option value="$PROJECT_DIR$/test/Processor/FilterApplierTest.php" />
+        <option value="$PROJECT_DIR$/test/Validator/ArrayAdapterTest.php" />
+        <option value="$PROJECT_DIR$/test/Evaluator/ExpressionFunction/Factory/PHPFunctionExpressionAbstractFactoryTest.php" />
+        <option value="$PROJECT_DIR$/test/Evaluator/ExpressionFunction/Factory/ExpressionFunctionAbstractFactoryTest.php" />
+        <option value="$PROJECT_DIR$/test/Factory/PluginAbstractFactoryAbstractTest.php" />
+        <option value="$PROJECT_DIR$/src/Evaluator/src/ExpressionFunction/Factory/PHPExpressionFunctionAbstractProvider.php" />
+        <option value="$PROJECT_DIR$/src/Evaluator/src/ExpressionFunction/Factory/PHPExpressionFunctionAbstractFactory.php" />
+        <option value="$PROJECT_DIR$/test/Evaluator/ExpressionFunction/Factory/CallbackExpressionFunctionAbstractFactory.php" />
+        <option value="$PROJECT_DIR$/src/Evaluator/src/ExpressionFunction/Factory/CallbackExpressionFunctionAbstractFactory.php" />
+        <option value="$PROJECT_DIR$/src/Evaluator/src/ExpressionFunction/SimpleFunctionExpression.php" />
+        <option value="$PROJECT_DIR$/src/Evaluator/src/ExpressionFunction/LogicException.php" />
+        <option value="$PROJECT_DIR$/src/Evaluator/src/ExpressionFunction/Callback.php" />
+        <option value="$PROJECT_DIR$/src/Evaluator/src/ExpressionFunction/Factory/SimpleExpressionFunctionAbstractFactory.php" />
+        <option value="$PROJECT_DIR$/test/Evaluator/ExpressionFunction/Factory/SimpleExpressionFunctionAbstractFactoryTest.php" />
+        <option value="$PROJECT_DIR$/src/Evaluator/src/ExpressionFunction/Factory/AbstractExpressionFunctionAbstractFactory.php" />
+        <option value="$PROJECT_DIR$/src/Evaluator/src/ExpressionFunction/Providers/PluginProviderAbstractFactory.php" />
+        <option value="$PROJECT_DIR$/src/Evaluator/src/ExpressionFunction/Providers/Plugin.php" />
+        <option value="$PROJECT_DIR$/test/Evaluator/ExpressionFunction/Provider/PluginTest.php" />
+        <option value="$PROJECT_DIR$/test/Processor/Factory/AbstractProcessorAbstractFactoryTest.php" />
+        <option value="$PROJECT_DIR$/test/Processor/Factory/FilterApplierAbstractProcessorFactoryTest.php" />
+        <option value="$PROJECT_DIR$/test/Validator/Factory/ValidatorAdapterAbstractFactoryTest.php" />
+        <option value="$PROJECT_DIR$/test/Evaluator/ExpressionFunction/Factory/PHPExpressionFunctionAbstractFactoryTest.php" />
+        <option value="$PROJECT_DIR$/test/Evaluator/ExpressionFunction/Factory/AbstractExpressionFunctionAbstractFactoryTest.php" />
+        <option value="$PROJECT_DIR$/test/Evaluator/ExpressionFunction/Provider/PluginProviderAbstractFactoryTest.php" />
+        <option value="$PROJECT_DIR$/src/Evaluator/src/ExpressionEvaluator.php" />
+        <option value="$PROJECT_DIR$/src/Factory/src/PluginAbstractFactoryAbstract.php" />
+        <option value="$PROJECT_DIR$/test/Evaluator/ExpressionFunction/Factory/CallbackExpressionFunctionAbstractFactoryTest.php" />
+        <option value="$PROJECT_DIR$/test/Processor/EvaluationTest.php" />
+        <option value="$PROJECT_DIR$/src/Evaluator/src/ExpressionEvaluatorAbstractFactory.php" />
+        <option value="$PROJECT_DIR$/test/Evaluator/Factory/ExpressionEvaluatorAbstractFactoryTest.php" />
       </list>
     </option>
   </component>
@@ -407,11 +377,31 @@
       <path value="$PROJECT_DIR$/vendor/myclabs/deep-copy" />
     </include_path>
   </component>
-  <component name="ProjectFrameBounds">
+  <component name="ProjectFrameBounds" extendedState="6">
     <option name="x" value="217" />
     <option name="y" value="218" />
     <option name="width" value="1398" />
     <option name="height" value="992" />
+  </component>
+  <component name="ProjectInspectionProfilesVisibleTreeState">
+    <entry key="Project Default">
+      <profile-state>
+        <expanded-state>
+          <State />
+          <State>
+            <id>Error handlingPHP</id>
+          </State>
+          <State>
+            <id>PHP</id>
+          </State>
+        </expanded-state>
+        <selected-state>
+          <State>
+            <id>PhpUnhandledExceptionInspection</id>
+          </State>
+        </selected-state>
+      </profile-state>
+    </entry>
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
     <ConfirmationsSetting value="2" id="Add" />
@@ -421,7 +411,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -432,32 +421,6 @@
             <path>
               <item name="rollun-datahandler" type="b2602c69:ProjectViewProjectNode" />
               <item name="rollun-datahandler" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="rollun-datahandler" type="b2602c69:ProjectViewProjectNode" />
-              <item name="rollun-datahandler" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="Evaluator" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="rollun-datahandler" type="b2602c69:ProjectViewProjectNode" />
-              <item name="rollun-datahandler" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="Evaluator" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="rollun-datahandler" type="b2602c69:ProjectViewProjectNode" />
-              <item name="rollun-datahandler" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="Evaluator" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="ExpressionFunction" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="rollun-datahandler" type="b2602c69:ProjectViewProjectNode" />
-              <item name="rollun-datahandler" type="462c0819:PsiDirectoryNode" />
               <item name="test" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -472,31 +435,68 @@
               <item name="test" type="462c0819:PsiDirectoryNode" />
               <item name="Evaluator" type="462c0819:PsiDirectoryNode" />
               <item name="ExpressionFunction" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="rollun-datahandler" type="b2602c69:ProjectViewProjectNode" />
+              <item name="rollun-datahandler" type="462c0819:PsiDirectoryNode" />
+              <item name="test" type="462c0819:PsiDirectoryNode" />
+              <item name="Evaluator" type="462c0819:PsiDirectoryNode" />
+              <item name="ExpressionFunction" type="462c0819:PsiDirectoryNode" />
+              <item name="Factory" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="rollun-datahandler" type="b2602c69:ProjectViewProjectNode" />
+              <item name="rollun-datahandler" type="462c0819:PsiDirectoryNode" />
+              <item name="test" type="462c0819:PsiDirectoryNode" />
+              <item name="Evaluator" type="462c0819:PsiDirectoryNode" />
+              <item name="ExpressionFunction" type="462c0819:PsiDirectoryNode" />
+              <item name="Provider" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="rollun-datahandler" type="b2602c69:ProjectViewProjectNode" />
+              <item name="rollun-datahandler" type="462c0819:PsiDirectoryNode" />
+              <item name="test" type="462c0819:PsiDirectoryNode" />
+              <item name="Evaluator" type="462c0819:PsiDirectoryNode" />
+              <item name="Factory" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="rollun-datahandler" type="b2602c69:ProjectViewProjectNode" />
+              <item name="rollun-datahandler" type="462c0819:PsiDirectoryNode" />
+              <item name="test" type="462c0819:PsiDirectoryNode" />
+              <item name="Processor" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="rollun-datahandler" type="b2602c69:ProjectViewProjectNode" />
+              <item name="rollun-datahandler" type="462c0819:PsiDirectoryNode" />
+              <item name="test" type="462c0819:PsiDirectoryNode" />
+              <item name="Processor" type="462c0819:PsiDirectoryNode" />
+              <item name="Factory" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
         </subPane>
       </pane>
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
-    <property name="SearchEverywhereHistoryKey" value="&#9;FILE&#9;file:///home/lasgrate/rollun/rollun-datahandler/src/Evaluator/src/ExpressionEvaluator.php&#10;Plu&#9;FILE&#9;file:///home/lasgrate/rollun/rollun-datahandler/vendor/zendframework/zend-filter/src/FilterPluginManager.php&#10;Filter&#9;FILE&#9;file:///home/lasgrate/rollun/rollun-datahandler/vendor/zendframework/zend-filter/src/FilterPluginManager.php&#10;Servi&#9;null&#9;null&#10;Symfony\Component\ExpressionLanguage\SyntaxError&#9;null&#9;null&#10;Es&#9;FILE&#9;file:///home/lasgrate/rollun/rollun-datahandler/vendor/symfony/expression-language/ExpressionLanguage.php&#10;Conca&#9;FILE&#9;file:///home/lasgrate/rollun/rollun-datahandler/src/Processor/src/Concat.php&#10;Re&#9;FILE&#9;file:///home/lasgrate/rollun/rollun-datahandler/vendor/zendframework/zend-validator/src/Regex.php&#10;Reg&#9;FILE&#9;file:///home/lasgrate/rollun/rollun-datahandler/vendor/zendframework/zend-validator/src/Regex.php&#10;Abstrac&#9;FILE&#9;file:///home/lasgrate/rollun/rollun-datahandler/vendor/zendframework/zend-validator/src/AbstractValidator.php&#10;Rege&#9;FILE&#9;file:///home/lasgrate/rollun/rollun-datahandler/vendor/zendframework/zend-validator/src/Regex.php" />
+    <property name="SearchEverywhereHistoryKey" value="LogicException&#9;FILE&#9;file:///home/lasgrate/rollun/rollun-datahandler/src/Evaluator/src/ExpressionFunction/LogicException.php&#10;Serv&#9;FILE&#9;file:///home/lasgrate/rollun/rollun-datahandler/vendor/zendframework/zend-servicemanager/src/ServiceManager.php&#10;Plu&#9;FILE&#9;file:///home/lasgrate/rollun/rollun-datahandler/vendor/zendframework/zend-filter/src/FilterPluginManager.php&#10;Filter&#9;FILE&#9;file:///home/lasgrate/rollun/rollun-datahandler/vendor/zendframework/zend-filter/src/FilterPluginManager.php&#10;Servi&#9;null&#9;null&#10;Symfony\Component\ExpressionLanguage\SyntaxError&#9;null&#9;null&#10;Es&#9;FILE&#9;file:///home/lasgrate/rollun/rollun-datahandler/vendor/symfony/expression-language/ExpressionLanguage.php&#10;Conca&#9;FILE&#9;file:///home/lasgrate/rollun/rollun-datahandler/src/Processor/src/Concat.php&#10;Re&#9;FILE&#9;file:///home/lasgrate/rollun/rollun-datahandler/vendor/zendframework/zend-validator/src/Regex.php&#10;Reg&#9;FILE&#9;file:///home/lasgrate/rollun/rollun-datahandler/vendor/zendframework/zend-validator/src/Regex.php&#10;Abstrac&#9;FILE&#9;file:///home/lasgrate/rollun/rollun-datahandler/vendor/zendframework/zend-validator/src/AbstractValidator.php&#10;Rege&#9;FILE&#9;file:///home/lasgrate/rollun/rollun-datahandler/vendor/zendframework/zend-validator/src/Regex.php" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../my-project" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../service-vehicles" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="settings.editor.selected.configurable" value="web-ide.project.structure" />
   </component>
   <component name="RecentsManager">
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/src/Evaluator/src/ExpressionFunction/Factory" />
-    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/src/Evaluator/src/ExpressionFunction/Factory" />
       <recent name="$PROJECT_DIR$/src/Evaluator/src/ExpressionFunction" />
       <recent name="$PROJECT_DIR$/src/Evaluator/src" />
       <recent name="$PROJECT_DIR$/src/Validator/src" />
       <recent name="$PROJECT_DIR$/src/Processor/src" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/Evaluator/src/ExpressionFunction/Factory" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -511,41 +511,41 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="PHPUnit.CallbackTest">
-    <configuration name="CallbackTest" type="PHPUnitRunConfigurationType" factoryName="PHPUnit" temporary="true">
-      <TestRunner class="rollun\test\datahandler\Evaluator\ExpressionFunction\CallbackTest" file="$PROJECT_DIR$/test/Evaluator/ExpressionFunction/CallbackTest.php" scope="Class" />
+  <component name="RunManager" selected="PHPUnit.ExpressionEvaluatorAbstractFactoryTest.testCreateWithExpressionFunctionProviders">
+    <configuration name="CallbackExpressionFunctionAbstractFactoryTest.testPositiveObjectCallbackInvoke" type="PHPUnitRunConfigurationType" factoryName="PHPUnit" temporary="true">
+      <TestRunner class="rollun\test\datahandler\Evaluator\ExpressionFunction\Factory\CallbackExpressionFunctionAbstractFactoryTest" file="$PROJECT_DIR$/test/Evaluator/ExpressionFunction/Factory/CallbackExpressionFunctionAbstractFactoryTest.php" method="testPositiveObjectCallbackInvoke" scope="Method" />
       <method v="2" />
     </configuration>
-    <configuration name="CallbackTest.testPositive" type="PHPUnitRunConfigurationType" factoryName="PHPUnit" temporary="true">
-      <TestRunner class="rollun\test\datahandler\Evaluator\ExpressionFunction\CallbackTest" file="$PROJECT_DIR$/test/Evaluator/ExpressionFunction/CallbackTest.php" method="testPositive" scope="Method" />
+    <configuration name="ExpressionEvaluatorAbstractFactoryTest.testCanCreate" type="PHPUnitRunConfigurationType" factoryName="PHPUnit" temporary="true">
+      <TestRunner class="rollun\test\datahandler\Evaluator\Factory\ExpressionEvaluatorAbstractFactoryTest" file="$PROJECT_DIR$/test/Evaluator/Factory/ExpressionEvaluatorAbstractFactoryTest.php" method="testCanCreate" scope="Method" />
       <method v="2" />
     </configuration>
-    <configuration name="CallbackTest.testPositiveCallableObject" type="PHPUnitRunConfigurationType" factoryName="PHPUnit" temporary="true">
-      <TestRunner class="rollun\test\datahandler\Evaluator\ExpressionFunction\CallbackTest" file="$PROJECT_DIR$/test/Evaluator/ExpressionFunction/CallbackTest.php" method="testPositiveCallableObject" scope="Method" />
+    <configuration name="ExpressionEvaluatorAbstractFactoryTest.testCreateWithExpressionFunctionProviders" type="PHPUnitRunConfigurationType" factoryName="PHPUnit" temporary="true">
+      <TestRunner class="rollun\test\datahandler\Evaluator\Factory\ExpressionEvaluatorAbstractFactoryTest" file="$PROJECT_DIR$/test/Evaluator/Factory/ExpressionEvaluatorAbstractFactoryTest.php" method="testCreateWithExpressionFunctionProviders" scope="Method" />
       <method v="2" />
     </configuration>
-    <configuration name="ExpressionEvaluatorTest.testCompileAddedFilterFunctions" type="PHPUnitRunConfigurationType" factoryName="PHPUnit" temporary="true">
-      <TestRunner class="rollun\test\datahandler\ExpressionEvaluator\ExpressionEvaluatorTest" file="$PROJECT_DIR$/test/Evaluator/ExpressionEvaluatorTest.php" method="testCompileAddedFilterFunctions" scope="Method" />
+    <configuration name="ExpressionEvaluatorAbstractFactoryTest.testCreateWithExpressionFunctions" type="PHPUnitRunConfigurationType" factoryName="PHPUnit" temporary="true">
+      <TestRunner class="rollun\test\datahandler\Evaluator\Factory\ExpressionEvaluatorAbstractFactoryTest" file="$PROJECT_DIR$/test/Evaluator/Factory/ExpressionEvaluatorAbstractFactoryTest.php" method="testCreateWithExpressionFunctions" scope="Method" />
       <method v="2" />
     </configuration>
-    <configuration name="ExpressionEvaluatorTest.testSimple" type="PHPUnitRunConfigurationType" factoryName="PHPUnit" temporary="true">
-      <TestRunner class="rollun\test\datahandler\ExpressionEvaluator\ExpressionEvaluatorTest" file="$PROJECT_DIR$/test/Evaluator/ExpressionEvaluatorTest.php" method="testSimple" scope="Method" />
+    <configuration name="test" type="PHPUnitRunConfigurationType" factoryName="PHPUnit" temporary="true">
+      <TestRunner directory="$PROJECT_DIR$/test" />
       <method v="2" />
     </configuration>
     <list>
-      <item itemvalue="PHPUnit.ExpressionEvaluatorTest.testCompileAddedFilterFunctions" />
-      <item itemvalue="PHPUnit.ExpressionEvaluatorTest.testSimple" />
-      <item itemvalue="PHPUnit.CallbackTest.testPositive" />
-      <item itemvalue="PHPUnit.CallbackTest.testPositiveCallableObject" />
-      <item itemvalue="PHPUnit.CallbackTest" />
+      <item itemvalue="PHPUnit.test" />
+      <item itemvalue="PHPUnit.CallbackExpressionFunctionAbstractFactoryTest.testPositiveObjectCallbackInvoke" />
+      <item itemvalue="PHPUnit.ExpressionEvaluatorAbstractFactoryTest.testCanCreate" />
+      <item itemvalue="PHPUnit.ExpressionEvaluatorAbstractFactoryTest.testCreateWithExpressionFunctions" />
+      <item itemvalue="PHPUnit.ExpressionEvaluatorAbstractFactoryTest.testCreateWithExpressionFunctionProviders" />
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="PHPUnit.CallbackTest" />
-        <item itemvalue="PHPUnit.CallbackTest.testPositiveCallableObject" />
-        <item itemvalue="PHPUnit.CallbackTest.testPositive" />
-        <item itemvalue="PHPUnit.ExpressionEvaluatorTest.testSimple" />
-        <item itemvalue="PHPUnit.ExpressionEvaluatorTest.testCompileAddedFilterFunctions" />
+        <item itemvalue="PHPUnit.ExpressionEvaluatorAbstractFactoryTest.testCreateWithExpressionFunctionProviders" />
+        <item itemvalue="PHPUnit.ExpressionEvaluatorAbstractFactoryTest.testCreateWithExpressionFunctions" />
+        <item itemvalue="PHPUnit.ExpressionEvaluatorAbstractFactoryTest.testCanCreate" />
+        <item itemvalue="PHPUnit.test" />
+        <item itemvalue="PHPUnit.CallbackExpressionFunctionAbstractFactoryTest.testPositiveObjectCallbackInvoke" />
       </list>
     </recent_temporary>
   </component>
@@ -563,62 +563,65 @@
       <workItem from="1537951696341" duration="26464000" />
       <workItem from="1538035597739" duration="25343000" />
       <workItem from="1538119873643" duration="28815000" />
+      <workItem from="1538378190622" duration="31556000" />
     </task>
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="CallbackTest_testPositive - 2018.09.28 at 18h 57m 24s.xml">
-      <configuration name="CallbackTest.testPositive" configurationId="PHPUnitRunConfigurationType" />
+    <history-entry file="ExpressionEvaluatorAbstractFactoryTest_testCreateWithExpressionFunctions - 2018.10.01 at 19h 47m 35s.xml">
+      <configuration name="ExpressionEvaluatorAbstractFactoryTest.testCreateWithExpressionFunctions" configurationId="PHPUnitRunConfigurationType" />
     </history-entry>
-    <history-entry file="CallbackTest_testPositive - 2018.09.28 at 18h 59m 30s.xml">
-      <configuration name="CallbackTest.testPositive" configurationId="PHPUnitRunConfigurationType" />
+    <history-entry file="ExpressionEvaluatorAbstractFactoryTest_testCreateWithExpressionFunctions - 2018.10.01 at 19h 47m 58s.xml">
+      <configuration name="ExpressionEvaluatorAbstractFactoryTest.testCreateWithExpressionFunctions" configurationId="PHPUnitRunConfigurationType" />
     </history-entry>
-    <history-entry file="CallbackTest_testPositiveCallableObject - 2018.09.28 at 19h 00m 07s.xml">
-      <configuration name="CallbackTest.testPositiveCallableObject" configurationId="PHPUnitRunConfigurationType" />
+    <history-entry file="ExpressionEvaluatorAbstractFactoryTest_testCreateWithExpressionFunctions - 2018.10.01 at 19h 48m 46s.xml">
+      <configuration name="ExpressionEvaluatorAbstractFactoryTest.testCreateWithExpressionFunctions" configurationId="PHPUnitRunConfigurationType" />
     </history-entry>
-    <history-entry file="CallbackTest_testPositiveCallableObject - 2018.09.28 at 19h 00m 58s.xml">
-      <configuration name="CallbackTest.testPositiveCallableObject" configurationId="PHPUnitRunConfigurationType" />
+    <history-entry file="ExpressionEvaluatorAbstractFactoryTest_testCreateWithExpressionFunctions - 2018.10.01 at 19h 49m 16s.xml">
+      <configuration name="ExpressionEvaluatorAbstractFactoryTest.testCreateWithExpressionFunctions" configurationId="PHPUnitRunConfigurationType" />
     </history-entry>
-    <history-entry file="CallbackTest_testPositiveCallableObject - 2018.09.28 at 19h 01m 08s.xml">
-      <configuration name="CallbackTest.testPositiveCallableObject" configurationId="PHPUnitRunConfigurationType" />
+    <history-entry file="ExpressionEvaluatorAbstractFactoryTest_testCreateWithExpressionFunctions - 2018.10.01 at 19h 49m 30s.xml">
+      <configuration name="ExpressionEvaluatorAbstractFactoryTest.testCreateWithExpressionFunctions" configurationId="PHPUnitRunConfigurationType" />
     </history-entry>
-    <history-entry file="CallbackTest_testPositiveCallableObject - 2018.09.28 at 19h 01m 14s.xml">
-      <configuration name="CallbackTest.testPositiveCallableObject" configurationId="PHPUnitRunConfigurationType" />
+    <history-entry file="ExpressionEvaluatorAbstractFactoryTest_testCreateWithExpressionFunctions - 2018.10.01 at 19h 50m 16s.xml">
+      <configuration name="ExpressionEvaluatorAbstractFactoryTest.testCreateWithExpressionFunctions" configurationId="PHPUnitRunConfigurationType" />
     </history-entry>
-    <history-entry file="CallbackTest - 2018.09.28 at 19h 01m 16s.xml">
-      <configuration name="CallbackTest" configurationId="PHPUnitRunConfigurationType" />
+    <history-entry file="ExpressionEvaluatorAbstractFactoryTest_testCreateWithExpressionFunctions - 2018.10.01 at 19h 50m 56s.xml">
+      <configuration name="ExpressionEvaluatorAbstractFactoryTest.testCreateWithExpressionFunctions" configurationId="PHPUnitRunConfigurationType" />
     </history-entry>
-    <history-entry file="CallbackTest_testPositiveCallableObject - 2018.09.28 at 19h 01m 20s.xml">
-      <configuration name="CallbackTest.testPositiveCallableObject" configurationId="PHPUnitRunConfigurationType" />
+    <history-entry file="ExpressionEvaluatorAbstractFactoryTest_testCreateWithExpressionFunctions - 2018.10.01 at 19h 51m 04s.xml">
+      <configuration name="ExpressionEvaluatorAbstractFactoryTest.testCreateWithExpressionFunctions" configurationId="PHPUnitRunConfigurationType" />
     </history-entry>
-    <history-entry file="CallbackTest - 2018.09.28 at 19h 02m 49s.xml">
-      <configuration name="CallbackTest" configurationId="PHPUnitRunConfigurationType" />
+    <history-entry file="ExpressionEvaluatorAbstractFactoryTest_testCreateWithExpressionFunctions - 2018.10.01 at 19h 51m 17s.xml">
+      <configuration name="ExpressionEvaluatorAbstractFactoryTest.testCreateWithExpressionFunctions" configurationId="PHPUnitRunConfigurationType" />
     </history-entry>
-    <history-entry file="CallbackTest - 2018.09.28 at 19h 03m 20s.xml">
-      <configuration name="CallbackTest" configurationId="PHPUnitRunConfigurationType" />
+    <history-entry file="ExpressionEvaluatorAbstractFactoryTest_testCreateWithExpressionFunctions - 2018.10.01 at 19h 51m 27s.xml">
+      <configuration name="ExpressionEvaluatorAbstractFactoryTest.testCreateWithExpressionFunctions" configurationId="PHPUnitRunConfigurationType" />
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="82574000" />
+    <option name="totallyTimeSpent" value="114130000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="217" y="218" width="1398" height="992" extended-state="0" />
+    <frame x="65" y="-4" width="1855" height="1204" extended-state="6" />
+    <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.49907064" visible="true" weight="0.35059172" />
+      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.49907064" visible="true" weight="0.30071864" />
       <window_info id="Favorites" order="1" side_tool="true" />
       <window_info id="Structure" order="2" sideWeight="0.50092936" weight="0.25262576" />
       <window_info anchor="bottom" id="Message" order="0" />
-      <window_info anchor="bottom" id="Find" order="1" />
-      <window_info anchor="bottom" id="Run" order="2" weight="0.46296296" />
-      <window_info anchor="bottom" id="Debug" order="3" weight="0.2881041" />
+      <window_info anchor="bottom" id="Find" order="1" weight="0.32992566" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" sideWeight="0.4997236" visible="true" weight="0.36431226" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.35315984" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Database Changes" order="8" show_stripe_button="false" />
       <window_info anchor="bottom" id="Version Control" order="9" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Terminal" order="10" weight="0.3224907" />
-      <window_info anchor="bottom" id="Event Log" order="11" side_tool="true" weight="0.32992566" />
+      <window_info anchor="bottom" id="Terminal" order="10" sideWeight="0.4991708" weight="0.3224907" />
+      <window_info anchor="bottom" id="Event Log" order="11" sideWeight="0.50082916" side_tool="true" weight="0.3224907" />
+      <window_info anchor="right" id="Coverage" side_tool="true" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
@@ -656,302 +659,58 @@
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" type="php">
-          <url>file://$PROJECT_DIR$/vendor/symfony/expression-language/ExpressionFunction.php</url>
+          <url>file://$PROJECT_DIR$/src/Validator/src/Factory/ValidatorAdapterAbstractFactory.php</url>
           <line>88</line>
-          <option name="timeStamp" value="8" />
+          <option name="timeStamp" value="39" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="php">
+          <url>file://$PROJECT_DIR$/src/Evaluator/src/ExpressionFunction/Factory/SimpleExpressionFunctionAbstractFactory.php</url>
+          <line>90</line>
+          <option name="timeStamp" value="49" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="php">
+          <url>file://$PROJECT_DIR$/src/Evaluator/src/ExpressionFunction/Callback.php</url>
+          <line>25</line>
+          <option name="timeStamp" value="58" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="php">
+          <url>file://$PROJECT_DIR$/src/Evaluator/src/ExpressionFunction/Factory/CallbackExpressionFunctionAbstractFactory.php</url>
+          <line>67</line>
+          <option name="timeStamp" value="59" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/Processor/src/Factory/ProcessorPluginManagerFactory.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="61">
-          <caret line="4" column="4" selection-start-line="4" selection-start-column="4" selection-end-line="4" selection-end-column="4" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Factory/src/PluginAbstractFactoryAbstract.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="359">
-          <caret line="83" column="34" selection-start-line="83" selection-start-column="34" selection-end-line="83" selection-end-column="34" />
-          <folding>
-            <element signature="e#46#87#0#PHP" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/vendor/zendframework/zend-filter/src/FilterPluginManager.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="266">
-          <caret line="27" column="53" selection-start-line="27" selection-start-column="53" selection-end-line="27" selection-end-column="53" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/vendor/zendframework/zend-validator/src/Uri.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="3382">
-          <caret line="184" column="17" selection-start-line="184" selection-start-column="17" selection-end-line="184" selection-end-column="17" />
-          <folding>
-            <element signature="e#337#353#0#PHP" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/vendor/zendframework/zend-validator/composer.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-70" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/vendor/zendframework/zend-validator/src/Digits.php">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/vendor/zendframework/zend-validator/src/Hostname.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-38310" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/vendor/symfony/expression-language/ParsedExpression.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="570">
-          <caret line="37" selection-start-line="37" selection-end-line="37" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/test/bootstrap.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="152">
-          <caret line="8" selection-start-line="8" selection-end-line="8" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/vendor/phpunit/phpunit/src/Framework/TestCase.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="165">
-          <caret line="1072" selection-start-line="1072" selection-end-line="1072" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/vendor/zendframework/zend-servicemanager/src/AbstractPluginManager.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="399">
-          <caret line="26" column="57" selection-start-line="26" selection-start-column="57" selection-end-line="26" selection-end-column="57" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/vendor/zendframework/zend-servicemanager/src/ServiceManager.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="512">
-          <caret line="311" column="20" selection-start-line="311" selection-start-column="20" selection-end-line="311" selection-end-column="20" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/.htaccess">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Evaluator/src/functions.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="266">
-          <caret line="14" lean-forward="true" selection-start-line="14" selection-end-line="14" />
-          <folding>
-            <element signature="e#48#100#0#PHP" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/vendor/symfony/expression-language/Tests/ExpressionLanguageTest.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="314">
-          <caret line="101" column="23" lean-forward="true" selection-start-line="101" selection-start-column="23" selection-end-line="101" selection-end-column="23" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Evaluator/src/PluginExpressionLanguageProvider.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="152">
-          <caret line="8" lean-forward="true" selection-start-line="8" selection-end-line="8" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/vendor/symfony/expression-language/ExpressionFunctionProviderInterface.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="171">
-          <caret line="16" column="10" selection-start-line="16" selection-start-column="10" selection-end-line="16" selection-end-column="10" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Evaluator/src/ExpressionFunctionAbstractFactory.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="722">
-          <caret line="38" column="35" lean-forward="true" selection-start-line="38" selection-start-column="35" selection-end-line="38" selection-end-column="35" />
-          <folding>
-            <element signature="e#48#89#0#PHP" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Processor/src/Factory/FilterApplierAbstractFactory.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="342">
-          <caret line="27" column="51" selection-start-line="27" selection-start-column="51" selection-end-line="27" selection-end-column="51" />
-          <folding>
-            <element signature="e#56#103#0#PHP" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Processor/src/Factory/SimpleProcessorAbstractFactory.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="441">
-          <caret line="27" column="44" selection-start-line="27" selection-start-column="44" selection-end-line="27" selection-end-column="44" />
-          <folding>
-            <element signature="e#56#108#0#PHP" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Validator/src/Factory/SimpleValidatorAbstractFactory.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="213">
-          <caret line="25" column="44" selection-start-line="25" selection-start-column="44" selection-end-line="25" selection-end-column="44" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Validator/src/Factory/ValidatorAdapterAbstractFactory.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="532">
-          <caret line="28" column="45" selection-start-line="28" selection-start-column="45" selection-end-line="28" selection-end-column="45" />
-          <folding>
-            <element signature="e#56#117#0#PHP" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/Filter/src/Factory/SimpleFilterAbstractFactory.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="213">
-          <caret line="25" column="41" selection-start-line="25" selection-start-column="41" selection-end-line="25" selection-end-column="41" />
-        </state>
+        <state relative-caret-position="-249" />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/vendor/zendframework/zend-servicemanager/src/Factory/FactoryInterface.php">
+    <entry file="file://$PROJECT_DIR$/src/Filter/src/RqlReplace.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="551">
-          <caret line="36" selection-start-line="36" selection-end-line="37" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/vendor/zendframework/zend-servicemanager/src/Factory/AbstractFactoryInterface.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="323">
-          <caret line="21" column="50" lean-forward="true" selection-start-line="21" selection-start-column="50" selection-end-line="21" selection-end-column="50" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/index.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="323">
-          <caret line="17" column="5" selection-start-line="17" selection-start-column="5" selection-end-line="17" selection-end-column="5" />
+        <state relative-caret-position="3192">
+          <caret line="170" column="63" selection-start-line="170" selection-start-column="63" selection-end-line="170" selection-end-column="63" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Processor/src/AbstractProcessor.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="739">
-          <caret line="116" column="33" selection-start-line="116" selection-start-column="33" selection-end-line="116" selection-end-column="33" />
+        <state relative-caret-position="344">
+          <caret line="81" selection-start-line="81" selection-end-line="81" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Evaluator/src/ExpressionFunction/ExpressionEvaluatorAbstractFactory.php">
+    <entry file="file://$PROJECT_DIR$/src/Processor/src/Concat.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="76">
-          <caret line="4" column="4" lean-forward="true" selection-start-line="4" selection-start-column="4" selection-end-line="4" selection-end-column="4" />
-          <folding>
-            <element signature="e#48#89#0#PHP" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Evaluator/src/ExpressionFunction/Providers/Plugin.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="171">
-          <caret line="9" column="59" selection-start-line="9" selection-start-column="24" selection-end-line="9" selection-end-column="59" />
-          <folding>
-            <element signature="e#76#95#0#PHP" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/vendor/http-interop/http-middleware/src/MiddlewareInterface.php">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/vendor/zendframework/zend-servicemanager/composer.json">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/vendor/container-interop/container-interop/composer.json">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/vendor/http-interop/http-middleware/composer.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="665">
-          <caret line="35" lean-forward="true" selection-start-line="35" selection-end-line="35" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/vendor/rollun-com/rollun-callback/src/Callback/src/Callback/Callback.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="114">
-          <caret line="11" column="4" lean-forward="true" selection-start-line="11" selection-start-column="4" selection-end-line="11" selection-end-column="4" />
-          <folding>
-            <element signature="e#205#217#0#PHP" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Evaluator/src/ExpressionEvaluatorAbstractFactory.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="853">
-          <caret line="57" column="36" lean-forward="true" selection-start-line="57" selection-start-column="36" selection-end-line="57" selection-end-column="36" />
-          <folding>
-            <element signature="e#48#89#0#PHP" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Evaluator/src/ExpressionFunction/Providers/PluginProviderAbstractFactory.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="720">
-          <caret line="48" column="7" selection-start-line="48" selection-start-column="7" selection-end-line="48" selection-end-column="7" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Evaluator/src/ExpressionFunction/Factory/AbstractExpressionFunctionAbstractFactory.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="283">
-          <caret line="27" column="30" selection-start-line="27" selection-start-column="30" selection-end-line="27" selection-end-column="30" />
-          <folding>
-            <element signature="e#75#116#0#PHP" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Evaluator/src/ExpressionEvaluator.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="228">
-          <caret line="12" selection-start-line="12" selection-end-line="12" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/composer.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="437">
-          <caret line="23" column="62" selection-start-line="23" selection-start-column="62" selection-end-line="23" selection-end-column="62" />
+        <state relative-caret-position="436">
+          <caret line="52" selection-start-line="52" selection-end-line="52" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/test/Filter/DuplicateSymbolTest.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="133">
+        <state relative-caret-position="-116">
           <caret line="7" column="3" selection-start-line="7" selection-start-column="3" selection-end-line="7" selection-end-column="3" />
           <folding>
             <element signature="e#50#96#0#PHP" expanded="true" />
@@ -959,88 +718,388 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/test/Evaluator/ExpressionEvaluatorTest.php">
+    <entry file="file://$PROJECT_DIR$/test/Filter/RqlReplaceTest.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="152">
-          <caret line="8" selection-start-line="8" selection-end-line="8" />
+        <state relative-caret-position="-627" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/test/Processor/ConcatTest.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="321">
+          <caret line="43" column="33" selection-start-line="43" selection-start-column="21" selection-end-line="43" selection-end-column="33" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/vendor/symfony/expression-language/ExpressionFunction.php">
+    <entry file="file://$PROJECT_DIR$/test/Processor/ValidateProcessorTest.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="573">
-          <caret line="53" column="33" lean-forward="true" selection-start-line="53" selection-start-column="20" selection-end-line="53" selection-end-column="33" />
+        <state relative-caret-position="321">
+          <caret line="27" column="25" selection-start-line="27" selection-start-column="13" selection-end-line="27" selection-end-column="25" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/vendor/symfony/expression-language/ExpressionLanguage.php">
+    <entry file="file://$PROJECT_DIR$/test/Processor/FilterApplierTest.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="796">
-          <caret line="161" column="37" lean-forward="true" selection-start-line="161" selection-start-column="37" selection-end-line="161" selection-end-column="37" />
+        <state relative-caret-position="289">
+          <caret line="43" column="33" selection-start-line="43" selection-start-column="21" selection-end-line="43" selection-end-column="33" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/vendor/symfony/expression-language/Node/Node.php">
+    <entry file="file://$PROJECT_DIR$/test/Validator/ArrayAdapterTest.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="679">
-          <caret line="61" column="26" selection-start-line="61" selection-start-column="26" selection-end-line="61" selection-end-column="26" />
+        <state relative-caret-position="339">
+          <caret line="96" column="34" selection-start-line="96" selection-start-column="34" selection-end-line="96" selection-end-column="34" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/vendor/symfony/expression-language/Compiler.php">
+    <entry file="file://$PROJECT_DIR$/test/Processor/Factory/ProcessorPluginManagerFactoryTest.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="379">
-          <caret line="30" column="28" lean-forward="true" selection-start-line="30" selection-start-column="28" selection-end-line="30" selection-end-column="28" />
+        <state relative-caret-position="570">
+          <caret line="30" column="5" selection-end-line="38" />
+          <folding>
+            <element signature="e#61#92#0#PHP" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/vendor/symfony/expression-language/Node/FunctionNode.php">
+    <entry file="file://$PROJECT_DIR$/src/Evaluator/src/ExpressionFunction/Factory/PHPExpressionFunctionAbstractFactory.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="460">
-          <caret line="39" column="44" selection-start-line="39" selection-start-column="24" selection-end-line="39" selection-end-column="44" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Evaluator/src/ExpressionFunction/Factory/SimpleExpressionFunctionAbstractFactory.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="739">
-          <caret line="86" column="9" lean-forward="true" selection-start-line="86" selection-start-column="9" selection-end-line="86" selection-end-column="9" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Evaluator/src/ExpressionFunction/Factory/CallbackExpressionFunctionAbstractFactory.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="707">
-          <caret line="63" column="56" selection-start-line="63" selection-start-column="56" selection-end-line="63" selection-end-column="56" />
+        <state relative-caret-position="570">
+          <caret line="46" column="67" lean-forward="true" selection-start-line="46" selection-start-column="67" selection-end-line="46" selection-end-column="67" />
           <folding>
             <element signature="e#75#104#0#PHP" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Evaluator/src/ExpressionFunction/SimpleFunctionExpression.php">
+    <entry file="file://$PROJECT_DIR$/vendor/symfony/expression-language/ExpressionFunction.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="152">
-          <caret line="8" selection-start-line="8" selection-end-line="8" />
+        <state relative-caret-position="176">
+          <caret line="77" selection-start-line="77" selection-end-line="77" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Evaluator/src/ExpressionFunction/Callback.php">
+    <entry file="file://$PROJECT_DIR$/src/Evaluator/src/ExpressionFunction/SimpleFunctionExpression.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="437">
-          <caret line="23" column="37" lean-forward="true" selection-start-line="23" selection-start-column="37" selection-end-line="23" selection-end-column="85" />
+        <state relative-caret-position="76">
+          <caret line="4" column="39" selection-start-line="4" selection-start-column="39" selection-end-line="4" selection-end-column="39" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$APPLICATION_HOME_DIR$/plugins/php/lib/php.jar!/stubs/Core/Core_c.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="236">
+          <caret line="301" column="26" selection-start-line="301" selection-start-column="26" selection-end-line="301" selection-end-column="26" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Evaluator/src/ExpressionFunction/Factory/SimpleExpressionFunctionAbstractFactory.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="741">
+          <caret line="91" selection-start-line="91" selection-end-line="91" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Evaluator/src/ExpressionFunction/Providers/PluginProviderAbstractFactory.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-399">
+          <caret line="6" selection-start-line="6" selection-end-line="6" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/vendor/zendframework/zend-servicemanager/src/ServiceManager.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="247">
+          <caret line="181" selection-start-line="181" selection-end-line="181" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/vendor/composer/ClassLoader.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="380">
+          <caret line="357" selection-start-line="357" selection-end-line="357" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/vendor/phpunit/phpunit/src/Framework/TestResult.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="342">
+          <caret line="779" selection-start-line="779" selection-end-line="779" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Evaluator/src/ExpressionFunction/LogicException.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="95">
+          <caret line="5" column="1" lean-forward="true" selection-start-line="5" selection-start-column="1" selection-end-line="5" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Evaluator/src/ExpressionFunction/Providers/Plugin.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="570">
+          <caret line="88" column="58" selection-start-line="88" selection-start-column="58" selection-end-line="88" selection-end-column="58" />
           <folding>
-            <element signature="e#67#86#0#PHP" expanded="true" />
+            <element signature="e#77#144#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/vendor/phpunit/phpunit/src/Framework/Assert.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="274">
+          <caret line="1150" selection-start-line="1150" selection-end-line="1150" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/test/Evaluator/ExpressionEvaluatorTest.php">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Processor/src/Factory/AbstractProcessorAbstractFactory.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="304">
+          <caret line="37" column="23" selection-start-line="37" selection-start-column="23" selection-end-line="37" selection-end-column="23" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Processor/src/Factory/FilterApplierAbstractProcessorFactory.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-325">
+          <folding>
+            <element signature="e#56#103#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/test/Processor/Factory/AbstractProcessorAbstractFactoryTest.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="342">
+          <caret line="18" column="71" selection-start-line="18" selection-start-column="71" selection-end-line="18" selection-end-column="71" />
+          <folding>
+            <element signature="e#61#131#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/test/Processor/Factory/FilterApplierAbstractProcessorFactoryTest.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="361">
+          <caret line="25" column="68" selection-start-line="25" selection-start-column="68" selection-end-line="25" selection-end-column="68" />
+          <folding>
+            <element signature="e#61#140#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/test/Processor/Factory/SimpleAbstractProcessorFactoryTest.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="517">
+          <caret line="37" column="37" lean-forward="true" selection-start-line="37" selection-start-column="37" selection-end-line="37" selection-end-column="37" />
+          <folding>
+            <element signature="e#61#90#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/test/Validator/Factory/SimpleValidatorAbstractFactoryTest.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="475">
+          <caret line="25" column="5" lean-forward="true" selection-start-line="25" selection-start-column="5" selection-end-line="25" selection-end-column="5" />
+          <folding>
+            <element signature="e#61#90#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/test/Validator/Factory/ValidatorAdapterAbstractFactoryTest.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="403">
+          <caret line="23" column="71" selection-start-line="23" selection-start-column="71" selection-end-line="23" selection-end-column="71" />
+          <folding>
+            <element signature="e#61#107#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/test/Filter/Factory/SimpleFilterAbstractFactoryTest.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="365">
+          <caret line="25" column="5" lean-forward="true" selection-start-line="25" selection-start-column="5" selection-end-line="25" selection-end-column="5" />
+          <folding>
+            <element signature="e#58#87#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/test/Factory/PluginAbstractFactoryAbstractTest.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="424">
+          <caret line="98" column="29" lean-forward="true" selection-start-line="98" selection-start-column="29" selection-end-line="98" selection-end-column="29" />
+          <folding>
+            <element signature="e#51#80#0#PHP" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/test/Evaluator/ExpressionFunction/CallbackTest.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="388">
-          <caret line="30" column="76" lean-forward="true" selection-start-line="30" selection-start-column="76" selection-end-line="30" selection-end-column="76" />
+        <state relative-caret-position="-147">
           <folding>
             <element signature="e#72#103#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/test/Evaluator/ExpressionFunction/Factory/PHPExpressionFunctionAbstractFactoryTest.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="342">
+          <caret line="18" column="52" selection-start-line="18" selection-start-column="52" selection-end-line="18" selection-end-column="52" />
+          <folding>
+            <element signature="e#80#109#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Evaluator/src/ExpressionFunction/Factory/AbstractExpressionFunctionAbstractFactory.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="323">
+          <caret line="44" column="20" selection-start-line="44" selection-start-column="20" selection-end-line="44" selection-end-column="20" />
+          <folding>
+            <element signature="e#75#116#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/test/Evaluator/ExpressionFunction/Provider/PluginProviderAbstractFactoryTest.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="342">
+          <caret line="36" column="99" selection-start-line="36" selection-start-column="99" selection-end-line="36" selection-end-column="99" />
+          <folding>
+            <element signature="e#81#110#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Factory/src/PluginAbstractFactoryAbstract.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="380">
+          <caret line="45" selection-start-line="45" selection-end-line="46" />
+          <folding>
+            <element signature="e#46#87#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Evaluator/src/ExpressionFunction/Factory/CallbackExpressionFunctionAbstractFactory.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="342">
+          <caret line="60" column="53" lean-forward="true" selection-start-line="60" selection-start-column="53" selection-end-line="60" selection-end-column="53" />
+          <folding>
+            <element signature="e#75#104#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/vendor/rollun-com/rollun-callback/src/Callback/src/Callback/Callback.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-722">
+          <caret line="31" column="20" selection-start-line="31" selection-start-column="20" selection-end-line="31" selection-end-column="20" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Evaluator/src/ExpressionFunction/Callback.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-57">
+          <caret line="11" column="6" selection-start-line="11" selection-start-column="6" selection-end-line="11" selection-end-column="6" />
+          <folding>
+            <element signature="e#67#129#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/test/Evaluator/ExpressionFunction/Factory/CallbackExpressionFunctionAbstractFactoryTest.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="442">
+          <caret line="70" column="68" selection-start-line="70" selection-start-column="68" selection-end-line="70" selection-end-column="68" />
+          <folding>
+            <element signature="e#80#109#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/test/Processor/EvaluationTest.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="190">
+          <caret line="10" selection-start-line="10" selection-end-line="10" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/test/Evaluator/ExpressionFunction/Factory/AbstractExpressionFunctionAbstractFactoryTest.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-147">
+          <caret line="14" column="22" lean-forward="true" selection-start-line="14" selection-start-column="22" selection-end-line="23" selection-end-column="5" />
+          <folding>
+            <element signature="e#80#109#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Evaluator/src/ExpressionEvaluator.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="114">
+          <caret line="6" column="38" selection-start-line="6" selection-start-column="38" selection-end-line="6" selection-end-column="38" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/test/Evaluator/ExpressionFunction/Factory/SimpleExpressionFunctionAbstractFactoryTest.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="346">
+          <caret line="20" column="18" selection-start-line="20" selection-start-column="18" selection-end-line="20" selection-end-column="18" />
+          <folding>
+            <element signature="e#80#109#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/test/Evaluator/ExpressionFunction/Provider/PluginTest.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="549">
+          <caret line="59" column="25" selection-start-line="59" selection-start-column="25" selection-end-line="59" selection-end-column="25" />
+          <folding>
+            <element signature="e#81#112#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/vendor/phpunit/phpunit/src/Framework/TestCase.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="399">
+          <caret line="1072" selection-start-line="1072" selection-end-line="1072" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/vendor/symfony/expression-language/ExpressionLanguage.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="361">
+          <caret line="36" selection-start-line="36" selection-end-line="36" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Evaluator/src/ExpressionEvaluatorAbstractFactory.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="556">
+          <caret line="107" column="15" selection-start-line="107" selection-start-column="15" selection-end-line="107" selection-end-column="15" />
+          <folding>
+            <element signature="e#48#89#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/test/Evaluator/Factory/ExpressionEvaluatorAbstractFactoryTest.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="290">
+          <caret line="50" column="60" selection-start-line="50" selection-start-column="60" selection-end-line="50" selection-end-column="60" />
+          <folding>
+            <element signature="e#61#92#0#PHP" expanded="true" />
           </folding>
         </state>
       </provider>

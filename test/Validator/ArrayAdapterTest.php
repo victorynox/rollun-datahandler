@@ -91,7 +91,7 @@ class ArrayAdapterTest extends TestCase
         ]);
     }
 
-    public function testInvalidColumnToWriteOptions()
+    public function testInvalidColumnsToValidateOptions()
     {
         $this->expectException(InvalidArgumentException::class);
         $this->expectExceptionMessage("Invalid option 'columnsToValidate'");

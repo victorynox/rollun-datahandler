@@ -1,27 +1,76 @@
 <?php
 
-namespace rollun\datahandler\Evaluator\ExpressionFunctionProviders;
+namespace rollun\datahandler\Evaluator\ExpressionFunction\Providers;
 
-use LogicException;
+use rollun\datahandler\Evaluator\ExpressionFunction\LogicException;
 use Symfony\Component\ExpressionLanguage\ExpressionFunction;
 use Symfony\Component\ExpressionLanguage\ExpressionFunctionProviderInterface;
 use Zend\ServiceManager\AbstractPluginManager;
 
+/**
+ * Class Plugin
+ * @package rollun\datahandler\Evaluator\ExpressionFunctionProviders
+ */
 class Plugin implements ExpressionFunctionProviderInterface
 {
+    /**
+     * @var AbstractPluginManager
+     */
     protected $pluginManager;
 
+    /**
+     * @var array
+     */
     protected $pluginServices;
 
+    /**
+     * @var string
+     */
     protected $calledMethod;
 
-    public function __construct(AbstractPluginManager $pluginManager, array $pluginServices, string $calledMethod)
-    {
+    /**
+     * Plugin constructor.
+     * @param AbstractPluginManager $pluginManager
+     * @param array $pluginServices
+     * @param string $calledMethod
+     */
+    public function __construct(
+        AbstractPluginManager $pluginManager,
+        array $pluginServices,
+        string $calledMethod = '__invoke'
+    ) {
         $this->pluginManager = $pluginManager;
         $this->pluginServices = $pluginServices;
         $this->calledMethod = $calledMethod;
     }
 
+    /**
+     * @return AbstractPluginManager
+     */
+    public function getPluginManager()
+    {
+        return $this->pluginManager;
+    }
+
+    /**
+     * @return array
+     */
+    public function getPluginServices()
+    {
+        return $this->pluginServices;
+    }
+
+    /**
+     * @return string
+     */
+    public function getCalledMethod()
+    {
+        return $this->calledMethod;
+    }
+
+    /**
+     * @return array|ExpressionFunction[]
+     */
     public function getFunctions()
     {
         $functionExpressions = [];
@@ -35,19 +84,22 @@ class Plugin implements ExpressionFunctionProviderInterface
                 $pluginManager,
                 $calledMethod
             ) {
-                throw new LogicException("Evaluator for $pluginService doesn't exist");
+                throw new LogicException(
+                    "Compiler for $pluginService doesn't exist",
+                    LogicException::COMPILER_NOT_SUPPORTED
+                );
             };
 
             $evaluator = function ($arguments, $value) use (
-                $pluginManager,
+                $pluginService,
                 $pluginManager,
                 $calledMethod
             ) {
-                $plugin = $pluginManager->get($pluginManager);
+                $plugin = $pluginManager->get($pluginService);
                 return $plugin->{$calledMethod}($value);
             };
 
-            $functionExpressions[] = new ExpressionFunction($pluginManager, $compiler, $evaluator);
+            $functionExpressions[] = new ExpressionFunction($pluginService, $compiler, $evaluator);
         }
 
         return $functionExpressions;

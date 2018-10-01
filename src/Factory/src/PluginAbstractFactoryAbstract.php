@@ -43,7 +43,7 @@ abstract class PluginAbstractFactoryAbstract implements AbstractFactoryInterface
      */
     public function canCreate(ContainerInterface $container, $requestedName)
     {
-        return boolval($this->getServiceConfig($container, $requestedName));
+        return !is_null($this->getServiceConfig($container, $requestedName));
     }
 
     /**
@@ -53,7 +53,7 @@ abstract class PluginAbstractFactoryAbstract implements AbstractFactoryInterface
      * @param array|null $options
      * @return array
      */
-    protected function getPluginOptions($serviceConfig, array $options = null)
+    public function getPluginOptions($serviceConfig, array $options = null)
     {
         $pluginOptions = [];
 
@@ -85,14 +85,14 @@ abstract class PluginAbstractFactoryAbstract implements AbstractFactoryInterface
      * @param bool $required
      * @return mixed
      */
-    protected function getClass(array $serviceConfig, $required = false)
+    public function getClass(array $serviceConfig, $required = false)
     {
         if (!isset($serviceConfig[self::CLASS_KEY])) {
             if (!$required) {
                 return self::DEFAULT_CLASS;
             }
 
-            throw new \InvalidArgumentException('There is no \'class\' config for plugin in config');
+            throw new \InvalidArgumentException("There is no 'class' config for plugin in config");
         } else if (!is_a($serviceConfig[self::CLASS_KEY], static::DEFAULT_CLASS, true)) {
             throw new \InvalidArgumentException(
                 'Caused class must implement or extend ' . static::DEFAULT_CLASS
@@ -105,9 +105,9 @@ abstract class PluginAbstractFactoryAbstract implements AbstractFactoryInterface
     /**
      * @param ContainerInterface $container
      * @param $requestedName
-     * @return null
+     * @return null|array
      */
-    protected function getServiceConfig(ContainerInterface $container, $requestedName)
+    public function getServiceConfig(ContainerInterface $container, $requestedName)
     {
         $config = $container->get('config');
         return $config[static::KEY][self::ABSTRACT_FACTORY_CONFIG][static::class][$requestedName] ?? null;

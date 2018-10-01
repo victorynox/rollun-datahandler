@@ -11,7 +11,7 @@ use Zend\Validator\ValidatorPluginManager;
  * Class ProcessorAbstractFactoryAbstract
  * @package rollun\datahandler\Processor\Factory
  */
-abstract class ProcessorAbstractFactoryAbstract extends PluginAbstractFactoryAbstract
+abstract class AbstractProcessorAbstractFactory extends PluginAbstractFactoryAbstract
 {
     /**
      *  Config key for all processors config

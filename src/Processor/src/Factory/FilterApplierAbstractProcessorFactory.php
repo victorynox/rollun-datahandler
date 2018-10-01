@@ -37,7 +37,7 @@ use Zend\Filter\FilterPluginManager;
  * Class FilterApplierAbstractFactory
  * @package rollun\datahandler\Processor\Factory
  */
-class FilterApplierAbstractFactory extends ProcessorAbstractFactoryAbstract
+class FilterApplierAbstractProcessorFactory extends AbstractProcessorAbstractFactory
 {
     /**
      * Default class for filter applier processor

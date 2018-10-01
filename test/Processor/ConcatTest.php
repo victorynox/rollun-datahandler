@@ -22,7 +22,7 @@ class ConcatTest extends TestCase
                         2 => 'second column',
                         3 => 'third column',
                     ],
-                    'columnToWrite' => 'result column',
+                    'resultColumn' => 'result column',
                 ],
                 [
                     'first column' => 'a',
@@ -41,7 +41,7 @@ class ConcatTest extends TestCase
                         2 => 'second column',
                     ],
                     'delimiter' => '-',
-                    'columnToWrite' => 'result column',
+                    'resultColumn' => 'result column',
                 ],
                 [
                     'first column' => 'a',

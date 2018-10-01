@@ -25,7 +25,7 @@ class ValidateProcessorTest extends TestCase
         $validator = new IsCountable();
         $options = [
             'columns' => [1, 2],
-            'columnToWrite' => 3,
+            'resultColumn' => 3,
         ];
         $value = [
             1 => 'a',
@@ -45,7 +45,7 @@ class ValidateProcessorTest extends TestCase
         $validator = new Digits();
         $options = [
             'columns' => [1, 2],
-            'columnToWrite' => 3,
+            'resultColumn' => 3,
         ];
         $value = [
             1 => 'a',
@@ -67,7 +67,7 @@ class ValidateProcessorTest extends TestCase
         $validator = new Callback();
         $options = [
             'columns' => [1, 2],
-            'columnToWrite' => 3,
+            'resultColumn' => 3,
         ];
         $value = [
             1 => 'a',

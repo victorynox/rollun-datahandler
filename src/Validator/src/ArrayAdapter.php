@@ -34,6 +34,22 @@ class ArrayAdapter extends AbstractValidator
     }
 
     /**
+     * @param ValidatorInterface $validator
+     */
+    public function setValidator(ValidatorInterface $validator)
+    {
+        $this->validator = $validator;
+    }
+
+    /**
+     * @return ValidatorInterface
+     */
+    public function getValidator()
+    {
+        return $this->validator;
+    }
+
+    /**
      * @param $columnsToValidate
      */
     public function setColumnsToValidate($columnsToValidate)
@@ -71,17 +87,18 @@ class ArrayAdapter extends AbstractValidator
 
         // Create copy of columnsToValidate
         $columnsToValidate = $this->getColumnsToValidate();
+        $valueColumns = [];
 
         foreach ($columnsToValidate as $column) {
             if (!isset($value[$column])) {
                 throw new InvalidArgumentException("{$column} doesn't exist in incoming value");
             }
+
+            $valueColumns[] = $value[$column];
         }
 
-        $valueColumns = $this->getValueColumns($value);
-
         foreach ($valueColumns as $column) {
-            $isValid = $this->validator->isValid($column);
+            $isValid = $this->getValidator()->isValid($column);
 
             if (!$isValid) {
                 return false;
@@ -89,21 +106,5 @@ class ArrayAdapter extends AbstractValidator
         }
 
         return true;
-    }
-
-    /**
-     * @param array $value
-     * @return array
-     */
-    protected function getValueColumns(array $value)
-    {
-        $valueColumns = [];
-        $columnsToValidate = $this->getColumnsToValidate();
-
-        foreach ($columnsToValidate as $column) {
-            $valueColumns[] = $value[$column];
-        }
-
-        return $valueColumns;
     }
 }

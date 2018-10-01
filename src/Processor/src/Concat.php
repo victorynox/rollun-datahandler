@@ -27,7 +27,7 @@ class Concat extends AbstractProcessor
     protected $columns;
 
     /**
-     * Column to write result of concating
+     * Column to write result of concatenation
      *
      * @var string
      */
@@ -65,6 +65,18 @@ class Concat extends AbstractProcessor
         }
 
         $this->columns = $columns;
+    }
+
+    /**
+     * @return array
+     */
+    public function getColumns()
+    {
+        if (!isset($this->columns)) {
+            throw new InvalidArgumentException("Missing option 'columns'");
+        }
+
+        return $this->columns;
     }
 
     /**
@@ -137,34 +149,23 @@ class Concat extends AbstractProcessor
      */
     public function doProcess(array $value)
     {
-        foreach ($this->columns as $column) {
+        $columns = $this->getColumns();
+        $valueColumns = [];
+
+        foreach ($columns as $priority => $column) {
             if (!array_key_exists($column, $value)) {
                 throw new InvalidArgumentException("Column '{$column}' in 'columns' option is not valid");
             }
-        }
 
-        $columns = $this->getValueColumns($value);
-        ksort($columns);
-
-        $resultColumn = $this->getResultColumn();
-        $delimiter = $this->getDelimiter();
-        $value[$resultColumn] = implode($delimiter, $columns);
-
-        return $value;
-    }
-
-    /**
-     * @param array $value
-     * @return array
-     */
-    protected function getValueColumns(array $value)
-    {
-        $valueColumns = [];
-
-        foreach ($this->columns as $priority => $column) {
             $valueColumns[$priority] = $value[$column];
         }
 
-        return $valueColumns;
+        ksort($valueColumns);
+
+        $resultColumn = $this->getResultColumn();
+        $delimiter = $this->getDelimiter();
+        $value[$resultColumn] = implode($delimiter, $valueColumns);
+
+        return $value;
     }
 }

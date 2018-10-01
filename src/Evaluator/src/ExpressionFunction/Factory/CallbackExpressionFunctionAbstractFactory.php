@@ -15,14 +15,14 @@ use rollun\datahandler\Evaluator\ExpressionFunction\Callback as CallbackExpressi
  * Config example:
  * <code>
  * AbstractExpressionFunctionAbstractFactory::KEY => [
- *      ExpressionFunctionAbstractFactory::class =>
- *          'expressionFunctionServiceName1' => [
+ *      CallbackExpressionFunctionAbstractFactory::class =>
+ *          'callbackExpressionFunctionServiceName1' => [
  *              'class' => Callback::class, // default value
  *              'callbackService' => 'callbackServiceName1',
  *              'callbackMethod' => 'callbackMethodName1',
  *              'functionName' => 'functionName1',
  *          ],
- *          'expressionFunctionServiceName2' => [
+ *          'callbackExpressionFunctionServiceName2' => [
  *              //...
  *          ],
  *      ]
@@ -56,7 +56,7 @@ class CallbackExpressionFunctionAbstractFactory extends AbstractExpressionFuncti
 
     public function __invoke(ContainerInterface $container, $requestedName, array $options = null)
     {
-        $serviceConfig = $container->get('config')[self::class][$requestedName];
+        $serviceConfig = $this->getServiceConfig($container, $requestedName);
 
         /** @var CallbackExpressionFunction $class */
         $class = $this->getClass($serviceConfig);
