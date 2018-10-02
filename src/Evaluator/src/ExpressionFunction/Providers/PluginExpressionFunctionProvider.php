@@ -11,7 +11,7 @@ use Zend\ServiceManager\AbstractPluginManager;
  * Class Plugin
  * @package rollun\datahandler\Evaluator\ExpressionFunctionProviders
  */
-class Plugin implements ExpressionFunctionProviderInterface
+class PluginExpressionFunctionProvider implements ExpressionFunctionProviderInterface
 {
     /**
      * @var AbstractPluginManager

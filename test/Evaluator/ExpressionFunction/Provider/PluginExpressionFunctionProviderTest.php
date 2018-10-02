@@ -4,21 +4,21 @@ namespace rollun\test\datahandler\Evaluator\ExpressionFunction\Provider;
 
 use PHPUnit\Framework\TestCase;
 use rollun\datahandler\Evaluator\ExpressionFunction\LogicException;
-use rollun\datahandler\Evaluator\ExpressionFunction\Providers\Plugin;
+use rollun\datahandler\Evaluator\ExpressionFunction\Providers\PluginExpressionFunctionProvider;
 use Symfony\Component\ExpressionLanguage\ExpressionFunction;
 use Symfony\Component\ExpressionLanguage\ExpressionLanguage;
 use Zend\Filter\FilterPluginManager;
 use Zend\ServiceManager\ServiceManager;
 use Zend\Validator\ValidatorPluginManager;
 
-class PluginTest extends TestCase
+class PluginExpressionFunctionProviderTest extends TestCase
 {
     public function testPositiveGetFunction()
     {
         $pluginManager = new FilterPluginManager(new ServiceManager());
         $services = ['digits', 'stringTrim'];
 
-        $pluginProvider = new Plugin($pluginManager, $services);
+        $pluginProvider = new PluginExpressionFunctionProvider($pluginManager, $services);
         $expressionFunctions = $pluginProvider->getFunctions();
 
         $this->assertEquals($expressionFunctions[0]->getName(), 'digits');
@@ -30,7 +30,7 @@ class PluginTest extends TestCase
         $pluginManager = new ValidatorPluginManager(new ServiceManager());
         $services = ['digits', 'emailAddress'];
 
-        $pluginProvider = new Plugin($pluginManager, $services);
+        $pluginProvider = new PluginExpressionFunctionProvider($pluginManager, $services);
         $expressionFunctions = $pluginProvider->getFunctions();
 
         $this->assertTrue($this->isExpressionValid(

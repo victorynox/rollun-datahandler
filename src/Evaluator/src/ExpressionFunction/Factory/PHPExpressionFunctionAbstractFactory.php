@@ -16,7 +16,7 @@ use Symfony\Component\ExpressionLanguage\ExpressionFunction;
  * AbstractExpressionFunctionAbstractFactory::KEY => [
  *      PHPExpressionFunctionAbstractProvider::class =>
  *          'phpExpressionFunctionServiceName1' => [
- *              'class' => ExpressionFunction::class, // default value
+ *              'class' => ExpressionFunction::class, // optional
  *              'phpFunctionName' => 'My\functions',
  *              'expressionFunctionName' => '', // alias function in expression language
  *          ],

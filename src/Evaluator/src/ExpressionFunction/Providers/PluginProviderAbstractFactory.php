@@ -15,7 +15,7 @@ use Zend\ServiceManager\Factory\AbstractFactoryInterface;
  * <code>
  * ProviderAbstractFactory::class => [
  *      'pluginProviderServiceName1' => [
- *          'class' => Plugin::class, // default value
+ *          'class' => PluginExpressionFunctionProvider::class, // optional
  *          'pluginManagerService' => FilterPluginManager::class,
  *          'calledMethod' => 'filter,
  *          'pluginServices' => [
@@ -43,7 +43,7 @@ class PluginProviderAbstractFactory implements AbstractFactoryInterface
     /**
      * Parent class for function
      */
-    const DEFAULT_CLASS = Plugin::class;
+    const DEFAULT_CLASS = PluginExpressionFunctionProvider::class;
 
     /**
      * Config for plugin manager service

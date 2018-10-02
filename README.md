@@ -20,21 +20,74 @@
 * SortSymbols - сортирует символы в строке (не имеет значение какие символы)
 * SortWords - сортирует слова в строке
 
-
 ## Процессоры
 
-Процессоры выполняют некие действие к входящему массиву и возвращают его. Суть процессора в том что бы 
-он что то сделал с входящими данными. Он может вернуть массив так ничего с ним и не сделав, при этом 
-обработать данные и уже с этими данными что то делать: записать логи, отправить что то на почту и тд.
+Процессоры выполняют некие действие с входящим массивом. Суть процессора в том что бы 
+он что то сделал с данными. Он может вернуть массив без изменений, при этом 
+обработать данные и выполнить какое то действие над ними: записать в лог, отправить на почту и тд.
+
+Пример:
+
+```php
+$processor = new Concat([
+    'columns' => [1, 2],
+    'delimiter' => '-'
+    'resultColumn' => 3
+]);
+
+var_dump($processor->process(['a', 'b'])); // displays ['a', 'b', 'a-b']
+```
 
 **Список процессоров:**
 
 * Concat - объединяет значения массива и записывает результат в столбец этого же массива
-* Evaluation - Вычисляет выражение над элементами массива 
-(элементы массива стают переменными в выражении, где ключ = название переменной, а значение = значение переменной)
-и записывает результат в столбец этого же массива
+* Evaluation - Вычисляет выражение над элементами массива (где ключ - название переменной в выражении, 
+а значение - значение этой переменной) и записывает результат в столбец этого же массива
 * FilterApplier - применяет фильтры к заданным столбцам массива
 
+#### FilterApplier
+
+Пример:
+
+```php
+// filters for applying
+// key in array is a priority of filter
+$filters = ;
+$options = [
+    'filters' => [
+        0 => [
+             'service' => 'digits',
+        ],
+        1 => [
+            'service' => 'rqlReplace',
+            'options' => [ // optional
+                'pattern' => '123',
+                'replacement' => '321',
+            ],
+        ],
+    ],
+    'argumentColumn' => 1,
+    'resultColumn' => 2, // optional (will save to argumentColumn)
+]
+
+$processor = new FilterApplier($options);
+var_dump($processor->process(['1a2b3', 'b'])); // displays ['1a2b3', '321']
+
+// you can add validator to determine if we can process
+// validator expect processor incoming $value as itself incoming $value
+$validator = EmailAddress();
+$processor = new FilterApplier($options, $validator);
+var_dump($processor->process(['1a2b3', '123'])); // displays ['1a2b3', 'b']
+
+// to correctly validation use ArrayAdapter validator adapter
+// this one apply validator to each value in array
+$validator = ArrayAdapter([
+    'columnsToValidate' => [1, 2],
+    'validator' => 'digits',
+]);
+$processor = new FilterApplier($options, $validator);
+var_dump($processor->process(['1a2b3', '123'])); // displays ['1a2b3', '321']
+```
 
 ## Валидаторы
 
@@ -44,16 +97,132 @@
 
 * ArrayAdapter - валидирует заданные столбцы массива
 
+#### ArrayAdapter
+```php
+$array1 = ['abcd', '123'];
+$array2 = ['321', '123'];
+
+$validator = new ArrayValidator([
+    'columnsToValidate' => [1, 2],
+    'validator' => 'digits',
+]);
+
+var_dump($validator->isValid($array1)); // false
+var_dump($validator->isValid($array2)); // true
+
+// if validator which you decorate need options, you can provide its using 'validatorOptions' option
+$validator = new ArrayValidator([
+    'columnsToValidate' => [1, 2],
+    'validator' => 'inArray',
+    'validatorOptions' => [
+        'haystack' => $array2
+    ],
+]);
+var_dump($validator->isValid($array2)); // false
+```
 
 ## Язык выражений (Expression Language)
 
-Рассширение до библиотека [`symfony\expression-language`](https://github.com/symfony/expression-language)
+Расширение до библиотеки [`symfony\expression-language`](https://github.com/symfony/expression-language).
+Компонент ExpressionLanguage может компилировать и вычислять выражения.
 
-**Expression functions**
+Пример:
 
-Callback - предоставляет возможность создание ExpressionFunction с колбэка
+```php
+$expressionLanguage = new ExpressionLanguage();
 
-**Expression functions providers**
+var_dump($expressionLanguage->evaluate('1 + 2')); // displays 3
+var_dump($expressionLanguage->compile('1 + 2')); // displays (1 + 2)
 
-Plugin - предоставляет возможность создание ExpressionFunctionProvider с AbstractPluginManager,
-указав список сервисов и вызываемый метод
+// array for variables in expression
+$values = [
+    'a' => 2,
+    'b' => 5,
+];
+var_dump($expressionLanguage->evaluate('a * b'), $values)); // displays 10
+var_dump($expressionLanguage->compile('a * b'), $values)); // displays (2 * 5)
+```
+
+#### Expression functions
+
+Callback - предоставляет возможность создание ExpressionFunction с колбэка.
+Такая функция не может быть скомпилирована, по это при попытки компиляции выражения которое использует это функцию
+будет выброшено исключение.
+
+```php
+$callback = function($value) {
+    return $value . $value;
+};
+$expressionFunction = new ExpressionFunction\Callback($callback, 'foo');
+$expressionLanguage = new ExpressionLanguage();
+$expressionLanguage->addFunction($expressionFunction);
+
+var_dump($expressionLanguage->evaluate("foo('a')")); // displays 'aa'
+var_dump($expressionLanguage->compile("foo('a')")); // exception will be thrown
+```
+
+#### Expression function providers
+
+PluginExpressionFunctionProvider - предоставляет возможность создание ExpressionFunctionProvider с AbstractPluginManager,
+указав список сервисов и вызываемый метод.
+
+```php
+$pluginManager = new FilterPluginManager(new ServiceManager());
+$services = ['digits', 'stringTrim'];
+$expressionFunctionProvider = new PluginExpressionFunctionProvider($pluginManager, $services, 'filter');
+$expressionLanguage = new ExpressionLanguage();
+$expressionLanguage->registerProvider($expressionFunctionProvider);
+
+var_dump($expressionLanguage->evaluate("digits('123abc')")); // displays '123'
+var_dump($expressionLanguage->compile("stringTrim('   ad   ')")); displays 'ad'
+```
+
+## Factories
+
+Процессоры, валидаторы и фильтры (далее 'плагины') могут бить созданы как с помощью плагин менеджера, 
+так и с непосредственно через контейнер. Если конфигурации для плагина заданы и в конфигах контейнера и через $options
+при создание через плагин менеджер, то они не должны конфликтовать, иначе будет выброшено исключение.
+
+Пример:
+
+```php
+$filterPluginManager = FilterPluginManager(new ServiceManager());
+// create filter using filter plugin options
+$filter = $filterPluginManager->get('pregReplace', [
+   'pattern' => '/aaa/',
+   'replacement' => 'a',
+]);
+
+var_dump(get_class($filter)); // Zend\Filter\PregReplace
+
+$container = new ServiceManager();
+$container->setService('config', [
+    'filters' => [
+        'abstract_factory_config' => [
+            SimpleFilterAbstractFactory::class => [
+                'pregReplaceFilter' => [
+                    'class' => PregReplace::class,
+                    'options' => [
+                        'pattern' => '/aaa/',
+                        'replacement' => 'a',
+                    ],
+                ]
+            ]
+        ]
+    ]
+]);
+
+$filterPluginManager = FilterPluginManager($container);
+
+// create using $container configs
+$filter = $filterPluginManager->get('pregReplace');
+
+var_dump(get_class($filter)); // Zend\Filter\PregReplace
+
+// create using $container configs and filter plugin options
+// will be thrown exception
+$filter = $filterPluginManager->get('pregReplace', [
+   'pattern' => '/aaa/',
+   'replacement' => 'a',
+]);
+```

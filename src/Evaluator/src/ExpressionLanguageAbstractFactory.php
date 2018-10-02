@@ -18,7 +18,7 @@ use Zend\ServiceManager\Factory\AbstractFactoryInterface;
  * <code>
  * ExpressionLanguageAbstractFactory::class => [
  *      'expressionLanguageServiceName1' => [
- *          'class' => ExpressionLanguage::class, // default value
+ *          'class' => ExpressionLanguage::class, // optional
  *          'functionExpressionProviders' => [ // optional
  *              'functionExpressionProviderServiceName1',
  *              'functionExpressionProviderServiceName2',

@@ -5,7 +5,7 @@ namespace rollun\test\datahandler\Evaluator\ExpressionFunction\Provider;
 use InvalidArgumentException;
 use PHPUnit\Framework\TestCase;
 use rollun\datahandler\Evaluator\ExpressionFunction\Providers\PluginProviderAbstractFactory;
-use rollun\datahandler\Evaluator\ExpressionFunction\Providers\Plugin;
+use rollun\datahandler\Evaluator\ExpressionFunction\Providers\PluginExpressionFunctionProvider;
 use Zend\Filter\FilterPluginManager;
 use Zend\ServiceManager\ServiceManager;
 use Zend\Validator\ValidatorPluginManager;
@@ -93,7 +93,7 @@ class PluginProviderAbstractFactoryTest extends TestCase
         ]);
         $container->setService($pluginManagerService, new ValidatorPluginManager($container));
 
-        /** @var Plugin $expressionFunctionProvider */
+        /** @var PluginExpressionFunctionProvider $expressionFunctionProvider */
         $expressionFunctionProvider = $this->object->__invoke($container, $requestedName);
 
         $this->assertTrue(is_a($expressionFunctionProvider->getPluginManager(), $pluginManagerService, true));

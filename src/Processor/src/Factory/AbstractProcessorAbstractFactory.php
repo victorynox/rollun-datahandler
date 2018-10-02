@@ -4,6 +4,7 @@ namespace rollun\datahandler\Processor\Factory;
 
 use Interop\Container\ContainerInterface;
 use rollun\datahandler\Factory\PluginAbstractFactoryAbstract;
+use InvalidArgumentException;
 use Zend\Validator\ValidatorInterface;
 use Zend\Validator\ValidatorPluginManager;
 
@@ -45,6 +46,12 @@ abstract class AbstractProcessorAbstractFactory extends PluginAbstractFactoryAbs
 
         $pluginRequestedName = $pluginOptions[self::VALIDATOR_KEY];
         $validatorPluginManager = $container->get(ValidatorPluginManager::class);
+
+        if (!($validatorPluginManager instanceof ValidatorPluginManager)) {
+            throw new InvalidArgumentException(
+                "Can get validator plugin manager using " . ValidatorPluginManager::class . " service name"
+            );
+        }
 
         if ($validatorPluginManager->has($pluginRequestedName)) {
             $validatorOptions = $pluginOptions[self::VALIDATOR_OPTION_KEY] ?? null;

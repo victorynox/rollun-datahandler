@@ -17,7 +17,7 @@ use rollun\datahandler\Evaluator\ExpressionFunction\Callback as CallbackExpressi
  * AbstractExpressionFunctionAbstractFactory::KEY => [
  *      CallbackExpressionFunctionAbstractFactory::class =>
  *          'callbackExpressionFunctionServiceName1' => [
- *              'class' => Callback::class, // default value
+ *              'class' => Callback::class, // optional
  *              'callbackService' => 'callbackServiceName1',
  *              'callbackMethod' => 'callbackMethodName1',
  *              'functionName' => 'functionName1',

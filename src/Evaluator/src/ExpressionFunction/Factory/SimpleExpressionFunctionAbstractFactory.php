@@ -16,7 +16,7 @@ use Symfony\Component\ExpressionLanguage\ExpressionFunction;
  * AbstractExpressionFunctionAbstractFactory::KEY => [
  *      SimpleExpressionFunctionAbstractFactory::class =>
  *          'simpleExpressionFunctionServiceName1' => [
- *              'class' => ExpressionFunction::class, // default value
+ *              'class' => ExpressionFunction::class, // optional
  *
  *              'functionName' => 'functionName1',
  *              // function ($str) {

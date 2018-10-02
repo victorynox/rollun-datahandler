@@ -19,8 +19,9 @@ use Zend\Filter\FilterPluginManager;
  *              'filterApplierProcessorServiceName1' => [
  *                  'class' => FilterApplier::class,
  *                  'options' => [ // by default is not required
- *                      'validator' => 'validator-service',
+ *                      'validator' => 'validatorServiceName',
  *                      'validatorOptions' => [],
+ *                      'filters' => [],
  *                      // other options, specific for each processor
  *                      //...
  *                  ],

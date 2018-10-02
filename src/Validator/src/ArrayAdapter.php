@@ -24,6 +24,10 @@ class ArrayAdapter extends AbstractValidator
 
     /**
      * ArrayAdapter constructor.
+     *
+     * Example valid $option keys
+     * - columnsToValidate - array or string (for one column) of column to validate
+     *
      * @param ValidatorInterface $validator
      * @param null $options
      */

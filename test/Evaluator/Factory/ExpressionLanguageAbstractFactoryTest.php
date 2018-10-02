@@ -6,7 +6,7 @@ use PHPUnit\Framework\TestCase;
 use rollun\datahandler\Evaluator\ExpressionEvaluator;
 use rollun\datahandler\Evaluator\ExpressionLanguageAbstractFactory;
 use rollun\datahandler\Evaluator\ExpressionFunction\LogicException;
-use rollun\datahandler\Evaluator\ExpressionFunction\Providers\Plugin;
+use rollun\datahandler\Evaluator\ExpressionFunction\Providers\PluginExpressionFunctionProvider;
 use Symfony\Component\ExpressionLanguage\ExpressionFunction;
 use Symfony\Component\ExpressionLanguage\ExpressionLanguage;
 use Zend\Filter\FilterPluginManager;
@@ -63,11 +63,11 @@ class ExpressionLanguageAbstractFactoryTest extends TestCase
         ]);
         $container->setService(
             'expressionFunctionProvider1',
-            new Plugin(new FilterPluginManager($container), ['stringTrim'])
+            new PluginExpressionFunctionProvider(new FilterPluginManager($container), ['stringTrim'])
         );
         $container->setService(
             'expressionFunctionProvider2',
-            new Plugin(new ValidatorPluginManager($container), ['digits'])
+            new PluginExpressionFunctionProvider(new ValidatorPluginManager($container), ['digits'])
         );
 
         /** @var ExpressionLanguage $expressionEvaluator */

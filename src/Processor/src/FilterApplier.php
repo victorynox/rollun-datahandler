@@ -37,7 +37,7 @@ class FilterApplier extends AbstractProcessor
      *
      *  [
      *      0 => [
-     *          'service' => 'rql' - filter service
+     *          'service' => 'rqlReplace' - filter service
      *          'options' => [
      *              'pattern' => '*Some*pattern*'
      *              'replacement' => 'Concrete string'
