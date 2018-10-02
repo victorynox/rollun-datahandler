@@ -11,6 +11,11 @@ use rollun\datahandler\Processor\FilterApplier;
  */
 class FilterApplierTest extends TestCase
 {
+    /**
+     * @param array $options
+     * @param null $validator
+     * @return FilterApplier
+     */
     public function getProcessor($options = [], $validator = null)
     {
         return new FilterApplier($options, $validator);

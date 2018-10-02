@@ -13,8 +13,9 @@ abstract class AbstractProcessorAbstractFactoryTest extends PluginAbstractFactor
 {
     /**
      * @param $requestedName
-     * @param $serviceConfig
+     * @param array $serviceConfig
      * @return \Zend\ServiceManager\ServiceManager
+     * @throws \ReflectionException
      */
     protected function getContainer($requestedName, $serviceConfig = [])
     {
@@ -27,6 +28,8 @@ abstract class AbstractProcessorAbstractFactoryTest extends PluginAbstractFactor
     /**
      * @param $processorClassName
      * @param $validatorClassName
+     * @throws \Interop\Container\Exception\ContainerException
+     * @throws \ReflectionException
      */
     public function assertInvokeWithOptions($processorClassName, $validatorClassName)
     {
@@ -46,6 +49,8 @@ abstract class AbstractProcessorAbstractFactoryTest extends PluginAbstractFactor
     /**
      * @param $processorClassName
      * @param $validatorClassName
+     * @throws \Interop\Container\Exception\ContainerException
+     * @throws \ReflectionException
      */
     public function assertInvokeWithConfig($processorClassName, $validatorClassName)
     {

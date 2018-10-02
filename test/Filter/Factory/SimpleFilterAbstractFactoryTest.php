@@ -8,6 +8,10 @@ use rollun\datahandler\Filter\RqlReplace;
 use rollun\test\datahandler\Factory\PluginAbstractFactoryAbstractTest;
 use Zend\Filter\StringTrim;
 
+/**
+ * Class SimpleFilterAbstractFactoryTest
+ * @package rollun\test\datahandler\Filter\Factory
+ */
 class SimpleFilterAbstractFactoryTest extends PluginAbstractFactoryAbstractTest
 {
     protected function setUp()
@@ -36,7 +40,7 @@ class SimpleFilterAbstractFactoryTest extends PluginAbstractFactoryAbstractTest
         $afterPattern = 'some-after-pattern';
         $replacement = 'replacement';
 
-        /** @var RqlReplace $processor */
+        /** @var RqlReplace $filter */
         $filter = $this->invoke([
             'class' => $filterClassName,
             'options' => [

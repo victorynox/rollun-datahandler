@@ -4,18 +4,18 @@ namespace rollun\test\datahandler\Processor\Factory;
 
 use InvalidArgumentException;
 use rollun\datahandler\Processor\Concat;
-use rollun\datahandler\Processor\Factory\SimpleAbstractProcessorFactory;
+use rollun\datahandler\Processor\Factory\SimpleProcessorAbstractFactory;
 use Zend\Validator\Digits;
 
 /**
  * Class SimpleProcessorAbstractFactoryTest
  * @package rollun\test\datahandler\Processor\Factory
  */
-class SimpleAbstractProcessorFactoryTest extends AbstractProcessorAbstractFactoryTest
+class SimpleProcessorAbstractFactoryTest extends AbstractProcessorAbstractFactoryTest
 {
     protected function setUp()
     {
-        $this->object = new SimpleAbstractProcessorFactory();
+        $this->object = new SimpleProcessorAbstractFactory();
     }
 
     public function testNegativeInvokeWithConfig()

@@ -12,12 +12,12 @@ use Zend\ServiceManager\Factory\AbstractFactoryInterface;
 abstract class PluginAbstractFactoryAbstract implements AbstractFactoryInterface
 {
     /**
-     * Parent class for plugin. By default doesn't set
+     * Parent class for plugin
      */
     const DEFAULT_CLASS = null;
 
     /**
-     * Common namespace name for plugin config. By default doesn't set
+     * Common namespace name for plugin config
      */
     const KEY = null;
 

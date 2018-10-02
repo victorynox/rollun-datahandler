@@ -21,6 +21,12 @@ class ValidatorAdapterAbstractFactoryTest extends PluginAbstractFactoryAbstractT
         $this->assertPositiveGetClass($validatorClassName);
     }
 
+    /**
+     * @param $requestedName
+     * @param array $serviceConfig
+     * @return \Zend\ServiceManager\ServiceManager
+     * @throws \ReflectionException
+     */
     protected function getContainer($requestedName, $serviceConfig = [])
     {
         $container = parent::getContainer($requestedName, $serviceConfig);
@@ -35,7 +41,7 @@ class ValidatorAdapterAbstractFactoryTest extends PluginAbstractFactoryAbstractT
         $validatorAdapterClassName = ArrayAdapter::class;
         $columnsToValidate = ['a', 'b'];
 
-        /** @var ArrayAdapter $processor */
+        /** @var ArrayAdapter $validatorAdapter */
         $validatorAdapter = $this->invoke([
             'class' => $validatorAdapterClassName,
             'options' => [

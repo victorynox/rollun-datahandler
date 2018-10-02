@@ -5,6 +5,10 @@ namespace rollun\test\datahandler\Processor;
 use PHPUnit\Framework\TestCase;
 use rollun\datahandler\Processor\Concat;
 
+/**
+ * Class ConcatTest
+ * @package rollun\test\datahandler\Processor
+ */
 class ConcatTest extends TestCase
 {
     public function getProcessor($options = [], $validator = null)

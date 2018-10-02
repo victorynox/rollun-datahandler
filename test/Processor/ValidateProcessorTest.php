@@ -15,6 +15,11 @@ use Zend\Validator\IsCountable;
  */
 class ValidateProcessorTest extends TestCase
 {
+    /**
+     * @param array $options
+     * @param null $validator
+     * @return Concat
+     */
     protected function getProcessor($options = [], $validator = null)
     {
         return new Concat($options, $validator);

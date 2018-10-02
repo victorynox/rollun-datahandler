@@ -7,6 +7,10 @@ use PHPUnit\Framework\TestCase;
 use rollun\datahandler\Factory\PluginAbstractFactoryAbstract;
 use Zend\ServiceManager\ServiceManager;
 
+/**
+ * Class PluginAbstractFactoryAbstractTest
+ * @package rollun\test\datahandler\Factory
+ */
 abstract class PluginAbstractFactoryAbstractTest extends TestCase
 {
     /**
@@ -18,20 +22,6 @@ abstract class PluginAbstractFactoryAbstractTest extends TestCase
     {
         $this->expectExceptionMessage("There is no 'class' config for plugin in config");
         $this->object->getClass([], true);
-    }
-
-    protected function getConstant($name)
-    {
-        $reflectionClass = new \ReflectionClass($this->object);
-        $constants = $reflectionClass->getConstants();
-
-        if (!isset($constants[$name])) {
-            throw new InvalidArgumentException(
-                "Undefined constant $name in " . get_class($this->object) . " class"
-            );
-        }
-
-        return $constants[$name];
     }
 
     public function testCanCreate()
@@ -103,9 +93,29 @@ abstract class PluginAbstractFactoryAbstractTest extends TestCase
     }
 
     /**
+     * @param $name
+     * @return mixed
+     * @throws \ReflectionException
+     */
+    protected function getConstant($name)
+    {
+        $reflectionClass = new \ReflectionClass($this->object);
+        $constants = $reflectionClass->getConstants();
+
+        if (!isset($constants[$name])) {
+            throw new InvalidArgumentException(
+                "Undefined constant $name in " . get_class($this->object) . " class"
+            );
+        }
+
+        return $constants[$name];
+    }
+
+    /**
      * @param $requestedName
-     * @param $serviceConfig
+     * @param array $serviceConfig
      * @return ServiceManager
+     * @throws \ReflectionException
      */
     protected function getContainer($requestedName, $serviceConfig = [])
     {
@@ -123,6 +133,13 @@ abstract class PluginAbstractFactoryAbstractTest extends TestCase
         return $container;
     }
 
+    /**
+     * @param array $serviceConfig
+     * @param null $options
+     * @return object
+     * @throws \Interop\Container\Exception\ContainerException
+     * @throws \ReflectionException
+     */
     protected function invoke($serviceConfig = [], $options = null)
     {
         $requestedName = 'requestedServiceName';

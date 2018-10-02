@@ -8,6 +8,10 @@ use rollun\test\datahandler\Factory\PluginAbstractFactoryAbstractTest;
 use Zend\Validator\Digits;
 use Zend\Validator\Regex;
 
+/**
+ * Class SimpleValidatorAbstractFactoryTest
+ * @package rollun\test\datahandler\Validator\Factory
+ */
 class SimpleValidatorAbstractFactoryTest extends PluginAbstractFactoryAbstractTest
 {
     protected function setUp()
@@ -33,7 +37,7 @@ class SimpleValidatorAbstractFactoryTest extends PluginAbstractFactoryAbstractTe
         $validatorClassName = Regex::class;
         $pattern = '/some-pattern/';
 
-        /** @var Regex $processor */
+        /** @var Regex $validator */
         $validator = $this->invoke([
             'class' => $validatorClassName,
             'options' => [

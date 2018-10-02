@@ -2,7 +2,7 @@
 
 namespace rollun\test\datahandler\Processor\Factory;
 
-use rollun\datahandler\Processor\Factory\FilterApplierAbstractProcessorFactory;
+use rollun\datahandler\Processor\Factory\FilterApplierProcessorAbstractFactory;
 use rollun\datahandler\Processor\FilterApplier;
 use Zend\Filter\FilterPluginManager;
 use Zend\Validator\Digits;
@@ -11,11 +11,11 @@ use Zend\Validator\Digits;
  * Class FilterApplierAbstractFactoryTest
  * @package rollun\test\datahandler\Processor\Factory
  */
-class FilterApplierAbstractProcessorFactoryTest extends AbstractProcessorAbstractFactoryTest
+class FilterApplierProcessorAbstractFactoryTest extends AbstractProcessorAbstractFactoryTest
 {
     protected function setUp()
     {
-        $this->object = new FilterApplierAbstractProcessorFactory();
+        $this->object = new FilterApplierProcessorAbstractFactory();
     }
 
     /**
