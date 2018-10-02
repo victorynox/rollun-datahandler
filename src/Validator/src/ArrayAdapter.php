@@ -86,7 +86,7 @@ class ArrayAdapter extends AbstractValidator
     public function isValid($value)
     {
         if (!is_array($value)) {
-            throw new InvalidArgumentException("Incoming value must be an array");
+            return false;
         }
 
         // Create copy of columnsToValidate

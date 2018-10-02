@@ -262,6 +262,7 @@ $container->setService('config', [
         ]
     ]
 ]);
+$filterPluginManager = FilterPluginManager($container);
 
 // will be thrown exception
 $filter = $filterPluginManager->get('pregReplace', [

@@ -4,8 +4,11 @@ namespace rollun\test\datahandler\Validator;
 
 use PHPUnit\Framework\TestCase;
 use rollun\datahandler\Validator\ArrayAdapter;
+use Zend\ServiceManager\ServiceManager;
 use Zend\Validator\Digits;
 use Zend\Validator\Exception\InvalidArgumentException;
+use Zend\Validator\NotEmpty;
+use Zend\Validator\ValidatorPluginManager;
 
 class ArrayAdapterTest extends TestCase
 {
