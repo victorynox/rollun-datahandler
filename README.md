@@ -50,10 +50,17 @@ var_dump($processor->process(['a', 'b'])); // displays ['a', 'b', 'a-b']
 Пример:
 
 ```php
-// filters for applying
-// key in array is a priority of filter
-$filters = ;
+$processor = new FilterApplier($options);
+
+var_dump($processor->process(['1a2b3', 'b'])); // displays ['1a2b3', '321']
+```
+
+Пример масива `$options` для FilterApplier. [Подробнее о том как задавать опции используя фабрики](#factories).
+
+```php
 $options = [
+    // filters for applying
+    // key in array is a priority of filter
     'filters' => [
         0 => [
              'service' => 'digits',
@@ -69,23 +76,29 @@ $options = [
     'argumentColumn' => 1,
     'resultColumn' => 2, // optional (will save to argumentColumn)
 ]
+```
 
-$processor = new FilterApplier($options);
-var_dump($processor->process(['1a2b3', 'b'])); // displays ['1a2b3', '321']
+Все процессоры, в том числе и FilterApplier могут принимать валидатор вторым параметром.
+Валидатор на входе получит тот же массив что и получит на входе процессор.
+Если массив будет не валидный процессор обрабатывать его не будет
 
-// you can add validator to determine if we can process
-// validator expect processor incoming $value as itself incoming $value
-$validator = EmailAddress();
+```php
+$validator = new EmailAddress();
 $processor = new FilterApplier($options, $validator);
-var_dump($processor->process(['1a2b3', '123'])); // displays ['1a2b3', 'b']
 
-// to correctly validation use ArrayAdapter validator adapter
-// this one apply validator to each value in array
+var_dump($processor->process(['1a2b3', '123'])); // displays ['1a2b3', 'b']
+```
+
+Для корректной работы валидатора, лучше использовать ArrayAdapter декоратор. Он применяет валидатор для заданого
+поля/полей
+
+```php
 $validator = ArrayAdapter([
     'columnsToValidate' => [1, 2],
     'validator' => 'digits',
 ]);
 $processor = new FilterApplier($options, $validator);
+
 var_dump($processor->process(['1a2b3', '123'])); // displays ['1a2b3', '321']
 ```
 
@@ -109,8 +122,12 @@ $validator = new ArrayValidator([
 
 var_dump($validator->isValid($array1)); // false
 var_dump($validator->isValid($array2)); // true
+```
 
-// if validator which you decorate need options, you can provide its using 'validatorOptions' option
+Если для использования валидатора нужны дополнительные опции, их можна передать через `'validatorOptions'` ключ.
+[Подробнее о том как задавать опции используя фабрики](#factories).
+
+```php
 $validator = new ArrayValidator([
     'columnsToValidate' => [1, 2],
     'validator' => 'inArray',
@@ -118,6 +135,7 @@ $validator = new ArrayValidator([
         'haystack' => $array2
     ],
 ]);
+
 var_dump($validator->isValid($array2)); // false
 ```
 
@@ -180,10 +198,6 @@ var_dump($expressionLanguage->compile("stringTrim('   ad   ')")); displays 'ad'
 ## Factories
 
 Процессоры, валидаторы и фильтры (далее 'плагины') могут бить созданы как с помощью плагин менеджера, 
-так и с непосредственно через контейнер. Если конфигурации для плагина заданы и в конфигах контейнера и через $options
-при создание через плагин менеджер, то они не должны конфликтовать, иначе будет выброшено исключение.
-
-Пример:
 
 ```php
 $filterPluginManager = FilterPluginManager(new ServiceManager());
@@ -194,7 +208,11 @@ $filter = $filterPluginManager->get('pregReplace', [
 ]);
 
 var_dump(get_class($filter)); // Zend\Filter\PregReplace
+```
 
+так и с непосредственно через контейнер. 
+
+```php
 $container = new ServiceManager();
 $container->setService('config', [
     'filters' => [
@@ -213,13 +231,32 @@ $container->setService('config', [
 ]);
 
 $filterPluginManager = FilterPluginManager($container);
-
-// create using $container configs
 $filter = $filterPluginManager->get('pregReplace');
 
 var_dump(get_class($filter)); // Zend\Filter\PregReplace
+```
 
-// create using $container configs and filter plugin options
+Если конфигурации для плагина заданы и в конфигах контейнера и через $options
+при создание через плагин менеджер, то они не должны конфликтовать, иначе будет выброшено исключение.
+
+```php
+$container = new ServiceManager();
+$container->setService('config', [
+    'filters' => [
+        'abstract_factory_config' => [
+            SimpleFilterAbstractFactory::class => [
+                'pregReplaceFilter' => [
+                    'class' => PregReplace::class,
+                    'options' => [
+                        'pattern' => '/aaa/',
+                        'replacement' => 'a',
+                    ],
+                ]
+            ]
+        ]
+    ]
+]);
+
 // will be thrown exception
 $filter = $filterPluginManager->get('pregReplace', [
    'pattern' => '/aaa/',
