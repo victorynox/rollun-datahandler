@@ -102,6 +102,22 @@ class Evaluation extends AbstractProcessor
     }
 
     /**
+     * Evaluate expression and save result in $this->resultColumn
+     * Variable in expression comes from incoming $value.
+     *
+     * Example:
+     * incoming $value = [
+     *      'a' => 'a',
+     *      'b' => 'b',
+     * ]
+     * $this->expression = "a + b + 'cd'"
+     * $this->resultColumn = 'c'
+     * returned $value = [
+     *      'a' => 'a',
+     *      'b' => 'b',
+     *      'c' => 'abcd',
+     * ]
+     *
      * @param array $value
      * @return array
      */
