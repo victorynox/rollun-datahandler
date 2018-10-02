@@ -4,24 +4,25 @@ namespace rollun\test\datahandler\Evaluator\Factory;
 
 use PHPUnit\Framework\TestCase;
 use rollun\datahandler\Evaluator\ExpressionEvaluator;
-use rollun\datahandler\Evaluator\ExpressionEvaluatorAbstractFactory;
+use rollun\datahandler\Evaluator\ExpressionLanguageAbstractFactory;
 use rollun\datahandler\Evaluator\ExpressionFunction\LogicException;
 use rollun\datahandler\Evaluator\ExpressionFunction\Providers\Plugin;
 use Symfony\Component\ExpressionLanguage\ExpressionFunction;
+use Symfony\Component\ExpressionLanguage\ExpressionLanguage;
 use Zend\Filter\FilterPluginManager;
 use Zend\ServiceManager\ServiceManager;
 use Zend\Validator\ValidatorPluginManager;
 
-class ExpressionEvaluatorAbstractFactoryTest extends TestCase
+class ExpressionLanguageAbstractFactoryTest extends TestCase
 {
     /**
-     * @var ExpressionEvaluatorAbstractFactory
+     * @var ExpressionLanguageAbstractFactory
      */
     protected $object;
 
     protected function setUp()
     {
-        $this->object = new ExpressionEvaluatorAbstractFactory();
+        $this->object = new ExpressionLanguageAbstractFactory();
     }
 
     public function testCanCreate()
@@ -45,10 +46,10 @@ class ExpressionEvaluatorAbstractFactoryTest extends TestCase
         $container->setService('expressionFunction1', ExpressionFunction::fromPhp('trim'));
         $container->setService('expressionFunction2', ExpressionFunction::fromPhp('ucfirst'));
 
-        /** @var ExpressionEvaluator $expressionEvaluator */
-        $expressionEvaluator = $this->object->__invoke($container, $requestedName);
-        $this->assertTrue($this->isExpressionValid($expressionEvaluator, "trim('   dsadsa ')", 'dsadsa'));
-        $this->assertTrue($this->isExpressionValid($expressionEvaluator, "ucfirst('as')", 'As'));
+        /** @var ExpressionLanguage $expressionLanguage */
+        $expressionLanguage = $this->object->__invoke($container, $requestedName);
+        $this->assertTrue($this->isExpressionValid($expressionLanguage, "trim('   dsadsa ')", 'dsadsa'));
+        $this->assertTrue($this->isExpressionValid($expressionLanguage, "ucfirst('as')", 'As'));
     }
 
     public function testCreateWithExpressionFunctionProviders()
@@ -69,10 +70,10 @@ class ExpressionEvaluatorAbstractFactoryTest extends TestCase
             new Plugin(new ValidatorPluginManager($container), ['digits'])
         );
 
-        /** @var ExpressionEvaluator $expressionEvaluator */
-        $expressionEvaluator = $this->object->__invoke($container, $requestedName);
-        $this->assertTrue($this->isExpressionValid($expressionEvaluator, "stringTrim('   dsadsa ')", 'dsadsa'));
-        $this->assertTrue($this->isExpressionValid($expressionEvaluator, "digits('1234a')", false));
+        /** @var ExpressionLanguage $expressionEvaluator */
+        $expressionLanguage = $this->object->__invoke($container, $requestedName);
+        $this->assertTrue($this->isExpressionValid($expressionLanguage, "stringTrim('   dsadsa ')", 'dsadsa'));
+        $this->assertTrue($this->isExpressionValid($expressionLanguage, "digits('1234a')", false));
     }
 
     /**
@@ -94,7 +95,7 @@ class ExpressionEvaluatorAbstractFactoryTest extends TestCase
 
     /**
      * @param array $serviceConfig
-     * @return \rollun\datahandler\Evaluator\ExpressionEvaluator
+     * @return ExpressionLanguage
      */
     protected function invoke($serviceConfig = [])
     {
@@ -103,7 +104,7 @@ class ExpressionEvaluatorAbstractFactoryTest extends TestCase
         return $this->object->__invoke($container, $requestedName, null);
     }
 
-    protected function isExpressionValid(ExpressionEvaluator $expressionEvaluator, $expression, $expectedEvaluation)
+    protected function isExpressionValid(ExpressionLanguage $expressionEvaluator, $expression, $expectedEvaluation)
     {
         try {
             $expressionEvaluator->compile($expression);

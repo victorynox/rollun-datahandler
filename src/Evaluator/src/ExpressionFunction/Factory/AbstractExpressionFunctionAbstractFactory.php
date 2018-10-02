@@ -57,6 +57,11 @@ abstract class AbstractExpressionFunctionAbstractFactory implements AbstractFact
         return $serviceConfig[self::CLASS_KEY];
     }
 
+    /**
+     * @param ContainerInterface $container
+     * @param $requestedName
+     * @return null
+     */
     public function getServiceConfig(ContainerInterface $container, $requestedName)
     {
         $config = $container->get('config');

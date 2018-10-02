@@ -8,14 +8,38 @@ use Symfony\Component\ExpressionLanguage\ExpressionLanguage;
 use Symfony\Component\ExpressionLanguage\SyntaxError;
 use Zend\Validator\ValidatorInterface;
 
+/**
+ * Class Evaluation
+ * @package rollun\datahandler\Processor
+ */
 class Evaluation extends AbstractProcessor
 {
+    /**
+     * @var null|ExpressionLanguage
+     */
     protected $expressionLanguage = null;
 
+    /**
+     * @var string
+     */
     protected $resultColumn;
 
+    /**
+     * @var string
+     */
     protected $expression;
 
+    /**
+     * Evaluation constructor.
+     *
+     * Valid $option keys are:
+     * - expression - expression to evaluate
+     * - resultColumn - column to write result of expression
+     *
+     * @param array|null $options
+     * @param ValidatorInterface|null $validator
+     * @param ExpressionLanguage|null $expressionLanguage
+     */
     public function __construct(
         array $options = null,
         ValidatorInterface $validator = null,
@@ -25,11 +49,17 @@ class Evaluation extends AbstractProcessor
         $this->expressionLanguage = $expressionLanguage;
     }
 
+    /**
+     * @param $expression
+     */
     public function setExpression($expression)
     {
         $this->expression = $expression;
     }
 
+    /**
+     * @return mixed
+     */
     public function getExpression()
     {
         if ($this->expression === null) {
@@ -39,11 +69,17 @@ class Evaluation extends AbstractProcessor
         return $this->expression;
     }
 
+    /**
+     * @param $resultColumn
+     */
     public function setResultColumn($resultColumn)
     {
         $this->resultColumn = $resultColumn;
     }
 
+    /**
+     * @return mixed
+     */
     public function getResultColumn()
     {
         if ($this->resultColumn === null) {
@@ -53,6 +89,9 @@ class Evaluation extends AbstractProcessor
         return $this->resultColumn;
     }
 
+    /**
+     * @return null|ExpressionLanguage
+     */
     public function getExpressionLanguage()
     {
         if ($this->expressionLanguage === null) {
@@ -62,6 +101,10 @@ class Evaluation extends AbstractProcessor
         return $this->expressionLanguage;
     }
 
+    /**
+     * @param array $value
+     * @return array
+     */
     public function doProcess(array $value)
     {
         $resultColumn = $this->getResultColumn();

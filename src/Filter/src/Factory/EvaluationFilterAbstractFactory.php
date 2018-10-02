@@ -33,7 +33,7 @@ use Symfony\Component\ExpressionLanguage\ExpressionLanguage;
  * ],
  * </code>
  *
- * Class SimpleFilterAbstractFactory
+ * Class EvaluationFilterAbstractFactory
  * @package rollun\datahandler\Filter\Factory
  */
 class EvaluationFilterAbstractFactory extends PluginAbstractFactoryAbstract

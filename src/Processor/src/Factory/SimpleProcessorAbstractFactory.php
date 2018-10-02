@@ -33,7 +33,7 @@ use Zend\ServiceManager\Factory\AbstractFactoryInterface;
  * ],
  * </code>
  *
- * Class ProcessorAbstractFactory
+ * Class SimpleProcessorAbstractFactory
  * @package rollun\datahandler\Processor\Factory
  */
 class SimpleProcessorAbstractFactory extends AbstractProcessorAbstractFactory implements AbstractFactoryInterface

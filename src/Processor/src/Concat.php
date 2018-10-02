@@ -39,7 +39,7 @@ class Concat extends AbstractProcessor
     protected $delimiter = '_';
 
     /**
-     * Valid keys are:
+     * Valid $option keys are:
      * - resultColumn - string, data store valid column
      * - expression - symphony language expression
      *  @see https://symfony.com/doc/current/components/expression_language/syntax.html

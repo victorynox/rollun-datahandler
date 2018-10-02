@@ -55,7 +55,7 @@ class FilterApplier extends AbstractProcessor
     protected $filterPluginManager;
 
     /**
-     * Valid keys are:
+     * Valid $option keys are:
      * - argumentColumn - string, data store valid column
      * - resultColumn - string, data store valid column
      * - filters - array of FilterInterface object

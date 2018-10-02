@@ -27,17 +27,29 @@ use Symfony\Component\ExpressionLanguage\ExpressionFunction;
  * ]
  * </code>
  *
- * Class ExpressionEvaluatorFactory
+ * Class PHPExpressionFunctionAbstractFactory
  * @package rollun\datahandler\Evaluator
  */
-class   PHPExpressionFunctionAbstractFactory extends AbstractExpressionFunctionAbstractFactory
+class PHPExpressionFunctionAbstractFactory extends AbstractExpressionFunctionAbstractFactory
 {
+    /**
+     * Parent class for function
+     */
     const DEFAULT_CLASS = ExpressionFunction::class;
 
-    const EXPRESSION_FUNCTION_NAME_KEY = 'functionNamespace';
+    /**
+     * Config key for function
+     */
+    const EXPRESSION_FUNCTION_NAME_KEY = 'expressionFunctionName';
 
-    const PHP_FUNCTION_NAME_KEY = 'functionName';
+    const PHP_FUNCTION_NAME_KEY = 'phpFunctionName';
 
+    /**
+     * @param ContainerInterface $container
+     * @param string $requestedName
+     * @param array|null $options
+     * @return object|ExpressionFunction
+     */
     public function __invoke(ContainerInterface $container, $requestedName, array $options = null)
     {
         $serviceConfig = $this->getServiceConfig($container, $requestedName);

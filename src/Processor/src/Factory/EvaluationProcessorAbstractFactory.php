@@ -35,7 +35,7 @@ use Symfony\Component\ExpressionLanguage\ExpressionLanguage;
  *
  * </code>
  *
- * Class FilterApplierAbstractFactory
+ * Class EvaluationProcessorAbstractFactory
  * @package rollun\datahandler\Processor\Factory
  */
 class EvaluationProcessorAbstractFactory extends AbstractProcessorAbstractFactory

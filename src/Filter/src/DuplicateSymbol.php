@@ -57,7 +57,7 @@ class DuplicateSymbol extends AbstractFilter
     /**
      * DuplicateSymbol constructor.
      *
-     * Valid keys are:
+     * Valid $option keys are:
      * - duplicate - symbol[s], which duplicate in string
      * - replace - symbol[s] to replace
      * - duplicateMoreThan - minimum of symbols to perform filter

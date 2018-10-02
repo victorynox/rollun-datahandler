@@ -20,13 +20,28 @@ class PHPExpressionFunctionAbstractFactoryTest extends AbstractExpressionFunctio
         $this->invoke();
     }
 
-    public function testPositiveInvoke()
+    public function testPositiveStandardFunction()
     {
         $expressionFunctionClassName = ExpressionFunction::class;
         $expressionFunction = $this->invoke([
             'class' => $expressionFunctionClassName,
-            'functionName' => 'trim'
+            'phpFunctionName' => 'trim'
         ]);
         $this->assertTrue(is_a($expressionFunction, $expressionFunctionClassName, true));
     }
+
+    public function testPositiveCustomFunction()
+    {
+        $expressionFunctionClassName = ExpressionFunction::class;
+        $expressionFunction = $this->invoke([
+            'class' => $expressionFunctionClassName,
+            'phpFunctionName' => 'rollun\test\datahandler\Evaluator\ExpressionFunction\Factory\someFunction'
+        ]);
+        $this->assertTrue(is_a($expressionFunction, $expressionFunctionClassName, true));
+    }
+}
+
+function someFunction()
+{
+
 }

@@ -8,7 +8,7 @@ use Zend\ServiceManager\Config;
 use Zend\ServiceManager\Factory\FactoryInterface;
 
 /**
- * Class ProcessorPluginManagerAbstractFactory
+ * Class ProcessorPluginManagerFactory
  * @package rollun\datahandler\Processor\Factory
  */
 class ProcessorPluginManagerFactory implements FactoryInterface

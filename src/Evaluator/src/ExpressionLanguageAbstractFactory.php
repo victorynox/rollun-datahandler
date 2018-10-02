@@ -4,10 +4,11 @@ namespace rollun\datahandler\Evaluator;
 
 use Interop\Container\ContainerInterface;
 use InvalidArgumentException;
+use Symfony\Component\ExpressionLanguage\ExpressionLanguage;
 use Zend\ServiceManager\Factory\AbstractFactoryInterface;
 
 /**
- * Create and return instance of ExpressionEvaluator
+ * Create and return instance of ExpressionLanguage
  * You can add function expressions to expression evaluation through function expression provider services
  * or directly through function expression services
  *
@@ -15,9 +16,9 @@ use Zend\ServiceManager\Factory\AbstractFactoryInterface;
  *
  * Config example:
  * <code>
- * ExpressionEvaluatorAbstractFactory::class => [
- *      'expressionEvaluatorServiceName1' => [
- *          'class' => ExpressionEvaluatorFactory::class, // default value
+ * ExpressionLanguageAbstractFactory::class => [
+ *      'expressionLanguageServiceName1' => [
+ *          'class' => ExpressionLanguage::class, // default value
  *          'functionExpressionProviders' => [ // optional
  *              'functionExpressionProviderServiceName1',
  *              'functionExpressionProviderServiceName2',
@@ -29,21 +30,21 @@ use Zend\ServiceManager\Factory\AbstractFactoryInterface;
  *              //...
  *          ],
  *      ],
- *      'expressionEvaluatorServiceName2' => [
+ *      'expressionLanguageServiceName2' => [
  *          //...
  *      ]
  * ]
  * </code>
  *
- * Class ExpressionEvaluatorFactory
+ * Class ExpressionLanguageAbstractFactory
  * @package rollun\datahandler\Evaluator
  */
-class ExpressionEvaluatorAbstractFactory implements AbstractFactoryInterface
+class ExpressionLanguageAbstractFactory implements AbstractFactoryInterface
 {
     /**
      * Parent class for expression evaluation
      */
-    const DEFAULT_CLASS = ExpressionEvaluator::class;
+    const DEFAULT_CLASS = ExpressionLanguage::class;
 
     /**
      * Config key for caused class
@@ -74,15 +75,15 @@ class ExpressionEvaluatorAbstractFactory implements AbstractFactoryInterface
      * @param ContainerInterface $container
      * @param string $requestedName
      * @param array|null $options
-     * @return ExpressionEvaluator
+     * @return ExpressionLanguage
      */
     public function __invoke(ContainerInterface $container, $requestedName, array $options = null)
     {
         $serviceConfig = $container->get('config')[self::class][$requestedName];
         $class = $this->getClass($serviceConfig);
 
-        /** @var ExpressionEvaluator $expressionEvaluator */
-        $expressionEvaluator = new $class();
+        /** @var ExpressionLanguage $expressionLanguage */
+        $expressionLanguage = new $class();
 
         $functionExpressionServiceNames = $serviceConfig[self::FUNCTION_EXPRESSIONS_KEY] ?? [];
         $functionExpressionProviderServiceNames = $serviceConfig[self::FUNCTION_EXPRESSION_PROVIDERS_KEY] ?? [];
@@ -90,7 +91,7 @@ class ExpressionEvaluatorAbstractFactory implements AbstractFactoryInterface
         if (is_array($functionExpressionProviderServiceNames)) {
             foreach ($functionExpressionProviderServiceNames as $functionExpressionProviderServiceName) {
                 $functionExpressionProvider = $container->get($functionExpressionProviderServiceName);
-                $expressionEvaluator->registerProvider($functionExpressionProvider);
+                $expressionLanguage->registerProvider($functionExpressionProvider);
             }
         } else {
             throw new InvalidArgumentException("Option 'functionExpressionProviders' is invalid");
@@ -99,13 +100,13 @@ class ExpressionEvaluatorAbstractFactory implements AbstractFactoryInterface
         if (is_array($functionExpressionServiceNames)) {
             foreach ($functionExpressionServiceNames as $functionExpressionServiceName) {
                 $functionExpression = $container->get($functionExpressionServiceName);
-                $expressionEvaluator->addFunction($functionExpression);
+                $expressionLanguage->addFunction($functionExpression);
             }
         } else {
             throw new InvalidArgumentException("Option 'functionExpressions' is invalid");
         }
 
-        return $expressionEvaluator;
+        return $expressionLanguage;
     }
 
     /**

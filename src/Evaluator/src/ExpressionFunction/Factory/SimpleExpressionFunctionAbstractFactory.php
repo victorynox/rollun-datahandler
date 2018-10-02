@@ -40,7 +40,7 @@ use Symfony\Component\ExpressionLanguage\ExpressionFunction;
  * ]
  * </code>
  *
- * Class ExpressionEvaluatorFactory
+ * Class SimpleExpressionFunctionAbstractFactory
  * @package rollun\datahandler\Evaluator
  */
 class SimpleExpressionFunctionAbstractFactory extends AbstractExpressionFunctionAbstractFactory

@@ -29,7 +29,7 @@ use rollun\datahandler\Evaluator\ExpressionFunction\Callback as CallbackExpressi
  * ]
  * </code>
  *
- * Class ExpressionEvaluatorFactory
+ * Class CallbackExpressionFunctionAbstractFactory
  * @package rollun\datahandler\Evaluator
  */
 class CallbackExpressionFunctionAbstractFactory extends AbstractExpressionFunctionAbstractFactory
@@ -54,6 +54,12 @@ class CallbackExpressionFunctionAbstractFactory extends AbstractExpressionFuncti
      */
     const FUNCTION_NAME_KEY = 'functionName';
 
+    /**
+     * @param ContainerInterface $container
+     * @param string $requestedName
+     * @param array|null $options
+     * @return mixed|object
+     */
     public function __invoke(ContainerInterface $container, $requestedName, array $options = null)
     {
         $serviceConfig = $this->getServiceConfig($container, $requestedName);

@@ -8,7 +8,7 @@ use Zend\Validator\ValidatorInterface;
 use Zend\Validator\ValidatorPluginManager;
 
 /**
- * Class ProcessorAbstractFactoryAbstract
+ * Class AbstractProcessorAbstractFactory
  * @package rollun\datahandler\Processor\Factory
  */
 abstract class AbstractProcessorAbstractFactory extends PluginAbstractFactoryAbstract

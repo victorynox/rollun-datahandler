@@ -15,7 +15,7 @@ use Zend\ServiceManager\Factory\AbstractFactoryInterface;
  * <code>
  * ProviderAbstractFactory::class => [
  *      'pluginProviderServiceName1' => [
- *          'class' => ExpressionEvaluatorFactory::class, // default value
+ *          'class' => Plugin::class, // default value
  *          'pluginManagerService' => FilterPluginManager::class,
  *          'calledMethod' => 'filter,
  *          'pluginServices' => [
@@ -30,7 +30,7 @@ use Zend\ServiceManager\Factory\AbstractFactoryInterface;
  * ]
  * </code>
  *
- * Class ExpressionEvaluatorFactory
+ * Class PluginProviderAbstractFactory
  * @package rollun\datahandler\Evaluator
  */
 class PluginProviderAbstractFactory implements AbstractFactoryInterface
@@ -70,6 +70,12 @@ class PluginProviderAbstractFactory implements AbstractFactoryInterface
         return !is_null($this->getServiceConfig($container, $requestedName));
     }
 
+    /**
+     * @param ContainerInterface $container
+     * @param string $requestedName
+     * @param array|null $options
+     * @return mixed|object
+     */
     public function __invoke(ContainerInterface $container, $requestedName, array $options = null)
     {
         $serviceConfig = $container->get('config')[self::class][$requestedName];
