@@ -4,7 +4,7 @@
 
 namespace Composer\Autoload;
 
-class ComposerStaticInit1c946fa18877ad2fb932e82dc6b60063
+class ComposerStaticInita05aa5037c855161b04b1e76ce3d7e4b
 {
     public static $files = array (
         '10a6847eba8a430a134fad89f4a30a26' => __DIR__ . '/..' . '/zendframework/zend-cache/autoload/patternPluginManagerPolyfill.php',
@@ -221,8 +221,8 @@ class ComposerStaticInit1c946fa18877ad2fb932e82dc6b60063
         'phpDocumentor\\Reflection\\' => 
         array (
             0 => __DIR__ . '/..' . '/phpdocumentor/reflection-common/src',
-            1 => __DIR__ . '/..' . '/phpdocumentor/reflection-docblock/src',
-            2 => __DIR__ . '/..' . '/phpdocumentor/type-resolver/src',
+            1 => __DIR__ . '/..' . '/phpdocumentor/type-resolver/src',
+            2 => __DIR__ . '/..' . '/phpdocumentor/reflection-docblock/src',
         ),
         'mindplay\\jsonfreeze\\' => 
         array (
@@ -1292,10 +1292,10 @@ class ComposerStaticInit1c946fa18877ad2fb932e82dc6b60063
     public static function getInitializer(ClassLoader $loader)
     {
         return \Closure::bind(function () use ($loader) {
-            $loader->prefixLengthsPsr4 = ComposerStaticInit1c946fa18877ad2fb932e82dc6b60063::$prefixLengthsPsr4;
-            $loader->prefixDirsPsr4 = ComposerStaticInit1c946fa18877ad2fb932e82dc6b60063::$prefixDirsPsr4;
-            $loader->prefixesPsr0 = ComposerStaticInit1c946fa18877ad2fb932e82dc6b60063::$prefixesPsr0;
-            $loader->classMap = ComposerStaticInit1c946fa18877ad2fb932e82dc6b60063::$classMap;
+            $loader->prefixLengthsPsr4 = ComposerStaticInita05aa5037c855161b04b1e76ce3d7e4b::$prefixLengthsPsr4;
+            $loader->prefixDirsPsr4 = ComposerStaticInita05aa5037c855161b04b1e76ce3d7e4b::$prefixDirsPsr4;
+            $loader->prefixesPsr0 = ComposerStaticInita05aa5037c855161b04b1e76ce3d7e4b::$prefixesPsr0;
+            $loader->classMap = ComposerStaticInita05aa5037c855161b04b1e76ce3d7e4b::$classMap;
 
         }, null, ClassLoader::class);
     }

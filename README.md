@@ -65,8 +65,8 @@ var_dump($processor->process(['1a2b3', 'b'])); // displays ['1a2b3', '321']
 
 ```php
 $options = [
-    // filters for applying
-    // key in array is a priority of filter
+    // Filters for applying
+    // Key in array is a priority of filter
     'filters' => [
         0 => [
              'service' => 'digits',
@@ -158,7 +158,7 @@ $expressionLanguage = new ExpressionLanguage();
 var_dump($expressionLanguage->evaluate('1 + 2')); // displays 3
 var_dump($expressionLanguage->compile('1 + 2')); // displays (1 + 2)
 
-// array for variables in expression
+// Array for variables in expression
 $values = [
     'a' => 2,
     'b' => 5,
@@ -170,7 +170,7 @@ var_dump($expressionLanguage->compile('a * b'), $values)); // displays (2 * 5)
 #### Expression functions
 
 Callback - предоставляет возможность создание ExpressionFunction с колбэка.
-Такая функция не может быть скомпилирована, по это при попытки компиляции выражения которое использует это функцию
+Такая функция не может быть скомпилирована, поэтому при попытки компиляции выражения которое использует это функцию
 будет выброшено исключение.
 
 ```php
@@ -207,7 +207,7 @@ var_dump($expressionLanguage->compile("stringTrim('   ad   ')")); displays 'ad'
 
 ```php
 $filterPluginManager = FilterPluginManager(new ServiceManager());
-// create filter using filter plugin options
+// Create filter using filter plugin options
 $filter = $filterPluginManager->get('pregReplace', [
    'pattern' => '/aaa/',
    'replacement' => 'a',
@@ -264,7 +264,7 @@ $container->setService('config', [
 ]);
 $filterPluginManager = FilterPluginManager($container);
 
-// will be thrown exception
+// Will be thrown exception
 $filter = $filterPluginManager->get('pregReplace', [
    'pattern' => '/aaa/',
    'replacement' => 'a',

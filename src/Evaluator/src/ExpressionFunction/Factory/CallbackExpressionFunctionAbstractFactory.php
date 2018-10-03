@@ -8,7 +8,7 @@ use rollun\callback\Callback\Callback;
 use rollun\datahandler\Evaluator\ExpressionFunction\Callback as CallbackExpressionFunction;
 
 /**
- * Create and return instance of Callback function expressions
+ * Create and return instance of CallbackExpressionFunction
  *
  * This Factory depends on Container (which should return an 'config' as array)
  *
@@ -18,9 +18,9 @@ use rollun\datahandler\Evaluator\ExpressionFunction\Callback as CallbackExpressi
  *      CallbackExpressionFunctionAbstractFactory::class =>
  *          'callbackExpressionFunctionServiceName1' => [
  *              'class' => Callback::class, // optional
+ *              'functionName' => 'functionName1', // optional
  *              'callbackService' => 'callbackServiceName1',
- *              'callbackMethod' => 'callbackMethodName1',
- *              'functionName' => 'functionName1',
+ *              'callbackMethod' => 'callbackMethodName1', // optional, default '__invoke'
  *          ],
  *          'callbackExpressionFunctionServiceName2' => [
  *              //...
@@ -35,7 +35,7 @@ use rollun\datahandler\Evaluator\ExpressionFunction\Callback as CallbackExpressi
 class CallbackExpressionFunctionAbstractFactory extends AbstractExpressionFunctionAbstractFactory
 {
     /**
-     * Parent class for function
+     * Default caused class
      */
     const DEFAULT_CLASS = CallbackExpressionFunction::class;
 
@@ -58,7 +58,7 @@ class CallbackExpressionFunctionAbstractFactory extends AbstractExpressionFuncti
      * @param ContainerInterface $container
      * @param string $requestedName
      * @param array|null $options
-     * @return mixed|object
+     * @return CallbackExpressionFunction
      */
     public function __invoke(ContainerInterface $container, $requestedName, array $options = null)
     {

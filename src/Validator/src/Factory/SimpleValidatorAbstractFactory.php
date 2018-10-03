@@ -28,6 +28,13 @@ use Zend\Validator\ValidatorInterface;
  *              ],
  *          ],
  *      ],
+ *      'abstract_factories' => [
+ *          //...
+ *      ],
+ *      'aliases' => [
+ *          //...
+ *      ],
+ *      //...
  * ],
  * </code>
  *
@@ -37,12 +44,12 @@ use Zend\Validator\ValidatorInterface;
 class SimpleValidatorAbstractFactory extends PluginAbstractFactoryAbstract
 {
     /**
-     * Parent class for plugin. By default doesn't set
+     * Parent class for plugin
      */
     const DEFAULT_CLASS = ValidatorInterface::class;
 
     /**
-     * Common namespace name for plugin config. By default doesn't set
+     * Common namespace name for plugin config
      */
     const KEY = 'validators';
 
@@ -54,8 +61,12 @@ class SimpleValidatorAbstractFactory extends PluginAbstractFactoryAbstract
      */
     public function __invoke(ContainerInterface $container, $requestedName, array $options = null)
     {
+        // Service config from $container
         $serviceConfig = $this->getServiceConfig($container, $requestedName);
+
+        // Merged $options with $serviceConfig
         $pluginOptions = $this->getPluginOptions($serviceConfig, $options);
+
         $class = $this->getClass($serviceConfig, true);
 
         return new $class($pluginOptions);

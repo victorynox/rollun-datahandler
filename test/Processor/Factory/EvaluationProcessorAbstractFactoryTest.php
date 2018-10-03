@@ -36,6 +36,8 @@ class EvaluationProcessorAbstractFactoryTest extends AbstractProcessorAbstractFa
         $processorClassName = Evaluation::class;
         $validatorClassName = Digits::class;
 
+        // Assert default class
+        $this->assertEquals($this->object->getClass([]), Evaluation::class);
         $this->assertInvokeWithConfig($processorClassName, $validatorClassName);
         $this->assertInvokeWithOptions($processorClassName, $validatorClassName);
         $this->assertPositiveGetClass($processorClassName);

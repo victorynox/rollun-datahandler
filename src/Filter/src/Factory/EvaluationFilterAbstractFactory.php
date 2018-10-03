@@ -4,7 +4,7 @@ namespace rollun\datahandler\Filter\Factory;
 
 use Interop\Container\ContainerInterface;
 use rollun\datahandler\Factory\PluginAbstractFactoryAbstract;
-use rollun\datahandler\Filter\Evaluation;
+use rollun\datahandler\Filter\Evaluation as EvaluationFilter;
 use Symfony\Component\ExpressionLanguage\ExpressionLanguage;
 
 /**
@@ -16,20 +16,26 @@ use Symfony\Component\ExpressionLanguage\ExpressionLanguage;
  * <code>
  * 'filters' => [
  *      'abstract_factory_config' => [
- *          SimpleFilterAbstractFactory::class => [
- *              'simpleFilterServiceName1' => [
+ *          EvaluationFilterAbstractFactory::class => [
+ *              'evaluationFilterServiceName1' => [
  *                  'class' => stringTrim::class,
- *                  'options' => [ // by default is not required
+ *                  'options' => [ // optional
  *                      'expressionLanguage' => 'expressionLanguageServiceName'
- *                      // filter options, specific for each filter
  *                      //...
  *                  ],
  *              ],
- *              'simpleFilterServiceName2' => [
+ *              'evaluationFilterServiceName2' => [
  *                  //...
  *              ],
  *          ],
  *      ],
+ *      'abstract_factories' => [
+ *          //...
+ *      ],
+ *      'aliases' => [
+ *          //...
+ *      ],
+ *      //...
  * ],
  * </code>
  *
@@ -44,9 +50,9 @@ class EvaluationFilterAbstractFactory extends PluginAbstractFactoryAbstract
     const KEY = 'filters';
 
     /**
-     * Parent class for plugin
+     * Default caused class
      */
-    const DEFAULT_CLASS = Evaluation::class;
+    const DEFAULT_CLASS = EvaluationFilter::class;
 
     /**
      * Config key for expression language service
@@ -55,15 +61,20 @@ class EvaluationFilterAbstractFactory extends PluginAbstractFactoryAbstract
 
     public function __invoke(ContainerInterface $container, $requestedName, array $options = null)
     {
+        // Service config from $container
         $serviceConfig = $this->getServiceConfig($container, $requestedName);
 
-        /** @var Evaluation $class */
         $class = $this->getClass($serviceConfig);
-        $pluginOptions = $this->getPluginOptions($serviceConfig, $options);
-        $expressionLanguage = $this->getExpressionLanguage($container, $pluginOptions);
-        $pluginOptions = $this->clearPluginOptions($pluginOptions);
 
-        return new $class($pluginOptions, $expressionLanguage);
+        // Merged $options with $serviceConfig
+        $pluginOptions = $this->getPluginOptions($serviceConfig, $options);
+
+        $expressionLanguage = $this->getExpressionLanguage($container, $pluginOptions);
+
+        // Remove options that are intended for the validator (extra options that no need in filter)
+        $clearedPluginOptions = $this->clearPluginOptions($pluginOptions);
+
+        return new $class($clearedPluginOptions, $expressionLanguage);
     }
 
     /**
@@ -82,6 +93,12 @@ class EvaluationFilterAbstractFactory extends PluginAbstractFactoryAbstract
         return $container->get($pluginOptions[self::EXPRESSION_LANGUAGE_KEY]);
     }
 
+    /**
+     * Remove extra options
+     *
+     * @param array $pluginOptions
+     * @return array
+     */
     protected function clearPluginOptions(array $pluginOptions)
     {
         unset($pluginOptions[self::EXPRESSION_LANGUAGE_KEY]);

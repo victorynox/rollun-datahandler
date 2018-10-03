@@ -15,14 +15,12 @@ use Zend\Filter\FilterPluginManager;
  * <code>
  * 'processors' => [
  *      'abstract_factory_config' => [
- *          FilterApplierAbstractFactory::class => [
+ *          FilterApplierProcessorAbstractFactory::class => [
  *              'filterApplierProcessorServiceName1' => [
  *                  'class' => FilterApplier::class,
- *                  'options' => [ // by default is not required
- *                      'validator' => 'validatorServiceName',
- *                      'validatorOptions' => [],
+ *                  'options' => [ // optional
+ *                      'validator' => 'validatorServiceName1',
  *                      'filters' => [],
- *                      // other options, specific for each processor
  *                      //...
  *                  ],
  *              ],
@@ -31,6 +29,13 @@ use Zend\Filter\FilterPluginManager;
  *              ],
  *          ],
  *      ],
+ *      'abstract_factories' => [
+ *          //...
+ *      ],
+ *      'aliases' => [
+ *          //...
+ *      ],
+ *      //...
  * ],
  *
  * </code>
@@ -41,7 +46,7 @@ use Zend\Filter\FilterPluginManager;
 class FilterApplierProcessorAbstractFactory extends AbstractProcessorAbstractFactory
 {
     /**
-     * Default class for filter applier processor
+     * Default caused class
      */
     const DEFAULT_CLASS = FilterApplier::class;
 
@@ -53,13 +58,20 @@ class FilterApplierProcessorAbstractFactory extends AbstractProcessorAbstractFac
      */
     public function __invoke(ContainerInterface $container, $requestedName, array $options = null)
     {
+        // Service config from $container
         $serviceConfig = $this->getServiceConfig($container, $requestedName);
-        $pluginOptions = $this->getPluginOptions($serviceConfig, $options);
-        $validator = $this->getValidator($container, $pluginOptions);
-        $clearedPluginOptions = $this->clearPluginOptions($pluginOptions);
 
         $class = $this->getClass($serviceConfig);
+
+        // Merged $options with $serviceConfig
+        $pluginOptions = $this->getPluginOptions($serviceConfig, $options);
+
+        $validator = $this->createValidator($container, $pluginOptions);
+
         $filterPluginManager = $container->get(FilterPluginManager::class);
+
+        // Remove options that are intended for the validator (extra options that no need in processor)
+        $clearedPluginOptions = $this->clearPluginOptions($pluginOptions);
 
         return new $class($clearedPluginOptions, $validator, $filterPluginManager);
     }

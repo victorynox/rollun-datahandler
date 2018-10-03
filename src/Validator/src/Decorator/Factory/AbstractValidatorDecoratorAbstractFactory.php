@@ -1,49 +1,46 @@
 <?php
 
-namespace rollun\datahandler\Processor\Factory;
+namespace rollun\datahandler\Validator\Decorator\Factory;
 
 use Interop\Container\ContainerInterface;
+use InvalidArgumentException;
 use rollun\datahandler\Factory\PluginAbstractFactoryAbstract;
 use Zend\Validator\ValidatorInterface;
 use Zend\Validator\ValidatorPluginManager;
 
 /**
- * Class AbstractProcessorAbstractFactory
- * @package rollun\datahandler\Processor\Factory
+ * Class AbstractValidatorDecoratorAbstractFactory
+ * @package rollun\datahandler\Validator\Factory
  */
-abstract class AbstractProcessorAbstractFactory extends PluginAbstractFactoryAbstract
+abstract class AbstractValidatorDecoratorAbstractFactory extends PluginAbstractFactoryAbstract
 {
     /**
-     *  Config key for all processors config
+     * Common namespace name for plugin config
      */
-    const KEY = 'processors';
+    const KEY = 'validators';
 
     /**
-     *  Validator service that implement ValidatorInterface::class
+     *  Config key for decorated validator
      */
     const VALIDATOR_KEY = 'validator';
 
     /**
-     * Options for validator
+     * Config key for options for decorated validator
      */
     const VALIDATOR_OPTION_KEY = 'validatorOptions';
 
     /**
-     * Create validator
-     *
      * @param ContainerInterface $container
-     * @param array $pluginOptions
-     * @return ValidatorInterface|null
+     * @param array $decoratorOptions
+     * @return ValidatorInterface
      */
-    protected function createValidator(ContainerInterface $container, array $pluginOptions)
+    public function getDecoratedValidator(ContainerInterface $container, array $decoratorOptions)
     {
-        $validator = null;
-
-        if (!isset($pluginOptions[self::VALIDATOR_KEY])) {
-            return $validator;
+        if (!isset($decoratorOptions[self::VALIDATOR_KEY])) {
+            throw new InvalidArgumentException("Missing 'validator' option");
         }
 
-        $validatorRequestedName = $pluginOptions[self::VALIDATOR_KEY];
+        $validatorRequestedName = $decoratorOptions[self::VALIDATOR_KEY];
         $validatorPluginManager = $container->get(ValidatorPluginManager::class);
         $validatorOptions = $pluginOptions[self::VALIDATOR_OPTION_KEY] ?? null;
 
@@ -53,12 +50,18 @@ abstract class AbstractProcessorAbstractFactory extends PluginAbstractFactoryAbs
             $validator = $validatorPluginManager->get($validatorRequestedName, $validatorOptions);
         } elseif ($container->has($validatorRequestedName)) {
             $validator = $container->get($validatorRequestedName);
+        } else {
+            throw new InvalidArgumentException(
+                "Can't create validator service with name '$validatorRequestedName'"
+            );
         }
 
         return clone $validator;
     }
 
     /**
+     * Remove extra options
+     *
      * @param array $pluginOptions
      * @return array
      */

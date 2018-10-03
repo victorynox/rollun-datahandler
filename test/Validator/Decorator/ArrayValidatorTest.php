@@ -1,21 +1,22 @@
 <?php
 
-namespace rollun\test\datahandler\Validator;
+namespace rollun\test\datahandler\Validator\Decorator;
 
 use PHPUnit\Framework\TestCase;
-use rollun\datahandler\Validator\ArrayAdapter;
-use Zend\ServiceManager\ServiceManager;
+use rollun\datahandler\Validator\Decorator\ArrayValidator;
 use Zend\Validator\Digits;
 use Zend\Validator\Exception\InvalidArgumentException;
-use Zend\Validator\NotEmpty;
-use Zend\Validator\ValidatorPluginManager;
 
-class ArrayAdapterTest extends TestCase
+/**
+ * Class ArrayValidatorTest
+ * @package rollun\test\datahandler\Validator
+ */
+class ArrayValidatorTest extends TestCase
 {
     public function testPositiveOneColumnValid()
     {
         $validator = new Digits();
-        $object = new ArrayAdapter($validator, [
+        $object = new ArrayValidator($validator, [
             'columnsToValidate' => 'key1'
         ]);
         $isValid = $object->isValid([
@@ -28,7 +29,7 @@ class ArrayAdapterTest extends TestCase
     public function testNegativeOneColumnValid()
     {
         $validator = new Digits();
-        $object = new ArrayAdapter($validator, [
+        $object = new ArrayValidator($validator, [
             'columnsToValidate' => 'key1'
         ]);
         $isValid = $object->isValid([
@@ -41,7 +42,7 @@ class ArrayAdapterTest extends TestCase
     public function testPositiveSeveralColumnValid()
     {
         $validator = new Digits();
-        $object = new ArrayAdapter($validator, [
+        $object = new ArrayValidator($validator, [
             'columnsToValidate' => ['key1', 'key2', 'key3']
         ]);
         $isValid = $object->isValid([
@@ -56,7 +57,7 @@ class ArrayAdapterTest extends TestCase
     public function testNegativeSeveralColumnValid()
     {
         $validator = new Digits();
-        $object = new ArrayAdapter($validator, [
+        $object = new ArrayValidator($validator, [
             'columnsToValidate' => ['key1', 'key2', 'key3']
         ]);
         $isValid = $object->isValid([
@@ -68,23 +69,12 @@ class ArrayAdapterTest extends TestCase
         $this->assertFalse($isValid);
     }
 
-    public function testInvalidValueException()
-    {
-        $this->expectException(InvalidArgumentException::class);
-        $this->expectExceptionMessage('Incoming value must be an array');
-        $validator = new Digits();
-        $object = new ArrayAdapter($validator, [
-            'columnsToValidate' => ['key1', 'key2', 'key3']
-        ]);
-        $object->isValid(null);
-    }
-
     public function testInvalidColumnException()
     {
         $this->expectException(InvalidArgumentException::class);
         $this->expectExceptionMessage("INVALID_COLUMN doesn't exist in incoming value");
         $validator = new Digits();
-        $object = new ArrayAdapter($validator, [
+        $object = new ArrayValidator($validator, [
             'columnsToValidate' => ['key1', 'key2', 'INVALID_COLUMN']
         ]);
         $object->isValid([
@@ -94,26 +84,22 @@ class ArrayAdapterTest extends TestCase
         ]);
     }
 
-    public function testInvalidColumnsToValidateOptions()
+    public function testInvalidColumnsToValidate()
     {
         $this->expectException(InvalidArgumentException::class);
         $this->expectExceptionMessage("Invalid option 'columnsToValidate'");
         $validator = new Digits();
-        new ArrayAdapter($validator, [
+        new ArrayValidator($validator, [
             'columnsToValidate' => null
         ]);
     }
 
-    public function testUnsetColumnsToWriteOption()
+    public function testUnsetColumnsToValidate()
     {
         $this->expectException(InvalidArgumentException::class);
         $this->expectExceptionMessage("Missing 'columnsToValidate' option");
         $validator = new Digits();
-        $object = new ArrayAdapter($validator);
-        $object->isValid([
-            'key1' => '12345',
-            'key2' => 'asdsf',
-            'key3' => '89012',
-        ]);
+        $object = new ArrayValidator($validator);
+        $object->getColumnsToValidate();
     }
 }

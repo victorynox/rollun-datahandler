@@ -13,27 +13,27 @@ use Zend\ServiceManager\Factory\AbstractFactoryInterface;
  *
  * Config example:
  * <code>
- * ProviderAbstractFactory::class => [
- *      'pluginProviderServiceName1' => [
+ * PluginFunctionExpressionProviderAbstractFactory::class => [
+ *      'pluginFunctionExpressionProviderServiceName1' => [
  *          'class' => PluginExpressionFunctionProvider::class, // optional
- *          'pluginManagerService' => FilterPluginManager::class,
- *          'calledMethod' => 'filter,
- *          'pluginServices' => [
+ *          'pluginServiceManager' => FilterPluginManager::class,
+ *          'calledMethod' => 'filter', // optional, default '__invoke'
+ *          'services' => [
  *               'digits',
  *               'rqlReplace',
  *               //...
  *           ]
  *      ],
- *      'providerName2' => [
+ *      'pluginFunctionExpressionProviderServiceName2' => [
  *          //...
  *      ]
  * ]
  * </code>
  *
- * Class PluginProviderAbstractFactory
+ * Class PluginFunctionExpressionProviderAbstractFactory
  * @package rollun\datahandler\Evaluator
  */
-class PluginProviderAbstractFactory implements AbstractFactoryInterface
+class PluginFunctionExpressionProviderAbstractFactory implements AbstractFactoryInterface
 {
     /**
      * Config key for caused class
@@ -41,14 +41,14 @@ class PluginProviderAbstractFactory implements AbstractFactoryInterface
     const CLASS_KEY = 'class';
 
     /**
-     * Parent class for function
+     * Default caused class
      */
     const DEFAULT_CLASS = PluginExpressionFunctionProvider::class;
 
     /**
      * Config for plugin manager service
      */
-    const PLUGIN_MANAGER_SERVICE_KEY = 'pluginManagerService';
+    const PLUGIN_MANAGER_SERVICE_KEY = 'pluginServiceManager';
 
     /**
      * Config for plugin manager called method
@@ -56,9 +56,9 @@ class PluginProviderAbstractFactory implements AbstractFactoryInterface
     const CALLED_METHOD_KEY = 'calledMethod';
 
     /**
-     * Config plugin manager services key
+     * Config for services, that will be called by plugin manager
      */
-    const PLUGIN_SERVICES_KEY = 'pluginServices';
+    const SERVICES_KEY = 'services';
 
     /**
      * @param ContainerInterface $container
@@ -81,16 +81,16 @@ class PluginProviderAbstractFactory implements AbstractFactoryInterface
         $serviceConfig = $container->get('config')[self::class][$requestedName];
 
         if (!isset($serviceConfig[self::PLUGIN_MANAGER_SERVICE_KEY])) {
-            throw new InvalidArgumentException("Missing 'pluginManagerService' option in config");
+            throw new InvalidArgumentException("Missing 'pluginServiceManager' option in config");
         }
 
-        if (!isset($serviceConfig[self::PLUGIN_SERVICES_KEY])) {
-            throw new InvalidArgumentException("Missing 'pluginServices' option in config");
+        if (!isset($serviceConfig[self::SERVICES_KEY])) {
+            throw new InvalidArgumentException("Missing 'services' option in config");
         }
 
         $class = $this->getClass($serviceConfig);
         $pluginManager = $container->get($serviceConfig[self::PLUGIN_MANAGER_SERVICE_KEY]);
-        $pluginServices = $serviceConfig[self::PLUGIN_SERVICES_KEY];
+        $pluginServices = $serviceConfig[self::SERVICES_KEY];
         $calledMethod = $serviceConfig[self::CALLED_METHOD_KEY] ?? '__invoke';
 
         return new $class($pluginManager, $pluginServices, $calledMethod);
@@ -100,15 +100,18 @@ class PluginProviderAbstractFactory implements AbstractFactoryInterface
      * Get caused class
      *
      * @param array $serviceConfig
-     * @return mixed
+     * @param bool $required
+     * @return string
      */
-    public function getClass(array $serviceConfig)
+    public function getClass(array $serviceConfig, $required = false)
     {
         if (!isset($serviceConfig[self::CLASS_KEY])) {
-            return self::DEFAULT_CLASS;
-        }
+            if (!$required) {
+                return self::DEFAULT_CLASS;
+            }
 
-        if (!is_a($serviceConfig[self::CLASS_KEY], static::DEFAULT_CLASS, true)) {
+            throw new \InvalidArgumentException("There is no 'class' config for plugin in config");
+        } else if (!is_a($serviceConfig[self::CLASS_KEY], static::DEFAULT_CLASS, true)) {
             throw new \InvalidArgumentException(
                 'Caused class must implement or extend ' . static::DEFAULT_CLASS
             );
@@ -117,6 +120,11 @@ class PluginProviderAbstractFactory implements AbstractFactoryInterface
         return $serviceConfig[self::CLASS_KEY];
     }
 
+    /**
+     * @param ContainerInterface $container
+     * @param $requestedName
+     * @return null|array
+     */
     public function getServiceConfig(ContainerInterface $container, $requestedName)
     {
         $config = $container->get('config');

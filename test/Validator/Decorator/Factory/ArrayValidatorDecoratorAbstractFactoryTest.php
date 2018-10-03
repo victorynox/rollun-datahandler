@@ -1,23 +1,30 @@
 <?php
 
-namespace rollun\test\datahandler\Validator\Factory;
+namespace rollun\test\datahandler\Validator\Decorator\Factory;
 
-use rollun\datahandler\Validator\ArrayAdapter;
-use rollun\datahandler\Validator\Factory\ValidatorAdapterAbstractFactory;
+use rollun\datahandler\Validator\Decorator\ArrayValidator;
+use rollun\datahandler\Validator\Decorator\Factory\ArrayDecoratorAbstractFactory;
 use rollun\test\datahandler\Factory\PluginAbstractFactoryAbstractTest;
 use Zend\Validator\Digits;
 use Zend\Validator\ValidatorPluginManager;
 
-class ValidatorAdapterAbstractFactoryTest extends PluginAbstractFactoryAbstractTest
+/**
+ * Class ArrayValidatorAbstractFactoryTest
+ * @package rollun\test\datahandler\Validator\Factory
+ */
+class ArrayValidatorDecoratorAbstractFactoryTest extends PluginAbstractFactoryAbstractTest
 {
     protected function setUp()
     {
-        $this->object = new ValidatorAdapterAbstractFactory();
+        $this->object = new ArrayDecoratorAbstractFactory();
     }
 
     public function testMainFunctionality()
     {
-        $validatorClassName = ArrayAdapter::class;
+        $validatorClassName = ArrayValidator::class;
+
+        // Assert default class
+        $this->assertEquals($this->object->getClass([]), ArrayValidator::class);
         $this->assertPositiveGetClass($validatorClassName);
     }
 
@@ -38,11 +45,11 @@ class ValidatorAdapterAbstractFactoryTest extends PluginAbstractFactoryAbstractT
     public function testValidOption()
     {
         $validatorClassName = Digits::class;
-        $validatorAdapterClassName = ArrayAdapter::class;
+        $validatorAdapterClassName = ArrayValidator::class;
         $columnsToValidate = ['a', 'b'];
 
-        /** @var ArrayAdapter $validatorAdapter */
-        $validatorAdapter = $this->invoke([
+        /** @var ArrayValidator $validatorDecorator */
+        $validatorDecorator = $this->invoke([
             'class' => $validatorAdapterClassName,
             'options' => [
                 'columnsToValidate' => $columnsToValidate,
@@ -50,8 +57,8 @@ class ValidatorAdapterAbstractFactoryTest extends PluginAbstractFactoryAbstractT
             ]
         ]);
 
-        $this->assertEquals($validatorAdapter->getColumnsToValidate(), $columnsToValidate);
-        $this->assertTrue(is_a($validatorAdapter->getValidator(), $validatorClassName, true));
+        $this->assertEquals($validatorDecorator->getColumnsToValidate(), $columnsToValidate);
+        $this->assertTrue(is_a($validatorDecorator->getValidator(), $validatorClassName, true));
 
     }
 }

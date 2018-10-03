@@ -3,7 +3,7 @@
 namespace rollun\datahandler\Processor\Factory;
 
 use Interop\Container\ContainerInterface;
-use rollun\datahandler\Processor\Evaluation;
+use rollun\datahandler\Processor\Evaluation as EvaluationProcessor;
 use Symfony\Component\ExpressionLanguage\ExpressionLanguage;
 
 /**
@@ -15,14 +15,12 @@ use Symfony\Component\ExpressionLanguage\ExpressionLanguage;
  * <code>
  * 'processors' => [
  *      'abstract_factory_config' => [
- *          EvaluationAbstractProcessorFactory::class => [
+ *          EvaluationProcessorAbstractFactory::class => [
  *              'evaluationProcessorServiceName1' => [
  *                  'class' => FilterApplier::class,
- *                  'options' => [ // by default is not required
- *                      'validator' => 'validator-service',
- *                      'validatorOptions' => [],
+ *                  'options' => [ // optional
+ *                      'validator' => 'validatorServiceName1',
  *                      'expressionLanguage' => 'expressionLanguageServiceName'
- *                      // other options, specific for each processor
  *                      //...
  *                  ],
  *              ],
@@ -31,6 +29,13 @@ use Symfony\Component\ExpressionLanguage\ExpressionLanguage;
  *              ],
  *          ],
  *      ],
+ *      'abstract_factories' => [
+ *          //...
+ *      ],
+ *      'aliases' => [
+ *          //...
+ *      ],
+ *      //...
  * ],
  *
  * </code>
@@ -41,9 +46,9 @@ use Symfony\Component\ExpressionLanguage\ExpressionLanguage;
 class EvaluationProcessorAbstractFactory extends AbstractProcessorAbstractFactory
 {
     /**
-     * Parent class for plugin
+     * Default caused class
      */
-    const DEFAULT_CLASS = Evaluation::class;
+    const DEFAULT_CLASS = EvaluationProcessor::class;
 
     /**
      * Config key for expression language service
@@ -58,16 +63,22 @@ class EvaluationProcessorAbstractFactory extends AbstractProcessorAbstractFactor
      */
     public function __invoke(ContainerInterface $container, $requestedName, array $options = null)
     {
+        // Service config from $container
         $serviceConfig = $this->getServiceConfig($container, $requestedName);
 
-        /** @var Evaluation $class */
         $class = $this->getClass($serviceConfig);
-        $pluginOptions = $this->getPluginOptions($serviceConfig, $options);
-        $validator = $this->getValidator($container, $pluginOptions);
-        $expressionLanguage = $this->getExpressionLanguage($container, $pluginOptions);
-        $pluginOptions = $this->clearPluginOptions($pluginOptions);
 
-        return new $class($pluginOptions, $validator, $expressionLanguage);
+        // Merged $options with $serviceConfig
+        $pluginOptions = $this->getPluginOptions($serviceConfig, $options);
+
+        $validator = $this->createValidator($container, $pluginOptions);
+
+        $expressionLanguage = $this->getExpressionLanguage($container, $pluginOptions);
+
+        // Remove options that are intended for the validator (extra options that no need in processor)
+        $clearedPluginOptions = $this->clearPluginOptions($pluginOptions);
+
+        return new $class($clearedPluginOptions, $validator, $expressionLanguage);
     }
 
     /**

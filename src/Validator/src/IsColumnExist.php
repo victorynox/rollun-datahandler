@@ -2,7 +2,7 @@
 
 namespace rollun\datahandler\Validator;
 
-use InvalidArgumentException;
+use Zend\Validator\Exception\InvalidArgumentException;
 use Zend\Validator\AbstractValidator;
 
 /**
@@ -12,9 +12,9 @@ use Zend\Validator\AbstractValidator;
 class IsColumnExist extends AbstractValidator
 {
     /**
-     * @var string
+     * @var array
      */
-    protected $validateColumn;
+    protected $validateColumns;
 
     /**
      * IsColumnExist constructor.
@@ -30,28 +30,28 @@ class IsColumnExist extends AbstractValidator
     }
 
     /**
-     * @return string
+     * @return array
      */
-    public function getValidateColumn()
+    public function getValidateColumns(): array
     {
-        if ($this->validateColumn === null) {
-            throw new InvalidArgumentException("Missing 'validateColumn' option");
+        if ($this->validateColumns === null) {
+            throw new InvalidArgumentException("Missing 'validateColumns' option");
         }
 
-        return $this->validateColumn;
+        return $this->validateColumns;
     }
 
     /**
-     * @param string $validateColumn
+     * @param string $validateColumns
      */
-    public function setValidateColumn($validateColumn)
+    public function setValidateColumns($validateColumns)
     {
-        if (is_array($validateColumn)) {
-            $this->validateColumn = $validateColumn;
-        } elseif (is_string($validateColumn)) {
-            $this->validateColumn = [$validateColumn];
+        if (is_array($validateColumns)) {
+            $this->validateColumns = $validateColumns;
+        } elseif (is_string($validateColumns)) {
+            $this->validateColumns = [$validateColumns];
         } else {
-            throw new InvalidArgumentException("Invalid option 'validateColumn'");
+            throw new InvalidArgumentException("Invalid option 'validateColumns'");
         }
     }
 
@@ -65,8 +65,14 @@ class IsColumnExist extends AbstractValidator
             return false;
         }
 
-        $validateColumn = $this->getValidateColumn();
+        $validateColumns = $this->getValidateColumns();
 
-        return key_exists($validateColumn, $value);
+        foreach ($validateColumns as $validateColumn) {
+            if (!key_exists($validateColumn, $value)) {
+                return false;
+            }
+        }
+
+        return true;
     }
 }

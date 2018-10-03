@@ -17,8 +17,8 @@ use Symfony\Component\ExpressionLanguage\ExpressionFunction;
  *      PHPExpressionFunctionAbstractProvider::class =>
  *          'phpExpressionFunctionServiceName1' => [
  *              'class' => ExpressionFunction::class, // optional
- *              'phpFunctionName' => 'My\functions',
- *              'expressionFunctionName' => '', // alias function in expression language
+ *              'phpFunctionName' => 'My\function',
+ *              'expressionFunctionName' => '', // optional, alias function in expression language
  *          ],
  *          'phpExpressionFunctionServiceName2' => [
  *              //...
@@ -48,7 +48,7 @@ class PHPExpressionFunctionAbstractFactory extends AbstractExpressionFunctionAbs
      * @param ContainerInterface $container
      * @param string $requestedName
      * @param array|null $options
-     * @return object|ExpressionFunction
+     * @return ExpressionFunction
      */
     public function __invoke(ContainerInterface $container, $requestedName, array $options = null)
     {

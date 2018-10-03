@@ -19,9 +19,7 @@ use Zend\ServiceManager\Factory\AbstractFactoryInterface;
  *              'simpleProcessorServiceName1' => [
  *                  'class' => Concat::class,
  *                  'options' => [ // by default is not required
- *                      'validator' => 'validator-service',
- *                      'validatorOptions' => [],
- *                      // other options, specific for each processor
+ *                      'validator' => 'validatorServiceName1',
  *                      //...
  *                  ],
  *              ],
@@ -29,17 +27,24 @@ use Zend\ServiceManager\Factory\AbstractFactoryInterface;
  *                  '//...
  *              ],
  *          ],
- *      ]
+ *      ],
+ *      'abstract_factories' => [
+ *          //...
+ *      ],
+ *      'aliases' => [
+ *          //...
+ *      ],
+ *      //...
  * ],
  * </code>
  *
  * Class SimpleProcessorAbstractFactory
  * @package rollun\datahandler\Processor\Factory
  */
-class SimpleProcessorAbstractFactory extends AbstractProcessorAbstractFactory implements AbstractFactoryInterface
+class SimpleProcessorAbstractFactory extends AbstractProcessorAbstractFactory
 {
     /**
-     * Parent class. Each object create by this factory must implement or extend this class
+     * Default caused class
      */
     const DEFAULT_CLASS = ProcessorInterface::class;
 
@@ -51,10 +56,17 @@ class SimpleProcessorAbstractFactory extends AbstractProcessorAbstractFactory im
      */
     public function __invoke(ContainerInterface $container, $requestedName, array $options = null)
     {
+        // Service config from $container
         $serviceConfig = $this->getServiceConfig($container, $requestedName);
-        $pluginOptions = $this->getPluginOptions($serviceConfig, $options);
-        $validator = $this->getValidator($container, $pluginOptions);
+
         $class = $this->getClass($serviceConfig, true);
+
+        // Merged $options with $serviceConfig
+        $pluginOptions = $this->getPluginOptions($serviceConfig, $options);
+
+        $validator = $this->createValidator($container, $pluginOptions);
+
+        // Remove options that are intended for the validator (extra options that no need in processor)
         $clearedPluginOptions = $this->clearPluginOptions($pluginOptions);
 
         return new $class($clearedPluginOptions, $validator);

@@ -1,16 +1,16 @@
 <?php
 
-namespace rollun\datahandler\Validator;
+namespace rollun\datahandler\Validator\Decorator;
 
 use Zend\Validator\AbstractValidator;
 use Zend\Validator\Exception\InvalidArgumentException;
 use Zend\Validator\ValidatorInterface;
 
 /**
- * Class ArrayAdapter
+ * Class ArrayValidator
  * @package rollun\datahandler\Validator
  */
-class ArrayAdapter extends AbstractValidator
+class ArrayValidator extends AbstractValidator
 {
     /**
      * @var array
@@ -38,22 +38,6 @@ class ArrayAdapter extends AbstractValidator
     }
 
     /**
-     * @param ValidatorInterface $validator
-     */
-    public function setValidator(ValidatorInterface $validator)
-    {
-        $this->validator = $validator;
-    }
-
-    /**
-     * @return ValidatorInterface
-     */
-    public function getValidator()
-    {
-        return $this->validator;
-    }
-
-    /**
      * @param $columnsToValidate
      */
     public function setColumnsToValidate($columnsToValidate)
@@ -70,7 +54,7 @@ class ArrayAdapter extends AbstractValidator
     /**
      * @return array
      */
-    public function getColumnsToValidate()
+    public function getColumnsToValidate(): array
     {
         if ($this->columnsToValidate === null) {
             throw new InvalidArgumentException("Missing 'columnsToValidate' option");
@@ -102,7 +86,7 @@ class ArrayAdapter extends AbstractValidator
         }
 
         foreach ($valueColumns as $column) {
-            $isValid = $this->getValidator()->isValid($column);
+            $isValid = $this->validator->isValid($column);
 
             if (!$isValid) {
                 return false;
@@ -110,5 +94,18 @@ class ArrayAdapter extends AbstractValidator
         }
 
         return true;
+    }
+
+    /**
+     * @return ValidatorInterface
+     */
+    public function getValidator(): ValidatorInterface
+    {
+        return $this->validator;
+    }
+
+    public function getMessages()
+    {
+        return $this->validator->getMessages();
     }
 }

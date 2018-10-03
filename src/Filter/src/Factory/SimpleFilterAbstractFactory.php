@@ -18,8 +18,7 @@ use Zend\Filter\FilterInterface;
  *          SimpleFilterAbstractFactory::class => [
  *              'simpleFilterServiceName1' => [
  *                  'class' => stringTrim::class,
- *                  'options' => [ // by default is not required
- *                      // filter options, specific for each filter
+ *                  'options' => [ // optional
  *                      //...
  *                  ],
  *              ],
@@ -28,6 +27,13 @@ use Zend\Filter\FilterInterface;
  *              ],
  *          ],
  *      ],
+ *      'abstract_factories' => [
+ *          //...
+ *      ],
+ *      'aliases' => [
+ *          //...
+ *      ],
+ *      //...
  * ],
  * </code>
  *
@@ -37,7 +43,7 @@ use Zend\Filter\FilterInterface;
 class SimpleFilterAbstractFactory extends PluginAbstractFactoryAbstract
 {
     /**
-     * Parent class for plugin. By default doesn't set
+     * Default caused class
      */
     const DEFAULT_CLASS = FilterInterface::class;
 
@@ -54,9 +60,13 @@ class SimpleFilterAbstractFactory extends PluginAbstractFactoryAbstract
      */
     public function __invoke(ContainerInterface $container, $requestedName, array $options = null)
     {
+        // Service config from $container
         $serviceConfig = $this->getServiceConfig($container, $requestedName);
-        $pluginOptions = $this->getPluginOptions($serviceConfig, $options);
+
         $class = $this->getClass($serviceConfig, true);
+
+        // Merged $options with $serviceConfig
+        $pluginOptions = $this->getPluginOptions($serviceConfig, $options);
 
         return new $class($pluginOptions);
     }

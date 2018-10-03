@@ -6,6 +6,10 @@ use InvalidArgumentException;
 use PHPUnit\Framework\TestCase;
 use rollun\datahandler\Processor\Evaluation;
 
+/**
+ * Class EvaluationTest
+ * @package rollun\test\datahandler\Processor
+ */
 class EvaluationTest extends TestCase
 {
     public function testPositive()

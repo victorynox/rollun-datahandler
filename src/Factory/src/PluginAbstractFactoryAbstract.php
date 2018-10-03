@@ -47,7 +47,7 @@ abstract class PluginAbstractFactoryAbstract implements AbstractFactoryInterface
     }
 
     /**
-     * Get options for plugin
+     * Get options for plugin (merged service config and options passed through __invoke)
      *
      * @param $serviceConfig
      * @param array|null $options
@@ -87,9 +87,10 @@ abstract class PluginAbstractFactoryAbstract implements AbstractFactoryInterface
      */
     public function getClass(array $serviceConfig, $required = false)
     {
+        // TODO: add test on default class
         if (!isset($serviceConfig[self::CLASS_KEY])) {
             if (!$required) {
-                return self::DEFAULT_CLASS;
+                return static::DEFAULT_CLASS;
             }
 
             throw new \InvalidArgumentException("There is no 'class' config for plugin in config");

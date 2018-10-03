@@ -17,6 +17,8 @@ class EvaluationFilterAbstractFactoryTest extends PluginAbstractFactoryAbstractT
     public function testMainFunctionality()
     {
         $filterClassName = Evaluation::class;
+        // Assert default class
+        $this->assertEquals($this->object->getClass([]), Evaluation::class);
         $this->assertPositiveGetClass($filterClassName);
     }
 

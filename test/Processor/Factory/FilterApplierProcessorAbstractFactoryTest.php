@@ -20,8 +20,9 @@ class FilterApplierProcessorAbstractFactoryTest extends AbstractProcessorAbstrac
 
     /**
      * @param $requestedName
-     * @param $serviceConfig
+     * @param array $serviceConfig
      * @return \Zend\ServiceManager\ServiceManager
+     * @throws \ReflectionException
      */
     public function getContainer($requestedName, $serviceConfig = [])
     {
@@ -35,6 +36,8 @@ class FilterApplierProcessorAbstractFactoryTest extends AbstractProcessorAbstrac
         $processorClassName = FilterApplier::class;
         $validatorClassName = Digits::class;
 
+        // Assert default class
+        $this->assertEquals($this->object->getClass([]), FilterApplier::class);
         $this->assertInvokeWithConfig($processorClassName, $validatorClassName);
         $this->assertInvokeWithOptions($processorClassName, $validatorClassName);
         $this->assertPositiveGetClass($processorClassName);

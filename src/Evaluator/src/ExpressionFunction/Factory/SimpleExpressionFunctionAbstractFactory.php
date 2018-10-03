@@ -17,13 +17,15 @@ use Symfony\Component\ExpressionLanguage\ExpressionFunction;
  *      SimpleExpressionFunctionAbstractFactory::class =>
  *          'simpleExpressionFunctionServiceName1' => [
  *              'class' => ExpressionFunction::class, // optional
- *
  *              'functionName' => 'functionName1',
+ *
+ *              // compiler callable example
  *              // function ($str) {
  *              //      return sprintf('(is_string(%1$s) ? strtolower(%1$s) : %1$s)', $str);
  *              // }
  *              'compilerService' => 'compilerServiceName1', service name which is callable
  *
+ *              // evaluator callable example
  *              // function ($arguments, $str) {
  *              //      if (!is_string($str)) {
  *              //          return $str;

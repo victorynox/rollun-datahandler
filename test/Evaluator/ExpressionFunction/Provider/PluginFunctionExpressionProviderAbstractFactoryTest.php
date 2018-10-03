@@ -4,22 +4,26 @@ namespace rollun\test\datahandler\Evaluator\ExpressionFunction\Provider;
 
 use InvalidArgumentException;
 use PHPUnit\Framework\TestCase;
-use rollun\datahandler\Evaluator\ExpressionFunction\Providers\PluginProviderAbstractFactory;
+use rollun\datahandler\Evaluator\ExpressionFunction\Providers\PluginFunctionExpressionProviderAbstractFactory;
 use rollun\datahandler\Evaluator\ExpressionFunction\Providers\PluginExpressionFunctionProvider;
 use Zend\Filter\FilterPluginManager;
 use Zend\ServiceManager\ServiceManager;
 use Zend\Validator\ValidatorPluginManager;
 
-class PluginProviderAbstractFactoryTest extends TestCase
+/**
+ * Class PluginFunctionExpressionProviderAbstractFactoryTest
+ * @package rollun\test\datahandler\Evaluator\ExpressionFunction\Provider
+ */
+class PluginFunctionExpressionProviderAbstractFactoryTest extends TestCase
 {
     /**
-     * @var PluginProviderAbstractFactory
+     * @var PluginFunctionExpressionProviderAbstractFactory
      */
     protected $object;
 
     protected function setUp()
     {
-        $this->object = new PluginProviderAbstractFactory();
+        $this->object = new PluginFunctionExpressionProviderAbstractFactory();
     }
 
     public function testCanCreate()
@@ -47,18 +51,18 @@ class PluginProviderAbstractFactoryTest extends TestCase
     public function testNegativeMissingPluginManagerServiceOptionInvoke()
     {
         $this->expectException(InvalidArgumentException::class);
-        $this->expectExceptionMessage("Missing 'pluginManagerService' option in config");
+        $this->expectExceptionMessage("Missing 'pluginServiceManager' option in config");
         $this->invoke();
     }
 
     public function testNegativePluginServicesOptionInvoke()
     {
         $this->expectException(InvalidArgumentException::class);
-        $this->expectExceptionMessage("Missing 'pluginServices' option in config");
+        $this->expectExceptionMessage("Missing 'services' option in config");
 
         $requestedName = 'requestedServiceName';
         $container = $this->getContainer($requestedName, [
-            'pluginManagerService' => FilterPluginManager::class
+            'pluginServiceManager' => FilterPluginManager::class
         ]);
         $container->setService(FilterPluginManager::class, new FilterPluginManager($container));
         $this->object->__invoke($container, $requestedName);
@@ -71,8 +75,8 @@ class PluginProviderAbstractFactoryTest extends TestCase
 
         // default 'calledMethod' option is '__invoke' is __invoke
         $container = $this->getContainer($requestedName, [
-            'pluginManagerService' => FilterPluginManager::class,
-            'pluginServices' => $pluginServices,
+            'pluginServiceManager' => FilterPluginManager::class,
+            'services' => $pluginServices,
         ]);
         $container->setService(FilterPluginManager::class, new FilterPluginManager($container));
         $expressionFunctionProvider = $this->object->__invoke($container, $requestedName);
@@ -87,9 +91,9 @@ class PluginProviderAbstractFactoryTest extends TestCase
         $calledMethod = 'isValid';
 
         $container = $this->getContainer($requestedName, [
-            'pluginManagerService' => $pluginManagerService,
-            'pluginServices' => $pluginServices,
+            'pluginServiceManager' => $pluginManagerService,
             'calledMethod' => $calledMethod,
+            'services' => $pluginServices,
         ]);
         $container->setService($pluginManagerService, new ValidatorPluginManager($container));
 
@@ -120,8 +124,7 @@ class PluginProviderAbstractFactoryTest extends TestCase
 
     /**
      * @param array $serviceConfig
-     * @return mixed|object
-     * @throws \Interop\Container\Exception\ContainerException
+     * @return PluginExpressionFunctionProvider
      */
     protected function invoke($serviceConfig = [])
     {
