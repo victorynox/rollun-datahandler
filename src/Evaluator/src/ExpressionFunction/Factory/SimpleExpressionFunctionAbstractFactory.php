@@ -4,6 +4,7 @@ namespace rollun\datahandler\Evaluator\ExpressionFunction\Factory;
 
 use InvalidArgumentException;
 use Interop\Container\ContainerInterface;
+use rollun\datahandler\Evaluator\ExpressionFunction\BaseExpressionFunction;
 use Symfony\Component\ExpressionLanguage\ExpressionFunction;
 
 /**
@@ -16,14 +17,14 @@ use Symfony\Component\ExpressionLanguage\ExpressionFunction;
  * AbstractExpressionFunctionAbstractFactory::KEY => [
  *      SimpleExpressionFunctionAbstractFactory::class =>
  *          'simpleExpressionFunctionServiceName1' => [
- *              'class' => ExpressionFunction::class, // optional
- *              'functionName' => 'functionName1',
+ *              'class' => ExpressionFunction::class,
+ *              'functionName' => 'functionName1', // optional, default 'simpleExpressionFunctionServiceName1'
  *
  *              // compiler callable example
  *              // function ($str) {
  *              //      return sprintf('(is_string(%1$s) ? strtolower(%1$s) : %1$s)', $str);
  *              // }
- *              'compilerService' => 'compilerServiceName1', service name which is callable
+ *              'compiler' => 'compilerServiceName1', service name which is callable
  *
  *              // evaluator callable example
  *              // function ($arguments, $str) {
@@ -33,7 +34,7 @@ use Symfony\Component\ExpressionLanguage\ExpressionFunction;
  *              //
  *              //      return strtolower($str);
  *              // }
- *              'evaluatorService' => 'evaluatorServiceName1', service name which is callable
+ *              'evaluator' => 'evaluatorServiceName1', service name which is callable
  *          ],
  *          'simpleExpressionFunctionServiceName2' => [
  *              //...
@@ -47,6 +48,11 @@ use Symfony\Component\ExpressionLanguage\ExpressionFunction;
  */
 class SimpleExpressionFunctionAbstractFactory extends AbstractExpressionFunctionAbstractFactory
 {
+    /**
+     * Default caused class
+     */
+    const DEFAULT_CLASS = BaseExpressionFunction::class;
+
     /**
      * Config key for function compiler
      */
@@ -72,34 +78,19 @@ class SimpleExpressionFunctionAbstractFactory extends AbstractExpressionFunction
     {
         $serviceConfig = $this->getServiceConfig($container, $requestedName);
 
+        if (!isset($serviceConfig[self::COMPILER_KEY])) {
+            throw new InvalidArgumentException("Missing 'compiler' option in config");
+        }
+
         $functionName = $serviceConfig[self::FUNCTION_NAME_KEY] ?? $requestedName;
-        $compiler = $this->getCallbackOption($container, $serviceConfig, self::COMPILER_KEY);
-        $evaluator = $this->getCallbackOption($container, $serviceConfig, self::EVALUATOR_KEY);
+        $compiler = $container->get($serviceConfig[self::COMPILER_KEY]);
+        $evaluator = isset($serviceConfig[self::COMPILER_KEY])
+            ? $container->get($serviceConfig[self::COMPILER_KEY])
+            : null;
 
         /** @var ExpressionFunction $class */
         $class = $this->getClass($serviceConfig);
 
         return new $class($functionName, $compiler, $evaluator);
-    }
-
-    /**
-     * @param ContainerInterface $container
-     * @param $serviceConfig
-     * @param $configKey
-     * @return mixed
-     */
-    protected function getCallbackOption(ContainerInterface $container, $serviceConfig, $configKey)
-    {
-        if (!isset($serviceConfig[$configKey])) {
-            throw new InvalidArgumentException("Missing '$configKey' option in config");
-        }
-
-        $evaluator = $container->get($serviceConfig[$configKey]);
-
-        if (is_callable($evaluator)) {
-            return $evaluator;
-        }
-
-        throw new InvalidArgumentException(ucfirst($configKey) . " must be callable");
     }
 }

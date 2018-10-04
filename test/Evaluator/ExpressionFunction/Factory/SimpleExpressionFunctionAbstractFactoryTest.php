@@ -21,22 +21,6 @@ class SimpleExpressionFunctionAbstractFactoryTest extends AbstractExpressionFunc
         $this->invoke();
     }
 
-    public function testNegativeMissingEvaluatorOptionInvoke()
-    {
-        $this->expectException(InvalidArgumentException::class);
-        $this->expectExceptionMessage("Missing 'evaluator' option in config");
-
-        $requestedName = 'requestedServiceName';
-        $container = $this->getContainer($requestedName, [
-            'compiler' => 'functionCallback'
-        ]);
-        $container->setService('functionCallback', function ($value) {
-            return $value . $value;
-        });
-
-        $this->object->__invoke($container, $requestedName);
-    }
-
     public function testPositiveInvoke()
     {
         $functionName = 'functionName';
@@ -55,6 +39,25 @@ class SimpleExpressionFunctionAbstractFactoryTest extends AbstractExpressionFunc
 
         /** @var ExpressionFunction $expressionFunction */
         $expressionFunction = $this->object->__invoke($container, $requestedName);
+        $this->assertTrue(is_a($expressionFunction, ExpressionFunction::class, true));
+        $this->assertEquals($expressionFunction->getName(), $functionName);
+    }
+
+    public function testPositiveInvokeWithoutEvaluator()
+    {
+        $functionName = 'functionName';
+        $requestedName = 'requestedServiceName';
+        $container = $this->getContainer($requestedName, [
+            'compiler' => 'compilerFunctionCallback',
+            'functionName' => $functionName,
+        ]);
+        $container->setService('compilerFunctionCallback', function ($value) {
+            throw new LogicException();
+        });
+
+        /** @var ExpressionFunction $expressionFunction */
+        $expressionFunction = $this->object->__invoke($container, $requestedName);
+        $this->assertTrue(is_a($expressionFunction, ExpressionFunction::class, true));
         $this->assertEquals($expressionFunction->getName(), $functionName);
     }
 }
