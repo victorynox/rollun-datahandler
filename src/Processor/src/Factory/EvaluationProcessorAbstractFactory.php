@@ -97,11 +97,11 @@ class EvaluationProcessorAbstractFactory extends AbstractProcessorAbstractFactor
         return $container->get($processorOptions[self::EXPRESSION_LANGUAGE_KEY]);
     }
 
-    protected function clearProcessorOptions(array $pluginOptions)
+    protected function clearProcessorOptions(array $processorOptions)
     {
-        $pluginOptions = parent::clearProcessorOptions($pluginOptions);
-        unset($pluginOptions[self::EXPRESSION_LANGUAGE_KEY]);
+        $processorOptions = parent::clearProcessorOptions($processorOptions);
+        unset($processorOptions[self::EXPRESSION_LANGUAGE_KEY]);
 
-        return $pluginOptions;
+        return $processorOptions;
     }
 }
