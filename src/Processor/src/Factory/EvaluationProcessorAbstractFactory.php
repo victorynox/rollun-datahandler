@@ -69,37 +69,37 @@ class EvaluationProcessorAbstractFactory extends AbstractProcessorAbstractFactor
         $class = $this->getClass($serviceConfig);
 
         // Merged $options with $serviceConfig
-        $pluginOptions = $this->getPluginOptions($serviceConfig, $options);
+        $processorOptions = $this->getPluginOptions($serviceConfig, $options);
 
-        $validator = $this->createValidator($container, $pluginOptions);
+        $validator = $this->createValidator($container, $processorOptions);
 
-        $expressionLanguage = $this->getExpressionLanguage($container, $pluginOptions);
+        $expressionLanguage = $this->getExpressionLanguage($container, $processorOptions);
 
         // Remove options that are intended for the validator (extra options that no need in processor)
-        $clearedPluginOptions = $this->clearPluginOptions($pluginOptions);
+        $clearedPluginOptions = $this->clearProcessorOptions($processorOptions);
 
         return new $class($clearedPluginOptions, $validator, $expressionLanguage);
     }
 
     /**
      * @param ContainerInterface $container
-     * @param $pluginOptions
+     * @param $processorOptions
      * @return ExpressionLanguage|null
      */
-    public function getExpressionLanguage(ContainerInterface $container, $pluginOptions)
+    public function getExpressionLanguage(ContainerInterface $container, $processorOptions)
     {
         $expressionLanguage = null;
 
-        if (!isset($pluginOptions[self::EXPRESSION_LANGUAGE_KEY])) {
+        if (!isset($processorOptions[self::EXPRESSION_LANGUAGE_KEY])) {
             return $expressionLanguage;
         }
 
-        return $container->get($pluginOptions[self::EXPRESSION_LANGUAGE_KEY]);
+        return $container->get($processorOptions[self::EXPRESSION_LANGUAGE_KEY]);
     }
 
-    protected function clearPluginOptions(array $pluginOptions)
+    protected function clearProcessorOptions(array $pluginOptions)
     {
-        $pluginOptions = parent::clearPluginOptions($pluginOptions);
+        $pluginOptions = parent::clearProcessorOptions($pluginOptions);
         unset($pluginOptions[self::EXPRESSION_LANGUAGE_KEY]);
 
         return $pluginOptions;

@@ -62,13 +62,13 @@ class SimpleProcessorAbstractFactory extends AbstractProcessorAbstractFactory
         $class = $this->getClass($serviceConfig, true);
 
         // Merged $options with $serviceConfig
-        $pluginOptions = $this->getPluginOptions($serviceConfig, $options);
+        $processorOptions = $this->getPluginOptions($serviceConfig, $options);
 
-        $validator = $this->createValidator($container, $pluginOptions);
+        $validator = $this->createValidator($container, $processorOptions);
 
         // Remove options that are intended for the validator (extra options that no need in processor)
-        $clearedPluginOptions = $this->clearPluginOptions($pluginOptions);
+        $clearedProcessorOptions = $this->clearProcessorOptions($processorOptions);
 
-        return new $class($clearedPluginOptions, $validator);
+        return new $class($clearedProcessorOptions, $validator);
     }
 }

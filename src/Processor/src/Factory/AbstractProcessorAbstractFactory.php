@@ -62,7 +62,7 @@ abstract class AbstractProcessorAbstractFactory extends PluginAbstractFactoryAbs
      * @param array $pluginOptions
      * @return array
      */
-    protected function clearPluginOptions(array $pluginOptions)
+    protected function clearProcessorOptions(array $pluginOptions)
     {
         unset($pluginOptions[self::VALIDATOR_KEY]);
         unset($pluginOptions[self::VALIDATOR_OPTION_KEY]);
