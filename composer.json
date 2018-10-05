@@ -33,5 +33,15 @@
     "psr-4": {
       "rollun\\test\\datahandler\\": "test"
     }
+  },
+  "extra": {
+    "zf": {
+      "config-provider": [
+        "rollun\\datahandler\\Evaluator\\ConfigProvider",
+        "rollun\\datahandler\\Filter\\ConfigProvider",
+        "rollun\\datahandler\\Validator\\ConfigProvider",
+        "rollun\\datahandler\\Processor\\ConfigProvider",
+      ]
+    }
   }
 }
