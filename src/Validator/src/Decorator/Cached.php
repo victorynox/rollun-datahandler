@@ -2,6 +2,7 @@
 
 namespace rollun\datahandler\Validator\Decorator;
 
+use BadMethodCallException;
 use Zend\Validator\ValidatorInterface;
 
 /**
@@ -11,37 +12,17 @@ use Zend\Validator\ValidatorInterface;
 class Cached implements ValidatorInterface
 {
     /**
-     * @var ValidatorInterface[]|array
+     * @var ValidatorInterface
      */
-    static protected $cachedValidators;
-
-    /**
-     * @var string
-     */
-    protected $requestedName;
+    protected $cachedValidator;
 
     /**
      * Cached constructor.
-     * @param $requestedName
      * @param ValidatorInterface $validator
      */
-    public function __construct(ValidatorInterface $validator, string $requestedName)
+    public function __construct(ValidatorInterface $validator)
     {
-        if (!isset(self::$cachedValidators[$requestedName])) {
-            self::$cachedValidators[$requestedName] = $validator;
-        }
-
-        $this->requestedName = $requestedName;
-    }
-
-    /**
-     * Get cached validator
-     *
-     * @return ValidatorInterface
-     */
-    public function getCachedValidator()
-    {
-        return self::$cachedValidators[$this->requestedName];
+        $this->cachedValidator = $validator;
     }
 
     /**
@@ -50,7 +31,7 @@ class Cached implements ValidatorInterface
      */
     public function isValid($value)
     {
-        return $this->getCachedValidator()->isValid($value);
+        return $this->cachedValidator->isValid($value);
     }
 
     /**
@@ -58,6 +39,20 @@ class Cached implements ValidatorInterface
      */
     public function getMessages()
     {
-        return $this->getCachedValidator()->getMessages();
+        return $this->cachedValidator->getMessages();
+    }
+
+    /**
+     * @param $name
+     * @param $arguments
+     * @return mixed
+     */
+    public function __call($name, $arguments)
+    {
+        if (!method_exists($this->cachedValidator, $name)) {
+            throw new BadMethodCallException("Method '$name' doesn't exist");
+        }
+
+        return $this->cachedValidator->$name(...$arguments);
     }
 }

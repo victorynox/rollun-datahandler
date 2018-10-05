@@ -2,10 +2,12 @@
 
 namespace rollun\datahandler\Evaluator;
 
-use rollun\callback\Callback\Factory\CallbackAbstractFactoryAbstract;
+use rollun\datahandler\Evaluator\ExpressionFunction\Factory\CallbackExpressionFunctionAbstractFactory;
 use rollun\datahandler\Evaluator\ExpressionFunction\Factory\PHPExpressionFunctionAbstractFactory;
 use rollun\datahandler\Evaluator\ExpressionFunction\Factory\SimpleExpressionFunctionAbstractFactory;
 use rollun\datahandler\Evaluator\ExpressionFunction\Providers\PluginFunctionExpressionProviderAbstractFactory;
+use rollun\datahandler\Evaluator\Factory\ExpressionLanguageAbstractFactory;
+use Symfony\Component\ExpressionLanguage\ExpressionLanguage;
 
 /**
  * The configuration provider for evaluation
@@ -26,6 +28,9 @@ class ConfigProvider
     {
         return [
             'dependencies' => $this->getDependencyConfig(),
+            ExpressionLanguageAbstractFactory::class => [
+                ExpressionLanguage::class => []
+            ],
         ];
     }
 
@@ -38,8 +43,8 @@ class ConfigProvider
     {
         return [
             'abstract_factories' => [
-                CallbackAbstractFactoryAbstract::class,
-                CallbackAbstractFactoryAbstract::class,
+                CallbackExpressionFunctionAbstractFactory::class,
+                ExpressionLanguageAbstractFactory::class,
                 PHPExpressionFunctionAbstractFactory::class,
                 SimpleExpressionFunctionAbstractFactory::class,
                 PluginFunctionExpressionProviderAbstractFactory::class,

@@ -1,6 +1,0 @@
-.idea/
-vendor
-composer.lock
-coverage.xml
-docker-compose.yml
-codeCoverage

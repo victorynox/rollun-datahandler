@@ -1,1 +1,0 @@
-../rollun-com/rollun-installer/bin/InstallerSelfCall.php

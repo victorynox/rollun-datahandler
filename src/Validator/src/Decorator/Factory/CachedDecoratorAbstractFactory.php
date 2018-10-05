@@ -4,6 +4,7 @@ namespace rollun\datahandler\Validator\Decorator\Factory;
 
 use Interop\Container\ContainerInterface;
 use rollun\datahandler\Validator\Decorator\Cached;
+use Zend\ServiceManager\ServiceManager;
 
 /**
  * Create and return instance of CachedValidator
@@ -18,7 +19,7 @@ use rollun\datahandler\Validator\Decorator\Cached;
  *              'cachedDecoratorServiceName1' => [
  *                  'class' => ArrayAdapter::class,
  *                  'options' => [
- *                      'validator' => 'validator-service', // required
+ *                      'validator' => 'validatorServiceName1', // required
  *                  ],
  *              ],
  *              'cachedDecoratorServiceName2' => [
@@ -59,6 +60,10 @@ class CachedDecoratorAbstractFactory extends AbstractValidatorDecoratorAbstractF
      */
     public function __invoke(ContainerInterface $container, $requestedName, array $options = null)
     {
+        if ($container->has($requestedName)) {
+            return $container->get($requestedName);
+        }
+
         // Service config from $container
         $serviceConfig = $this->getServiceConfig($container, $requestedName);
 
@@ -66,9 +71,14 @@ class CachedDecoratorAbstractFactory extends AbstractValidatorDecoratorAbstractF
 
         // Merged $options with $serviceConfig
         $decoratorOptions = $this->getPluginOptions($serviceConfig, $options);
+        $decoratedValidator = $this->getDecoratedValidator($container, $decoratorOptions);
 
-        $cachedValidator = $this->getDecoratedValidator($container, $decoratorOptions);
+        $cachedDecorator = new $class($decoratedValidator);
 
-        return new $class($cachedValidator, $requestedName);
+        if ($container instanceof ServiceManager) {
+            $container->setService($requestedName, $cachedDecorator);
+        }
+
+        return $cachedDecorator;
     }
 }

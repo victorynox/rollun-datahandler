@@ -6,7 +6,7 @@ use rollun\datahandler\Validator\Decorator\Cached;
 use rollun\datahandler\Validator\Decorator\Factory\CachedDecoratorAbstractFactory;
 use rollun\test\datahandler\Factory\PluginAbstractFactoryAbstractTest;
 use Zend\ServiceManager\ServiceManager;
-use Zend\Validator\Digits;
+use Zend\Validator\InArray;
 use Zend\Validator\ValidatorPluginManager;
 
 /**
@@ -48,16 +48,18 @@ class CachedDecoratorAbstractFactoryTest extends PluginAbstractFactoryAbstractTe
         $requestedName = 'requestedServiceName';
         $container = $this->getContainer($requestedName, [
             'options' => [
-                'validator' => Digits::class
+                'validator' => 'validatorServiceName'
             ]
         ]);
+        $container->setService('validatorServiceName', new InArray(['haystack' => ['a']]));
 
         /** @var Cached $object1 */
         $object1 = $this->object->__invoke($container, $requestedName);
         /** @var Cached $object2 */
         $object2 = $this->object->__invoke($container, $requestedName);
 
-        $this->assertTrue($object1->getCachedValidator() === $object2->getCachedValidator());
+        $this->assertTrue($object1->getHaystack() === $object2->getHaystack());
+        $this->assertTrue($object1 === $object2);
     }
 
     public function testDifferentValidators()
@@ -66,18 +68,20 @@ class CachedDecoratorAbstractFactoryTest extends PluginAbstractFactoryAbstractTe
         $requestedName2 = 'requestedServiceName2';
         $container = new ServiceManager();
         $container->setService(ValidatorPluginManager::class, new ValidatorPluginManager($container));
+        $container->setService('validatorServiceName1', new InArray(['haystack' => ['a']]));
+        $container->setService('validatorServiceName2', new InArray(['haystack' => ['a']]));
         $container->setService('config', [
             $this->getConstant('KEY') => [
                 'abstract_factory_config' => [
                     get_class($this->object) => [
                         $requestedName1 => [
                             'options' => [
-                                'validator' => Digits::class
+                                'validator' => 'validatorServiceName1'
                             ],
                         ],
                         $requestedName2 => [
                             'options' => [
-                                'validator' => Digits::class
+                                'validator' => 'validatorServiceName2'
                             ],
                         ]
                     ],
@@ -89,7 +93,7 @@ class CachedDecoratorAbstractFactoryTest extends PluginAbstractFactoryAbstractTe
         $object1 = $this->object->__invoke($container, $requestedName1);
         /** @var Cached $object2 */
         $object2 = $this->object->__invoke($container, $requestedName2);
-
-        $this->assertTrue($object1->getCachedValidator() !== $object2->getCachedValidator());
+        $this->assertTrue($object1->getHaystack() === $object2->getHaystack());
+        $this->assertFalse($object1 === $object2);
     }
 }

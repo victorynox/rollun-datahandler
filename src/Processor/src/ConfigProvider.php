@@ -26,11 +26,12 @@ class ConfigProvider
     {
         return [
             'dependencies' => $this->getDependencyConfig(),
+            'processors' => $this->getProcessorConfig(),
         ];
     }
 
     /**
-     * Returns the templates configuration
+     * Return config for ServiceManager
      *
      * @return array
      */
@@ -41,6 +42,41 @@ class ConfigProvider
                 EvaluationProcessorAbstractFactory::class,
                 FilterApplierProcessorAbstractFactory::class,
                 ProcessorPluginManagerFactory::class,
+                SimpleProcessorAbstractFactory::class,
+            ]
+        ];
+    }
+
+    /**
+     * Return config for ProcessorPluginManager
+     *
+     * @return array
+     */
+    public function getProcessorConfig()
+    {
+        return [
+            'abstract_factory_config' => [
+                SimpleProcessorAbstractFactory::class => [
+                    Concat::class => ['class' => Concat::class],
+                ],
+                FilterApplierProcessorAbstractFactory::class => [
+                    FilterApplier::class => ['class' => FilterApplier::class],
+                ],
+                EvaluationProcessorAbstractFactory::class => [
+                    Evaluation::class => ['class' => Evaluation::class],
+                ],
+            ],
+            'aliases' => [
+                'FilterApplier' => FilterApplier::class,
+                'filterApplier' => FilterApplier::class,
+                'filterapplier' => FilterApplier::class,
+                'Evaluation' => Evaluation::class,
+                'evaluation' => Evaluation::class,
+                'Concat' => Concat::class,
+                'concat' => Concat::class,
+            ],
+            'abstract_factories' => [
+                FilterApplierProcessorAbstractFactory::class,
                 SimpleProcessorAbstractFactory::class,
             ]
         ];
