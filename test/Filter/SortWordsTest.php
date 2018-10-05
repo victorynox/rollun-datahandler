@@ -2,7 +2,7 @@
 
 namespace rollun\test\datahandler\Filter;
 
-use rollun\datanadler\Filter\SortWords;
+use rollun\datahandler\Filter\SortWords;
 use PHPUnit\Framework\TestCase;
 
 /**

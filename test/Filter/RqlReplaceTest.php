@@ -2,7 +2,7 @@
 
 namespace rollun\test\datahandler\Filter;
 
-use rollun\datanadler\Filter\RqlReplace;
+use rollun\datahandler\Filter\RqlReplace;
 use PHPUnit\Framework\TestCase;
 
 /**
@@ -72,8 +72,8 @@ class RqlReplaceTest extends TestCase
                 'expect' => 'Brute Force 750 4x4i EPS',
                 'options' => [
                     'beforePattern' => 'Brute Force 750 ',
-                    'pattern' => 'KVF* ',
-                    'afterPattern' => '',
+                    'pattern' => 'KVF*',
+                    'afterPattern' => '4x4i',
                 ],
                 'value' => 'Brute Force 750 KVF750G 4x4i EPS',
             ],

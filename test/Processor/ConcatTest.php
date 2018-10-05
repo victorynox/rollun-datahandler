@@ -1,11 +1,21 @@
 <?php
 
-namespace test\Vehicles\Workers\Processors;
+namespace rollun\test\datahandler\Processor;
 
-use rollun\datanadler\Processor\Concat;
+use PHPUnit\Framework\TestCase;
+use rollun\datahandler\Processor\Concat;
 
-class ConcatTest extends AbstractProcessorTest
+/**
+ * Class ConcatTest
+ * @package rollun\test\datahandler\Processor
+ */
+class ConcatTest extends TestCase
 {
+    public function getProcessor($options = [], $validator = null)
+    {
+        return new Concat($options, $validator);
+    }
+
     public function dataProvider()
     {
         return [
@@ -16,7 +26,7 @@ class ConcatTest extends AbstractProcessorTest
                         2 => 'second column',
                         3 => 'third column',
                     ],
-                    'columnToWrite' => 'result column',
+                    'resultColumn' => 'result column',
                 ],
                 [
                     'first column' => 'a',
@@ -35,7 +45,7 @@ class ConcatTest extends AbstractProcessorTest
                         2 => 'second column',
                     ],
                     'delimiter' => '-',
-                    'columnToWrite' => 'result column',
+                    'resultColumn' => 'result column',
                 ],
                 [
                     'first column' => 'a',

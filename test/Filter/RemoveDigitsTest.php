@@ -2,7 +2,7 @@
 
 namespace rollun\test\datahandler\Filter;
 
-use rollun\datanadler\Filter\RemoveDigits;
+use rollun\datahandler\Filter\RemoveDigits;
 use PHPUnit\Framework\TestCase;
 
 /**
