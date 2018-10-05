@@ -3,8 +3,7 @@
 namespace rollun\test\datahandler\Evaluator\Factory;
 
 use PHPUnit\Framework\TestCase;
-use rollun\datahandler\Evaluator\ExpressionEvaluator;
-use rollun\datahandler\Evaluator\ExpressionLanguageAbstractFactory;
+use rollun\datahandler\Evaluator\Factory\ExpressionLanguageAbstractFactory;
 use rollun\datahandler\Evaluator\ExpressionFunction\LogicException;
 use rollun\datahandler\Evaluator\ExpressionFunction\Providers\PluginExpressionFunctionProvider;
 use Symfony\Component\ExpressionLanguage\ExpressionFunction;

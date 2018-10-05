@@ -2,9 +2,11 @@
 
 namespace rollun\datahandler\Validator;
 
-use rollun\datahandler\Validator\Factory\ArrayDecoratorAbstractFactory;
+use rollun\datahandler\Validator\Decorator;
+use rollun\datahandler\Validator\Decorator\Factory\ArrayDecoratorAbstractFactory;
+use rollun\datahandler\Validator\Decorator\Factory\CachedDecoratorAbstractFactory;
+use rollun\datahandler\Validator\Decorator\Factory\ThrowableDecoratorAbstractFactory;
 use rollun\datahandler\Validator\Factory\SimpleValidatorAbstractFactory;
-use rollun\datahandler\Validator\Factory\ThrowableDecoratorAbstractFactory;
 
 /**
  * The configuration provider for validators
@@ -25,17 +27,60 @@ class ConfigProvider
     {
         return [
             'dependencies' => $this->getDependencyConfig(),
+            'validators' => $this->getValidatorConfig(),
         ];
     }
 
     /**
-     * Returns the templates configuration
+     * Return config for ServiceManager
      *
      * @return array
      */
     public function getDependencyConfig()
     {
         return [
+            'abstract_factories' => [
+                ArrayDecoratorAbstractFactory::class,
+                SimpleValidatorAbstractFactory::class,
+                ThrowableDecoratorAbstractFactory::class,
+            ]
+        ];
+    }
+
+    /**
+     * Return config for ValidatorPluginManager
+     *
+     * @return array
+     */
+    public function getValidatorConfig()
+    {
+        return [
+            'abstract_factory_config' => [
+                SimpleValidatorAbstractFactory::class => [
+                    IsColumnExist::class => ['class' => IsColumnExist::class],
+                ],
+                ArrayDecoratorAbstractFactory::class => [
+                    Decorator\ArrayValidator::class => ['class' => Decorator\ArrayValidator::class],
+                ],
+                ThrowableDecoratorAbstractFactory::class => [
+                    Decorator\Throwable::class => ['class' => Decorator\Throwable::class],
+                ],
+                CachedDecoratorAbstractFactory::class => [
+                    Decorator\Cached::class => ['class' => Decorator\Cached::class],
+                ],
+            ],
+            'aliases' => [
+                'IsColumnExist' => IsColumnExist::class,
+                'isColumnExist' => IsColumnExist::class,
+                'iscolumnExist' => IsColumnExist::class,
+                'iscolumnexist' => IsColumnExist::class,
+                'ArrayValidator' => Decorator\ArrayValidator::class,
+                'arrayValidator' => Decorator\ArrayValidator::class,
+                'Throwable' => Decorator\Throwable::class,
+                'throwable' => Decorator\Throwable::class,
+                'Cached' => Decorator\Cached::class,
+                'cached' => Decorator\Cached::class,
+            ],
             'abstract_factories' => [
                 ArrayDecoratorAbstractFactory::class,
                 SimpleValidatorAbstractFactory::class,

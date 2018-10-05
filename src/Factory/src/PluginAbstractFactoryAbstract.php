@@ -83,11 +83,10 @@ abstract class PluginAbstractFactoryAbstract implements AbstractFactoryInterface
      *
      * @param array $serviceConfig
      * @param bool $required
-     * @return mixed
+     * @return string
      */
     public function getClass(array $serviceConfig, $required = false)
     {
-        // TODO: add test on default class
         if (!isset($serviceConfig[self::CLASS_KEY])) {
             if (!$required) {
                 return static::DEFAULT_CLASS;

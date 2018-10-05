@@ -1,6 +1,6 @@
 <?php
 
-namespace rollun\datahandler\Evaluator;
+namespace rollun\datahandler\Evaluator\Factory;
 
 use Interop\Container\ContainerInterface;
 use InvalidArgumentException;

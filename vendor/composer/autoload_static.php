@@ -4,7 +4,7 @@
 
 namespace Composer\Autoload;
 
-class ComposerStaticInita05aa5037c855161b04b1e76ce3d7e4b
+class ComposerStaticInitef9ff4610bbc0bbb9b28a3c7f4429b19
 {
     public static $files = array (
         '10a6847eba8a430a134fad89f4a30a26' => __DIR__ . '/..' . '/zendframework/zend-cache/autoload/patternPluginManagerPolyfill.php',
@@ -76,6 +76,7 @@ class ComposerStaticInita05aa5037c855161b04b1e76ce3d7e4b
             'Zend\\Escaper\\' => 13,
             'Zend\\Diactoros\\' => 15,
             'Zend\\Db\\' => 8,
+            'Zend\\ConfigAggregator\\' => 22,
             'Zend\\Cache\\' => 11,
         ),
         'W' => 
@@ -221,8 +222,8 @@ class ComposerStaticInita05aa5037c855161b04b1e76ce3d7e4b
         'phpDocumentor\\Reflection\\' => 
         array (
             0 => __DIR__ . '/..' . '/phpdocumentor/reflection-common/src',
-            1 => __DIR__ . '/..' . '/phpdocumentor/type-resolver/src',
-            2 => __DIR__ . '/..' . '/phpdocumentor/reflection-docblock/src',
+            1 => __DIR__ . '/..' . '/phpdocumentor/reflection-docblock/src',
+            2 => __DIR__ . '/..' . '/phpdocumentor/type-resolver/src',
         ),
         'mindplay\\jsonfreeze\\' => 
         array (
@@ -303,6 +304,10 @@ class ComposerStaticInita05aa5037c855161b04b1e76ce3d7e4b
         'Zend\\Db\\' => 
         array (
             0 => __DIR__ . '/..' . '/zendframework/zend-db/src',
+        ),
+        'Zend\\ConfigAggregator\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/zendframework/zend-config-aggregator/src',
         ),
         'Zend\\Cache\\' => 
         array (
@@ -1292,10 +1297,10 @@ class ComposerStaticInita05aa5037c855161b04b1e76ce3d7e4b
     public static function getInitializer(ClassLoader $loader)
     {
         return \Closure::bind(function () use ($loader) {
-            $loader->prefixLengthsPsr4 = ComposerStaticInita05aa5037c855161b04b1e76ce3d7e4b::$prefixLengthsPsr4;
-            $loader->prefixDirsPsr4 = ComposerStaticInita05aa5037c855161b04b1e76ce3d7e4b::$prefixDirsPsr4;
-            $loader->prefixesPsr0 = ComposerStaticInita05aa5037c855161b04b1e76ce3d7e4b::$prefixesPsr0;
-            $loader->classMap = ComposerStaticInita05aa5037c855161b04b1e76ce3d7e4b::$classMap;
+            $loader->prefixLengthsPsr4 = ComposerStaticInitef9ff4610bbc0bbb9b28a3c7f4429b19::$prefixLengthsPsr4;
+            $loader->prefixDirsPsr4 = ComposerStaticInitef9ff4610bbc0bbb9b28a3c7f4429b19::$prefixDirsPsr4;
+            $loader->prefixesPsr0 = ComposerStaticInitef9ff4610bbc0bbb9b28a3c7f4429b19::$prefixesPsr0;
+            $loader->classMap = ComposerStaticInitef9ff4610bbc0bbb9b28a3c7f4429b19::$classMap;
 
         }, null, ClassLoader::class);
     }
