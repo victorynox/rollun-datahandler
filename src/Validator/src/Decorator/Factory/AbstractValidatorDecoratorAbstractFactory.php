@@ -42,7 +42,7 @@ abstract class AbstractValidatorDecoratorAbstractFactory extends PluginAbstractF
 
         $validatorRequestedName = $decoratorOptions[self::VALIDATOR_KEY];
         $validatorPluginManager = $container->get(ValidatorPluginManager::class);
-        $validatorOptions = $pluginOptions[self::VALIDATOR_OPTION_KEY] ?? null;
+        $validatorOptions = $decoratorOptions[self::VALIDATOR_OPTION_KEY] ?? null;
 
         if (($validatorPluginManager instanceof ValidatorPluginManager)
             && $validatorPluginManager->has($validatorRequestedName)) {
@@ -56,7 +56,7 @@ abstract class AbstractValidatorDecoratorAbstractFactory extends PluginAbstractF
             );
         }
 
-        return clone $validator;
+        return $validator;
     }
 
     /**

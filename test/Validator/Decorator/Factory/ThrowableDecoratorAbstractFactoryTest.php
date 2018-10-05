@@ -4,8 +4,8 @@ namespace rollun\test\datahandler\Validator\Decorator\Factory;
 
 use rollun\datahandler\Validator\Decorator\Factory\ThrowableDecoratorAbstractFactory;
 use rollun\datahandler\Validator\Decorator\Throwable;
-use Zend\Validator\Digits;
 use rollun\test\datahandler\Factory\PluginAbstractFactoryAbstractTest;
+use Zend\Validator\InArray;
 use Zend\Validator\ValidatorPluginManager;
 
 class ThrowableDecoratorAbstractFactoryTest extends PluginAbstractFactoryAbstractTest
@@ -40,17 +40,20 @@ class ThrowableDecoratorAbstractFactoryTest extends PluginAbstractFactoryAbstrac
 
     public function testValidOption()
     {
-        $validatorClassName = Digits::class;
+        $haystack = ['a', 'b'];
         $validatorAdapterClassName = Throwable::class;
 
         /** @var Throwable $validatorDecorator */
         $validatorDecorator = $this->invoke([
             'class' => $validatorAdapterClassName,
             'options' => [
-                'validator' => $validatorClassName,
+                'validator' => InArray::class,
+                'validatorOptions' => [
+                    'haystack' => $haystack
+                ],
             ]
         ]);
 
-        $this->assertTrue(is_a($validatorDecorator->getValidator(), $validatorClassName, true));
+        $this->assertEquals($validatorDecorator->getHaystack(), $haystack);
     }
 }

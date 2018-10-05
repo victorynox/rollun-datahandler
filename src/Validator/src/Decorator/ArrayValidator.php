@@ -2,6 +2,7 @@
 
 namespace rollun\datahandler\Validator\Decorator;
 
+use BadMethodCallException;
 use Zend\Validator\AbstractValidator;
 use Zend\Validator\Exception\InvalidArgumentException;
 use Zend\Validator\ValidatorInterface;
@@ -97,15 +98,24 @@ class ArrayValidator extends AbstractValidator
     }
 
     /**
-     * @return ValidatorInterface
+     * @return array
      */
-    public function getValidator(): ValidatorInterface
-    {
-        return $this->validator;
-    }
-
     public function getMessages()
     {
         return $this->validator->getMessages();
+    }
+
+    /**
+     * @param $name
+     * @param $arguments
+     * @return mixed
+     */
+    public function __call($name, $arguments)
+    {
+        if (!method_exists($this->validator, $name)) {
+            throw new BadMethodCallException("Method '$name' doesn't exist");
+        }
+
+        return $this->validator->$name(...$arguments);
     }
 }

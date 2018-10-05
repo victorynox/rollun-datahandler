@@ -5,7 +5,6 @@ namespace rollun\test\datahandler\Validator\Decorator;
 use PHPUnit\Framework\TestCase;
 use rollun\datahandler\Validator\Decorator\Cached;
 use Zend\Validator\Digits;
-use Zend\Validator\Ip;
 
 /**
  * Class CachedTest
@@ -13,20 +12,10 @@ use Zend\Validator\Ip;
  */
 class CachedTest extends TestCase
 {
-    public function testSameValidators()
+    public function testPositive()
     {
-        $cachedDecorator1 = new Cached(new Digits(), 'cachedDigits');
-        $cachedDecorator2 = new Cached(new Ip(), 'cachedDigits');
-
-        $this->assertTrue($cachedDecorator1->getCachedValidator() === $cachedDecorator2->getCachedValidator());
-    }
-
-    public function testDifferentValidators()
-    {
-        $validator = new Digits();
-        $cachedDecorator1 = new Cached(clone $validator, 'cachedDigits1');
-        $cachedDecorator2 = new Cached(clone $validator, 'cachedDigits2');
-
-        $this->assertFalse($cachedDecorator1->getCachedValidator() === $cachedDecorator2->getCachedValidator());
+        $cachedDecorator = new Cached(new Digits());
+        $this->assertTrue($cachedDecorator->isValid('123'));
+        $this->assertFalse($cachedDecorator->isValid('123abc'));
     }
 }
