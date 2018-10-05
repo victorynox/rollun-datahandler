@@ -41,8 +41,13 @@ class ConfigProvider
             'abstract_factories' => [
                 EvaluationProcessorAbstractFactory::class,
                 FilterApplierProcessorAbstractFactory::class,
-                ProcessorPluginManagerFactory::class,
                 SimpleProcessorAbstractFactory::class,
+            ],
+            'aliases' => [
+                'PluginManager' => ProcessorPluginManager::class,
+            ],
+            'factories' => [
+                ProcessorPluginManager::class => ProcessorPluginManagerFactory::class
             ]
         ];
     }

@@ -96,13 +96,13 @@ class EvaluationFilterAbstractFactory extends PluginAbstractFactoryAbstract
     /**
      * Remove extra options
      *
-     * @param array $pluginOptions
+     * @param array $filterOptions
      * @return array
      */
-    protected function clearFilterOptions(array $pluginOptions)
+    protected function clearFilterOptions(array $filterOptions)
     {
-        unset($pluginOptions[self::EXPRESSION_LANGUAGE_KEY]);
+        unset($filterOptions[self::EXPRESSION_LANGUAGE_KEY]);
 
-        return $pluginOptions;
+        return $filterOptions;
     }
 }

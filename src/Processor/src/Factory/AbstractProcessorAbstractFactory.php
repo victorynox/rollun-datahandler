@@ -32,20 +32,20 @@ abstract class AbstractProcessorAbstractFactory extends PluginAbstractFactoryAbs
      * Create validator
      *
      * @param ContainerInterface $container
-     * @param array $pluginOptions
+     * @param array $processorOptions
      * @return ValidatorInterface|null
      */
-    protected function createValidator(ContainerInterface $container, array $pluginOptions)
+    protected function createValidator(ContainerInterface $container, array $processorOptions)
     {
         $validator = null;
 
-        if (!isset($pluginOptions[self::VALIDATOR_KEY])) {
+        if (!isset($processorOptions[self::VALIDATOR_KEY])) {
             return $validator;
         }
 
-        $validatorRequestedName = $pluginOptions[self::VALIDATOR_KEY];
+        $validatorRequestedName = $processorOptions[self::VALIDATOR_KEY];
         $validatorPluginManager = $container->get(ValidatorPluginManager::class);
-        $validatorOptions = $pluginOptions[self::VALIDATOR_OPTION_KEY] ?? null;
+        $validatorOptions = $processorOptions[self::VALIDATOR_OPTION_KEY] ?? null;
 
         if (($validatorPluginManager instanceof ValidatorPluginManager)
             && $validatorPluginManager->has($validatorRequestedName)) {
