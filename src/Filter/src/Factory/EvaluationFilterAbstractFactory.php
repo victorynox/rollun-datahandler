@@ -72,7 +72,7 @@ class EvaluationFilterAbstractFactory extends PluginAbstractFactoryAbstract
         $expressionLanguage = $this->getExpressionLanguage($container, $pluginOptions);
 
         // Remove options that are intended for the validator (extra options that no need in filter)
-        $clearedPluginOptions = $this->clearPluginOptions($pluginOptions);
+        $clearedPluginOptions = $this->clearFilterOptions($pluginOptions);
 
         return new $class($clearedPluginOptions, $expressionLanguage);
     }
@@ -99,7 +99,7 @@ class EvaluationFilterAbstractFactory extends PluginAbstractFactoryAbstract
      * @param array $pluginOptions
      * @return array
      */
-    protected function clearPluginOptions(array $pluginOptions)
+    protected function clearFilterOptions(array $pluginOptions)
     {
         unset($pluginOptions[self::EXPRESSION_LANGUAGE_KEY]);
 

@@ -67,7 +67,7 @@ class ArrayDecoratorAbstractFactory extends AbstractValidatorDecoratorAbstractFa
         $decoratedValidator = $this->getDecoratedValidator($container, $decoratorOptions);
 
         // Remove options that are intended for the decorated validator (extra options that no need in ArrayValidator)
-        $clearedDecoratorOptions = $this->clearPluginOptions($decoratorOptions);
+        $clearedDecoratorOptions = $this->clearValidatorOptions($decoratorOptions);
 
         return new $class($decoratedValidator, $clearedDecoratorOptions);
     }
