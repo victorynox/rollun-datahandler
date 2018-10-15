@@ -22,16 +22,17 @@ if (!$filePath) {
     /** @var SplFileInfo $splFileInfo */
     foreach ($files as $splFileInfo) {
         $filename = basename($splFileInfo->getBasename(), ".php");
+        $path = $splFileInfo->getPathInfo()->getPathname();
 
         if ($splFileInfo->isFile()) {
-            echo "<a href='/{$filename}'>{$splFileInfo->getFilename()}</a><br>";
+            echo "<a href='/{$path}/{$filename}'>{$path}/{$splFileInfo->getFilename()}</a><br /><br />";
         }
     }
 } else {
     ob_start();
-    include_once "example/{$filePath}.php";
+    include_once "{$filePath}.php";
     $content = ob_get_clean();
 
-    echo "<a href='/'>< Back</a><br><br>";
+    echo "<a href='/'>< Back</a><br /><br />";
     echo $content;
 }
