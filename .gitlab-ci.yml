@@ -1,4 +1,51 @@
-image: alpine
+#image: docker
+#services:
+#- docker:dind
+image: php:7.1
 
-simple_job:
-  script: echo "simple job"
+cache:
+  paths:
+  - vendor/
+
+before_script:
+  # update packages
+- apt-get update -yqq
+# install git
+- apt-get install git -yqq
+# install php-json ext
+- docker-php-ext-install json
+# install composer
+- curl -sS https://getcomposer.org/installer | php
+# install deps
+- php composer.phar install
+
+stages:
+- build
+- test
+- analyse
+
+#container_build:
+#  stage: build
+#  image: docker:latest
+#  before_script:
+#  - docker login registry.gitlab.com
+#  script: docker build -t registry.gitlab.com/rollun/rollun-datahandler:${CI_COMMIT_REF_SLUG}
+#  after_script:
+#  - docker
+#  artifacts:
+#  allow_failure: true
+#  when: manual
+
+phpunit:
+  stage: test
+  script: vendor/bin/phpunit --configuration phpunit.xml --coverage-test
+
+phpunit:7.2:
+  image: php:7.2
+  stage: test
+  allow_failure: true
+  script: vendor/bin/phpunit --configuration phpunit.xml --coverage-test
+
+phpcs:
+  stage: analyse
+  script: vendor/bin/phpcs .
