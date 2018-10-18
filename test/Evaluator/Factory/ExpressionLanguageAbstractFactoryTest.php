@@ -48,7 +48,7 @@ class ExpressionLanguageAbstractFactoryTest extends TestCase
         /** @var ExpressionLanguage $expressionLanguage */
         $expressionLanguage = $this->object->__invoke($container, $requestedName);
         $this->assertFalse($this->isExpressionValid($expressionLanguage, "trim('   dsadsa ')", 'dsadsa'));
-        $this->assertTrue($this->isExpressionValid($expressionLanguage, "ucfirst('as')", 'As'));
+        $this->assertFalse($this->isExpressionValid($expressionLanguage, "ucfirst('as')", 'As'));
     }
 
     public function testCreateWithExpressionFunctionProviders()
