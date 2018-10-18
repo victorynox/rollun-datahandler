@@ -5,7 +5,7 @@
          colors="true">
     <testsuites>
         <testsuite name="unit">
-            <!-- add config -->
+            <directory>test</directory>
         </testsuite>
     </testsuites>
     <filter>
