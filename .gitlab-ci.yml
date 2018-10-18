@@ -92,8 +92,9 @@ mkdocs:deploy:
     GITHUB_REPO: git@github.com:victorynox/rollun-datahandler.git
   image: debian
   before_script:
+  - apt-get update
   - apt-get install git -y
-  - 'which ssh-agent || ( apt-get install update -y && apt-get install openssh -y )'
+  - 'which ssh-agent || (apt-get install openssh -y )'
   - eval $(ssh-agent -s)
   - ssh-add <(echo "$GIT_SSH_PRIVAT_KEY")
   - git config --global user.email $GIT_EMAIL
