@@ -45,7 +45,7 @@ class ArrayValidator extends AbstractValidator
     {
         if (is_array($columnsToValidate)) {
             $this->columnsToValidate = $columnsToValidate;
-        } elseif (is_numeric($columnsToValidate)) {
+        } elseif (is_numeric($columnsToValidate) || is_string($columnsToValidate)) {
             $this->columnsToValidate = [$columnsToValidate];
         } else {
             throw new InvalidArgumentException("Invalid option 'columnsToValidate'");
