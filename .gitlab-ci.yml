@@ -107,6 +107,8 @@ mkdocs:deploy:
   - git remote add origin git@github.com:victorynox/rollun-datahandler.git
   - git fetch
   - git checkout -b gh-pages
+  - git add *
+  - git commit -m "build docs $CI_COMMIT_TAG"
   - git push --force origin gh-pages
   environment:
     name: github-pages
