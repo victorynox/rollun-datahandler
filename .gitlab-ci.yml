@@ -61,6 +61,10 @@ phpunit:7.2:
 
 phpcs:
   stage: analyse
+  changes:
+  - config/*
+  - src/*
+  - test/*
   script: vendor/bin/phpcs .
 
 mkdocs:build:
