@@ -103,13 +103,13 @@ mkdocs:deploy:
   script:
   - cd site
   - git init
-  - git remote add origin ${GITHUB_REPO}
+  - git remote add origin git@github.com:victorynox/rollun-datahandler.git
   - git fetch
   - git checkout -b gh-pages
   - git push --force origin gh-pages
   environment:
     name: github-pages
-    url: https://${GITPAGES}
+    url: https://$GITPAGES
   dependencies:
   - mkdocs:build
 #  only:
