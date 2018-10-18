@@ -100,7 +100,6 @@ mkdocs:deploy:
   - git config --global user.email $GIT_EMAIL
   - git config --global user.name $GIT_NAME
   - mkdir -p ~/.ssh
-  - cat gitlab-known-hosts >> ~/.ssh/known_hosts
   script:
   - cd site
   - git init
