@@ -23,21 +23,9 @@ before_script:
 
 stages:
 - build
-- deploy
 - test
 - analyse
-
-#container_build:
-#  stage: build
-#  image: docker:latest
-#  before_script:
-#  - docker login registry.gitlab.com
-#  script: docker build -t registry.gitlab.com/rollun/rollun-datahandler:${CI_COMMIT_REF_SLUG}
-#  after_script:
-#  - docker
-#  artifacts:
-#  allow_failure: true
-#  when: manual
+- deploy
 
 phpunit:
   only:
@@ -80,10 +68,10 @@ mkdocs:build:
     expire_in: 3 hour
     paths:
     - site
-#  only:
-#  - tags
-#  except:
-#  - /^(?!master).+@/
+  only:
+  - tags
+  except:
+  - /^(?!master).+@/
 
 mkdocs:deploy:
   stage: deploy
@@ -115,7 +103,7 @@ mkdocs:deploy:
     url: https://$GITPAGES
   dependencies:
   - mkdocs:build
-#  only:
-#  - tags
-#  except:
-#  - /^(?!master).+@/
+  only:
+  - tags
+  except:
+  - /^(?!master).+@/
