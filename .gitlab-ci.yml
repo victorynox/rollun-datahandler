@@ -77,6 +77,7 @@ mkdocs:build:
   stage: build
   script: mkdocs build
   artifacts:
+    expire_in: 3 hour
     paths:
     - site
   only:
@@ -89,9 +90,9 @@ mkdocs:deploy:
   variables:
     GITPAGES: victorynox.github.io/rollun-datahandler/
     GITHUB_REPO: git@github.com:victorynox/rollun-datahandler.git
-  image: git-robot
+  image: alpine/git
   before_script:
-  - 'which ssh-agent || ( apt-get update -y && apt-get install openssh-client -y )'
+  - 'which ssh-agent || ( apk update -y && apk add --no-cache openssh -y )'
   - eval $(ssh-agent -s)
   - ssh-add <(echo "$GIT_SSH_PRIVAT_KEY")
   - git config --global user.email $GIT_EMAIL
