@@ -23,9 +23,9 @@ before_script:
 
 stages:
 - build
+- deploy
 - test
 - analyse
-- deploy
 
 #container_build:
 #  stage: build
@@ -80,10 +80,10 @@ mkdocs:build:
     expire_in: 3 hour
     paths:
     - site
-  only:
-  - tags
-  except:
-  - /^(?!master).+@/
+#  only:
+#  - tags
+#  except:
+#  - /^(?!master).+@/
 
 mkdocs:deploy:
   stage: deploy
@@ -111,7 +111,7 @@ mkdocs:deploy:
     url: https://${GITPAGES}
   dependencies:
   - mkdocs:build
-  only:
-  - tags
-  except:
-  - /^(?!master).+@/
+#  only:
+#  - tags
+#  except:
+#  - /^(?!master).+@/
