@@ -90,10 +90,11 @@ mkdocs:deploy:
   variables:
     GITPAGES: victorynox.github.io/rollun-datahandler/
     GITHUB_REPO: git@github.com:victorynox/rollun-datahandler.git
-  image: alpine
+  image: debian
   before_script:
-  - apk add git -y
-  - 'which ssh-agent || ( apk update -y && apk add --no-cache openssh -y )'
+  - apt-get install --no-cache bash
+  - apt-get install git -y
+  - 'which ssh-agent || ( apt-get install update -y && apt-get install add --no-cache openssh -y )'
   - eval $(ssh-agent -s)
   - ssh-add <(echo "$GIT_SSH_PRIVAT_KEY")
   - git config --global user.email $GIT_EMAIL
