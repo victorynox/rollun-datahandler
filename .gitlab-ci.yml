@@ -90,8 +90,9 @@ mkdocs:deploy:
   variables:
     GITPAGES: victorynox.github.io/rollun-datahandler/
     GITHUB_REPO: git@github.com:victorynox/rollun-datahandler.git
-  image: alpine/git
+  image: alpine
   before_script:
+  - apk add git -y
   - 'which ssh-agent || ( apk update -y && apk add --no-cache openssh -y )'
   - eval $(ssh-agent -s)
   - ssh-add <(echo "$GIT_SSH_PRIVAT_KEY")
