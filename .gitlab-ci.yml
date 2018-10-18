@@ -104,7 +104,8 @@ mkdocs:deploy:
   - cd site
   - git init
   - git remote add origin ${GITHUB_REPO}
-  - git checkout gh-pages
+  - git fetch
+  - git checkout -b gh-pages
   - git push --force origin gh-pages
   environment:
     name: github-pages
