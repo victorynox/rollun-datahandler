@@ -1,6 +1,6 @@
-#image: docker
-#services:
-#- docker:dind
+# image: docker
+# services:
+# - docker:dind
 image: php:7.1
 
 cache:
@@ -18,7 +18,7 @@ before_script:
 - docker-php-ext-install zip
 # install composer
 - curl -sS https://getcomposer.org/installer | php
-# install deps
+# install dependencies
 - php composer.phar install
 
 stages:
