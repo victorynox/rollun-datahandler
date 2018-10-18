@@ -48,7 +48,7 @@ class IsColumnExist extends AbstractValidator
     {
         if (is_array($validateColumns)) {
             $this->validateColumns = $validateColumns;
-        } elseif (is_numeric($validateColumns)) {
+        } elseif (is_numeric($validateColumns) || is_string($validateColumns)) {
             $this->validateColumns = [$validateColumns];
         } else {
             throw new InvalidArgumentException("Invalid option 'validateColumns'");
