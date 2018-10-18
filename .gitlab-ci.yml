@@ -41,13 +41,13 @@ stages:
 
 phpunit:
   stage: test
-  script: vendor/bin/phpunit --configuration phpunit.xml --coverage-test
+  script: vendor/bin/phpunit --configuration phpunit.xml
 
 phpunit:7.2:
   image: php:7.2
   stage: test
   allow_failure: true
-  script: vendor/bin/phpunit --configuration phpunit.xml --coverage-test
+  script: vendor/bin/phpunit --configuration phpunit.xml
 
 phpcs:
   stage: analyse
