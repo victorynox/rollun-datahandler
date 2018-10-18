@@ -54,7 +54,7 @@ phpcs:
   script: vendor/bin/phpcs .
 
 mkdocs:build:
-  image: python:7.2.15
+  image: python:2.7
   before_script:
   - curl https://bootstrap.pypa.io/get-pip.py -o get-pip.py
   - python get-pip.py
