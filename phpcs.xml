@@ -7,6 +7,9 @@
 
     <!-- Exclude external libraries -->
     <exclude-pattern>vendor</exclude-pattern>
+    <exclude-pattern>site</exclude-pattern>
+    <exclude-pattern>*.js</exclude-pattern>
+    <exclude-pattern>*.css</exclude-pattern>
 
     <!-- How many files should be checked simultaneously -->
     <arg name="parallel" value="75" />

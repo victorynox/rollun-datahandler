@@ -1,6 +1,6 @@
-#image: docker
-#services:
-#- docker:dind
+# image: docker
+# services:
+# - docker:dind
 image: php:7.1
 
 cache:
@@ -18,7 +18,7 @@ before_script:
 - docker-php-ext-install zip
 # install composer
 - curl -sS https://getcomposer.org/installer | php
-# install deps
+# install dependencies
 - php composer.phar install
 
 stages:
@@ -27,23 +27,21 @@ stages:
 - analyse
 - deploy
 
-#container_build:
-#  stage: build
-#  image: docker:latest
-#  before_script:
-#  - docker login registry.gitlab.com
-#  script: docker build -t registry.gitlab.com/rollun/rollun-datahandler:${CI_COMMIT_REF_SLUG}
-#  after_script:
-#  - docker
-#  artifacts:
-#  allow_failure: true
-#  when: manual
-
 phpunit:
+  only:
+    changes:
+    - config/*
+    - src/*
+    - test/*
   stage: test
   script: vendor/bin/phpunit --configuration phpunit.xml
 
 phpunit:7.2:
+  only:
+    changes:
+    - config/*
+    - src/*
+    - test/*
   image: php:7.2
   stage: test
   allow_failure: true
@@ -51,10 +49,15 @@ phpunit:7.2:
 
 phpcs:
   stage: analyse
+  only:
+    changes:
+    - config/*
+    - src/*
+    - test/*
   script: vendor/bin/phpcs .
 
 mkdocs:build:
-  image: python:7.2
+  image: python:2.7
   before_script:
   - curl https://bootstrap.pypa.io/get-pip.py -o get-pip.py
   - python get-pip.py
@@ -62,6 +65,7 @@ mkdocs:build:
   stage: build
   script: mkdocs build
   artifacts:
+    expire_in: 3 hour
     paths:
     - site
   only:
@@ -74,24 +78,29 @@ mkdocs:deploy:
   variables:
     GITPAGES: victorynox.github.io/rollun-datahandler/
     GITHUB_REPO: git@github.com:victorynox/rollun-datahandler.git
-  image: git-robot
+  image: debian
   before_script:
-  - 'which ssh-agent || ( apt-get update -y && apt-get install openssh-client -y )'
+  - apt-get update
+  - apt-get install git -y
+  - 'which ssh-agent || (apt-get install openssh -y )'
   - eval $(ssh-agent -s)
   - ssh-add <(echo "$GIT_SSH_PRIVAT_KEY")
   - git config --global user.email $GIT_EMAIL
   - git config --global user.name $GIT_NAME
   - mkdir -p ~/.ssh
-  - cat gitlab-known-hosts >> ~/.ssh/known_hosts
+  - ssh-keyscan -H -t rsa github.com  >> ~/.ssh/known_hosts
   script:
   - cd site
   - git init
-  - git add origin ${GITHUB_REPO}
-  - git checkout gh-pages
+  - git remote add origin git@github.com:victorynox/rollun-datahandler.git
+  - git fetch
+  - git checkout -b gh-pages
+  - git add *
+  - git commit -m "build docs $CI_COMMIT_TAG"
   - git push --force origin gh-pages
   environment:
     name: github-pages
-    url: https://${GITPAGES}
+    url: https://$GITPAGES
   dependencies:
   - mkdocs:build
   only:
