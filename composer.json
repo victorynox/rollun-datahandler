@@ -45,5 +45,16 @@
                 "rollun\\datahandler\\Processor\\ConfigProvider"
             ]
         }
+    },
+    "scripts": {
+        "development-disable": "zf-development-mode disable",
+        "development-enable": "zf-development-mode enable",
+        "development-status": "zf-development-mode status",
+        "clear-config-cache": "php bin/clear-config-cache.php",
+        "code-sniffer": "phpcs .",
+        "code-beautiful": "phpcbf .",
+        "server": "php -S 0.0.0.0:8000 -t public public/index.php",
+        "test": "phpunit --colors=always",
+        "test-coverage": "phpunit --colors=always --coverage-clover clover.xml"
     }
 }
