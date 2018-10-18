@@ -103,7 +103,7 @@ mkdocs:deploy:
   script:
   - cd site
   - git init
-  - git add origin ${GITHUB_REPO}
+  - git remote add origin ${GITHUB_REPO}
   - git checkout gh-pages
   - git push --force origin gh-pages
   environment:
