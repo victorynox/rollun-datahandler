@@ -8,12 +8,13 @@ cache:
   - vendor/
 
 before_script:
-  # update packages
+# update packages
 - apt-get update -yqq
 # install git
 - apt-get install git -yqq
 # install php-json ext
 - docker-php-ext-install json
+- docker-php-ext-install zip
 # install composer
 - curl -sS https://getcomposer.org/installer | php
 # install deps
@@ -23,6 +24,7 @@ stages:
 - build
 - test
 - analyse
+- deploy
 
 #container_build:
 #  stage: build
@@ -49,3 +51,49 @@ phpunit:7.2:
 phpcs:
   stage: analyse
   script: vendor/bin/phpcs .
+
+mkdocs:build:
+  image: python:7.2
+  before_script:
+  - curl https://bootstrap.pypa.io/get-pip.py -o get-pip.py
+  - python get-pip.py
+  - pip install mkdocs
+  stage: build
+  script: mkdocs build
+  artifacts:
+    paths:
+    - site
+  only:
+  - tags
+  except:
+  - /^(?!master).+@/
+
+mkdocs:deploy:
+  stage: deploy
+  variables:
+    GITPAGES: victorynox.github.io/rollun-datahandler/
+    GITHUB_REPO: git@github.com:victorynox/rollun-datahandler.git
+  image: git-robot
+  before_script:
+  - 'which ssh-agent || ( apt-get update -y && apt-get install openssh-client -y )'
+  - eval $(ssh-agent -s)
+  - ssh-add <(echo "$GIT_SSH_PRIVAT_KEY")
+  - git config --global user.email $GIT_EMAIL
+  - git config --global user.name $GIT_NAME
+  - mkdir -p ~/.ssh
+  - cat gitlab-known-hosts >> ~/.ssh/known_hosts
+  script:
+  - cd site
+  - git init
+  - git add origin ${GITHUB_REPO}
+  - git checkout gh-pages
+  - git push --force origin gh-pages
+  environment:
+    name: github-pages
+    url: https://${GITPAGES}
+  dependencies:
+  - mkdocs:build
+  only:
+  - tags
+  except:
+  - /^(?!master).+@/
