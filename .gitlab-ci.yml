@@ -12,6 +12,7 @@ before_script:
 - apt-get update -yqq
 # install git
 - apt-get install git -yqq
+- apt-get install zlib1g-dev -yqq
 # install php-json ext
 - docker-php-ext-install json
 - docker-php-ext-install zip
